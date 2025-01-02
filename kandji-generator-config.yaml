@@ -1,9 +1,0 @@
-outputDir: .
-verbose: False
-skipOverwrite: True
-useTags: True
-enablePostProcessFile: True
-# apiNamePrefix: ''
-# apiNameSuffix: Api
-gitHost: github.com
-gitUserId: MScottBlake
