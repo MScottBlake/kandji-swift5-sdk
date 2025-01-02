@@ -1,10 +1,10 @@
-name: OpenAPIClient
+name: kandji_sdk
 targets:
-  OpenAPIClient:
+  kandji_sdk:
     type: framework
     platform: iOS
     deploymentTarget: "11.0"
-    sources: [OpenAPIClient]
+    sources: [KandjiSDK/Classes/KandjiAPIs]
     info:
       path: ./Info.plist
       version: 1.0.0

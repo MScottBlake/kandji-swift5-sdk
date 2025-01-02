@@ -20,7 +20,7 @@ Get User
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let userId = "userId_example" // String | 
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 # **listUsers**
 ```swift
-    open class func listUsers(email: String? = nil, id: String? = nil, integrationId: String? = nil, archived: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Users
@@ -70,15 +70,15 @@ List Users
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let email = "email_example" // String | Returns users with email addresses containing the provided string. (optional)
-let id = "id_example" // String | Search for a user matching the provided UUID value. (optional)
+let _id = "_id_example" // String | Search for a user matching the provided UUID value. (optional)
 let integrationId = "integrationId_example" // String | Search for a integration matching the provided UUID value. (optional)
 let archived = "archived_example" // String | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
 
 // List Users
-UsersAPI.listUsers(email: email, id: id, integrationId: integrationId, archived: archived) { (response, error) in
+UsersAPI.listUsers(email: email, _id: _id, integrationId: integrationId, archived: archived) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -95,7 +95,7 @@ UsersAPI.listUsers(email: email, id: id, integrationId: integrationId, archived:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **String** | Returns users with email addresses containing the provided string. | [optional] 
- **id** | **String** | Search for a user matching the provided UUID value. | [optional] 
+ **_id** | **String** | Search for a user matching the provided UUID value. | [optional] 
  **integrationId** | **String** | Search for a integration matching the provided UUID value. | [optional] 
  **archived** | **String** | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | [optional] 
 

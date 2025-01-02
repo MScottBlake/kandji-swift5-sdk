@@ -22,7 +22,7 @@ Create a tag. Can only create one tag per request.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let body = "body_example" // String |  (optional)
 
@@ -72,7 +72,7 @@ Delete Tag
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let tagId = "tagId_example" // String | 
 
@@ -122,7 +122,7 @@ Return configured tags.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let search = "search_example" // String | Return resultes containing a given tag search string.
 
@@ -172,7 +172,7 @@ Update Tag
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let tagId = "tagId_example" // String | 
 let body = "body_example" // String |  (optional)

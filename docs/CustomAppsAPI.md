@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 # **createCustomApp**
 ```swift
-    open class func createCustomApp(fileKey: String, installEnforcement: String, installType: String, name: String, selfServiceCategoryId: String, selfServiceRecommended: String, showInSelfService: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func createCustomApp(name: String, fileKey: String, installType: String, installEnforcement: String, showInSelfService: String, selfServiceCategoryId: String, selfServiceRecommended: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create Custom App
@@ -24,18 +24,18 @@ Create Custom App
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
-let fileKey = "fileKey_example" // String | (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.
-let installEnforcement = "installEnforcement_example" // String | (Required) Options are install_once, continuously_enforce, no_enforcement
-let installType = "installType_example" // String | (Required) Options are package, zip, image
 let name = "name_example" // String | (Required) The name for this Custom App
+let fileKey = "fileKey_example" // String | (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.
+let installType = "installType_example" // String | (Required) Options are package, zip, image
+let installEnforcement = "installEnforcement_example" // String | (Required) Options are install_once, continuously_enforce, no_enforcement
+let showInSelfService = "showInSelfService_example" // String | (Optional, default=false) Displays this app in Self Service
 let selfServiceCategoryId = "selfServiceCategoryId_example" // String | (Required for show_in_self_service=true) Self Service Category (by ID) to display app in
 let selfServiceRecommended = "selfServiceRecommended_example" // String | (Optional, default=false) Adds recommended flag to app in Self Service
-let showInSelfService = "showInSelfService_example" // String | (Optional, default=false) Displays this app in Self Service
 
 // Create Custom App
-CustomAppsAPI.createCustomApp(fileKey: fileKey, installEnforcement: installEnforcement, installType: installType, name: name, selfServiceCategoryId: selfServiceCategoryId, selfServiceRecommended: selfServiceRecommended, showInSelfService: showInSelfService) { (response, error) in
+CustomAppsAPI.createCustomApp(name: name, fileKey: fileKey, installType: installType, installEnforcement: installEnforcement, showInSelfService: showInSelfService, selfServiceCategoryId: selfServiceCategoryId, selfServiceRecommended: selfServiceRecommended) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -51,13 +51,13 @@ CustomAppsAPI.createCustomApp(fileKey: fileKey, installEnforcement: installEnfor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileKey** | **String** | (Required) The S3 key from the &lt;code&gt;Upload Custom App&lt;/code&gt; endpont used to upload the custom app file. | 
- **installEnforcement** | **String** | (Required) Options are install_once, continuously_enforce, no_enforcement | 
- **installType** | **String** | (Required) Options are package, zip, image | 
  **name** | **String** | (Required) The name for this Custom App | 
+ **fileKey** | **String** | (Required) The S3 key from the &lt;code&gt;Upload Custom App&lt;/code&gt; endpont used to upload the custom app file. | 
+ **installType** | **String** | (Required) Options are package, zip, image | 
+ **installEnforcement** | **String** | (Required) Options are install_once, continuously_enforce, no_enforcement | 
+ **showInSelfService** | **String** | (Optional, default&#x3D;false) Displays this app in Self Service | 
  **selfServiceCategoryId** | **String** | (Required for show_in_self_service&#x3D;true) Self Service Category (by ID) to display app in | 
  **selfServiceRecommended** | **String** | (Optional, default&#x3D;false) Adds recommended flag to app in Self Service | 
- **showInSelfService** | **String** | (Optional, default&#x3D;false) Displays this app in Self Service | 
 
 ### Return type
 
@@ -81,12 +81,12 @@ Name | Type | Description  | Notes
 
 Delete Custom App
 
-<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let libraryItemId = "libraryItemId_example" // String | 
 
@@ -136,7 +136,7 @@ Get Custom App
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let libraryItemId = "libraryItemId_example" // String | 
 
@@ -186,7 +186,7 @@ This endpoint makes a request to retrieve a list of custom apps from the Kandji 
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let page = "page_example" // String | Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request. (optional)
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 # **updateCustomApp**
 ```swift
-    open class func updateCustomApp(libraryItemId: String, active: String, name: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func updateCustomApp(libraryItemId: String, name: String, active: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update Custom App
@@ -236,14 +236,14 @@ Update Custom App
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let libraryItemId = "libraryItemId_example" // String | 
-let active = "active_example" // String | (Optional, default=true) Whether this Custom App is active and installable
 let name = "name_example" // String | Renaming a Custom App
+let active = "active_example" // String | (Optional, default=true) Whether this Custom App is active and installable
 
 // Update Custom App
-CustomAppsAPI.updateCustomApp(libraryItemId: libraryItemId, active: active, name: name) { (response, error) in
+CustomAppsAPI.updateCustomApp(libraryItemId: libraryItemId, name: name, active: active) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -260,8 +260,8 @@ CustomAppsAPI.updateCustomApp(libraryItemId: libraryItemId, active: active, name
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **libraryItemId** | **String** |  | 
- **active** | **String** | (Optional, default&#x3D;true) Whether this Custom App is active and installable | 
  **name** | **String** | Renaming a Custom App | 
+ **active** | **String** | (Optional, default&#x3D;true) Whether this Custom App is active and installable | 
 
 ### Return type
 
@@ -290,7 +290,7 @@ Upload Custom App
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let body = "body_example" // String |  (optional)
 

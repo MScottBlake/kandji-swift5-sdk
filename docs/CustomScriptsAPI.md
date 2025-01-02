@@ -23,7 +23,7 @@ This request allows you to create a custom script in the Kandji library.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let body = "body_example" // String |  (optional)
 
@@ -68,12 +68,12 @@ Name | Type | Description  | Notes
 
 Delete Custom Script
 
-<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom scripts from the Kandji library.</p>  <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+<p>NOTICE: This is permanent so be careful.</p> <p>This endpoint sends a request to delete a specific custom scripts from the Kandji library.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
 
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let libraryItemId = "libraryItemId_example" // String | 
 
@@ -123,7 +123,7 @@ Get Custom Script
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let libraryItemId = "libraryItemId_example" // String | 
 
@@ -173,9 +173,9 @@ This endpoint makes a request to retrieve a list of custom scripts from the Kand
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
-let page = "page_example" // String | Optional page number (when results exceed pagination threshold) (optional)
+let page = "page_example" // String | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
 
 // List Custom Scripts
 CustomScriptsAPI.listCustomScripts(page: page) { (response, error) in
@@ -194,7 +194,7 @@ CustomScriptsAPI.listCustomScripts(page: page) { (response, error) in
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **String** | Optional page number (when results exceed pagination threshold) | [optional] 
+ **page** | **String** | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. | [optional] 
 
 ### Return type
 
@@ -223,7 +223,7 @@ This request allows you to update a custom script in the Kandji library.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let libraryItemId = "libraryItemId_example" // String | 
 let body = "body_example" // String |  (optional)

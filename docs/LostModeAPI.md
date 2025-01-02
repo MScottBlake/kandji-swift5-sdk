@@ -22,7 +22,7 @@ Disable Lost Mode
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 
@@ -72,7 +72,7 @@ Enable Lost Mode
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 let body = "body_example" // String |  (optional)
@@ -124,7 +124,7 @@ Play Lost Mode Sound
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 
@@ -174,7 +174,7 @@ This endpoint sends an MDM command to update the location data on iOS and iPadOS
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 

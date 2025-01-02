@@ -23,7 +23,7 @@ This request creates a note for the specified device ID.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 let body = "body_example" // String |  (optional)
@@ -75,7 +75,7 @@ This request deletes a specified note (Note ID) for the specified Device ID.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 let noteId = "noteId_example" // String | 
@@ -127,7 +127,7 @@ This request gets all notes for the specified Device ID.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 
@@ -177,7 +177,7 @@ This request retrieves a specified note (Note ID) for the specified Device ID.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 let noteId = "noteId_example" // String | 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 # **updateDeviceNote**
 ```swift
-    open class func updateDeviceNote(deviceId: String, noteId: String, authorization: String, contentType: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func updateDeviceNote(deviceId: String, noteId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update Device Note
@@ -229,16 +229,14 @@ This request patches a specified note (Note ID) for the specified Device ID.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 let noteId = "noteId_example" // String | 
-let authorization = "authorization_example" // String | 
-let contentType = "contentType_example" // String | 
 let body = "body_example" // String |  (optional)
 
 // Update Device Note
-NotesAPI.updateDeviceNote(deviceId: deviceId, noteId: noteId, authorization: authorization, contentType: contentType, body: body) { (response, error) in
+NotesAPI.updateDeviceNote(deviceId: deviceId, noteId: noteId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -256,8 +254,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deviceId** | **String** |  | 
  **noteId** | **String** |  | 
- **authorization** | **String** |  | 
- **contentType** | **String** |  | 
  **body** | **String** |  | [optional] 
 
 ### Return type

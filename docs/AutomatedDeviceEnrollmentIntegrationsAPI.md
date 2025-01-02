@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 # **createAdeIntegration**
 ```swift
-    open class func createAdeIntegration(blueprintId: String, email: String, file: URL, phone: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func createAdeIntegration(blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create ADE integration
@@ -29,15 +29,15 @@ Create ADE integration
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let blueprintId = "blueprintId_example" // String | 
+let phone = "phone_example" // String | 
 let email = "email_example" // String | 
 let file = URL(string: "https://example.com")! // URL | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
-let phone = "phone_example" // String | 
 
 // Create ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.createAdeIntegration(blueprintId: blueprintId, email: email, file: file, phone: phone) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.createAdeIntegration(blueprintId: blueprintId, phone: phone, email: email, file: file) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -54,9 +54,9 @@ AutomatedDeviceEnrollmentIntegrationsAPI.createAdeIntegration(blueprintId: bluep
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprintId** | **String** |  | 
+ **phone** | **String** |  | 
  **email** | **String** |  | 
  **file** | **URL** | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
- **phone** | **String** |  | 
 
 ### Return type
 
@@ -85,7 +85,7 @@ Delete ADE integration
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let adeTokenId = "adeTokenId_example" // String | 
 
@@ -135,7 +135,7 @@ Download ADE public key
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 
 // Download ADE public key
@@ -181,7 +181,7 @@ Get information about a specific Automated Device Enrollment device.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 
@@ -231,7 +231,7 @@ This request returns a specific ADE integration based on the <code>ade_token_id<
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let adeTokenId = "adeTokenId_example" // String | 
 
@@ -281,7 +281,7 @@ Get a list of Automated Device Enrollment devices.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let blueprintId = "blueprintId_example" // String | Return results &quot;containing&quot; the specified blueprint id (optional)
 let userId = "userId_example" // String | &quot;exact&quot; match on kandji user ID number (optional)
@@ -347,7 +347,7 @@ This request returns a list of configured ADE integrations.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 
 // List ADE integrations
@@ -388,12 +388,12 @@ Void (empty response body)
 
 List devices associated to ADE token
 
-<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>  <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
+<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
 
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let adeTokenId = "adeTokenId_example" // String | 
 let page = "page_example" // String | Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
@@ -435,26 +435,26 @@ Name | Type | Description  | Notes
 
 # **renewAdeIntegration**
 ```swift
-    open class func renewAdeIntegration(adeTokenId: String, blueprintId: String, email: String, file: URL, phone: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func renewAdeIntegration(adeTokenId: String, blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Renew ADE integration
 
-<p>This request will renew an existing ADE integration.</p>  <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
+<p>This request will renew an existing ADE integration.</p> <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
 
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let adeTokenId = "adeTokenId_example" // String | 
 let blueprintId = "blueprintId_example" // String | 
+let phone = "phone_example" // String | 
 let email = "email_example" // String | 
 let file = URL(string: "https://example.com")! // URL | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
-let phone = "phone_example" // String | 
 
 // Renew ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.renewAdeIntegration(adeTokenId: adeTokenId, blueprintId: blueprintId, email: email, file: file, phone: phone) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.renewAdeIntegration(adeTokenId: adeTokenId, blueprintId: blueprintId, phone: phone, email: email, file: file) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -472,9 +472,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **adeTokenId** | **String** |  | 
  **blueprintId** | **String** |  | 
+ **phone** | **String** |  | 
  **email** | **String** |  | 
  **file** | **URL** | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
- **phone** | **String** |  | 
 
 ### Return type
 
@@ -503,7 +503,7 @@ Update ADE device
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 let body = "body_example" // String |  (optional)
@@ -555,7 +555,7 @@ Update ADE integration
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import kandji_sdk
 
 let adeTokenId = "adeTokenId_example" // String | 
 let body = "body_example" // String |  (optional)
