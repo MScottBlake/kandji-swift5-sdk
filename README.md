@@ -296,5 +296,5 @@ https://openapi-generator.tech/docs/faq-generators#how-do-i-implement-bearer-tok
 
 ## Author
 
-
+mitchelsblake@gmail.com
 
