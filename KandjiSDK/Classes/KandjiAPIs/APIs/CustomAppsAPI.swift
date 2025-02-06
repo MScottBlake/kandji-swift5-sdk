@@ -29,8 +29,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createCustomApp(name: String, fileKey: String, installType: String, installEnforcement: String, showInSelfService: String, selfServiceCategoryId: String, selfServiceRecommended: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return createCustomAppWithRequestBuilder(name: name, fileKey: fileKey, installType: installType, installEnforcement: installEnforcement, showInSelfService: showInSelfService, selfServiceCategoryId: selfServiceCategoryId, selfServiceRecommended: selfServiceRecommended).execute(apiResponseQueue) { result in
+    open class func customAppsCreateCustomApp(name: String, fileKey: String, installType: String, installEnforcement: String, showInSelfService: String, selfServiceCategoryId: String, selfServiceRecommended: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customAppsCreateCustomAppWithRequestBuilder(name: name, fileKey: fileKey, installType: installType, installEnforcement: installEnforcement, showInSelfService: showInSelfService, selfServiceCategoryId: selfServiceCategoryId, selfServiceRecommended: selfServiceRecommended).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -61,7 +61,7 @@ extension kandji_sdkAPI {
      - parameter selfServiceRecommended: (form) (Optional, default&#x3D;false) Adds recommended flag to app in Self Service 
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func createCustomAppWithRequestBuilder(name: String, fileKey: String, installType: String, installEnforcement: String, showInSelfService: String, selfServiceCategoryId: String, selfServiceRecommended: String) -> RequestBuilder<AnyCodable> {
+    open class func customAppsCreateCustomAppWithRequestBuilder(name: String, fileKey: String, installType: String, installEnforcement: String, showInSelfService: String, selfServiceCategoryId: String, selfServiceRecommended: String) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/library/custom-apps"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableFormParams: [String: Any?] = [
@@ -98,8 +98,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deleteCustomApp(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return deleteCustomAppWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func customAppsDeleteCustomApp(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return customAppsDeleteCustomAppWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -124,7 +124,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func deleteCustomAppWithRequestBuilder(libraryItemId: String) -> RequestBuilder<Void> {
+    open class func customAppsDeleteCustomAppWithRequestBuilder(libraryItemId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/library/custom-apps/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -153,8 +153,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getCustomApp(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getCustomAppWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func customAppsGetCustomApp(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customAppsGetCustomAppWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -179,7 +179,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getCustomAppWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
+    open class func customAppsGetCustomAppWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/custom-apps/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -208,8 +208,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listCustomApps(page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listCustomAppsWithRequestBuilder(page: page).execute(apiResponseQueue) { result in
+    open class func customAppsListCustomApps(page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customAppsListCustomAppsWithRequestBuilder(page: page).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -234,7 +234,7 @@ extension kandji_sdkAPI {
      - parameter page: (query) Optional page number. Used when results exceed pagination threshold. A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listCustomAppsWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func customAppsListCustomAppsWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/library/custom-apps"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -265,8 +265,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateCustomApp(libraryItemId: String, name: String, active: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateCustomAppWithRequestBuilder(libraryItemId: libraryItemId, name: name, active: active).execute(apiResponseQueue) { result in
+    open class func customAppsUpdateCustomApp(libraryItemId: String, name: String, active: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customAppsUpdateCustomAppWithRequestBuilder(libraryItemId: libraryItemId, name: name, active: active).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -293,7 +293,7 @@ extension kandji_sdkAPI {
      - parameter active: (form) (Optional, default&#x3D;true) Whether this Custom App is active and installable 
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func updateCustomAppWithRequestBuilder(libraryItemId: String, name: String, active: String) -> RequestBuilder<AnyCodable> {
+    open class func customAppsUpdateCustomAppWithRequestBuilder(libraryItemId: String, name: String, active: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/custom-apps/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -328,8 +328,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func uploadCustomApp(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return uploadCustomAppWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
+    open class func customAppsUploadCustomApp(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return customAppsUploadCustomAppWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -354,7 +354,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<Void> 
      */
-    open class func uploadCustomAppWithRequestBuilder(body: String? = nil) -> RequestBuilder<Void> {
+    open class func customAppsUploadCustomAppWithRequestBuilder(body: String? = nil) -> RequestBuilder<Void> {
         let localVariablePath = "/api/v1/library/custom-apps/upload"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)

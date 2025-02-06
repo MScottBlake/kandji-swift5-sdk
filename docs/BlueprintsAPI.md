@@ -4,21 +4,21 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assignLibraryItem**](BlueprintsAPI.md#assignlibraryitem) | **POST** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
-[**createBlueprint**](BlueprintsAPI.md#createblueprint) | **POST** /api/v1/blueprints | Create Blueprint
-[**deleteBlueprint**](BlueprintsAPI.md#deleteblueprint) | **DELETE** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
-[**getBlueprint**](BlueprintsAPI.md#getblueprint) | **GET** /api/v1/blueprints/{blueprint_id} | Get Blueprint
-[**getBlueprintTemplates**](BlueprintsAPI.md#getblueprinttemplates) | **GET** /api/v1/blueprints/templates/ | Get Blueprint Templates
-[**getManualEnrollmentProfile**](BlueprintsAPI.md#getmanualenrollmentprofile) | **GET** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
-[**listBlueprints**](BlueprintsAPI.md#listblueprints) | **GET** /api/v1/blueprints | List Blueprints
-[**listLibraryItems**](BlueprintsAPI.md#listlibraryitems) | **GET** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
-[**removeLibraryItem**](BlueprintsAPI.md#removelibraryitem) | **POST** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
-[**updateBlueprint**](BlueprintsAPI.md#updateblueprint) | **PATCH** /api/v1/blueprints/{blueprint_id} | Update Blueprint
+[**blueprintsAssignLibraryItem**](BlueprintsAPI.md#blueprintsassignlibraryitem) | **POST** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
+[**blueprintsCreateBlueprint**](BlueprintsAPI.md#blueprintscreateblueprint) | **POST** /api/v1/blueprints | Create Blueprint
+[**blueprintsDeleteBlueprint**](BlueprintsAPI.md#blueprintsdeleteblueprint) | **DELETE** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
+[**blueprintsGetBlueprint**](BlueprintsAPI.md#blueprintsgetblueprint) | **GET** /api/v1/blueprints/{blueprint_id} | Get Blueprint
+[**blueprintsGetBlueprintTemplates**](BlueprintsAPI.md#blueprintsgetblueprinttemplates) | **GET** /api/v1/blueprints/templates/ | Get Blueprint Templates
+[**blueprintsGetManualEnrollmentProfile**](BlueprintsAPI.md#blueprintsgetmanualenrollmentprofile) | **GET** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
+[**blueprintsListBlueprints**](BlueprintsAPI.md#blueprintslistblueprints) | **GET** /api/v1/blueprints | List Blueprints
+[**blueprintsListLibraryItems**](BlueprintsAPI.md#blueprintslistlibraryitems) | **GET** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
+[**blueprintsRemoveLibraryItem**](BlueprintsAPI.md#blueprintsremovelibraryitem) | **POST** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
+[**blueprintsUpdateBlueprint**](BlueprintsAPI.md#blueprintsupdateblueprint) | **PATCH** /api/v1/blueprints/{blueprint_id} | Update Blueprint
 
 
-# **assignLibraryItem**
+# **blueprintsAssignLibraryItem**
 ```swift
-    open class func assignLibraryItem(blueprintId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func blueprintsAssignLibraryItem(blueprintId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Assign Library Item
@@ -34,7 +34,7 @@ let blueprintId = "blueprintId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Assign Library Item
-BlueprintsAPI.assignLibraryItem(blueprintId: blueprintId, body: body) { (response, error) in
+BlueprintsAPI.blueprintsAssignLibraryItem(blueprintId: blueprintId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -68,9 +68,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **createBlueprint**
+# **blueprintsCreateBlueprint**
 ```swift
-    open class func createBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func blueprintsCreateBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create Blueprint
@@ -90,7 +90,7 @@ let sourceId = "sourceId_example" // String | Set either the source template ID,
 let type = "type_example" // String | Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>
 
 // Create Blueprint
-BlueprintsAPI.createBlueprint(name: name, enrollmentCodeIsActive: enrollmentCodeIsActive, enrollmentCodeCode: enrollmentCodeCode, sourceType: sourceType, sourceId: sourceId, type: type) { (response, error) in
+BlueprintsAPI.blueprintsCreateBlueprint(name: name, enrollmentCodeIsActive: enrollmentCodeIsActive, enrollmentCodeCode: enrollmentCodeCode, sourceType: sourceType, sourceId: sourceId, type: type) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -128,9 +128,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteBlueprint**
+# **blueprintsDeleteBlueprint**
 ```swift
-    open class func deleteBlueprint(blueprintId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func blueprintsDeleteBlueprint(blueprintId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Blueprint
@@ -145,7 +145,7 @@ import kandji_sdk
 let blueprintId = "blueprintId_example" // String | 
 
 // Delete Blueprint
-BlueprintsAPI.deleteBlueprint(blueprintId: blueprintId) { (response, error) in
+BlueprintsAPI.blueprintsDeleteBlueprint(blueprintId: blueprintId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -178,9 +178,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getBlueprint**
+# **blueprintsGetBlueprint**
 ```swift
-    open class func getBlueprint(blueprintId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func blueprintsGetBlueprint(blueprintId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get Blueprint
@@ -195,7 +195,7 @@ import kandji_sdk
 let blueprintId = "blueprintId_example" // String | 
 
 // Get Blueprint
-BlueprintsAPI.getBlueprint(blueprintId: blueprintId) { (response, error) in
+BlueprintsAPI.blueprintsGetBlueprint(blueprintId: blueprintId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -228,9 +228,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getBlueprintTemplates**
+# **blueprintsGetBlueprintTemplates**
 ```swift
-    open class func getBlueprintTemplates(limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func blueprintsGetBlueprintTemplates(limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get Blueprint Templates
@@ -244,7 +244,7 @@ let limit = "limit_example" // String | Number of results to return per page. (o
 let offset = "offset_example" // String | The initial index from which to return the results. (optional)
 
 // Get Blueprint Templates
-BlueprintsAPI.getBlueprintTemplates(limit: limit, offset: offset) { (response, error) in
+BlueprintsAPI.blueprintsGetBlueprintTemplates(limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -278,9 +278,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getManualEnrollmentProfile**
+# **blueprintsGetManualEnrollmentProfile**
 ```swift
-    open class func getManualEnrollmentProfile(blueprintId: String, sso: String? = nil, completion: @escaping (_ data: String?, _ error: Error?) -> Void)
+    open class func blueprintsGetManualEnrollmentProfile(blueprintId: String, sso: String? = nil, completion: @escaping (_ data: String?, _ error: Error?) -> Void)
 ```
 
 Get Manual Enrollment Profile
@@ -296,7 +296,7 @@ let blueprintId = "blueprintId_example" // String |
 let sso = "sso_example" // String | Use the <code>sso</code> query parameter, set to <code>true</code>, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &quot;Require Authentication&quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. (optional)
 
 // Get Manual Enrollment Profile
-BlueprintsAPI.getManualEnrollmentProfile(blueprintId: blueprintId, sso: sso) { (response, error) in
+BlueprintsAPI.blueprintsGetManualEnrollmentProfile(blueprintId: blueprintId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -330,9 +330,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listBlueprints**
+# **blueprintsListBlueprints**
 ```swift
-    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func blueprintsListBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Blueprints
@@ -351,7 +351,7 @@ let limit = "limit_example" // String | Number of results to return per page. (o
 let offset = "offset_example" // String | The initial index from which to return the results. (optional)
 
 // List Blueprints
-BlueprintsAPI.listBlueprints(_id: _id, idIn: idIn, name: name, limit: limit, offset: offset) { (response, error) in
+BlueprintsAPI.blueprintsListBlueprints(_id: _id, idIn: idIn, name: name, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -388,9 +388,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listLibraryItems**
+# **blueprintsListLibraryItems**
 ```swift
-    open class func listLibraryItems(blueprintId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func blueprintsListLibraryItems(blueprintId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Library Items
@@ -405,7 +405,7 @@ import kandji_sdk
 let blueprintId = "blueprintId_example" // String | 
 
 // List Library Items
-BlueprintsAPI.listLibraryItems(blueprintId: blueprintId) { (response, error) in
+BlueprintsAPI.blueprintsListLibraryItems(blueprintId: blueprintId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -438,9 +438,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **removeLibraryItem**
+# **blueprintsRemoveLibraryItem**
 ```swift
-    open class func removeLibraryItem(blueprintId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func blueprintsRemoveLibraryItem(blueprintId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Remove Library Item
@@ -456,7 +456,7 @@ let blueprintId = "blueprintId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Remove Library Item
-BlueprintsAPI.removeLibraryItem(blueprintId: blueprintId, body: body) { (response, error) in
+BlueprintsAPI.blueprintsRemoveLibraryItem(blueprintId: blueprintId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -490,9 +490,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateBlueprint**
+# **blueprintsUpdateBlueprint**
 ```swift
-    open class func updateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func blueprintsUpdateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update Blueprint
@@ -511,7 +511,7 @@ let enrollmentCodeCode = "enrollmentCodeCode_example" // String | Update the enr
 let enrollmentCodeIsActive = "enrollmentCodeIsActive_example" // String | Disable the Blueprint for manual device enrollment from the enrollment portal.
 
 // Update Blueprint
-BlueprintsAPI.updateBlueprint(blueprintId: blueprintId, name: name, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive) { (response, error) in
+BlueprintsAPI.blueprintsUpdateBlueprint(blueprintId: blueprintId, name: name, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive) { (response, error) in
     guard error == nil else {
         print(error)
         return

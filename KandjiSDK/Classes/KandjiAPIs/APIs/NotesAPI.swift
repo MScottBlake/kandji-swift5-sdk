@@ -24,8 +24,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createDeviceNote(deviceId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return createDeviceNoteWithRequestBuilder(deviceId: deviceId, body: body).execute(apiResponseQueue) { result in
+    open class func notesCreateDeviceNote(deviceId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return notesCreateDeviceNoteWithRequestBuilder(deviceId: deviceId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -51,7 +51,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func createDeviceNoteWithRequestBuilder(deviceId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func notesCreateDeviceNoteWithRequestBuilder(deviceId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/notes"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -81,8 +81,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deleteDeviceNote(deviceId: String, noteId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return deleteDeviceNoteWithRequestBuilder(deviceId: deviceId, noteId: noteId).execute(apiResponseQueue) { result in
+    open class func notesDeleteDeviceNote(deviceId: String, noteId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return notesDeleteDeviceNoteWithRequestBuilder(deviceId: deviceId, noteId: noteId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -108,7 +108,7 @@ extension kandji_sdkAPI {
      - parameter noteId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func deleteDeviceNoteWithRequestBuilder(deviceId: String, noteId: String) -> RequestBuilder<AnyCodable> {
+    open class func notesDeleteDeviceNoteWithRequestBuilder(deviceId: String, noteId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/notes/{note_id}"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -140,8 +140,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceNotes(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getDeviceNotesWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func notesGetDeviceNotes(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return notesGetDeviceNotesWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -166,7 +166,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceNotesWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func notesGetDeviceNotesWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/notes"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -196,8 +196,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func retrieveDeviceNote(deviceId: String, noteId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return retrieveDeviceNoteWithRequestBuilder(deviceId: deviceId, noteId: noteId).execute(apiResponseQueue) { result in
+    open class func notesRetrieveDeviceNote(deviceId: String, noteId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return notesRetrieveDeviceNoteWithRequestBuilder(deviceId: deviceId, noteId: noteId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -223,7 +223,7 @@ extension kandji_sdkAPI {
      - parameter noteId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func retrieveDeviceNoteWithRequestBuilder(deviceId: String, noteId: String) -> RequestBuilder<AnyCodable> {
+    open class func notesRetrieveDeviceNoteWithRequestBuilder(deviceId: String, noteId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/notes/{note_id}"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -257,8 +257,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateDeviceNote(deviceId: String, noteId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateDeviceNoteWithRequestBuilder(deviceId: deviceId, noteId: noteId, body: body).execute(apiResponseQueue) { result in
+    open class func notesUpdateDeviceNote(deviceId: String, noteId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return notesUpdateDeviceNoteWithRequestBuilder(deviceId: deviceId, noteId: noteId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -285,7 +285,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func updateDeviceNoteWithRequestBuilder(deviceId: String, noteId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func notesUpdateDeviceNoteWithRequestBuilder(deviceId: String, noteId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/notes/{note_id}"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

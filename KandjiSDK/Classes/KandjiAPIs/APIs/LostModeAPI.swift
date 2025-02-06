@@ -23,8 +23,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func disableLostMode(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return disableLostModeWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func lostModeDisableLostMode(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return lostModeDisableLostModeWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -48,7 +48,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func disableLostModeWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
+    open class func lostModeDisableLostModeWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/devices/{device_id}/action/disablelostmode"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -78,8 +78,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func enableLostMode(deviceId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return enableLostModeWithRequestBuilder(deviceId: deviceId, body: body).execute(apiResponseQueue) { result in
+    open class func lostModeEnableLostMode(deviceId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return lostModeEnableLostModeWithRequestBuilder(deviceId: deviceId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -104,7 +104,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<Void> 
      */
-    open class func enableLostModeWithRequestBuilder(deviceId: String, body: String? = nil) -> RequestBuilder<Void> {
+    open class func lostModeEnableLostModeWithRequestBuilder(deviceId: String, body: String? = nil) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/devices/{device_id}/action/enablelostmode"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -133,8 +133,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func playLostModeSound(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return playLostModeSoundWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func lostModePlayLostModeSound(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return lostModePlayLostModeSoundWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -158,7 +158,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func playLostModeSoundWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
+    open class func lostModePlayLostModeSoundWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/devices/{device_id}/action/playlostmodesound"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -187,8 +187,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateLocation(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateLocationWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func lostModeUpdateLocation(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return lostModeUpdateLocationWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -212,7 +212,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func updateLocationWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
+    open class func lostModeUpdateLocationWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/devices/{device_id}/action/updatelocation"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

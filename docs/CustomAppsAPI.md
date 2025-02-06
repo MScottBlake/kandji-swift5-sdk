@@ -4,17 +4,17 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomApp**](CustomAppsAPI.md#createcustomapp) | **POST** /api/v1/library/custom-apps | Create Custom App
-[**deleteCustomApp**](CustomAppsAPI.md#deletecustomapp) | **DELETE** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
-[**getCustomApp**](CustomAppsAPI.md#getcustomapp) | **GET** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
-[**listCustomApps**](CustomAppsAPI.md#listcustomapps) | **GET** /api/v1/library/custom-apps | List Custom Apps
-[**updateCustomApp**](CustomAppsAPI.md#updatecustomapp) | **PATCH** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
-[**uploadCustomApp**](CustomAppsAPI.md#uploadcustomapp) | **POST** /api/v1/library/custom-apps/upload | Upload Custom App
+[**customAppsCreateCustomApp**](CustomAppsAPI.md#customappscreatecustomapp) | **POST** /api/v1/library/custom-apps | Create Custom App
+[**customAppsDeleteCustomApp**](CustomAppsAPI.md#customappsdeletecustomapp) | **DELETE** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
+[**customAppsGetCustomApp**](CustomAppsAPI.md#customappsgetcustomapp) | **GET** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
+[**customAppsListCustomApps**](CustomAppsAPI.md#customappslistcustomapps) | **GET** /api/v1/library/custom-apps | List Custom Apps
+[**customAppsUpdateCustomApp**](CustomAppsAPI.md#customappsupdatecustomapp) | **PATCH** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
+[**customAppsUploadCustomApp**](CustomAppsAPI.md#customappsuploadcustomapp) | **POST** /api/v1/library/custom-apps/upload | Upload Custom App
 
 
-# **createCustomApp**
+# **customAppsCreateCustomApp**
 ```swift
-    open class func createCustomApp(name: String, fileKey: String, installType: String, installEnforcement: String, showInSelfService: String, selfServiceCategoryId: String, selfServiceRecommended: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customAppsCreateCustomApp(name: String, fileKey: String, installType: String, installEnforcement: String, showInSelfService: String, selfServiceCategoryId: String, selfServiceRecommended: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create Custom App
@@ -35,7 +35,7 @@ let selfServiceCategoryId = "selfServiceCategoryId_example" // String | (Require
 let selfServiceRecommended = "selfServiceRecommended_example" // String | (Optional, default=false) Adds recommended flag to app in Self Service
 
 // Create Custom App
-CustomAppsAPI.createCustomApp(name: name, fileKey: fileKey, installType: installType, installEnforcement: installEnforcement, showInSelfService: showInSelfService, selfServiceCategoryId: selfServiceCategoryId, selfServiceRecommended: selfServiceRecommended) { (response, error) in
+CustomAppsAPI.customAppsCreateCustomApp(name: name, fileKey: fileKey, installType: installType, installEnforcement: installEnforcement, showInSelfService: showInSelfService, selfServiceCategoryId: selfServiceCategoryId, selfServiceRecommended: selfServiceRecommended) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -74,9 +74,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteCustomApp**
+# **customAppsDeleteCustomApp**
 ```swift
-    open class func deleteCustomApp(libraryItemId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func customAppsDeleteCustomApp(libraryItemId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Custom App
@@ -91,7 +91,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Delete Custom App
-CustomAppsAPI.deleteCustomApp(libraryItemId: libraryItemId) { (response, error) in
+CustomAppsAPI.customAppsDeleteCustomApp(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -124,9 +124,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getCustomApp**
+# **customAppsGetCustomApp**
 ```swift
-    open class func getCustomApp(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customAppsGetCustomApp(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Custom App
@@ -141,7 +141,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Get Custom App
-CustomAppsAPI.getCustomApp(libraryItemId: libraryItemId) { (response, error) in
+CustomAppsAPI.customAppsGetCustomApp(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -174,9 +174,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listCustomApps**
+# **customAppsListCustomApps**
 ```swift
-    open class func listCustomApps(page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customAppsListCustomApps(page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Custom Apps
@@ -191,7 +191,7 @@ import kandji_sdk
 let page = "page_example" // String | Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 device records returned per request. (optional)
 
 // List Custom Apps
-CustomAppsAPI.listCustomApps(page: page) { (response, error) in
+CustomAppsAPI.customAppsListCustomApps(page: page) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -224,9 +224,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateCustomApp**
+# **customAppsUpdateCustomApp**
 ```swift
-    open class func updateCustomApp(libraryItemId: String, name: String, active: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customAppsUpdateCustomApp(libraryItemId: String, name: String, active: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update Custom App
@@ -243,7 +243,7 @@ let name = "name_example" // String | Renaming a Custom App
 let active = "active_example" // String | (Optional, default=true) Whether this Custom App is active and installable
 
 // Update Custom App
-CustomAppsAPI.updateCustomApp(libraryItemId: libraryItemId, name: name, active: active) { (response, error) in
+CustomAppsAPI.customAppsUpdateCustomApp(libraryItemId: libraryItemId, name: name, active: active) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -278,9 +278,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **uploadCustomApp**
+# **customAppsUploadCustomApp**
 ```swift
-    open class func uploadCustomApp(body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func customAppsUploadCustomApp(body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Upload Custom App
@@ -295,7 +295,7 @@ import kandji_sdk
 let body = "body_example" // String |  (optional)
 
 // Upload Custom App
-CustomAppsAPI.uploadCustomApp(body: body) { (response, error) in
+CustomAppsAPI.customAppsUploadCustomApp(body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return

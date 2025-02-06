@@ -24,8 +24,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createInhouseApp(contentType: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return createInhouseAppWithRequestBuilder(contentType: contentType, body: body).execute(apiResponseQueue) { result in
+    open class func inhouseAppsCreateInhouseApp(contentType: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return inhouseAppsCreateInhouseAppWithRequestBuilder(contentType: contentType, body: body).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -50,7 +50,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<Void> 
      */
-    open class func createInhouseAppWithRequestBuilder(contentType: String, body: String? = nil) -> RequestBuilder<Void> {
+    open class func inhouseAppsCreateInhouseAppWithRequestBuilder(contentType: String, body: String? = nil) -> RequestBuilder<Void> {
         let localVariablePath = "/api/v1/library/ipa-apps"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
@@ -77,8 +77,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deleteInhouseApp(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return deleteInhouseAppWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func inhouseAppsDeleteInhouseApp(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return inhouseAppsDeleteInhouseAppWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -102,7 +102,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func deleteInhouseAppWithRequestBuilder(libraryItemId: String) -> RequestBuilder<Void> {
+    open class func inhouseAppsDeleteInhouseAppWithRequestBuilder(libraryItemId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/library/ipa-apps/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -131,8 +131,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getInhouseApp(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getInhouseAppWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func inhouseAppsGetInhouseApp(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return inhouseAppsGetInhouseAppWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -157,7 +157,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getInhouseAppWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
+    open class func inhouseAppsGetInhouseAppWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/ipa-apps/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -186,8 +186,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listInhouseApps(page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listInhouseAppsWithRequestBuilder(page: page).execute(apiResponseQueue) { result in
+    open class func inhouseAppsListInhouseApps(page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return inhouseAppsListInhouseAppsWithRequestBuilder(page: page).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -212,7 +212,7 @@ extension kandji_sdkAPI {
      - parameter page: (query) Optional page number. Used when results exceed pagination threshold. A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 app records returned per request. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listInhouseAppsWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func inhouseAppsListInhouseAppsWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/library/ipa-apps"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -243,8 +243,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateInhouseApp(libraryItemId: String, contentType: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateInhouseAppWithRequestBuilder(libraryItemId: libraryItemId, contentType: contentType, body: body).execute(apiResponseQueue) { result in
+    open class func inhouseAppsUpdateInhouseApp(libraryItemId: String, contentType: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return inhouseAppsUpdateInhouseAppWithRequestBuilder(libraryItemId: libraryItemId, contentType: contentType, body: body).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -270,7 +270,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<Void> 
      */
-    open class func updateInhouseAppWithRequestBuilder(libraryItemId: String, contentType: String, body: String? = nil) -> RequestBuilder<Void> {
+    open class func inhouseAppsUpdateInhouseAppWithRequestBuilder(libraryItemId: String, contentType: String, body: String? = nil) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/library/ipa-apps/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -301,8 +301,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func uploadInhouseApp(contentType: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return uploadInhouseAppWithRequestBuilder(contentType: contentType, body: body).execute(apiResponseQueue) { result in
+    open class func inhouseAppsUploadInhouseApp(contentType: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return inhouseAppsUploadInhouseAppWithRequestBuilder(contentType: contentType, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -328,7 +328,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func uploadInhouseAppWithRequestBuilder(contentType: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func inhouseAppsUploadInhouseAppWithRequestBuilder(contentType: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/library/ipa-apps/upload"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
@@ -355,8 +355,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func uploadInhouseAppStatus(pendingUploadId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return uploadInhouseAppStatusWithRequestBuilder(pendingUploadId: pendingUploadId).execute(apiResponseQueue) { result in
+    open class func inhouseAppsUploadInhouseAppStatus(pendingUploadId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return inhouseAppsUploadInhouseAppStatusWithRequestBuilder(pendingUploadId: pendingUploadId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -381,7 +381,7 @@ extension kandji_sdkAPI {
      - parameter pendingUploadId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func uploadInhouseAppStatusWithRequestBuilder(pendingUploadId: String) -> RequestBuilder<AnyCodable> {
+    open class func inhouseAppsUploadInhouseAppStatusWithRequestBuilder(pendingUploadId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/ipa-apps/upload/{pending_upload_id}/status"
         let pendingUploadIdPreEscape = "\(APIHelper.mapValueToPathItem(pendingUploadId))"
         let pendingUploadIdPostEscape = pendingUploadIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

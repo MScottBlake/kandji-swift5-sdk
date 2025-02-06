@@ -4,15 +4,15 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**disableLostMode**](LostModeAPI.md#disablelostmode) | **POST** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
-[**enableLostMode**](LostModeAPI.md#enablelostmode) | **POST** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
-[**playLostModeSound**](LostModeAPI.md#playlostmodesound) | **POST** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
-[**updateLocation**](LostModeAPI.md#updatelocation) | **POST** /api/v1/devices/{device_id}/action/updatelocation | Update Location
+[**lostModeDisableLostMode**](LostModeAPI.md#lostmodedisablelostmode) | **POST** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
+[**lostModeEnableLostMode**](LostModeAPI.md#lostmodeenablelostmode) | **POST** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
+[**lostModePlayLostModeSound**](LostModeAPI.md#lostmodeplaylostmodesound) | **POST** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
+[**lostModeUpdateLocation**](LostModeAPI.md#lostmodeupdatelocation) | **POST** /api/v1/devices/{device_id}/action/updatelocation | Update Location
 
 
-# **disableLostMode**
+# **lostModeDisableLostMode**
 ```swift
-    open class func disableLostMode(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func lostModeDisableLostMode(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Disable Lost Mode
@@ -27,7 +27,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Disable Lost Mode
-LostModeAPI.disableLostMode(deviceId: deviceId) { (response, error) in
+LostModeAPI.lostModeDisableLostMode(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -60,9 +60,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **enableLostMode**
+# **lostModeEnableLostMode**
 ```swift
-    open class func enableLostMode(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func lostModeEnableLostMode(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Enable Lost Mode
@@ -78,7 +78,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Enable Lost Mode
-LostModeAPI.enableLostMode(deviceId: deviceId, body: body) { (response, error) in
+LostModeAPI.lostModeEnableLostMode(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -112,9 +112,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **playLostModeSound**
+# **lostModePlayLostModeSound**
 ```swift
-    open class func playLostModeSound(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func lostModePlayLostModeSound(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Play Lost Mode Sound
@@ -129,7 +129,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Play Lost Mode Sound
-LostModeAPI.playLostModeSound(deviceId: deviceId) { (response, error) in
+LostModeAPI.lostModePlayLostModeSound(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -162,9 +162,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateLocation**
+# **lostModeUpdateLocation**
 ```swift
-    open class func updateLocation(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func lostModeUpdateLocation(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Update Location
@@ -179,7 +179,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Update Location
-LostModeAPI.updateLocation(deviceId: deviceId) { (response, error) in
+LostModeAPI.lostModeUpdateLocation(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return

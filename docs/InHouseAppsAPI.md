@@ -4,18 +4,18 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createInhouseApp**](InHouseAppsAPI.md#createinhouseapp) | **POST** /api/v1/library/ipa-apps | Create In-House App
-[**deleteInhouseApp**](InHouseAppsAPI.md#deleteinhouseapp) | **DELETE** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
-[**getInhouseApp**](InHouseAppsAPI.md#getinhouseapp) | **GET** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
-[**listInhouseApps**](InHouseAppsAPI.md#listinhouseapps) | **GET** /api/v1/library/ipa-apps | List In-House Apps
-[**updateInhouseApp**](InHouseAppsAPI.md#updateinhouseapp) | **PATCH** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
-[**uploadInhouseApp**](InHouseAppsAPI.md#uploadinhouseapp) | **POST** /api/v1/library/ipa-apps/upload | Upload In-House App
-[**uploadInhouseAppStatus**](InHouseAppsAPI.md#uploadinhouseappstatus) | **GET** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
+[**inhouseAppsCreateInhouseApp**](InHouseAppsAPI.md#inhouseappscreateinhouseapp) | **POST** /api/v1/library/ipa-apps | Create In-House App
+[**inhouseAppsDeleteInhouseApp**](InHouseAppsAPI.md#inhouseappsdeleteinhouseapp) | **DELETE** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
+[**inhouseAppsGetInhouseApp**](InHouseAppsAPI.md#inhouseappsgetinhouseapp) | **GET** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
+[**inhouseAppsListInhouseApps**](InHouseAppsAPI.md#inhouseappslistinhouseapps) | **GET** /api/v1/library/ipa-apps | List In-House Apps
+[**inhouseAppsUpdateInhouseApp**](InHouseAppsAPI.md#inhouseappsupdateinhouseapp) | **PATCH** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
+[**inhouseAppsUploadInhouseApp**](InHouseAppsAPI.md#inhouseappsuploadinhouseapp) | **POST** /api/v1/library/ipa-apps/upload | Upload In-House App
+[**inhouseAppsUploadInhouseAppStatus**](InHouseAppsAPI.md#inhouseappsuploadinhouseappstatus) | **GET** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
 
 
-# **createInhouseApp**
+# **inhouseAppsCreateInhouseApp**
 ```swift
-    open class func createInhouseApp(contentType: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func inhouseAppsCreateInhouseApp(contentType: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Create In-House App
@@ -31,7 +31,7 @@ let contentType = "contentType_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Create In-House App
-InHouseAppsAPI.createInhouseApp(contentType: contentType, body: body) { (response, error) in
+InHouseAppsAPI.inhouseAppsCreateInhouseApp(contentType: contentType, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -65,9 +65,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteInhouseApp**
+# **inhouseAppsDeleteInhouseApp**
 ```swift
-    open class func deleteInhouseApp(libraryItemId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func inhouseAppsDeleteInhouseApp(libraryItemId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete In-House App
@@ -82,7 +82,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Delete In-House App
-InHouseAppsAPI.deleteInhouseApp(libraryItemId: libraryItemId) { (response, error) in
+InHouseAppsAPI.inhouseAppsDeleteInhouseApp(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -115,9 +115,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getInhouseApp**
+# **inhouseAppsGetInhouseApp**
 ```swift
-    open class func getInhouseApp(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func inhouseAppsGetInhouseApp(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get In-House App
@@ -132,7 +132,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Get In-House App
-InHouseAppsAPI.getInhouseApp(libraryItemId: libraryItemId) { (response, error) in
+InHouseAppsAPI.inhouseAppsGetInhouseApp(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -165,9 +165,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listInhouseApps**
+# **inhouseAppsListInhouseApps**
 ```swift
-    open class func listInhouseApps(page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func inhouseAppsListInhouseApps(page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List In-House Apps
@@ -182,7 +182,7 @@ import kandji_sdk
 let page = "page_example" // String | Optional page number. Used when results exceed pagination threshold. A hard upper <code>limit</code> is set at 300 app records returned per request. (optional)
 
 // List In-House Apps
-InHouseAppsAPI.listInhouseApps(page: page) { (response, error) in
+InHouseAppsAPI.inhouseAppsListInhouseApps(page: page) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -215,9 +215,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateInhouseApp**
+# **inhouseAppsUpdateInhouseApp**
 ```swift
-    open class func updateInhouseApp(libraryItemId: String, contentType: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func inhouseAppsUpdateInhouseApp(libraryItemId: String, contentType: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Update In-House App
@@ -234,7 +234,7 @@ let contentType = "contentType_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Update In-House App
-InHouseAppsAPI.updateInhouseApp(libraryItemId: libraryItemId, contentType: contentType, body: body) { (response, error) in
+InHouseAppsAPI.inhouseAppsUpdateInhouseApp(libraryItemId: libraryItemId, contentType: contentType, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -269,9 +269,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **uploadInhouseApp**
+# **inhouseAppsUploadInhouseApp**
 ```swift
-    open class func uploadInhouseApp(contentType: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func inhouseAppsUploadInhouseApp(contentType: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Upload In-House App
@@ -287,7 +287,7 @@ let contentType = "contentType_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Upload In-House App
-InHouseAppsAPI.uploadInhouseApp(contentType: contentType, body: body) { (response, error) in
+InHouseAppsAPI.inhouseAppsUploadInhouseApp(contentType: contentType, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -321,9 +321,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **uploadInhouseAppStatus**
+# **inhouseAppsUploadInhouseAppStatus**
 ```swift
-    open class func uploadInhouseAppStatus(pendingUploadId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func inhouseAppsUploadInhouseAppStatus(pendingUploadId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Upload In-House App Status
@@ -338,7 +338,7 @@ import kandji_sdk
 let pendingUploadId = "pendingUploadId_example" // String | 
 
 // Upload In-House App Status
-InHouseAppsAPI.uploadInhouseAppStatus(pendingUploadId: pendingUploadId) { (response, error) in
+InHouseAppsAPI.inhouseAppsUploadInhouseAppStatus(pendingUploadId: pendingUploadId) { (response, error) in
     guard error == nil else {
         print(error)
         return

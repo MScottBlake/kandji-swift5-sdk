@@ -28,8 +28,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func activationLock(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return activationLockWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismActivationLock(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismActivationLockWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -59,7 +59,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<Void> 
      */
-    open class func activationLockWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<Void> {
+    open class func prismActivationLockWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<Void> {
         let localVariablePath = "/api/v1/prism/activation_lock"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -98,8 +98,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func applicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return applicationFirewallWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismApplicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismApplicationFirewallWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -129,7 +129,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func applicationFirewallWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismApplicationFirewallWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/application_firewall"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -168,8 +168,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func applications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return applicationsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismApplications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismApplicationsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -199,7 +199,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func applicationsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismApplicationsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/apps"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -238,8 +238,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func certificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return certificatesWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismCertificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismCertificatesWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -269,7 +269,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func certificatesWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismCertificatesWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/certificates"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -303,8 +303,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func count(category: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return countWithRequestBuilder(category: category).execute(apiResponseQueue) { result in
+    open class func prismCount(category: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismCountWithRequestBuilder(category: category).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -329,7 +329,7 @@ extension kandji_sdkAPI {
      - parameter category: (query) &lt;p&gt;Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (&amp;quot;_&amp;quot;) when using the API query.&lt;/p&gt; &lt;p&gt;Examples: apps device_information kernel_extensions system_extensions&lt;/p&gt; 
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func countWithRequestBuilder(category: String) -> RequestBuilder<AnyCodable> {
+    open class func prismCountWithRequestBuilder(category: String) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/count"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -363,8 +363,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func desktopAndScreensaver(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return desktopAndScreensaverWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismDesktopAndScreensaver(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismDesktopAndScreensaverWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -394,7 +394,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func desktopAndScreensaverWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismDesktopAndScreensaverWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/desktop_and_screensaver"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -434,8 +434,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return deviceInformationWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset, body: body).execute(apiResponseQueue) { result in
+    open class func prismDeviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismDeviceInformationWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -466,7 +466,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func deviceInformationWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismDeviceInformationWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/device_information"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
@@ -505,8 +505,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func filevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return filevaultWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismFilevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismFilevaultWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -536,7 +536,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func filevaultWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismFilevaultWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/filevault"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -575,8 +575,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func gatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return gatekeeperAndXprotectWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismGatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismGatekeeperAndXprotectWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -606,7 +606,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func gatekeeperAndXprotectWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismGatekeeperAndXprotectWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/gatekeeper_and_xprotect"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -640,8 +640,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getCategoryExport(exportId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getCategoryExportWithRequestBuilder(exportId: exportId).execute(apiResponseQueue) { result in
+    open class func prismGetCategoryExport(exportId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismGetCategoryExportWithRequestBuilder(exportId: exportId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -666,7 +666,7 @@ extension kandji_sdkAPI {
      - parameter exportId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getCategoryExportWithRequestBuilder(exportId: String) -> RequestBuilder<AnyCodable> {
+    open class func prismGetCategoryExportWithRequestBuilder(exportId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/prism/export/{export_id}"
         let exportIdPreEscape = "\(APIHelper.mapValueToPathItem(exportId))"
         let exportIdPostEscape = exportIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -700,8 +700,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func installedProfiles(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return installedProfilesWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismInstalledProfiles(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismInstalledProfilesWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -731,7 +731,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func installedProfilesWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismInstalledProfilesWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/installed_profiles"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -770,8 +770,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func kernelExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return kernelExtensionsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismKernelExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismKernelExtensionsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -801,7 +801,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func kernelExtensionsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismKernelExtensionsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/kernel_extensions"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -840,8 +840,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func launchAgentsAndDaemons(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return launchAgentsAndDaemonsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismLaunchAgentsAndDaemons(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismLaunchAgentsAndDaemonsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -871,7 +871,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func launchAgentsAndDaemonsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismLaunchAgentsAndDaemonsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/launch_agents_and_daemons"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -910,8 +910,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func localUsers(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return localUsersWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismLocalUsers(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismLocalUsersWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -941,7 +941,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func localUsersWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismLocalUsersWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/local_users"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -975,8 +975,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func requestCategoryExport(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return requestCategoryExportWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
+    open class func prismRequestCategoryExport(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismRequestCategoryExportWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -1001,7 +1001,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func requestCategoryExportWithRequestBuilder(body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismRequestCategoryExportWithRequestBuilder(body: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/export"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
@@ -1032,8 +1032,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func startupSettings(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return startupSettingsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismStartupSettings(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismStartupSettingsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -1063,7 +1063,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func startupSettingsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismStartupSettingsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/startup_settings"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -1102,8 +1102,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func systemExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return systemExtensionsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismSystemExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismSystemExtensionsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -1133,7 +1133,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func systemExtensionsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismSystemExtensionsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/system_extensions"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -1172,8 +1172,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func transparencyDatabase(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return transparencyDatabaseWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func prismTransparencyDatabase(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return prismTransparencyDatabaseWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -1203,7 +1203,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func transparencyDatabaseWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func prismTransparencyDatabaseWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/prism/transparency_database"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil

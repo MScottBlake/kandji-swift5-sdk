@@ -4,12 +4,12 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listSelfServiceCategories**](SelfServiceAPI.md#listselfservicecategories) | **GET** /api/v1/self-service/categories | List Self Service Categories
+[**selfServiceListSelfServiceCategories**](SelfServiceAPI.md#selfservicelistselfservicecategories) | **GET** /api/v1/self-service/categories | List Self Service Categories
 
 
-# **listSelfServiceCategories**
+# **selfServiceListSelfServiceCategories**
 ```swift
-    open class func listSelfServiceCategories(completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func selfServiceListSelfServiceCategories(completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Self Service Categories
@@ -23,7 +23,7 @@ import kandji_sdk
 
 
 // List Self Service Categories
-SelfServiceAPI.listSelfServiceCategories() { (response, error) in
+SelfServiceAPI.selfServiceListSelfServiceCategories() { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -16,6 +16,61 @@ extension kandji_sdkAPI {
 @objcMembers open class UsersAPI : NSObject {
 
     /**
+     Delete User
+     
+     - parameter userId: (path)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func usersDeleteUser(userId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return usersDeleteUserWithRequestBuilder(userId: userId).execute(apiResponseQueue) { result in
+            switch result {
+            case .success:
+                completion((), nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     Delete User
+     - DELETE /api/v1/users/{user_id}
+     - <p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p> <h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3> <p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot; }  </code></pre>
+     - Bearer Token:
+       - type: http
+       - name: bearer
+     - responseHeaders: [Content-Type(String)]
+     - externalDocs: class ExternalDocumentation {
+    description: null
+    url: https://api-docs.kandji.io/#6bca946f-07be-4dd4-a00a-7081e8d2fbfb
+}
+     - parameter userId: (path)  
+     - returns: RequestBuilder<Void> 
+     */
+    open class func usersDeleteUserWithRequestBuilder(userId: String) -> RequestBuilder<Void> {
+        var localVariablePath = "/api/v1/users/{user_id}"
+        let userIdPreEscape = "\(APIHelper.mapValueToPathItem(userId))"
+        let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{user_id}", with: userIdPostEscape, options: .literal, range: nil)
+        let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<Void>.Type = kandji_sdkAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
      Get User
      
      - parameter userId: (path)  
@@ -23,8 +78,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getUser(userId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getUserWithRequestBuilder(userId: userId).execute(apiResponseQueue) { result in
+    open class func usersGetUser(userId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return usersGetUserWithRequestBuilder(userId: userId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -37,7 +92,7 @@ extension kandji_sdkAPI {
     /**
      Get User
      - GET /api/v1/users/{user_id}
-     - <p>This endpoint makes a request to retrieve a specified user directory integration user by id.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p>user_id (path parameter): The unique identifier of the user directory integration user.</p>
+     - This endpoint makes a request to retrieve a specified user directory integration user by id.
      - Bearer Token:
        - type: http
        - name: bearer
@@ -49,7 +104,7 @@ extension kandji_sdkAPI {
      - parameter userId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getUserWithRequestBuilder(userId: String) -> RequestBuilder<AnyCodable> {
+    open class func usersGetUserWithRequestBuilder(userId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/users/{user_id}"
         let userIdPreEscape = "\(APIHelper.mapValueToPathItem(userId))"
         let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -81,8 +136,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listUsersWithRequestBuilder(email: email, _id: _id, integrationId: integrationId, archived: archived).execute(apiResponseQueue) { result in
+    open class func usersListUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return usersListUsersWithRequestBuilder(email: email, _id: _id, integrationId: integrationId, archived: archived).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -110,7 +165,7 @@ extension kandji_sdkAPI {
      - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func usersListUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/users"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil

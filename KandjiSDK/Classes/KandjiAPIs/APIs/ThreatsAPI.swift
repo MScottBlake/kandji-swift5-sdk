@@ -30,8 +30,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getThreatDetails(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getThreatDetailsWithRequestBuilder(classification: classification, dateRange: dateRange, deviceId: deviceId, status: status, sortBy: sortBy, term: term, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func threatsGetThreatDetails(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return threatsGetThreatDetailsWithRequestBuilder(classification: classification, dateRange: dateRange, deviceId: deviceId, status: status, sortBy: sortBy, term: term, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -63,7 +63,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getThreatDetailsWithRequestBuilder(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func threatsGetThreatDetailsWithRequestBuilder(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/threat-details"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil

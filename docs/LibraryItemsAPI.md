@@ -4,13 +4,13 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLibraryItemActivity**](LibraryItemsAPI.md#getlibraryitemactivity) | **GET** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
-[**getLibraryItemStatuses**](LibraryItemsAPI.md#getlibraryitemstatuses) | **GET** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
+[**libraryItemsGetLibraryItemActivity**](LibraryItemsAPI.md#libraryitemsgetlibraryitemactivity) | **GET** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
+[**libraryItemsGetLibraryItemStatuses**](LibraryItemsAPI.md#libraryitemsgetlibraryitemstatuses) | **GET** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
 
 
-# **getLibraryItemActivity**
+# **libraryItemsGetLibraryItemActivity**
 ```swift
-    open class func getLibraryItemActivity(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func libraryItemsGetLibraryItemActivity(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Library Item Activity
@@ -30,7 +30,7 @@ let limit = "limit_example" // String | A hard upper <code>limit</code> is set a
 let offset = "offset_example" // String | Specify the starting record to return (optional)
 
 // Get Library Item Activity
-LibraryItemsAPI.getLibraryItemActivity(libraryItemId: libraryItemId, activityType: activityType, userId: userId, userEmail: userEmail, limit: limit, offset: offset) { (response, error) in
+LibraryItemsAPI.libraryItemsGetLibraryItemActivity(libraryItemId: libraryItemId, activityType: activityType, userId: userId, userEmail: userEmail, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -68,9 +68,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getLibraryItemStatuses**
+# **libraryItemsGetLibraryItemStatuses**
 ```swift
-    open class func getLibraryItemStatuses(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func libraryItemsGetLibraryItemStatuses(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Library Item Statuses
@@ -88,7 +88,7 @@ let limit = "limit_example" // String | A hard upper <code>limit</code> is set a
 let offset = "" // String | Specify the starting record to return (optional)
 
 // Get Library Item Statuses
-LibraryItemsAPI.getLibraryItemStatuses(libraryItemId: libraryItemId, computerId: computerId, limit: limit, offset: offset) { (response, error) in
+LibraryItemsAPI.libraryItemsGetLibraryItemStatuses(libraryItemId: libraryItemId, computerId: computerId, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return

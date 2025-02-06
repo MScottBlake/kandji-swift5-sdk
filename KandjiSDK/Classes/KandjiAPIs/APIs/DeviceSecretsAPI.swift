@@ -23,8 +23,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getActivationLockBypassCode(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getActivationLockBypassCodeWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceSecretsGetActivationLockBypassCode(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceSecretsGetActivationLockBypassCodeWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -49,7 +49,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getActivationLockBypassCodeWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceSecretsGetActivationLockBypassCodeWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/secrets/bypasscode"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -78,8 +78,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getFilevaultRecoveryKey(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getFilevaultRecoveryKeyWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceSecretsGetFilevaultRecoveryKey(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceSecretsGetFilevaultRecoveryKeyWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -104,7 +104,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getFilevaultRecoveryKeyWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceSecretsGetFilevaultRecoveryKeyWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/secrets/filevaultkey"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -133,8 +133,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getRecoveryLockPassword(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getRecoveryLockPasswordWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceSecretsGetRecoveryLockPassword(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceSecretsGetRecoveryLockPasswordWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -159,7 +159,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getRecoveryLockPasswordWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceSecretsGetRecoveryLockPasswordWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/secrets/recoverypassword"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -188,8 +188,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getUnlockPin(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getUnlockPinWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceSecretsGetUnlockPin(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceSecretsGetUnlockPinWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -214,7 +214,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getUnlockPinWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceSecretsGetUnlockPinWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/secrets/unlockpin"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

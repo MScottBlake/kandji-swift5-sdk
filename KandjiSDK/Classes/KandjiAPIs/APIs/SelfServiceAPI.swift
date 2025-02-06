@@ -22,8 +22,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listSelfServiceCategories(apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listSelfServiceCategoriesWithRequestBuilder().execute(apiResponseQueue) { result in
+    open class func selfServiceListSelfServiceCategories(apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return selfServiceListSelfServiceCategoriesWithRequestBuilder().execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -47,7 +47,7 @@ extension kandji_sdkAPI {
 }
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listSelfServiceCategoriesWithRequestBuilder() -> RequestBuilder<AnyCodable> {
+    open class func selfServiceListSelfServiceCategoriesWithRequestBuilder() -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/self-service/categories"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil

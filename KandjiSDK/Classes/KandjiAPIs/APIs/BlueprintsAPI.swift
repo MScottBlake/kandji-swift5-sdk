@@ -24,8 +24,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func assignLibraryItem(blueprintId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return assignLibraryItemWithRequestBuilder(blueprintId: blueprintId, body: body).execute(apiResponseQueue) { result in
+    open class func blueprintsAssignLibraryItem(blueprintId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsAssignLibraryItemWithRequestBuilder(blueprintId: blueprintId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -51,7 +51,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func assignLibraryItemWithRequestBuilder(blueprintId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func blueprintsAssignLibraryItemWithRequestBuilder(blueprintId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}/assign-library-item"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -85,8 +85,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return createBlueprintWithRequestBuilder(name: name, enrollmentCodeIsActive: enrollmentCodeIsActive, enrollmentCodeCode: enrollmentCodeCode, sourceType: sourceType, sourceId: sourceId, type: type).execute(apiResponseQueue) { result in
+    open class func blueprintsCreateBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsCreateBlueprintWithRequestBuilder(name: name, enrollmentCodeIsActive: enrollmentCodeIsActive, enrollmentCodeCode: enrollmentCodeCode, sourceType: sourceType, sourceId: sourceId, type: type).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -116,7 +116,7 @@ extension kandji_sdkAPI {
      - parameter type: (form) Choose the type of blueprint to create. Options: &lt;code&gt;classic&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt; 
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func createBlueprintWithRequestBuilder(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String) -> RequestBuilder<AnyCodable> {
+    open class func blueprintsCreateBlueprintWithRequestBuilder(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/blueprints"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableFormParams: [String: Any?] = [
@@ -152,8 +152,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deleteBlueprint(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return deleteBlueprintWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
+    open class func blueprintsDeleteBlueprint(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsDeleteBlueprintWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -177,7 +177,7 @@ extension kandji_sdkAPI {
      - parameter blueprintId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func deleteBlueprintWithRequestBuilder(blueprintId: String) -> RequestBuilder<Void> {
+    open class func blueprintsDeleteBlueprintWithRequestBuilder(blueprintId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -206,8 +206,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getBlueprint(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return getBlueprintWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
+    open class func blueprintsGetBlueprint(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsGetBlueprintWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -232,7 +232,7 @@ extension kandji_sdkAPI {
      - parameter blueprintId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func getBlueprintWithRequestBuilder(blueprintId: String) -> RequestBuilder<Void> {
+    open class func blueprintsGetBlueprintWithRequestBuilder(blueprintId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -262,8 +262,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getBlueprintTemplates(limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return getBlueprintTemplatesWithRequestBuilder(limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func blueprintsGetBlueprintTemplates(limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsGetBlueprintTemplatesWithRequestBuilder(limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -287,7 +287,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) The initial index from which to return the results. (optional)
      - returns: RequestBuilder<Void> 
      */
-    open class func getBlueprintTemplatesWithRequestBuilder(limit: String? = nil, offset: String? = nil) -> RequestBuilder<Void> {
+    open class func blueprintsGetBlueprintTemplatesWithRequestBuilder(limit: String? = nil, offset: String? = nil) -> RequestBuilder<Void> {
         let localVariablePath = "/api/v1/blueprints/templates/"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -318,8 +318,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getManualEnrollmentProfile(blueprintId: String, sso: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: String?, _ error: Error?) -> Void)) -> RequestTask {
-        return getManualEnrollmentProfileWithRequestBuilder(blueprintId: blueprintId, sso: sso).execute(apiResponseQueue) { result in
+    open class func blueprintsGetManualEnrollmentProfile(blueprintId: String, sso: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: String?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsGetManualEnrollmentProfileWithRequestBuilder(blueprintId: blueprintId, sso: sso).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -345,7 +345,7 @@ extension kandji_sdkAPI {
      - parameter sso: (query) Use the &lt;code&gt;sso&lt;/code&gt; query parameter, set to &lt;code&gt;true&lt;/code&gt;, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &amp;quot;Require Authentication&amp;quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile. (optional)
      - returns: RequestBuilder<String> 
      */
-    open class func getManualEnrollmentProfileWithRequestBuilder(blueprintId: String, sso: String? = nil) -> RequestBuilder<String> {
+    open class func blueprintsGetManualEnrollmentProfileWithRequestBuilder(blueprintId: String, sso: String? = nil) -> RequestBuilder<String> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}/ota-enrollment-profile"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -381,8 +381,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listBlueprintsWithRequestBuilder(_id: _id, idIn: idIn, name: name, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func blueprintsListBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsListBlueprintsWithRequestBuilder(_id: _id, idIn: idIn, name: name, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -411,7 +411,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) The initial index from which to return the results. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listBlueprintsWithRequestBuilder(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func blueprintsListBlueprintsWithRequestBuilder(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/blueprints"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -444,8 +444,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listLibraryItems(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listLibraryItemsWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
+    open class func blueprintsListLibraryItems(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsListLibraryItemsWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -470,7 +470,7 @@ extension kandji_sdkAPI {
      - parameter blueprintId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listLibraryItemsWithRequestBuilder(blueprintId: String) -> RequestBuilder<AnyCodable> {
+    open class func blueprintsListLibraryItemsWithRequestBuilder(blueprintId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}/list-library-items"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -500,8 +500,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func removeLibraryItem(blueprintId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return removeLibraryItemWithRequestBuilder(blueprintId: blueprintId, body: body).execute(apiResponseQueue) { result in
+    open class func blueprintsRemoveLibraryItem(blueprintId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsRemoveLibraryItemWithRequestBuilder(blueprintId: blueprintId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -527,7 +527,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func removeLibraryItemWithRequestBuilder(blueprintId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func blueprintsRemoveLibraryItemWithRequestBuilder(blueprintId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}/remove-library-item"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -560,8 +560,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateBlueprintWithRequestBuilder(blueprintId: blueprintId, name: name, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive).execute(apiResponseQueue) { result in
+    open class func blueprintsUpdateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return blueprintsUpdateBlueprintWithRequestBuilder(blueprintId: blueprintId, name: name, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -590,7 +590,7 @@ extension kandji_sdkAPI {
      - parameter enrollmentCodeIsActive: (form) Disable the Blueprint for manual device enrollment from the enrollment portal. 
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func updateBlueprintWithRequestBuilder(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String) -> RequestBuilder<AnyCodable> {
+    open class func blueprintsUpdateBlueprintWithRequestBuilder(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

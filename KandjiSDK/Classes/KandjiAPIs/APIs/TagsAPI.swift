@@ -23,8 +23,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createTag(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return createTagWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
+    open class func tagsCreateTag(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return tagsCreateTagWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -49,7 +49,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func createTagWithRequestBuilder(body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func tagsCreateTagWithRequestBuilder(body: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/tags"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
@@ -75,8 +75,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deleteTag(tagId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return deleteTagWithRequestBuilder(tagId: tagId).execute(apiResponseQueue) { result in
+    open class func tagsDeleteTag(tagId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return tagsDeleteTagWithRequestBuilder(tagId: tagId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -100,7 +100,7 @@ extension kandji_sdkAPI {
      - parameter tagId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func deleteTagWithRequestBuilder(tagId: String) -> RequestBuilder<Void> {
+    open class func tagsDeleteTagWithRequestBuilder(tagId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/tags/{tag_id}"
         let tagIdPreEscape = "\(APIHelper.mapValueToPathItem(tagId))"
         let tagIdPostEscape = tagIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -129,8 +129,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getTags(search: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getTagsWithRequestBuilder(search: search).execute(apiResponseQueue) { result in
+    open class func tagsGetTags(search: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return tagsGetTagsWithRequestBuilder(search: search).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -155,7 +155,7 @@ extension kandji_sdkAPI {
      - parameter search: (query) Return resultes containing a given tag search string. 
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getTagsWithRequestBuilder(search: String) -> RequestBuilder<AnyCodable> {
+    open class func tagsGetTagsWithRequestBuilder(search: String) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/tags"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -185,8 +185,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateTag(tagId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateTagWithRequestBuilder(tagId: tagId, body: body).execute(apiResponseQueue) { result in
+    open class func tagsUpdateTag(tagId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return tagsUpdateTagWithRequestBuilder(tagId: tagId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -212,7 +212,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func updateTagWithRequestBuilder(tagId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func tagsUpdateTagWithRequestBuilder(tagId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/tags/{tag_id}"
         let tagIdPreEscape = "\(APIHelper.mapValueToPathItem(tagId))"
         let tagIdPostEscape = tagIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

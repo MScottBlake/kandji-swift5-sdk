@@ -4,16 +4,16 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomProfile**](CustomProfilesAPI.md#createcustomprofile) | **POST** /api/v1/library/custom-profiles | Create Custom Profile
-[**deleteCustomProfile**](CustomProfilesAPI.md#deletecustomprofile) | **DELETE** /api/v1/library/custom-profiles/{library_item_id} | Delete Custom Profile
-[**getCustomProfile**](CustomProfilesAPI.md#getcustomprofile) | **GET** /api/v1/library/custom-profiles/{library_item_id} | Get Custom Profile
-[**listCustomProfiles**](CustomProfilesAPI.md#listcustomprofiles) | **GET** /api/v1/library/custom-profiles | List Custom Profiles
-[**updateCustomProfile**](CustomProfilesAPI.md#updatecustomprofile) | **PATCH** /api/v1/library/custom-profiles/{library_item_id} | Update Custom Profile
+[**customProfilesCreateCustomProfile**](CustomProfilesAPI.md#customprofilescreatecustomprofile) | **POST** /api/v1/library/custom-profiles | Create Custom Profile
+[**customProfilesDeleteCustomProfile**](CustomProfilesAPI.md#customprofilesdeletecustomprofile) | **DELETE** /api/v1/library/custom-profiles/{library_item_id} | Delete Custom Profile
+[**customProfilesGetCustomProfile**](CustomProfilesAPI.md#customprofilesgetcustomprofile) | **GET** /api/v1/library/custom-profiles/{library_item_id} | Get Custom Profile
+[**customProfilesListCustomProfiles**](CustomProfilesAPI.md#customprofileslistcustomprofiles) | **GET** /api/v1/library/custom-profiles | List Custom Profiles
+[**customProfilesUpdateCustomProfile**](CustomProfilesAPI.md#customprofilesupdatecustomprofile) | **PATCH** /api/v1/library/custom-profiles/{library_item_id} | Update Custom Profile
 
 
-# **createCustomProfile**
+# **customProfilesCreateCustomProfile**
 ```swift
-    open class func createCustomProfile(name: String, file: URL, active: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customProfilesCreateCustomProfile(name: String, file: URL, active: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create Custom Profile
@@ -30,7 +30,7 @@ let file = URL(string: "https://example.com")! // URL | (Required) The path to t
 let active = "active_example" // String | (Optional, default=true) Whether this library item is active
 
 // Create Custom Profile
-CustomProfilesAPI.createCustomProfile(name: name, file: file, active: active) { (response, error) in
+CustomProfilesAPI.customProfilesCreateCustomProfile(name: name, file: file, active: active) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteCustomProfile**
+# **customProfilesDeleteCustomProfile**
 ```swift
-    open class func deleteCustomProfile(libraryItemId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func customProfilesDeleteCustomProfile(libraryItemId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Custom Profile
@@ -82,7 +82,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Delete Custom Profile
-CustomProfilesAPI.deleteCustomProfile(libraryItemId: libraryItemId) { (response, error) in
+CustomProfilesAPI.customProfilesDeleteCustomProfile(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -115,9 +115,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getCustomProfile**
+# **customProfilesGetCustomProfile**
 ```swift
-    open class func getCustomProfile(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customProfilesGetCustomProfile(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Custom Profile
@@ -132,7 +132,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Get Custom Profile
-CustomProfilesAPI.getCustomProfile(libraryItemId: libraryItemId) { (response, error) in
+CustomProfilesAPI.customProfilesGetCustomProfile(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -165,9 +165,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listCustomProfiles**
+# **customProfilesListCustomProfiles**
 ```swift
-    open class func listCustomProfiles(page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customProfilesListCustomProfiles(page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Custom Profiles
@@ -182,7 +182,7 @@ import kandji_sdk
 let page = "page_example" // String | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
 
 // List Custom Profiles
-CustomProfilesAPI.listCustomProfiles(page: page) { (response, error) in
+CustomProfilesAPI.customProfilesListCustomProfiles(page: page) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -215,9 +215,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateCustomProfile**
+# **customProfilesUpdateCustomProfile**
 ```swift
-    open class func updateCustomProfile(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customProfilesUpdateCustomProfile(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update Custom Profile
@@ -232,7 +232,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Update Custom Profile
-CustomProfilesAPI.updateCustomProfile(libraryItemId: libraryItemId) { (response, error) in
+CustomProfilesAPI.customProfilesUpdateCustomProfile(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return

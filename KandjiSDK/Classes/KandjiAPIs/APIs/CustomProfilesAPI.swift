@@ -25,8 +25,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createCustomProfile(name: String, file: URL, active: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return createCustomProfileWithRequestBuilder(name: name, file: file, active: active).execute(apiResponseQueue) { result in
+    open class func customProfilesCreateCustomProfile(name: String, file: URL, active: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customProfilesCreateCustomProfileWithRequestBuilder(name: name, file: file, active: active).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -53,7 +53,7 @@ extension kandji_sdkAPI {
      - parameter active: (form) (Optional, default&#x3D;true) Whether this library item is active 
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func createCustomProfileWithRequestBuilder(name: String, file: URL, active: String) -> RequestBuilder<AnyCodable> {
+    open class func customProfilesCreateCustomProfileWithRequestBuilder(name: String, file: URL, active: String) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/library/custom-profiles"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableFormParams: [String: Any?] = [
@@ -86,8 +86,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deleteCustomProfile(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return deleteCustomProfileWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func customProfilesDeleteCustomProfile(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return customProfilesDeleteCustomProfileWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -112,7 +112,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func deleteCustomProfileWithRequestBuilder(libraryItemId: String) -> RequestBuilder<Void> {
+    open class func customProfilesDeleteCustomProfileWithRequestBuilder(libraryItemId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/library/custom-profiles/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -141,8 +141,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getCustomProfile(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getCustomProfileWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func customProfilesGetCustomProfile(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customProfilesGetCustomProfileWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -167,7 +167,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getCustomProfileWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
+    open class func customProfilesGetCustomProfileWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/custom-profiles/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -196,8 +196,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listCustomProfiles(page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listCustomProfilesWithRequestBuilder(page: page).execute(apiResponseQueue) { result in
+    open class func customProfilesListCustomProfiles(page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customProfilesListCustomProfilesWithRequestBuilder(page: page).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -222,7 +222,7 @@ extension kandji_sdkAPI {
      - parameter page: (query) Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listCustomProfilesWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func customProfilesListCustomProfilesWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/library/custom-profiles"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -251,8 +251,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateCustomProfile(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateCustomProfileWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func customProfilesUpdateCustomProfile(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customProfilesUpdateCustomProfileWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -277,7 +277,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func updateCustomProfileWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
+    open class func customProfilesUpdateCustomProfileWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/custom-profiles/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

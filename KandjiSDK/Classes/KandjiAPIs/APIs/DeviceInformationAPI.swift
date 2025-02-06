@@ -23,8 +23,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func cancelLostMode(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return cancelLostModeWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceInformationCancelLostMode(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationCancelLostModeWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -48,7 +48,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func cancelLostModeWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
+    open class func deviceInformationCancelLostModeWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/devices/{device_id}/details/lostmode"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -79,8 +79,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceActivity(deviceId: String, limit: String, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getDeviceActivityWithRequestBuilder(deviceId: deviceId, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func deviceInformationGetDeviceActivity(deviceId: String, limit: String, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationGetDeviceActivityWithRequestBuilder(deviceId: deviceId, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -107,7 +107,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceActivityWithRequestBuilder(deviceId: String, limit: String, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func deviceInformationGetDeviceActivityWithRequestBuilder(deviceId: String, limit: String, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/activity"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -140,8 +140,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceApps(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getDeviceAppsWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceInformationGetDeviceApps(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationGetDeviceAppsWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -166,7 +166,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceAppsWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceInformationGetDeviceAppsWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/apps"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -195,8 +195,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceDetails(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getDeviceDetailsWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceInformationGetDeviceDetails(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationGetDeviceDetailsWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -221,7 +221,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceDetailsWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceInformationGetDeviceDetailsWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/details"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -250,8 +250,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceLibraryItems(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getDeviceLibraryItemsWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceInformationGetDeviceLibraryItems(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationGetDeviceLibraryItemsWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -276,7 +276,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceLibraryItemsWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceInformationGetDeviceLibraryItemsWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/library-items"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -305,8 +305,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceLostModeDetails(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getDeviceLostModeDetailsWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceInformationGetDeviceLostModeDetails(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationGetDeviceLostModeDetailsWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -331,7 +331,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceLostModeDetailsWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceInformationGetDeviceLostModeDetailsWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/details/lostmode"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -360,8 +360,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceParameters(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getDeviceParametersWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceInformationGetDeviceParameters(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationGetDeviceParametersWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -386,7 +386,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceParametersWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceInformationGetDeviceParametersWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/parameters"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -415,8 +415,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceStatus(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getDeviceStatusWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+    open class func deviceInformationGetDeviceStatus(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationGetDeviceStatusWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -441,7 +441,7 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceStatusWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
+    open class func deviceInformationGetDeviceStatusWithRequestBuilder(deviceId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/status"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -490,8 +490,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listDevices(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listDevicesWithRequestBuilder(limit: limit, assetTag: assetTag, blueprintId: blueprintId, deviceId: deviceId, deviceName: deviceName, filevaultEnabled: filevaultEnabled, macAddress: macAddress, model: model, ordering: ordering, osVersion: osVersion, platform: platform, serialNumber: serialNumber, tagName: tagName, tagNameIn: tagNameIn, tagId: tagId, tagIdIn: tagIdIn, user: user, userEmail: userEmail, userId: userId, userName: userName, offset: offset).execute(apiResponseQueue) { result in
+    open class func deviceInformationListDevices(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return deviceInformationListDevicesWithRequestBuilder(limit: limit, assetTag: assetTag, blueprintId: blueprintId, deviceId: deviceId, deviceName: deviceName, filevaultEnabled: filevaultEnabled, macAddress: macAddress, model: model, ordering: ordering, osVersion: osVersion, platform: platform, serialNumber: serialNumber, tagName: tagName, tagNameIn: tagNameIn, tagId: tagId, tagIdIn: tagIdIn, user: user, userEmail: userEmail, userId: userId, userName: userName, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -536,7 +536,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listDevicesWithRequestBuilder(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func deviceInformationListDevicesWithRequestBuilder(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/devices"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil

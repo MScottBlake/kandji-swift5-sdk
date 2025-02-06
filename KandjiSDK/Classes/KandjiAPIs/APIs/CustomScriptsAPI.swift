@@ -23,8 +23,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createCustomScript(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return createCustomScriptWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
+    open class func customScriptsCreateCustomScript(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customScriptsCreateCustomScriptWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -49,7 +49,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func createCustomScriptWithRequestBuilder(body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func customScriptsCreateCustomScriptWithRequestBuilder(body: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/library/custom-scripts"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
@@ -75,8 +75,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deleteCustomScript(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
-        return deleteCustomScriptWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func customScriptsDeleteCustomScript(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return customScriptsDeleteCustomScriptWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case .success:
                 completion((), nil)
@@ -101,7 +101,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<Void> 
      */
-    open class func deleteCustomScriptWithRequestBuilder(libraryItemId: String) -> RequestBuilder<Void> {
+    open class func customScriptsDeleteCustomScriptWithRequestBuilder(libraryItemId: String) -> RequestBuilder<Void> {
         var localVariablePath = "/api/v1/library/custom-scripts/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -130,8 +130,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getCustomScript(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getCustomScriptWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
+    open class func customScriptsGetCustomScript(libraryItemId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customScriptsGetCustomScriptWithRequestBuilder(libraryItemId: libraryItemId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -156,7 +156,7 @@ extension kandji_sdkAPI {
      - parameter libraryItemId: (path)  
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getCustomScriptWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
+    open class func customScriptsGetCustomScriptWithRequestBuilder(libraryItemId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/custom-scripts/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -185,8 +185,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listCustomScripts(page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listCustomScriptsWithRequestBuilder(page: page).execute(apiResponseQueue) { result in
+    open class func customScriptsListCustomScripts(page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customScriptsListCustomScriptsWithRequestBuilder(page: page).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -211,7 +211,7 @@ extension kandji_sdkAPI {
      - parameter page: (query) Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listCustomScriptsWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func customScriptsListCustomScriptsWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/library/custom-scripts"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -241,8 +241,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateCustomScript(libraryItemId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateCustomScriptWithRequestBuilder(libraryItemId: libraryItemId, body: body).execute(apiResponseQueue) { result in
+    open class func customScriptsUpdateCustomScript(libraryItemId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return customScriptsUpdateCustomScriptWithRequestBuilder(libraryItemId: libraryItemId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -268,7 +268,7 @@ extension kandji_sdkAPI {
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func updateCustomScriptWithRequestBuilder(libraryItemId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func customScriptsUpdateCustomScriptWithRequestBuilder(libraryItemId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/custom-scripts/{library_item_id}"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

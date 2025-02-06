@@ -4,16 +4,16 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomScript**](CustomScriptsAPI.md#createcustomscript) | **POST** /api/v1/library/custom-scripts | Create Custom Script
-[**deleteCustomScript**](CustomScriptsAPI.md#deletecustomscript) | **DELETE** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
-[**getCustomScript**](CustomScriptsAPI.md#getcustomscript) | **GET** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
-[**listCustomScripts**](CustomScriptsAPI.md#listcustomscripts) | **GET** /api/v1/library/custom-scripts | List Custom Scripts
-[**updateCustomScript**](CustomScriptsAPI.md#updatecustomscript) | **PATCH** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
+[**customScriptsCreateCustomScript**](CustomScriptsAPI.md#customscriptscreatecustomscript) | **POST** /api/v1/library/custom-scripts | Create Custom Script
+[**customScriptsDeleteCustomScript**](CustomScriptsAPI.md#customscriptsdeletecustomscript) | **DELETE** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
+[**customScriptsGetCustomScript**](CustomScriptsAPI.md#customscriptsgetcustomscript) | **GET** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
+[**customScriptsListCustomScripts**](CustomScriptsAPI.md#customscriptslistcustomscripts) | **GET** /api/v1/library/custom-scripts | List Custom Scripts
+[**customScriptsUpdateCustomScript**](CustomScriptsAPI.md#customscriptsupdatecustomscript) | **PATCH** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
 
 
-# **createCustomScript**
+# **customScriptsCreateCustomScript**
 ```swift
-    open class func createCustomScript(body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customScriptsCreateCustomScript(body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create Custom Script
@@ -28,7 +28,7 @@ import kandji_sdk
 let body = "body_example" // String |  (optional)
 
 // Create Custom Script
-CustomScriptsAPI.createCustomScript(body: body) { (response, error) in
+CustomScriptsAPI.customScriptsCreateCustomScript(body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -61,9 +61,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteCustomScript**
+# **customScriptsDeleteCustomScript**
 ```swift
-    open class func deleteCustomScript(libraryItemId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func customScriptsDeleteCustomScript(libraryItemId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Custom Script
@@ -78,7 +78,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Delete Custom Script
-CustomScriptsAPI.deleteCustomScript(libraryItemId: libraryItemId) { (response, error) in
+CustomScriptsAPI.customScriptsDeleteCustomScript(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -111,9 +111,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getCustomScript**
+# **customScriptsGetCustomScript**
 ```swift
-    open class func getCustomScript(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customScriptsGetCustomScript(libraryItemId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Custom Script
@@ -128,7 +128,7 @@ import kandji_sdk
 let libraryItemId = "libraryItemId_example" // String | 
 
 // Get Custom Script
-CustomScriptsAPI.getCustomScript(libraryItemId: libraryItemId) { (response, error) in
+CustomScriptsAPI.customScriptsGetCustomScript(libraryItemId: libraryItemId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -161,9 +161,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listCustomScripts**
+# **customScriptsListCustomScripts**
 ```swift
-    open class func listCustomScripts(page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customScriptsListCustomScripts(page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Custom Scripts
@@ -178,7 +178,7 @@ import kandji_sdk
 let page = "page_example" // String | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
 
 // List Custom Scripts
-CustomScriptsAPI.listCustomScripts(page: page) { (response, error) in
+CustomScriptsAPI.customScriptsListCustomScripts(page: page) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -211,9 +211,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateCustomScript**
+# **customScriptsUpdateCustomScript**
 ```swift
-    open class func updateCustomScript(libraryItemId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func customScriptsUpdateCustomScript(libraryItemId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update Custom Script
@@ -229,7 +229,7 @@ let libraryItemId = "libraryItemId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Update Custom Script
-CustomScriptsAPI.updateCustomScript(libraryItemId: libraryItemId, body: body) { (response, error) in
+CustomScriptsAPI.customScriptsUpdateCustomScript(libraryItemId: libraryItemId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return

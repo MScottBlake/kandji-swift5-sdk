@@ -22,8 +22,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func licensing(apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return licensingWithRequestBuilder().execute(apiResponseQueue) { result in
+    open class func settingsLicensing(apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return settingsLicensingWithRequestBuilder().execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -47,7 +47,7 @@ extension kandji_sdkAPI {
 }
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func licensingWithRequestBuilder() -> RequestBuilder<AnyCodable> {
+    open class func settingsLicensingWithRequestBuilder() -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/settings/licensing"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil

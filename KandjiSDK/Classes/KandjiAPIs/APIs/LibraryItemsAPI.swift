@@ -28,8 +28,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getLibraryItemActivity(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getLibraryItemActivityWithRequestBuilder(libraryItemId: libraryItemId, activityType: activityType, userId: userId, userEmail: userEmail, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func libraryItemsGetLibraryItemActivity(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return libraryItemsGetLibraryItemActivityWithRequestBuilder(libraryItemId: libraryItemId, activityType: activityType, userId: userId, userEmail: userEmail, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -59,7 +59,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getLibraryItemActivityWithRequestBuilder(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func libraryItemsGetLibraryItemActivityWithRequestBuilder(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/library-items/{library_item_id}/activity"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -98,8 +98,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getLibraryItemStatuses(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return getLibraryItemStatusesWithRequestBuilder(libraryItemId: libraryItemId, computerId: computerId, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+    open class func libraryItemsGetLibraryItemStatuses(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return libraryItemsGetLibraryItemStatusesWithRequestBuilder(libraryItemId: libraryItemId, computerId: computerId, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -127,7 +127,7 @@ extension kandji_sdkAPI {
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getLibraryItemStatusesWithRequestBuilder(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func libraryItemsGetLibraryItemStatusesWithRequestBuilder(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/library/library-items/{library_item_id}/status"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
