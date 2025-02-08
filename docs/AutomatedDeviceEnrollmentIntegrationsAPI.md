@@ -4,22 +4,22 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**automatedDeviceEnrollmentIntegrationsCreateAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationscreateadeintegration) | **POST** /api/v1/integrations/apple/ade/ | Create ADE integration
-[**automatedDeviceEnrollmentIntegrationsDeleteAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationsdeleteadeintegration) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
-[**automatedDeviceEnrollmentIntegrationsDownloadAdePublicKey**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationsdownloadadepublickey) | **GET** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
-[**automatedDeviceEnrollmentIntegrationsGetAdeDevice**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationsgetadedevice) | **GET** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
-[**automatedDeviceEnrollmentIntegrationsGetAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationsgetadeintegration) | **GET** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
-[**automatedDeviceEnrollmentIntegrationsListAdeDevices**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationslistadedevices) | **GET** /api/v1/integrations/apple/ade/devices | List ADE devices
-[**automatedDeviceEnrollmentIntegrationsListAdeIntegrations**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationslistadeintegrations) | **GET** /api/v1/integrations/apple/ade | List ADE integrations
-[**automatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationslistdevicesassociatedtoadetoken) | **GET** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
-[**automatedDeviceEnrollmentIntegrationsRenewAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationsrenewadeintegration) | **POST** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
-[**automatedDeviceEnrollmentIntegrationsUpdateAdeDevice**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationsupdateadedevice) | **PATCH** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
-[**automatedDeviceEnrollmentIntegrationsUpdateAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#automateddeviceenrollmentintegrationsupdateadeintegration) | **PATCH** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
+[**createAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#createadeintegration) | **POST** /api/v1/integrations/apple/ade/ | Create ADE integration
+[**deleteAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#deleteadeintegration) | **DELETE** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
+[**downloadAdePublicKey**](AutomatedDeviceEnrollmentIntegrationsAPI.md#downloadadepublickey) | **GET** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
+[**getAdeDevice**](AutomatedDeviceEnrollmentIntegrationsAPI.md#getadedevice) | **GET** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
+[**getAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#getadeintegration) | **GET** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
+[**listAdeDevices**](AutomatedDeviceEnrollmentIntegrationsAPI.md#listadedevices) | **GET** /api/v1/integrations/apple/ade/devices | List ADE devices
+[**listAdeIntegrations**](AutomatedDeviceEnrollmentIntegrationsAPI.md#listadeintegrations) | **GET** /api/v1/integrations/apple/ade | List ADE integrations
+[**listDevicesAssociatedToAdeToken**](AutomatedDeviceEnrollmentIntegrationsAPI.md#listdevicesassociatedtoadetoken) | **GET** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
+[**renewAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#renewadeintegration) | **POST** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
+[**updateAdeDevice**](AutomatedDeviceEnrollmentIntegrationsAPI.md#updateadedevice) | **PATCH** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
+[**updateAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#updateadeintegration) | **PATCH** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
 
 
-# **automatedDeviceEnrollmentIntegrationsCreateAdeIntegration**
+# **createAdeIntegration**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsCreateAdeIntegration(blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func createAdeIntegration(blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create ADE integration
@@ -37,7 +37,7 @@ let email = "email_example" // String |
 let file = URL(string: "https://example.com")! // URL | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
 
 // Create ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsCreateAdeIntegration(blueprintId: blueprintId, phone: phone, email: email, file: file) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.createAdeIntegration(blueprintId: blueprintId, phone: phone, email: email, file: file) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -73,9 +73,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsDeleteAdeIntegration**
+# **deleteAdeIntegration**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsDeleteAdeIntegration(adeTokenId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteAdeIntegration(adeTokenId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete ADE integration
@@ -90,7 +90,7 @@ import kandji_sdk
 let adeTokenId = "adeTokenId_example" // String | 
 
 // Delete ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsDeleteAdeIntegration(adeTokenId: adeTokenId) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.deleteAdeIntegration(adeTokenId: adeTokenId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -123,9 +123,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsDownloadAdePublicKey**
+# **downloadAdePublicKey**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsDownloadAdePublicKey(completion: @escaping (_ data: String?, _ error: Error?) -> Void)
+    open class func downloadAdePublicKey(completion: @escaping (_ data: String?, _ error: Error?) -> Void)
 ```
 
 Download ADE public key
@@ -139,7 +139,7 @@ import kandji_sdk
 
 
 // Download ADE public key
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsDownloadAdePublicKey() { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.downloadAdePublicKey() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -169,9 +169,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsGetAdeDevice**
+# **getAdeDevice**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsGetAdeDevice(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getAdeDevice(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get ADE device
@@ -186,7 +186,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get ADE device
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsGetAdeDevice(deviceId: deviceId) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.getAdeDevice(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -219,9 +219,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsGetAdeIntegration**
+# **getAdeIntegration**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsGetAdeIntegration(adeTokenId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func getAdeIntegration(adeTokenId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get ADE integration
@@ -236,7 +236,7 @@ import kandji_sdk
 let adeTokenId = "adeTokenId_example" // String | 
 
 // Get ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsGetAdeIntegration(adeTokenId: adeTokenId) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.getAdeIntegration(adeTokenId: adeTokenId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -269,9 +269,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsListAdeDevices**
+# **listAdeDevices**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsListAdeDevices(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listAdeDevices(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List ADE devices
@@ -294,7 +294,7 @@ let serialNumber = "" // String | Search for a specific device by Serial Number.
 let page = "page_example" // String | Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
 
 // List ADE devices
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsListAdeDevices(blueprintId: blueprintId, userId: userId, depAccount: depAccount, deviceFamily: deviceFamily, model: model, os: os, profileStatus: profileStatus, serialNumber: serialNumber, page: page) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.listAdeDevices(blueprintId: blueprintId, userId: userId, depAccount: depAccount, deviceFamily: deviceFamily, model: model, os: os, profileStatus: profileStatus, serialNumber: serialNumber, page: page) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -335,9 +335,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsListAdeIntegrations**
+# **listAdeIntegrations**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsListAdeIntegrations(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func listAdeIntegrations(completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 List ADE integrations
@@ -351,7 +351,7 @@ import kandji_sdk
 
 
 // List ADE integrations
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsListAdeIntegrations() { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.listAdeIntegrations() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -381,9 +381,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken**
+# **listDevicesAssociatedToAdeToken**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken(adeTokenId: String, page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listDevicesAssociatedToAdeToken(adeTokenId: String, page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List devices associated to ADE token
@@ -399,7 +399,7 @@ let adeTokenId = "adeTokenId_example" // String |
 let page = "page_example" // String | Use the <code>page</code> parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the <code>next</code> and <code>previous</code> key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
 
 // List devices associated to ADE token
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken(adeTokenId: adeTokenId, page: page) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.listDevicesAssociatedToAdeToken(adeTokenId: adeTokenId, page: page) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -433,9 +433,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsRenewAdeIntegration**
+# **renewAdeIntegration**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsRenewAdeIntegration(adeTokenId: String, blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func renewAdeIntegration(adeTokenId: String, blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Renew ADE integration
@@ -454,7 +454,7 @@ let email = "email_example" // String |
 let file = URL(string: "https://example.com")! // URL | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
 
 // Renew ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsRenewAdeIntegration(adeTokenId: adeTokenId, blueprintId: blueprintId, phone: phone, email: email, file: file) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.renewAdeIntegration(adeTokenId: adeTokenId, blueprintId: blueprintId, phone: phone, email: email, file: file) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -491,9 +491,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsUpdateAdeDevice**
+# **updateAdeDevice**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsUpdateAdeDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func updateAdeDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update ADE device
@@ -509,7 +509,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Update ADE device
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsUpdateAdeDevice(deviceId: deviceId, body: body) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.updateAdeDevice(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -543,9 +543,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **automatedDeviceEnrollmentIntegrationsUpdateAdeIntegration**
+# **updateAdeIntegration**
 ```swift
-    open class func automatedDeviceEnrollmentIntegrationsUpdateAdeIntegration(adeTokenId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func updateAdeIntegration(adeTokenId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Update ADE integration
@@ -561,7 +561,7 @@ let adeTokenId = "adeTokenId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Update ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.automatedDeviceEnrollmentIntegrationsUpdateAdeIntegration(adeTokenId: adeTokenId, body: body) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.updateAdeIntegration(adeTokenId: adeTokenId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return

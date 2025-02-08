@@ -4,26 +4,26 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deviceActionsClearPasscode**](DeviceActionsAPI.md#deviceactionsclearpasscode) | **POST** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
-[**deviceActionsDeleteDevice**](DeviceActionsAPI.md#deviceactionsdeletedevice) | **DELETE** /api/v1/devices/{device_id} | Delete Device
-[**deviceActionsDeleteUser**](DeviceActionsAPI.md#deviceactionsdeleteuser) | **POST** /api/v1/devices/{device_id}/action/deleteuser | Delete User
-[**deviceActionsEraseDevice**](DeviceActionsAPI.md#deviceactionserasedevice) | **POST** /api/v1/devices/{device_id}/action/erase | Erase Device
-[**deviceActionsGetDeviceCommands**](DeviceActionsAPI.md#deviceactionsgetdevicecommands) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
-[**deviceActionsLockDevice**](DeviceActionsAPI.md#deviceactionslockdevice) | **POST** /api/v1/devices/{device_id}/action/lock | Lock Device
-[**deviceActionsReinstallAgent**](DeviceActionsAPI.md#deviceactionsreinstallagent) | **POST** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
-[**deviceActionsRemoteDesktop**](DeviceActionsAPI.md#deviceactionsremotedesktop) | **POST** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
-[**deviceActionsRenewMdmProfile**](DeviceActionsAPI.md#deviceactionsrenewmdmprofile) | **POST** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
-[**deviceActionsRestartDevice**](DeviceActionsAPI.md#deviceactionsrestartdevice) | **POST** /api/v1/devices/{device_id}/action/restart | Restart Device
-[**deviceActionsSendBlankpush**](DeviceActionsAPI.md#deviceactionssendblankpush) | **POST** /api/v1/devices/{device_id}/action/blankpush | Send Blankpush
-[**deviceActionsSetName**](DeviceActionsAPI.md#deviceactionssetname) | **POST** /api/v1/devices/{device_id}/action/setname | Set Name
-[**deviceActionsShutdown**](DeviceActionsAPI.md#deviceactionsshutdown) | **POST** /api/v1/devices/{device_id}/action/shutdown | Shutdown
-[**deviceActionsUnlockAccount**](DeviceActionsAPI.md#deviceactionsunlockaccount) | **POST** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
-[**deviceActionsUpdateInventory**](DeviceActionsAPI.md#deviceactionsupdateinventory) | **POST** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
+[**clearPasscode**](DeviceActionsAPI.md#clearpasscode) | **POST** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
+[**deleteDevice**](DeviceActionsAPI.md#deletedevice) | **DELETE** /api/v1/devices/{device_id} | Delete Device
+[**deleteUser**](DeviceActionsAPI.md#deleteuser) | **POST** /api/v1/devices/{device_id}/action/deleteuser | Delete User
+[**eraseDevice**](DeviceActionsAPI.md#erasedevice) | **POST** /api/v1/devices/{device_id}/action/erase | Erase Device
+[**getDeviceCommands**](DeviceActionsAPI.md#getdevicecommands) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
+[**lockDevice**](DeviceActionsAPI.md#lockdevice) | **POST** /api/v1/devices/{device_id}/action/lock | Lock Device
+[**reinstallAgent**](DeviceActionsAPI.md#reinstallagent) | **POST** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
+[**remoteDesktop**](DeviceActionsAPI.md#remotedesktop) | **POST** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
+[**renewMdmProfile**](DeviceActionsAPI.md#renewmdmprofile) | **POST** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
+[**restartDevice**](DeviceActionsAPI.md#restartdevice) | **POST** /api/v1/devices/{device_id}/action/restart | Restart Device
+[**sendBlankpush**](DeviceActionsAPI.md#sendblankpush) | **POST** /api/v1/devices/{device_id}/action/blankpush | Send Blankpush
+[**setName**](DeviceActionsAPI.md#setname) | **POST** /api/v1/devices/{device_id}/action/setname | Set Name
+[**shutdown**](DeviceActionsAPI.md#shutdown) | **POST** /api/v1/devices/{device_id}/action/shutdown | Shutdown
+[**unlockAccount**](DeviceActionsAPI.md#unlockaccount) | **POST** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
+[**updateInventory**](DeviceActionsAPI.md#updateinventory) | **POST** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
 
 
-# **deviceActionsClearPasscode**
+# **clearPasscode**
 ```swift
-    open class func deviceActionsClearPasscode(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func clearPasscode(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Clear Passcode
@@ -38,7 +38,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Clear Passcode
-DeviceActionsAPI.deviceActionsClearPasscode(deviceId: deviceId) { (response, error) in
+DeviceActionsAPI.clearPasscode(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -71,9 +71,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsDeleteDevice**
+# **deleteDevice**
 ```swift
-    open class func deviceActionsDeleteDevice(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteDevice(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Device
@@ -88,7 +88,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Delete Device
-DeviceActionsAPI.deviceActionsDeleteDevice(deviceId: deviceId) { (response, error) in
+DeviceActionsAPI.deleteDevice(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -121,9 +121,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsDeleteUser**
+# **deleteUser**
 ```swift
-    open class func deviceActionsDeleteUser(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteUser(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete User
@@ -139,7 +139,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Delete User
-DeviceActionsAPI.deviceActionsDeleteUser(deviceId: deviceId, body: body) { (response, error) in
+DeviceActionsAPI.deleteUser(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -173,9 +173,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsEraseDevice**
+# **eraseDevice**
 ```swift
-    open class func deviceActionsEraseDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func eraseDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Erase Device
@@ -191,7 +191,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Erase Device
-DeviceActionsAPI.deviceActionsEraseDevice(deviceId: deviceId, body: body) { (response, error) in
+DeviceActionsAPI.eraseDevice(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -225,9 +225,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsGetDeviceCommands**
+# **getDeviceCommands**
 ```swift
-    open class func deviceActionsGetDeviceCommands(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func getDeviceCommands(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Get Device Commands
@@ -244,7 +244,7 @@ let limit = "limit_example" // String | A hard upper <code>limit</code> is set a
 let offset = "offset_example" // String | Specify the starting record to return (optional)
 
 // Get Device Commands
-DeviceActionsAPI.deviceActionsGetDeviceCommands(deviceId: deviceId, limit: limit, offset: offset) { (response, error) in
+DeviceActionsAPI.getDeviceCommands(deviceId: deviceId, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -279,9 +279,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsLockDevice**
+# **lockDevice**
 ```swift
-    open class func deviceActionsLockDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func lockDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Lock Device
@@ -297,7 +297,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Lock Device
-DeviceActionsAPI.deviceActionsLockDevice(deviceId: deviceId, body: body) { (response, error) in
+DeviceActionsAPI.lockDevice(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -331,9 +331,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsReinstallAgent**
+# **reinstallAgent**
 ```swift
-    open class func deviceActionsReinstallAgent(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func reinstallAgent(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Reinstall Agent
@@ -348,7 +348,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Reinstall Agent
-DeviceActionsAPI.deviceActionsReinstallAgent(deviceId: deviceId) { (response, error) in
+DeviceActionsAPI.reinstallAgent(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -381,9 +381,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsRemoteDesktop**
+# **remoteDesktop**
 ```swift
-    open class func deviceActionsRemoteDesktop(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func remoteDesktop(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Remote Desktop
@@ -399,7 +399,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Remote Desktop
-DeviceActionsAPI.deviceActionsRemoteDesktop(deviceId: deviceId, body: body) { (response, error) in
+DeviceActionsAPI.remoteDesktop(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -433,9 +433,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsRenewMdmProfile**
+# **renewMdmProfile**
 ```swift
-    open class func deviceActionsRenewMdmProfile(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func renewMdmProfile(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Renew MDM Profile
@@ -450,7 +450,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Renew MDM Profile
-DeviceActionsAPI.deviceActionsRenewMdmProfile(deviceId: deviceId) { (response, error) in
+DeviceActionsAPI.renewMdmProfile(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -483,9 +483,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsRestartDevice**
+# **restartDevice**
 ```swift
-    open class func deviceActionsRestartDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func restartDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Restart Device
@@ -501,7 +501,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Restart Device
-DeviceActionsAPI.deviceActionsRestartDevice(deviceId: deviceId, body: body) { (response, error) in
+DeviceActionsAPI.restartDevice(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -535,9 +535,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsSendBlankpush**
+# **sendBlankpush**
 ```swift
-    open class func deviceActionsSendBlankpush(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func sendBlankpush(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Send Blankpush
@@ -552,7 +552,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Send Blankpush
-DeviceActionsAPI.deviceActionsSendBlankpush(deviceId: deviceId) { (response, error) in
+DeviceActionsAPI.sendBlankpush(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -585,9 +585,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsSetName**
+# **setName**
 ```swift
-    open class func deviceActionsSetName(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func setName(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Set Name
@@ -603,7 +603,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Set Name
-DeviceActionsAPI.deviceActionsSetName(deviceId: deviceId, body: body) { (response, error) in
+DeviceActionsAPI.setName(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -637,9 +637,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsShutdown**
+# **shutdown**
 ```swift
-    open class func deviceActionsShutdown(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func shutdown(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Shutdown
@@ -654,7 +654,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Shutdown
-DeviceActionsAPI.deviceActionsShutdown(deviceId: deviceId) { (response, error) in
+DeviceActionsAPI.shutdown(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -687,9 +687,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsUnlockAccount**
+# **unlockAccount**
 ```swift
-    open class func deviceActionsUnlockAccount(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func unlockAccount(deviceId: String, body: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Unlock Account
@@ -705,7 +705,7 @@ let deviceId = "deviceId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Unlock Account
-DeviceActionsAPI.deviceActionsUnlockAccount(deviceId: deviceId, body: body) { (response, error) in
+DeviceActionsAPI.unlockAccount(deviceId: deviceId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -739,9 +739,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceActionsUpdateInventory**
+# **updateInventory**
 ```swift
-    open class func deviceActionsUpdateInventory(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func updateInventory(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Update Inventory
@@ -756,7 +756,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Update Inventory
-DeviceActionsAPI.deviceActionsUpdateInventory(deviceId: deviceId) { (response, error) in
+DeviceActionsAPI.updateInventory(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return

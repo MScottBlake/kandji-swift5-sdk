@@ -4,14 +4,14 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersDeleteUser**](UsersAPI.md#usersdeleteuser) | **DELETE** /api/v1/users/{user_id} | Delete User
-[**usersGetUser**](UsersAPI.md#usersgetuser) | **GET** /api/v1/users/{user_id} | Get User
-[**usersListUsers**](UsersAPI.md#userslistusers) | **GET** /api/v1/users | List Users
+[**deleteUser**](UsersAPI.md#deleteuser) | **DELETE** /api/v1/users/{user_id} | Delete User
+[**getUser**](UsersAPI.md#getuser) | **GET** /api/v1/users/{user_id} | Get User
+[**listUsers**](UsersAPI.md#listusers) | **GET** /api/v1/users | List Users
 
 
-# **usersDeleteUser**
+# **deleteUser**
 ```swift
-    open class func usersDeleteUser(userId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteUser(userId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete User
@@ -26,7 +26,7 @@ import kandji_sdk
 let userId = "userId_example" // String | 
 
 // Delete User
-UsersAPI.usersDeleteUser(userId: userId) { (response, error) in
+UsersAPI.deleteUser(userId: userId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -59,9 +59,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **usersGetUser**
+# **getUser**
 ```swift
-    open class func usersGetUser(userId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getUser(userId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get User
@@ -76,7 +76,7 @@ import kandji_sdk
 let userId = "userId_example" // String | 
 
 // Get User
-UsersAPI.usersGetUser(userId: userId) { (response, error) in
+UsersAPI.getUser(userId: userId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -109,9 +109,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **usersListUsers**
+# **listUsers**
 ```swift
-    open class func usersListUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Users
@@ -129,7 +129,7 @@ let integrationId = "integrationId_example" // String | Search for a integration
 let archived = "archived_example" // String | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
 
 // List Users
-UsersAPI.usersListUsers(email: email, _id: _id, integrationId: integrationId, archived: archived) { (response, error) in
+UsersAPI.listUsers(email: email, _id: _id, integrationId: integrationId, archived: archived) { (response, error) in
     guard error == nil else {
         print(error)
         return

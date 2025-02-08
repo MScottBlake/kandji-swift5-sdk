@@ -4,29 +4,29 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**prismActivationLock**](PrismAPI.md#prismactivationlock) | **GET** /api/v1/prism/activation_lock | Activation lock
-[**prismApplicationFirewall**](PrismAPI.md#prismapplicationfirewall) | **GET** /api/v1/prism/application_firewall | Application firewall
-[**prismApplications**](PrismAPI.md#prismapplications) | **GET** /api/v1/prism/apps | Applications
-[**prismCertificates**](PrismAPI.md#prismcertificates) | **GET** /api/v1/prism/certificates | Certificates
-[**prismCount**](PrismAPI.md#prismcount) | **GET** /api/v1/prism/count | Count
-[**prismDesktopAndScreensaver**](PrismAPI.md#prismdesktopandscreensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
-[**prismDeviceInformation**](PrismAPI.md#prismdeviceinformation) | **GET** /api/v1/prism/device_information | Device information
-[**prismFilevault**](PrismAPI.md#prismfilevault) | **GET** /api/v1/prism/filevault | FileVault
-[**prismGatekeeperAndXprotect**](PrismAPI.md#prismgatekeeperandxprotect) | **GET** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
-[**prismGetCategoryExport**](PrismAPI.md#prismgetcategoryexport) | **GET** /api/v1/prism/export/{export_id} | Get category export
-[**prismInstalledProfiles**](PrismAPI.md#prisminstalledprofiles) | **GET** /api/v1/prism/installed_profiles | Installed profiles
-[**prismKernelExtensions**](PrismAPI.md#prismkernelextensions) | **GET** /api/v1/prism/kernel_extensions | Kernel Extensions
-[**prismLaunchAgentsAndDaemons**](PrismAPI.md#prismlaunchagentsanddaemons) | **GET** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
-[**prismLocalUsers**](PrismAPI.md#prismlocalusers) | **GET** /api/v1/prism/local_users | Local users
-[**prismRequestCategoryExport**](PrismAPI.md#prismrequestcategoryexport) | **POST** /api/v1/prism/export | Request category export
-[**prismStartupSettings**](PrismAPI.md#prismstartupsettings) | **GET** /api/v1/prism/startup_settings | Startup settings
-[**prismSystemExtensions**](PrismAPI.md#prismsystemextensions) | **GET** /api/v1/prism/system_extensions | System Extensions
-[**prismTransparencyDatabase**](PrismAPI.md#prismtransparencydatabase) | **GET** /api/v1/prism/transparency_database | Transparency database
+[**activationLock**](PrismAPI.md#activationlock) | **GET** /api/v1/prism/activation_lock | Activation lock
+[**applicationFirewall**](PrismAPI.md#applicationfirewall) | **GET** /api/v1/prism/application_firewall | Application firewall
+[**applications**](PrismAPI.md#applications) | **GET** /api/v1/prism/apps | Applications
+[**certificates**](PrismAPI.md#certificates) | **GET** /api/v1/prism/certificates | Certificates
+[**count**](PrismAPI.md#count) | **GET** /api/v1/prism/count | Count
+[**desktopAndScreensaver**](PrismAPI.md#desktopandscreensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
+[**deviceInformation**](PrismAPI.md#deviceinformation) | **GET** /api/v1/prism/device_information | Device information
+[**filevault**](PrismAPI.md#filevault) | **GET** /api/v1/prism/filevault | FileVault
+[**gatekeeperAndXprotect**](PrismAPI.md#gatekeeperandxprotect) | **GET** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
+[**getCategoryExport**](PrismAPI.md#getcategoryexport) | **GET** /api/v1/prism/export/{export_id} | Get category export
+[**installedProfiles**](PrismAPI.md#installedprofiles) | **GET** /api/v1/prism/installed_profiles | Installed profiles
+[**kernelExtensions**](PrismAPI.md#kernelextensions) | **GET** /api/v1/prism/kernel_extensions | Kernel Extensions
+[**launchAgentsAndDaemons**](PrismAPI.md#launchagentsanddaemons) | **GET** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
+[**localUsers**](PrismAPI.md#localusers) | **GET** /api/v1/prism/local_users | Local users
+[**requestCategoryExport**](PrismAPI.md#requestcategoryexport) | **POST** /api/v1/prism/export | Request category export
+[**startupSettings**](PrismAPI.md#startupsettings) | **GET** /api/v1/prism/startup_settings | Startup settings
+[**systemExtensions**](PrismAPI.md#systemextensions) | **GET** /api/v1/prism/system_extensions | System Extensions
+[**transparencyDatabase**](PrismAPI.md#transparencydatabase) | **GET** /api/v1/prism/transparency_database | Transparency database
 
 
-# **prismActivationLock**
+# **activationLock**
 ```swift
-    open class func prismActivationLock(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func activationLock(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Activation lock
@@ -46,7 +46,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Activation lock
-PrismAPI.prismActivationLock(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.activationLock(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -84,9 +84,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismApplicationFirewall**
+# **applicationFirewall**
 ```swift
-    open class func prismApplicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func applicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Application firewall
@@ -106,7 +106,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Application firewall
-PrismAPI.prismApplicationFirewall(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.applicationFirewall(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -144,9 +144,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismApplications**
+# **applications**
 ```swift
-    open class func prismApplications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func applications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Applications
@@ -166,7 +166,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Applications
-PrismAPI.prismApplications(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.applications(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -204,9 +204,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismCertificates**
+# **certificates**
 ```swift
-    open class func prismCertificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func certificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Certificates
@@ -226,7 +226,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Certificates
-PrismAPI.prismCertificates(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.certificates(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -264,9 +264,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismCount**
+# **count**
 ```swift
-    open class func prismCount(category: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func count(category: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Count
@@ -281,7 +281,7 @@ import kandji_sdk
 let category = "category_example" // String | <p>Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p> <p>Examples: apps device_information kernel_extensions system_extensions</p>
 
 // Count
-PrismAPI.prismCount(category: category) { (response, error) in
+PrismAPI.count(category: category) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -314,9 +314,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismDesktopAndScreensaver**
+# **desktopAndScreensaver**
 ```swift
-    open class func prismDesktopAndScreensaver(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func desktopAndScreensaver(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Desktop and Screensaver
@@ -336,7 +336,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Desktop and Screensaver
-PrismAPI.prismDesktopAndScreensaver(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.desktopAndScreensaver(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -374,9 +374,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismDeviceInformation**
+# **deviceInformation**
 ```swift
-    open class func prismDeviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func deviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Device information
@@ -397,7 +397,7 @@ let offset = "" // String | Specify the starting record to return (optional)
 let body = "body_example" // String |  (optional)
 
 // Device information
-PrismAPI.prismDeviceInformation(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset, body: body) { (response, error) in
+PrismAPI.deviceInformation(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -436,9 +436,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismFilevault**
+# **filevault**
 ```swift
-    open class func prismFilevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func filevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 FileVault
@@ -458,7 +458,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return (optional)
 
 // FileVault
-PrismAPI.prismFilevault(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.filevault(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -496,9 +496,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismGatekeeperAndXprotect**
+# **gatekeeperAndXprotect**
 ```swift
-    open class func prismGatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func gatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Gatekeeper and XProtect
@@ -518,7 +518,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return (optional)
 
 // Gatekeeper and XProtect
-PrismAPI.prismGatekeeperAndXprotect(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.gatekeeperAndXprotect(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -556,9 +556,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismGetCategoryExport**
+# **getCategoryExport**
 ```swift
-    open class func prismGetCategoryExport(exportId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getCategoryExport(exportId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get category export
@@ -573,7 +573,7 @@ import kandji_sdk
 let exportId = "exportId_example" // String | 
 
 // Get category export
-PrismAPI.prismGetCategoryExport(exportId: exportId) { (response, error) in
+PrismAPI.getCategoryExport(exportId: exportId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -606,9 +606,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismInstalledProfiles**
+# **installedProfiles**
 ```swift
-    open class func prismInstalledProfiles(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func installedProfiles(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Installed profiles
@@ -628,7 +628,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Installed profiles
-PrismAPI.prismInstalledProfiles(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.installedProfiles(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -666,9 +666,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismKernelExtensions**
+# **kernelExtensions**
 ```swift
-    open class func prismKernelExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func kernelExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Kernel Extensions
@@ -688,7 +688,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Kernel Extensions
-PrismAPI.prismKernelExtensions(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.kernelExtensions(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -726,9 +726,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismLaunchAgentsAndDaemons**
+# **launchAgentsAndDaemons**
 ```swift
-    open class func prismLaunchAgentsAndDaemons(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func launchAgentsAndDaemons(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Launch Agents and Daemons
@@ -748,7 +748,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Launch Agents and Daemons
-PrismAPI.prismLaunchAgentsAndDaemons(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.launchAgentsAndDaemons(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -786,9 +786,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismLocalUsers**
+# **localUsers**
 ```swift
-    open class func prismLocalUsers(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func localUsers(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Local users
@@ -808,7 +808,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Local users
-PrismAPI.prismLocalUsers(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.localUsers(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -846,9 +846,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismRequestCategoryExport**
+# **requestCategoryExport**
 ```swift
-    open class func prismRequestCategoryExport(body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func requestCategoryExport(body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Request category export
@@ -863,7 +863,7 @@ import kandji_sdk
 let body = "body_example" // String |  (optional)
 
 // Request category export
-PrismAPI.prismRequestCategoryExport(body: body) { (response, error) in
+PrismAPI.requestCategoryExport(body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -896,9 +896,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismStartupSettings**
+# **startupSettings**
 ```swift
-    open class func prismStartupSettings(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func startupSettings(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Startup settings
@@ -918,7 +918,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return (optional)
 
 // Startup settings
-PrismAPI.prismStartupSettings(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.startupSettings(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -956,9 +956,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismSystemExtensions**
+# **systemExtensions**
 ```swift
-    open class func prismSystemExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func systemExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 System Extensions
@@ -978,7 +978,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // System Extensions
-PrismAPI.prismSystemExtensions(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.systemExtensions(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -1016,9 +1016,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **prismTransparencyDatabase**
+# **transparencyDatabase**
 ```swift
-    open class func prismTransparencyDatabase(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func transparencyDatabase(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Transparency database
@@ -1038,7 +1038,7 @@ let limit = "" // String | A hard upper <code>limit</code> is set at 300 device 
 let offset = "" // String | Specify the starting record to return. (optional)
 
 // Transparency database
-PrismAPI.prismTransparencyDatabase(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+PrismAPI.transparencyDatabase(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return

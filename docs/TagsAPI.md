@@ -4,15 +4,15 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**tagsCreateTag**](TagsAPI.md#tagscreatetag) | **POST** /api/v1/tags | Create Tag
-[**tagsDeleteTag**](TagsAPI.md#tagsdeletetag) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
-[**tagsGetTags**](TagsAPI.md#tagsgettags) | **GET** /api/v1/tags | Get Tags
-[**tagsUpdateTag**](TagsAPI.md#tagsupdatetag) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
+[**createTag**](TagsAPI.md#createtag) | **POST** /api/v1/tags | Create Tag
+[**deleteTag**](TagsAPI.md#deletetag) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
+[**getTags**](TagsAPI.md#gettags) | **GET** /api/v1/tags | Get Tags
+[**updateTag**](TagsAPI.md#updatetag) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
 
 
-# **tagsCreateTag**
+# **createTag**
 ```swift
-    open class func tagsCreateTag(body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func createTag(body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Create Tag
@@ -27,7 +27,7 @@ import kandji_sdk
 let body = "body_example" // String |  (optional)
 
 // Create Tag
-TagsAPI.tagsCreateTag(body: body) { (response, error) in
+TagsAPI.createTag(body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -60,9 +60,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tagsDeleteTag**
+# **deleteTag**
 ```swift
-    open class func tagsDeleteTag(tagId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteTag(tagId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Tag
@@ -77,7 +77,7 @@ import kandji_sdk
 let tagId = "tagId_example" // String | 
 
 // Delete Tag
-TagsAPI.tagsDeleteTag(tagId: tagId) { (response, error) in
+TagsAPI.deleteTag(tagId: tagId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -110,9 +110,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tagsGetTags**
+# **getTags**
 ```swift
-    open class func tagsGetTags(search: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getTags(search: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Tags
@@ -127,7 +127,7 @@ import kandji_sdk
 let search = "search_example" // String | Return resultes containing a given tag search string.
 
 // Get Tags
-TagsAPI.tagsGetTags(search: search) { (response, error) in
+TagsAPI.getTags(search: search) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -160,9 +160,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tagsUpdateTag**
+# **updateTag**
 ```swift
-    open class func tagsUpdateTag(tagId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func updateTag(tagId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update Tag
@@ -178,7 +178,7 @@ let tagId = "tagId_example" // String |
 let body = "body_example" // String |  (optional)
 
 // Update Tag
-TagsAPI.tagsUpdateTag(tagId: tagId, body: body) { (response, error) in
+TagsAPI.updateTag(tagId: tagId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return

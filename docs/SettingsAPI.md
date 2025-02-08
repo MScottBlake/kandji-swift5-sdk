@@ -4,12 +4,12 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**settingsLicensing**](SettingsAPI.md#settingslicensing) | **GET** /api/v1/settings/licensing | Licensing
+[**licensing**](SettingsAPI.md#licensing) | **GET** /api/v1/settings/licensing | Licensing
 
 
-# **settingsLicensing**
+# **licensing**
 ```swift
-    open class func settingsLicensing(completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func licensing(completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Licensing
@@ -23,7 +23,7 @@ import kandji_sdk
 
 
 // Licensing
-SettingsAPI.settingsLicensing() { (response, error) in
+SettingsAPI.licensing() { (response, error) in
     guard error == nil else {
         print(error)
         return

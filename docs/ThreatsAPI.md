@@ -4,12 +4,12 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**threatsGetThreatDetails**](ThreatsAPI.md#threatsgetthreatdetails) | **GET** /api/v1/threat-details | Get Threat Details
+[**getThreatDetails**](ThreatsAPI.md#getthreatdetails) | **GET** /api/v1/threat-details | Get Threat Details
 
 
-# **threatsGetThreatDetails**
+# **getThreatDetails**
 ```swift
-    open class func threatsGetThreatDetails(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getThreatDetails(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Threat Details
@@ -31,7 +31,7 @@ let limit = "limit_example" // String | <p>A hard upper <code>limit</code> is se
 let offset = "offset_example" // String | Specify the starting record to return (optional)
 
 // Get Threat Details
-ThreatsAPI.threatsGetThreatDetails(classification: classification, dateRange: dateRange, deviceId: deviceId, status: status, sortBy: sortBy, term: term, limit: limit, offset: offset) { (response, error) in
+ThreatsAPI.getThreatDetails(classification: classification, dateRange: dateRange, deviceId: deviceId, status: status, sortBy: sortBy, term: term, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return

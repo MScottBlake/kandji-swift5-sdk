@@ -4,15 +4,15 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deviceSecretsGetActivationLockBypassCode**](DeviceSecretsAPI.md#devicesecretsgetactivationlockbypasscode) | **GET** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
-[**deviceSecretsGetFilevaultRecoveryKey**](DeviceSecretsAPI.md#devicesecretsgetfilevaultrecoverykey) | **GET** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
-[**deviceSecretsGetRecoveryLockPassword**](DeviceSecretsAPI.md#devicesecretsgetrecoverylockpassword) | **GET** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
-[**deviceSecretsGetUnlockPin**](DeviceSecretsAPI.md#devicesecretsgetunlockpin) | **GET** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
+[**getActivationLockBypassCode**](DeviceSecretsAPI.md#getactivationlockbypasscode) | **GET** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
+[**getFilevaultRecoveryKey**](DeviceSecretsAPI.md#getfilevaultrecoverykey) | **GET** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
+[**getRecoveryLockPassword**](DeviceSecretsAPI.md#getrecoverylockpassword) | **GET** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
+[**getUnlockPin**](DeviceSecretsAPI.md#getunlockpin) | **GET** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
 
 
-# **deviceSecretsGetActivationLockBypassCode**
+# **getActivationLockBypassCode**
 ```swift
-    open class func deviceSecretsGetActivationLockBypassCode(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getActivationLockBypassCode(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Activation Lock Bypass Code
@@ -27,7 +27,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Activation Lock Bypass Code
-DeviceSecretsAPI.deviceSecretsGetActivationLockBypassCode(deviceId: deviceId) { (response, error) in
+DeviceSecretsAPI.getActivationLockBypassCode(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -60,9 +60,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceSecretsGetFilevaultRecoveryKey**
+# **getFilevaultRecoveryKey**
 ```swift
-    open class func deviceSecretsGetFilevaultRecoveryKey(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getFilevaultRecoveryKey(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get FileVault Recovery Key
@@ -77,7 +77,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get FileVault Recovery Key
-DeviceSecretsAPI.deviceSecretsGetFilevaultRecoveryKey(deviceId: deviceId) { (response, error) in
+DeviceSecretsAPI.getFilevaultRecoveryKey(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -110,9 +110,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceSecretsGetRecoveryLockPassword**
+# **getRecoveryLockPassword**
 ```swift
-    open class func deviceSecretsGetRecoveryLockPassword(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getRecoveryLockPassword(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Recovery Lock Password
@@ -127,7 +127,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Recovery Lock Password
-DeviceSecretsAPI.deviceSecretsGetRecoveryLockPassword(deviceId: deviceId) { (response, error) in
+DeviceSecretsAPI.getRecoveryLockPassword(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -160,9 +160,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceSecretsGetUnlockPin**
+# **getUnlockPin**
 ```swift
-    open class func deviceSecretsGetUnlockPin(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getUnlockPin(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Unlock Pin
@@ -177,7 +177,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Unlock Pin
-DeviceSecretsAPI.deviceSecretsGetUnlockPin(deviceId: deviceId) { (response, error) in
+DeviceSecretsAPI.getUnlockPin(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return

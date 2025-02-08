@@ -4,20 +4,20 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deviceInformationCancelLostMode**](DeviceInformationAPI.md#deviceinformationcancellostmode) | **DELETE** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
-[**deviceInformationGetDeviceActivity**](DeviceInformationAPI.md#deviceinformationgetdeviceactivity) | **GET** /api/v1/devices/{device_id}/activity | Get Device Activity
-[**deviceInformationGetDeviceApps**](DeviceInformationAPI.md#deviceinformationgetdeviceapps) | **GET** /api/v1/devices/{device_id}/apps | Get Device Apps
-[**deviceInformationGetDeviceDetails**](DeviceInformationAPI.md#deviceinformationgetdevicedetails) | **GET** /api/v1/devices/{device_id}/details | Get Device Details
-[**deviceInformationGetDeviceLibraryItems**](DeviceInformationAPI.md#deviceinformationgetdevicelibraryitems) | **GET** /api/v1/devices/{device_id}/library-items | Get Device Library Items
-[**deviceInformationGetDeviceLostModeDetails**](DeviceInformationAPI.md#deviceinformationgetdevicelostmodedetails) | **GET** /api/v1/devices/{device_id}/details/lostmode | Get Device Lost Mode details
-[**deviceInformationGetDeviceParameters**](DeviceInformationAPI.md#deviceinformationgetdeviceparameters) | **GET** /api/v1/devices/{device_id}/parameters | Get Device Parameters
-[**deviceInformationGetDeviceStatus**](DeviceInformationAPI.md#deviceinformationgetdevicestatus) | **GET** /api/v1/devices/{device_id}/status | Get Device Status
-[**deviceInformationListDevices**](DeviceInformationAPI.md#deviceinformationlistdevices) | **GET** /api/v1/devices | List Devices
+[**cancelLostMode**](DeviceInformationAPI.md#cancellostmode) | **DELETE** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
+[**getDeviceActivity**](DeviceInformationAPI.md#getdeviceactivity) | **GET** /api/v1/devices/{device_id}/activity | Get Device Activity
+[**getDeviceApps**](DeviceInformationAPI.md#getdeviceapps) | **GET** /api/v1/devices/{device_id}/apps | Get Device Apps
+[**getDeviceDetails**](DeviceInformationAPI.md#getdevicedetails) | **GET** /api/v1/devices/{device_id}/details | Get Device Details
+[**getDeviceLibraryItems**](DeviceInformationAPI.md#getdevicelibraryitems) | **GET** /api/v1/devices/{device_id}/library-items | Get Device Library Items
+[**getDeviceLostModeDetails**](DeviceInformationAPI.md#getdevicelostmodedetails) | **GET** /api/v1/devices/{device_id}/details/lostmode | Get Device Lost Mode details
+[**getDeviceParameters**](DeviceInformationAPI.md#getdeviceparameters) | **GET** /api/v1/devices/{device_id}/parameters | Get Device Parameters
+[**getDeviceStatus**](DeviceInformationAPI.md#getdevicestatus) | **GET** /api/v1/devices/{device_id}/status | Get Device Status
+[**listDevices**](DeviceInformationAPI.md#listdevices) | **GET** /api/v1/devices | List Devices
 
 
-# **deviceInformationCancelLostMode**
+# **cancelLostMode**
 ```swift
-    open class func deviceInformationCancelLostMode(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func cancelLostMode(deviceId: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Cancel Lost Mode
@@ -32,7 +32,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Cancel Lost Mode
-DeviceInformationAPI.deviceInformationCancelLostMode(deviceId: deviceId) { (response, error) in
+DeviceInformationAPI.cancelLostMode(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -65,9 +65,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceInformationGetDeviceActivity**
+# **getDeviceActivity**
 ```swift
-    open class func deviceInformationGetDeviceActivity(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getDeviceActivity(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Device Activity
@@ -84,7 +84,7 @@ let limit = "limit_example" // String | A hard upper <code>limit</code> is set a
 let offset = "offset_example" // String | Specify the starting record to return (optional)
 
 // Get Device Activity
-DeviceInformationAPI.deviceInformationGetDeviceActivity(deviceId: deviceId, limit: limit, offset: offset) { (response, error) in
+DeviceInformationAPI.getDeviceActivity(deviceId: deviceId, limit: limit, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -119,9 +119,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceInformationGetDeviceApps**
+# **getDeviceApps**
 ```swift
-    open class func deviceInformationGetDeviceApps(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getDeviceApps(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Device Apps
@@ -136,7 +136,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Device Apps
-DeviceInformationAPI.deviceInformationGetDeviceApps(deviceId: deviceId) { (response, error) in
+DeviceInformationAPI.getDeviceApps(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -169,9 +169,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceInformationGetDeviceDetails**
+# **getDeviceDetails**
 ```swift
-    open class func deviceInformationGetDeviceDetails(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getDeviceDetails(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Device Details
@@ -186,7 +186,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Device Details
-DeviceInformationAPI.deviceInformationGetDeviceDetails(deviceId: deviceId) { (response, error) in
+DeviceInformationAPI.getDeviceDetails(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -219,9 +219,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceInformationGetDeviceLibraryItems**
+# **getDeviceLibraryItems**
 ```swift
-    open class func deviceInformationGetDeviceLibraryItems(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getDeviceLibraryItems(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Device Library Items
@@ -236,7 +236,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Device Library Items
-DeviceInformationAPI.deviceInformationGetDeviceLibraryItems(deviceId: deviceId) { (response, error) in
+DeviceInformationAPI.getDeviceLibraryItems(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -269,9 +269,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceInformationGetDeviceLostModeDetails**
+# **getDeviceLostModeDetails**
 ```swift
-    open class func deviceInformationGetDeviceLostModeDetails(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getDeviceLostModeDetails(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Device Lost Mode details
@@ -286,7 +286,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Device Lost Mode details
-DeviceInformationAPI.deviceInformationGetDeviceLostModeDetails(deviceId: deviceId) { (response, error) in
+DeviceInformationAPI.getDeviceLostModeDetails(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -319,9 +319,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceInformationGetDeviceParameters**
+# **getDeviceParameters**
 ```swift
-    open class func deviceInformationGetDeviceParameters(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getDeviceParameters(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Device Parameters
@@ -336,7 +336,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Device Parameters
-DeviceInformationAPI.deviceInformationGetDeviceParameters(deviceId: deviceId) { (response, error) in
+DeviceInformationAPI.getDeviceParameters(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -369,9 +369,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceInformationGetDeviceStatus**
+# **getDeviceStatus**
 ```swift
-    open class func deviceInformationGetDeviceStatus(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getDeviceStatus(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Get Device Status
@@ -386,7 +386,7 @@ import kandji_sdk
 let deviceId = "deviceId_example" // String | 
 
 // Get Device Status
-DeviceInformationAPI.deviceInformationGetDeviceStatus(deviceId: deviceId) { (response, error) in
+DeviceInformationAPI.getDeviceStatus(deviceId: deviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -419,9 +419,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deviceInformationListDevices**
+# **listDevices**
 ```swift
-    open class func deviceInformationListDevices(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listDevices(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Devices
@@ -456,7 +456,7 @@ let userName = "userName_example" // String | Return results &quot;containing&qu
 let offset = "offset_example" // String | Specify the starting record to return (optional)
 
 // List Devices
-DeviceInformationAPI.deviceInformationListDevices(limit: limit, assetTag: assetTag, blueprintId: blueprintId, deviceId: deviceId, deviceName: deviceName, filevaultEnabled: filevaultEnabled, macAddress: macAddress, model: model, ordering: ordering, osVersion: osVersion, platform: platform, serialNumber: serialNumber, tagName: tagName, tagNameIn: tagNameIn, tagId: tagId, tagIdIn: tagIdIn, user: user, userEmail: userEmail, userId: userId, userName: userName, offset: offset) { (response, error) in
+DeviceInformationAPI.listDevices(limit: limit, assetTag: assetTag, blueprintId: blueprintId, deviceId: deviceId, deviceName: deviceName, filevaultEnabled: filevaultEnabled, macAddress: macAddress, model: model, ordering: ordering, osVersion: osVersion, platform: platform, serialNumber: serialNumber, tagName: tagName, tagNameIn: tagNameIn, tagId: tagId, tagIdIn: tagIdIn, user: user, userEmail: userEmail, userId: userId, userName: userName, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return

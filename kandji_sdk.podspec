@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.license = 'Proprietary'
   s.homepage = 'https://github.com/OpenAPITools/openapi-generator'
   s.summary = 'kandji_sdk Swift SDK'
-  s.source_files = 'KandjiSDK/Classes/KandjiAPIs/**/*.swift'
+  s.source_files = 'Kandji/Classes/KandjiAPIs/**/*.swift'
   s.dependency 'AnyCodable-FlightSchool', '~> 0.6'
 end
