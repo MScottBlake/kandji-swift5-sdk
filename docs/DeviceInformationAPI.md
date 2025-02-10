@@ -5,6 +5,7 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelLostMode**](DeviceInformationAPI.md#cancellostmode) | **DELETE** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
+[**getDevice**](DeviceInformationAPI.md#getdevice) | **GET** /api/v1/devices/{device_id} | Get Device
 [**getDeviceActivity**](DeviceInformationAPI.md#getdeviceactivity) | **GET** /api/v1/devices/{device_id}/activity | Get Device Activity
 [**getDeviceApps**](DeviceInformationAPI.md#getdeviceapps) | **GET** /api/v1/devices/{device_id}/apps | Get Device Apps
 [**getDeviceDetails**](DeviceInformationAPI.md#getdevicedetails) | **GET** /api/v1/devices/{device_id}/details | Get Device Details
@@ -13,6 +14,7 @@ Method | HTTP request | Description
 [**getDeviceParameters**](DeviceInformationAPI.md#getdeviceparameters) | **GET** /api/v1/devices/{device_id}/parameters | Get Device Parameters
 [**getDeviceStatus**](DeviceInformationAPI.md#getdevicestatus) | **GET** /api/v1/devices/{device_id}/status | Get Device Status
 [**listDevices**](DeviceInformationAPI.md#listdevices) | **GET** /api/v1/devices | List Devices
+[**updateDevice**](DeviceInformationAPI.md#updatedevice) | **PATCH** /api/v1/devices/{device_id} | Update Device
 
 
 # **cancelLostMode**
@@ -62,6 +64,56 @@ Void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getDevice**
+```swift
+    open class func getDevice(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+```
+
+Get Device
+
+This request returns the high-level information for a specified Device ID.
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import kandji_sdk
+
+let deviceId = "deviceId_example" // String | 
+
+// Get Device
+DeviceInformationAPI.getDevice(deviceId: deviceId) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **deviceId** | **String** |  | 
+
+### Return type
+
+**AnyCodable**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -505,6 +557,58 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateDevice**
+```swift
+    open class func updateDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+```
+
+Update Device
+
+<p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p> <p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=&quot;https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f&quot;>Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p> <h3 id=&quot;additional-information&quot;>Additional information</h3> <p>User ID can be found using the <code>list users</code> API</p> <p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p> <p>For example, for this URL <a href=&quot;https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4&quot;>https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p> <p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p> <p>An example script that leverages this API can be found in the <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record&quot;>Kandji Support GitHub</a></p> <h4 id=&quot;clearing-the-device-asset-tag&quot;>Clearing the device asset tag</h4> <p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;asset_tag&quot;: null }  </code></pre> <h4 id=&quot;clearing-the-assigned-user-attribute&quot;>Clearing the assigned user attribute</h4> <p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;user&quot;: null }  </code></pre> <h4 id=&quot;clearing-all-tags&quot;>Clearing all tags</h4> <p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;tags&quot;: [] }  </code></pre>
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import kandji_sdk
+
+let deviceId = "deviceId_example" // String | 
+let body = "body_example" // String |  (optional)
+
+// Update Device
+DeviceInformationAPI.updateDevice(deviceId: deviceId, body: body) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **deviceId** | **String** |  | 
+ **body** | **String** |  | [optional] 
+
+### Return type
+
+**AnyCodable**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

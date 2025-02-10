@@ -206,11 +206,11 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getBlueprint(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getBlueprint(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
         return getBlueprintWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
             switch result {
-            case .success:
-                completion((), nil)
+            case let .success(response):
+                completion(response.body, nil)
             case let .failure(error):
                 completion(nil, error)
             }
@@ -230,9 +230,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#c0383706-3a41-445c-998f-37a2c1c7ba4a
 }
      - parameter blueprintId: (path)  
-     - returns: RequestBuilder<Void> 
+     - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getBlueprintWithRequestBuilder(blueprintId: String) -> RequestBuilder<Void> {
+    open class func getBlueprintWithRequestBuilder(blueprintId: String) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -248,7 +248,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<Void>.Type = kandji_sdkAPI.requestBuilderFactory.getNonDecodableBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

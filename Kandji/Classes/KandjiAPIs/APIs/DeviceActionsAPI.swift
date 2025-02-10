@@ -246,11 +246,11 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getDeviceCommands(deviceId: String, limit: String, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getDeviceCommands(deviceId: String, limit: String, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
         return getDeviceCommandsWithRequestBuilder(deviceId: deviceId, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
-            case .success:
-                completion((), nil)
+            case let .success(response):
+                completion(response.body, nil)
             case let .failure(error):
                 completion(nil, error)
             }
@@ -272,9 +272,9 @@ extension kandji_sdkAPI {
      - parameter deviceId: (path)  
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. 
      - parameter offset: (query) Specify the starting record to return (optional)
-     - returns: RequestBuilder<Void> 
+     - returns: RequestBuilder<AnyCodable> 
      */
-    open class func getDeviceCommandsWithRequestBuilder(deviceId: String, limit: String, offset: String? = nil) -> RequestBuilder<Void> {
+    open class func getDeviceCommandsWithRequestBuilder(deviceId: String, limit: String, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/commands"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -294,7 +294,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<Void>.Type = kandji_sdkAPI.requestBuilderFactory.getNonDecodableBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
