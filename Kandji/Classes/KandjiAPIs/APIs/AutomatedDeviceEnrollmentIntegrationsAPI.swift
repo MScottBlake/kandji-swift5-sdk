@@ -26,7 +26,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createAdeIntegration(blueprintId: String, phone: String, email: String, file: URL, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: CreateIntegration200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func createAdeIntegration(blueprintId: String, phone: String, email: String, file: URL, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return createAdeIntegrationWithRequestBuilder(blueprintId: blueprintId, phone: phone, email: email, file: file).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -53,9 +53,9 @@ extension kandji_sdkAPI {
      - parameter phone: (form)  
      - parameter email: (form)  
      - parameter file: (form) This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. 
-     - returns: RequestBuilder<CreateIntegration200Response> 
+     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response> 
      */
-    open class func createAdeIntegrationWithRequestBuilder(blueprintId: String, phone: String, email: String, file: URL) -> RequestBuilder<CreateIntegration200Response> {
+    open class func createAdeIntegrationWithRequestBuilder(blueprintId: String, phone: String, email: String, file: URL) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response> {
         let localVariablePath = "/api/v1/integrations/apple/ade/"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableFormParams: [String: Any?] = [
@@ -76,7 +76,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<CreateIntegration200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -194,7 +194,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getAdeDevice(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Success200Response1?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getAdeDevice(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getAdeDeviceWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -218,9 +218,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#e77e952f-5138-4175-821d-820eaacd66ce
 }
      - parameter deviceId: (path)  
-     - returns: RequestBuilder<Success200Response1> 
+     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response> 
      */
-    open class func getAdeDeviceWithRequestBuilder(deviceId: String) -> RequestBuilder<Success200Response1> {
+    open class func getAdeDeviceWithRequestBuilder(deviceId: String) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response> {
         var localVariablePath = "/api/v1/integrations/apple/ade/devices/{device_id}"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -236,7 +236,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<Success200Response1>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -311,7 +311,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listAdeDevices(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Success200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listAdeDevices(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listAdeDevicesWithRequestBuilder(blueprintId: blueprintId, userId: userId, depAccount: depAccount, deviceFamily: deviceFamily, model: model, os: os, profileStatus: profileStatus, serialNumber: serialNumber, page: page).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -343,9 +343,9 @@ extension kandji_sdkAPI {
      - parameter profileStatus: (query) The automated device enrollment profile assignment status - assigned, empty, pushed, removed (optional)
      - parameter serialNumber: (query) Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. (optional)
      - parameter page: (query) Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
-     - returns: RequestBuilder<Success200Response> 
+     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
      */
-    open class func listAdeDevicesWithRequestBuilder(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil) -> RequestBuilder<Success200Response> {
+    open class func listAdeDevicesWithRequestBuilder(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
         let localVariablePath = "/api/v1/integrations/apple/ade/devices"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -369,7 +369,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<Success200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -432,7 +432,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listDevicesAssociatedToAdeToken(adeTokenId: String, page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: ListAssociatedDevicesNullMdmDevice200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listDevicesAssociatedToAdeToken(adeTokenId: String, page: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listDevicesAssociatedToAdeTokenWithRequestBuilder(adeTokenId: adeTokenId, page: page).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -457,9 +457,9 @@ extension kandji_sdkAPI {
 }
      - parameter adeTokenId: (path)  
      - parameter page: (query) Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page. (optional)
-     - returns: RequestBuilder<ListAssociatedDevicesNullMdmDevice200Response> 
+     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response> 
      */
-    open class func listDevicesAssociatedToAdeTokenWithRequestBuilder(adeTokenId: String, page: String? = nil) -> RequestBuilder<ListAssociatedDevicesNullMdmDevice200Response> {
+    open class func listDevicesAssociatedToAdeTokenWithRequestBuilder(adeTokenId: String, page: String? = nil) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response> {
         var localVariablePath = "/api/v1/integrations/apple/ade/{ade_token_id}/devices"
         let adeTokenIdPreEscape = "\(APIHelper.mapValueToPathItem(adeTokenId))"
         let adeTokenIdPostEscape = adeTokenIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -478,7 +478,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<ListAssociatedDevicesNullMdmDevice200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -562,7 +562,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateAdeDevice(deviceId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: UpdateUserAssignment200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func updateAdeDevice(deviceId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return updateAdeDeviceWithRequestBuilder(deviceId: deviceId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -587,9 +587,9 @@ extension kandji_sdkAPI {
 }
      - parameter deviceId: (path)  
      - parameter body: (body)  (optional)
-     - returns: RequestBuilder<UpdateUserAssignment200Response> 
+     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response> 
      */
-    open class func updateAdeDeviceWithRequestBuilder(deviceId: String, body: String? = nil) -> RequestBuilder<UpdateUserAssignment200Response> {
+    open class func updateAdeDeviceWithRequestBuilder(deviceId: String, body: String? = nil) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response> {
         var localVariablePath = "/api/v1/integrations/apple/ade/devices/{device_id}"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -605,7 +605,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<UpdateUserAssignment200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PATCH", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

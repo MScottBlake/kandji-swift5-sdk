@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 # **getLibraryItemActivity**
 ```swift
-    open class func getLibraryItemActivity(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: Success200Response?, _ error: Error?) -> Void)
+    open class func getLibraryItemActivity(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
 ```
 
 Get Library Item Activity
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response**](Success200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 # **getLibraryItemStatuses**
 ```swift
-    open class func getLibraryItemStatuses(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: EdrStatus200Response1?, _ error: Error?) -> Void)
+    open class func getLibraryItemStatuses(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
 ```
 
 Get Library Item Statuses
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdrStatus200Response1**](EdrStatus200Response1.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
