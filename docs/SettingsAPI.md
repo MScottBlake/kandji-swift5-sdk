@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **licensing**
 ```swift
-    open class func licensing(completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func licensing(completion: @escaping (_ data: SettingsLicensing200Response?, _ error: Error?) -> Void)
 ```
 
 Licensing
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**AnyCodable**
+[**SettingsLicensing200Response**](SettingsLicensing200Response.md)
 
 ### Authorization
 

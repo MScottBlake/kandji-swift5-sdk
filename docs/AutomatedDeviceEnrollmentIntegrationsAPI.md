@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 # **createAdeIntegration**
 ```swift
-    open class func createAdeIntegration(blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func createAdeIntegration(blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response?, _ error: Error?) -> Void)
 ```
 
 Create ADE integration
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ This endpoint does not need any parameter.
 
 # **getAdeDevice**
 ```swift
-    open class func getAdeDevice(deviceId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getAdeDevice(deviceId: String, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response?, _ error: Error?) -> Void)
 ```
 
 Get ADE device
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Void (empty response body)
 
 # **listAdeDevices**
 ```swift
-    open class func listAdeDevices(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listAdeDevices(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
 ```
 
 List ADE devices
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -383,7 +383,7 @@ Void (empty response body)
 
 # **listDevicesAssociatedToAdeToken**
 ```swift
-    open class func listDevicesAssociatedToAdeToken(adeTokenId: String, page: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listDevicesAssociatedToAdeToken(adeTokenId: String, page: String? = nil, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response?, _ error: Error?) -> Void)
 ```
 
 List devices associated to ADE token
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response**](AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response.md)
 
 ### Authorization
 
@@ -493,7 +493,7 @@ Void (empty response body)
 
 # **updateAdeDevice**
 ```swift
-    open class func updateAdeDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func updateAdeDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response?, _ error: Error?) -> Void)
 ```
 
 Update ADE device
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
 
 ### Authorization
 

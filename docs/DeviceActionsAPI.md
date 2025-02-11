@@ -227,7 +227,7 @@ Void (empty response body)
 
 # **getDeviceCommands**
 ```swift
-    open class func getDeviceCommands(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getDeviceCommands(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: DeviceActionsGetDeviceCommands200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device Commands
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**DeviceActionsGetDeviceCommands200Response**](DeviceActionsGetDeviceCommands200Response.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 # **lockDevice**
 ```swift
-    open class func lockDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func lockDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: DeviceActionsLockDevice200Response?, _ error: Error?) -> Void)
 ```
 
 Lock Device
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**DeviceActionsLockDevice200Response**](DeviceActionsLockDevice200Response.md)
 
 ### Authorization
 

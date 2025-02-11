@@ -23,7 +23,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createTag(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func createTag(body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: TagsCreateTag201Response?, _ error: Error?) -> Void)) -> RequestTask {
         return createTagWithRequestBuilder(body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -47,9 +47,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#f9270517-98cb-4078-99b3-cbcd1acc2fca
 }
      - parameter body: (body)  (optional)
-     - returns: RequestBuilder<AnyCodable> 
+     - returns: RequestBuilder<TagsCreateTag201Response> 
      */
-    open class func createTagWithRequestBuilder(body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func createTagWithRequestBuilder(body: String? = nil) -> RequestBuilder<TagsCreateTag201Response> {
         let localVariablePath = "/api/v1/tags"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
@@ -62,7 +62,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<TagsCreateTag201Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -129,7 +129,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getTags(search: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getTags(search: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getTagsWithRequestBuilder(search: search).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -153,9 +153,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#9e4feff9-bc65-4625-b2ca-5a30328c6b7e
 }
      - parameter search: (query) Return resultes containing a given tag search string. 
-     - returns: RequestBuilder<AnyCodable> 
+     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
      */
-    open class func getTagsWithRequestBuilder(search: String) -> RequestBuilder<AnyCodable> {
+    open class func getTagsWithRequestBuilder(search: String) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
         let localVariablePath = "/api/v1/tags"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -171,7 +171,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -185,7 +185,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateTag(tagId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func updateTag(tagId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: TagsCreateTag201Response?, _ error: Error?) -> Void)) -> RequestTask {
         return updateTagWithRequestBuilder(tagId: tagId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -210,9 +210,9 @@ extension kandji_sdkAPI {
 }
      - parameter tagId: (path)  
      - parameter body: (body)  (optional)
-     - returns: RequestBuilder<AnyCodable> 
+     - returns: RequestBuilder<TagsCreateTag201Response> 
      */
-    open class func updateTagWithRequestBuilder(tagId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func updateTagWithRequestBuilder(tagId: String, body: String? = nil) -> RequestBuilder<TagsCreateTag201Response> {
         var localVariablePath = "/api/v1/tags/{tag_id}"
         let tagIdPreEscape = "\(APIHelper.mapValueToPathItem(tagId))"
         let tagIdPostEscape = tagIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -228,7 +228,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<TagsCreateTag201Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PATCH", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

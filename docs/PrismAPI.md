@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 # **activationLock**
 ```swift
-    open class func activationLock(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func activationLock(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Activation lock
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 # **applicationFirewall**
 ```swift
-    open class func applicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func applicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Application firewall
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 # **applications**
 ```swift
-    open class func applications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func applications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismApplications200Response?, _ error: Error?) -> Void)
 ```
 
 Applications
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismApplications200Response**](PrismApplications200Response.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 # **certificates**
 ```swift
-    open class func certificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func certificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Certificates
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 # **count**
 ```swift
-    open class func count(category: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func count(category: String, completion: @escaping (_ data: PrismCount200Response?, _ error: Error?) -> Void)
 ```
 
 Count
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismCount200Response**](PrismCount200Response.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 # **desktopAndScreensaver**
 ```swift
-    open class func desktopAndScreensaver(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func desktopAndScreensaver(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Desktop and Screensaver
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 # **deviceInformation**
 ```swift
-    open class func deviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func deviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, completion: @escaping (_ data: PrismDeviceInformation200Response?, _ error: Error?) -> Void)
 ```
 
 Device information
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismDeviceInformation200Response**](PrismDeviceInformation200Response.md)
 
 ### Authorization
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 # **filevault**
 ```swift
-    open class func filevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func filevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismDeviceInformation200Response?, _ error: Error?) -> Void)
 ```
 
 FileVault
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismDeviceInformation200Response**](PrismDeviceInformation200Response.md)
 
 ### Authorization
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 # **gatekeeperAndXprotect**
 ```swift
-    open class func gatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func gatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Gatekeeper and XProtect
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 # **getCategoryExport**
 ```swift
-    open class func getCategoryExport(exportId: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getCategoryExport(exportId: String, completion: @escaping (_ data: PrismGetCategoryExport200Response?, _ error: Error?) -> Void)
 ```
 
 Get category export
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismGetCategoryExport200Response**](PrismGetCategoryExport200Response.md)
 
 ### Authorization
 
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 # **installedProfiles**
 ```swift
-    open class func installedProfiles(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func installedProfiles(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Installed profiles
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -668,7 +668,7 @@ Name | Type | Description  | Notes
 
 # **kernelExtensions**
 ```swift
-    open class func kernelExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func kernelExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Kernel Extensions
@@ -713,7 +713,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -728,7 +728,7 @@ Name | Type | Description  | Notes
 
 # **launchAgentsAndDaemons**
 ```swift
-    open class func launchAgentsAndDaemons(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func launchAgentsAndDaemons(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Launch Agents and Daemons
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -788,7 +788,7 @@ Name | Type | Description  | Notes
 
 # **localUsers**
 ```swift
-    open class func localUsers(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func localUsers(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismLocalUsers200Response?, _ error: Error?) -> Void)
 ```
 
 Local users
@@ -833,7 +833,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismLocalUsers200Response**](PrismLocalUsers200Response.md)
 
 ### Authorization
 
@@ -848,7 +848,7 @@ Name | Type | Description  | Notes
 
 # **requestCategoryExport**
 ```swift
-    open class func requestCategoryExport(body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func requestCategoryExport(body: String? = nil, completion: @escaping (_ data: PrismRequestCategoryExport200Response?, _ error: Error?) -> Void)
 ```
 
 Request category export
@@ -883,7 +883,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismRequestCategoryExport200Response**](PrismRequestCategoryExport200Response.md)
 
 ### Authorization
 
@@ -898,7 +898,7 @@ Name | Type | Description  | Notes
 
 # **startupSettings**
 ```swift
-    open class func startupSettings(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func startupSettings(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Startup settings
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -958,7 +958,7 @@ Name | Type | Description  | Notes
 
 # **systemExtensions**
 ```swift
-    open class func systemExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func systemExtensions(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 System Extensions
@@ -1003,7 +1003,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -1018,7 +1018,7 @@ Name | Type | Description  | Notes
 
 # **transparencyDatabase**
 ```swift
-    open class func transparencyDatabase(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func transparencyDatabase(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Transparency database
@@ -1063,7 +1063,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 

@@ -30,7 +30,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getThreatDetails(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getThreatDetails(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: ThreatsGetThreatDetails200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getThreatDetailsWithRequestBuilder(classification: classification, dateRange: dateRange, deviceId: deviceId, status: status, sortBy: sortBy, term: term, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -61,9 +61,9 @@ extension kandji_sdkAPI {
      - parameter term: (query) &lt;p&gt;Search term to filter threat results.&lt;/p&gt; &lt;p&gt;The response will include anything matching the following fields: &lt;code&gt;device_name&lt;/code&gt;, &lt;code&gt;file_hash&lt;/code&gt;, and &lt;code&gt;file_path&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;So if you search for &lt;code&gt;bad file&lt;/code&gt;, the results will include anywhere &lt;code&gt;bad file&lt;/code&gt; exists in the three fields above.&lt;/p&gt; (optional)
      - parameter limit: (query) &lt;p&gt;A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 1000 records returned per request. If more records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. &lt;/p&gt; &lt;p&gt;Additionally, parameter queries can be added to a request to limit the results.&lt;/p&gt; (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
-     - returns: RequestBuilder<AnyCodable> 
+     - returns: RequestBuilder<ThreatsGetThreatDetails200Response> 
      */
-    open class func getThreatDetailsWithRequestBuilder(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func getThreatDetailsWithRequestBuilder(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<ThreatsGetThreatDetails200Response> {
         let localVariablePath = "/api/v1/threat-details"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -86,7 +86,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<ThreatsGetThreatDetails200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

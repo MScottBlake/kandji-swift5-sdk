@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 # **createTag**
 ```swift
-    open class func createTag(body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func createTag(body: String? = nil, completion: @escaping (_ data: TagsCreateTag201Response?, _ error: Error?) -> Void)
 ```
 
 Create Tag
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ Void (empty response body)
 
 # **getTags**
 ```swift
-    open class func getTags(search: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func getTags(search: String, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
 ```
 
 Get Tags
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 # **updateTag**
 ```swift
-    open class func updateTag(tagId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func updateTag(tagId: String, body: String? = nil, completion: @escaping (_ data: TagsCreateTag201Response?, _ error: Error?) -> Void)
 ```
 
 Update Tag
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
 
 ### Authorization
 
