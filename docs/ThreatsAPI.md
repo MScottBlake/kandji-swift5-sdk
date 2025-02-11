@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **getThreatDetails**
 ```swift
-    open class func getThreatDetails(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: ThreatsGetThreatDetails200Response?, _ error: Error?) -> Void)
+    open class func getThreatDetails(classification: String? = nil, dateRange: String? = nil, deviceId: String? = nil, status: String? = nil, sortBy: String? = nil, term: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: UsingTermParam200Response?, _ error: Error?) -> Void)
 ```
 
 Get Threat Details
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ThreatsGetThreatDetails200Response**](ThreatsGetThreatDetails200Response.md)
+[**UsingTermParam200Response**](UsingTermParam200Response.md)
 
 ### Authorization
 

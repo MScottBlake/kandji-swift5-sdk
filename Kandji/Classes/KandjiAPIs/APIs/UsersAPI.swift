@@ -78,7 +78,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getUser(userId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: UsersGetUser200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getUser(userId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Success200Response16?, _ error: Error?) -> Void)) -> RequestTask {
         return getUserWithRequestBuilder(userId: userId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -102,9 +102,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#9f2a96e0-25c2-4a99-a2e1-7d7a95e75ae6
 }
      - parameter userId: (path)  
-     - returns: RequestBuilder<UsersGetUser200Response> 
+     - returns: RequestBuilder<Success200Response16> 
      */
-    open class func getUserWithRequestBuilder(userId: String) -> RequestBuilder<UsersGetUser200Response> {
+    open class func getUserWithRequestBuilder(userId: String) -> RequestBuilder<Success200Response16> {
         var localVariablePath = "/api/v1/users/{user_id}"
         let userIdPreEscape = "\(APIHelper.mapValueToPathItem(userId))"
         let userIdPostEscape = userIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -120,7 +120,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<UsersGetUser200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<Success200Response16>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -136,7 +136,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: UsersListUsers200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Success200Response15?, _ error: Error?) -> Void)) -> RequestTask {
         return listUsersWithRequestBuilder(email: email, _id: _id, integrationId: integrationId, archived: archived).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -163,9 +163,9 @@ extension kandji_sdkAPI {
      - parameter _id: (query) Search for a user matching the provided UUID value. (optional)
      - parameter integrationId: (query) Search for a integration matching the provided UUID value. (optional)
      - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
-     - returns: RequestBuilder<UsersListUsers200Response> 
+     - returns: RequestBuilder<Success200Response15> 
      */
-    open class func listUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil) -> RequestBuilder<UsersListUsers200Response> {
+    open class func listUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil) -> RequestBuilder<Success200Response15> {
         let localVariablePath = "/api/v1/users"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -184,7 +184,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<UsersListUsers200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<Success200Response15>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 # **getActivationLockBypassCode**
 ```swift
-    open class func getActivationLockBypassCode(deviceId: String, completion: @escaping (_ data: DeviceSecretsGetActivationLockBypassCode200Response?, _ error: Error?) -> Void)
+    open class func getActivationLockBypassCode(deviceId: String, completion: @escaping (_ data: Success200Response5?, _ error: Error?) -> Void)
 ```
 
 Get Activation Lock Bypass Code
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetActivationLockBypassCode200Response**](DeviceSecretsGetActivationLockBypassCode200Response.md)
+[**Success200Response5**](Success200Response5.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 # **getFilevaultRecoveryKey**
 ```swift
-    open class func getFilevaultRecoveryKey(deviceId: String, completion: @escaping (_ data: DeviceSecretsGetFilevaultRecoveryKey200Response?, _ error: Error?) -> Void)
+    open class func getFilevaultRecoveryKey(deviceId: String, completion: @escaping (_ data: Success200Response6?, _ error: Error?) -> Void)
 ```
 
 Get FileVault Recovery Key
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetFilevaultRecoveryKey200Response**](DeviceSecretsGetFilevaultRecoveryKey200Response.md)
+[**Success200Response6**](Success200Response6.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 # **getRecoveryLockPassword**
 ```swift
-    open class func getRecoveryLockPassword(deviceId: String, completion: @escaping (_ data: DeviceSecretsGetRecoveryLockPassword200Response?, _ error: Error?) -> Void)
+    open class func getRecoveryLockPassword(deviceId: String, completion: @escaping (_ data: Success200Response8?, _ error: Error?) -> Void)
 ```
 
 Get Recovery Lock Password
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetRecoveryLockPassword200Response**](DeviceSecretsGetRecoveryLockPassword200Response.md)
+[**Success200Response8**](Success200Response8.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 # **getUnlockPin**
 ```swift
-    open class func getUnlockPin(deviceId: String, completion: @escaping (_ data: DeviceSecretsGetUnlockPin200Response?, _ error: Error?) -> Void)
+    open class func getUnlockPin(deviceId: String, completion: @escaping (_ data: Success200Response7?, _ error: Error?) -> Void)
 ```
 
 Get Unlock Pin
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetUnlockPin200Response**](DeviceSecretsGetUnlockPin200Response.md)
+[**Success200Response7**](Success200Response7.md)
 
 ### Authorization
 

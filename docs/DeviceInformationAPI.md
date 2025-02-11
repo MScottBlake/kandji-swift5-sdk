@@ -69,7 +69,7 @@ Void (empty response body)
 
 # **getDevice**
 ```swift
-    open class func getDevice(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDevice200Response?, _ error: Error?) -> Void)
+    open class func getDevice(deviceId: String, completion: @escaping (_ data: GetIpad200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDevice200Response**](DeviceInformationGetDevice200Response.md)
+[**GetIpad200Response**](GetIpad200Response.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceActivity**
 ```swift
-    open class func getDeviceActivity(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: DeviceInformationGetDeviceActivity200Response?, _ error: Error?) -> Void)
+    open class func getDeviceActivity(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: GetDeviceActivity200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device Activity
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceActivity200Response**](DeviceInformationGetDeviceActivity200Response.md)
+[**GetDeviceActivity200Response**](GetDeviceActivity200Response.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceApps**
 ```swift
-    open class func getDeviceApps(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceApps200Response?, _ error: Error?) -> Void)
+    open class func getDeviceApps(deviceId: String, completion: @escaping (_ data: IpadApps200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device Apps
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceApps200Response**](DeviceInformationGetDeviceApps200Response.md)
+[**IpadApps200Response**](IpadApps200Response.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceDetails**
 ```swift
-    open class func getDeviceDetails(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceDetails200Response?, _ error: Error?) -> Void)
+    open class func getDeviceDetails(deviceId: String, completion: @escaping (_ data: IphoneOrIpadInLostMode200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device Details
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceDetails200Response**](DeviceInformationGetDeviceDetails200Response.md)
+[**IphoneOrIpadInLostMode200Response**](IphoneOrIpadInLostMode200Response.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceLibraryItems**
 ```swift
-    open class func getDeviceLibraryItems(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceLibraryItems200Response?, _ error: Error?) -> Void)
+    open class func getDeviceLibraryItems(deviceId: String, completion: @escaping (_ data: EdrStatus200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device Library Items
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceLibraryItems200Response**](DeviceInformationGetDeviceLibraryItems200Response.md)
+[**EdrStatus200Response**](EdrStatus200Response.md)
 
 ### Authorization
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceLostModeDetails**
 ```swift
-    open class func getDeviceLostModeDetails(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceLostModeDetails200Response?, _ error: Error?) -> Void)
+    open class func getDeviceLostModeDetails(deviceId: String, completion: @escaping (_ data: GetDeviceLostModeDetails200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device Lost Mode details
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceLostModeDetails200Response**](DeviceInformationGetDeviceLostModeDetails200Response.md)
+[**GetDeviceLostModeDetails200Response**](GetDeviceLostModeDetails200Response.md)
 
 ### Authorization
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceParameters**
 ```swift
-    open class func getDeviceParameters(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceParameters200Response?, _ error: Error?) -> Void)
+    open class func getDeviceParameters(deviceId: String, completion: @escaping (_ data: GetDeviceParameters200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device Parameters
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceParameters200Response**](DeviceInformationGetDeviceParameters200Response.md)
+[**GetDeviceParameters200Response**](GetDeviceParameters200Response.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceStatus**
 ```swift
-    open class func getDeviceStatus(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceStatus200Response?, _ error: Error?) -> Void)
+    open class func getDeviceStatus(deviceId: String, completion: @escaping (_ data: GetDeviceStatus200Response?, _ error: Error?) -> Void)
 ```
 
 Get Device Status
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceStatus200Response**](DeviceInformationGetDeviceStatus200Response.md)
+[**GetDeviceStatus200Response**](GetDeviceStatus200Response.md)
 
 ### Authorization
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 # **updateDevice**
 ```swift
-    open class func updateDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: DeviceInformationUpdateDevice200Response?, _ error: Error?) -> Void)
+    open class func updateDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: ClearAllTags200Response?, _ error: Error?) -> Void)
 ```
 
 Update Device
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationUpdateDevice200Response**](DeviceInformationUpdateDevice200Response.md)
+[**ClearAllTags200Response**](ClearAllTags200Response.md)
 
 ### Authorization
 

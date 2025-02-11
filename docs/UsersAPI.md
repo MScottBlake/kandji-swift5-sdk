@@ -61,7 +61,7 @@ Void (empty response body)
 
 # **getUser**
 ```swift
-    open class func getUser(userId: String, completion: @escaping (_ data: UsersGetUser200Response?, _ error: Error?) -> Void)
+    open class func getUser(userId: String, completion: @escaping (_ data: Success200Response16?, _ error: Error?) -> Void)
 ```
 
 Get User
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsersGetUser200Response**](UsersGetUser200Response.md)
+[**Success200Response16**](Success200Response16.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 # **listUsers**
 ```swift
-    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, completion: @escaping (_ data: UsersListUsers200Response?, _ error: Error?) -> Void)
+    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, completion: @escaping (_ data: Success200Response15?, _ error: Error?) -> Void)
 ```
 
 List Users
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsersListUsers200Response**](UsersListUsers200Response.md)
+[**Success200Response15**](Success200Response15.md)
 
 ### Authorization
 
