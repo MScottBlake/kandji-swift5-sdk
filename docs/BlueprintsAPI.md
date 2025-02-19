@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 # **createBlueprint**
 ```swift
-    open class func createBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, completion: @escaping (_ data: BlueprintsCreateBlueprint201Response?, _ error: Error?) -> Void)
+    open class func createBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, completion: @escaping (_ data: InlineObject5?, _ error: Error?) -> Void)
 ```
 
 Create Blueprint
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlueprintsCreateBlueprint201Response**](BlueprintsCreateBlueprint201Response.md)
+[**InlineObject5**](InlineObject5.md)
 
 ### Authorization
 
@@ -180,7 +180,7 @@ Void (empty response body)
 
 # **getBlueprint**
 ```swift
-    open class func getBlueprint(blueprintId: String, completion: @escaping (_ data: BlueprintsGetBlueprint200Response?, _ error: Error?) -> Void)
+    open class func getBlueprint(blueprintId: String, completion: @escaping (_ data: InlineObject6?, _ error: Error?) -> Void)
 ```
 
 Get Blueprint
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlueprintsGetBlueprint200Response**](BlueprintsGetBlueprint200Response.md)
+[**InlineObject6**](InlineObject6.md)
 
 ### Authorization
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 # **listBlueprints**
 ```swift
-    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
+    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: InlineObject2?, _ error: Error?) -> Void)
 ```
 
 List Blueprints
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 # **listLibraryItems**
 ```swift
-    open class func listLibraryItems(blueprintId: String, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
+    open class func listLibraryItems(blueprintId: String, completion: @escaping (_ data: InlineObject2?, _ error: Error?) -> Void)
 ```
 
 List Library Items
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 # **updateBlueprint**
 ```swift
-    open class func updateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, completion: @escaping (_ data: BlueprintsUpdateBlueprint200Response?, _ error: Error?) -> Void)
+    open class func updateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, completion: @escaping (_ data: InlineObject7?, _ error: Error?) -> Void)
 ```
 
 Update Blueprint
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlueprintsUpdateBlueprint200Response**](BlueprintsUpdateBlueprint200Response.md)
+[**InlineObject7**](InlineObject7.md)
 
 ### Authorization
 

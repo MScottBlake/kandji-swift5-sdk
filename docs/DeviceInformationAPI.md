@@ -69,7 +69,7 @@ Void (empty response body)
 
 # **getDevice**
 ```swift
-    open class func getDevice(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDevice200Response?, _ error: Error?) -> Void)
+    open class func getDevice(deviceId: String, completion: @escaping (_ data: InlineObject8?, _ error: Error?) -> Void)
 ```
 
 Get Device
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDevice200Response**](DeviceInformationGetDevice200Response.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceActivity**
 ```swift
-    open class func getDeviceActivity(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: DeviceInformationGetDeviceActivity200Response?, _ error: Error?) -> Void)
+    open class func getDeviceActivity(deviceId: String, limit: String, offset: String? = nil, completion: @escaping (_ data: InlineObject12?, _ error: Error?) -> Void)
 ```
 
 Get Device Activity
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceActivity200Response**](DeviceInformationGetDeviceActivity200Response.md)
+[**InlineObject12**](InlineObject12.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceApps**
 ```swift
-    open class func getDeviceApps(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceApps200Response?, _ error: Error?) -> Void)
+    open class func getDeviceApps(deviceId: String, completion: @escaping (_ data: InlineObject13?, _ error: Error?) -> Void)
 ```
 
 Get Device Apps
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceApps200Response**](DeviceInformationGetDeviceApps200Response.md)
+[**InlineObject13**](InlineObject13.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceDetails**
 ```swift
-    open class func getDeviceDetails(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceDetails200Response?, _ error: Error?) -> Void)
+    open class func getDeviceDetails(deviceId: String, completion: @escaping (_ data: InlineObject10?, _ error: Error?) -> Void)
 ```
 
 Get Device Details
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceDetails200Response**](DeviceInformationGetDeviceDetails200Response.md)
+[**InlineObject10**](InlineObject10.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceLibraryItems**
 ```swift
-    open class func getDeviceLibraryItems(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceLibraryItems200Response?, _ error: Error?) -> Void)
+    open class func getDeviceLibraryItems(deviceId: String, completion: @escaping (_ data: InlineObject14?, _ error: Error?) -> Void)
 ```
 
 Get Device Library Items
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceLibraryItems200Response**](DeviceInformationGetDeviceLibraryItems200Response.md)
+[**InlineObject14**](InlineObject14.md)
 
 ### Authorization
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceLostModeDetails**
 ```swift
-    open class func getDeviceLostModeDetails(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceLostModeDetails200Response?, _ error: Error?) -> Void)
+    open class func getDeviceLostModeDetails(deviceId: String, completion: @escaping (_ data: InlineObject11?, _ error: Error?) -> Void)
 ```
 
 Get Device Lost Mode details
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceLostModeDetails200Response**](DeviceInformationGetDeviceLostModeDetails200Response.md)
+[**InlineObject11**](InlineObject11.md)
 
 ### Authorization
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceParameters**
 ```swift
-    open class func getDeviceParameters(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceParameters200Response?, _ error: Error?) -> Void)
+    open class func getDeviceParameters(deviceId: String, completion: @escaping (_ data: InlineObject15?, _ error: Error?) -> Void)
 ```
 
 Get Device Parameters
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceParameters200Response**](DeviceInformationGetDeviceParameters200Response.md)
+[**InlineObject15**](InlineObject15.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 # **getDeviceStatus**
 ```swift
-    open class func getDeviceStatus(deviceId: String, completion: @escaping (_ data: DeviceInformationGetDeviceStatus200Response?, _ error: Error?) -> Void)
+    open class func getDeviceStatus(deviceId: String, completion: @escaping (_ data: InlineObject16?, _ error: Error?) -> Void)
 ```
 
 Get Device Status
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationGetDeviceStatus200Response**](DeviceInformationGetDeviceStatus200Response.md)
+[**InlineObject16**](InlineObject16.md)
 
 ### Authorization
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 # **updateDevice**
 ```swift
-    open class func updateDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: DeviceInformationUpdateDevice200Response?, _ error: Error?) -> Void)
+    open class func updateDevice(deviceId: String, body: String? = nil, completion: @escaping (_ data: InlineObject9?, _ error: Error?) -> Void)
 ```
 
 Update Device
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInformationUpdateDevice200Response**](DeviceInformationUpdateDevice200Response.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 
