@@ -22,7 +22,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func licensing(apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject38?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func licensing(apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: SettingsLicensing200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return licensingWithRequestBuilder().execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -45,9 +45,9 @@ extension kandji_sdkAPI {
     description: null
     url: https://api-docs.kandji.io/#34c35449-8d94-4741-8395-8965c0316fec
 }
-     - returns: RequestBuilder<InlineObject38> 
+     - returns: RequestBuilder<SettingsLicensing200Response> 
      */
-    open class func licensingWithRequestBuilder() -> RequestBuilder<InlineObject38> {
+    open class func licensingWithRequestBuilder() -> RequestBuilder<SettingsLicensing200Response> {
         let localVariablePath = "/api/v1/settings/licensing"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -60,7 +60,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject38>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<SettingsLicensing200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

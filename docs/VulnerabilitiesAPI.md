@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **getVulnerabilityDescription**
 ```swift
-    open class func getVulnerabilityDescription(cveId: String, completion: @escaping (_ data: InlineObject35?, _ error: Error?) -> Void)
+    open class func getVulnerabilityDescription(cveId: String, completion: @escaping (_ data: VulnerabilitiesGetVulnerabilityDescription200Response?, _ error: Error?) -> Void)
 ```
 
 Get Vulnerability Description
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject35**](InlineObject35.md)
+[**VulnerabilitiesGetVulnerabilityDescription200Response**](VulnerabilitiesGetVulnerabilityDescription200Response.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 # **listDetections**
 ```swift
-    open class func listDetections(after: String? = nil, limit: String? = nil, filter: String? = nil, completion: @escaping (_ data: InlineObject33?, _ error: Error?) -> Void)
+    open class func listDetections(after: String? = nil, limit: String? = nil, filter: String? = nil, completion: @escaping (_ data: VulnerabilitiesListDetections200Response?, _ error: Error?) -> Void)
 ```
 
 List Detections
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject33**](InlineObject33.md)
+[**VulnerabilitiesListDetections200Response**](VulnerabilitiesListDetections200Response.md)
 
 ### Authorization
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 # **listVulnerabilities**
 ```swift
-    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: InlineObject34?, _ error: Error?) -> Void)
+    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: VulnerabilitiesListVulnerabilities200Response?, _ error: Error?) -> Void)
 ```
 
 List Vulnerabilities
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject34**](InlineObject34.md)
+[**VulnerabilitiesListVulnerabilities200Response**](VulnerabilitiesListVulnerabilities200Response.md)
 
 ### Authorization
 

@@ -23,7 +23,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getVulnerabilityDescription(cveId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject35?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getVulnerabilityDescription(cveId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesGetVulnerabilityDescription200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getVulnerabilityDescriptionWithRequestBuilder(cveId: cveId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -47,9 +47,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#5ed832dc-00f7-4105-ba9d-ad29ff6ead74
 }
      - parameter cveId: (path)  
-     - returns: RequestBuilder<InlineObject35> 
+     - returns: RequestBuilder<VulnerabilitiesGetVulnerabilityDescription200Response> 
      */
-    open class func getVulnerabilityDescriptionWithRequestBuilder(cveId: String) -> RequestBuilder<InlineObject35> {
+    open class func getVulnerabilityDescriptionWithRequestBuilder(cveId: String) -> RequestBuilder<VulnerabilitiesGetVulnerabilityDescription200Response> {
         var localVariablePath = "/api/v1/vulnerability-management/vulnerabilities/{cve_id}"
         let cveIdPreEscape = "\(APIHelper.mapValueToPathItem(cveId))"
         let cveIdPostEscape = cveIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -65,7 +65,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject35>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesGetVulnerabilityDescription200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -218,7 +218,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listDetections(after: String? = nil, limit: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject33?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listDetections(after: String? = nil, limit: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListDetections200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listDetectionsWithRequestBuilder(after: after, limit: limit, filter: filter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -244,9 +244,9 @@ extension kandji_sdkAPI {
      - parameter after: (query) Cursor token. (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter filter: (query) Can filter on any key attribute within the response. (optional)
-     - returns: RequestBuilder<InlineObject33> 
+     - returns: RequestBuilder<VulnerabilitiesListDetections200Response> 
      */
-    open class func listDetectionsWithRequestBuilder(after: String? = nil, limit: String? = nil, filter: String? = nil) -> RequestBuilder<InlineObject33> {
+    open class func listDetectionsWithRequestBuilder(after: String? = nil, limit: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListDetections200Response> {
         let localVariablePath = "/api/v1/vulnerability-management/detections"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -264,7 +264,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject33>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListDetections200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -280,7 +280,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject34?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListVulnerabilities200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listVulnerabilitiesWithRequestBuilder(page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -307,9 +307,9 @@ extension kandji_sdkAPI {
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;cve_id. (optional)
      - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;p&gt;cve_id app_name severity first_detection_date latest_detection_date&lt;/p&gt; (optional)
-     - returns: RequestBuilder<InlineObject34> 
+     - returns: RequestBuilder<VulnerabilitiesListVulnerabilities200Response> 
      */
-    open class func listVulnerabilitiesWithRequestBuilder(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<InlineObject34> {
+    open class func listVulnerabilitiesWithRequestBuilder(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListVulnerabilities200Response> {
         let localVariablePath = "/api/v1/vulnerability-management/vulnerabilities"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -328,7 +328,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject34>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListVulnerabilities200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

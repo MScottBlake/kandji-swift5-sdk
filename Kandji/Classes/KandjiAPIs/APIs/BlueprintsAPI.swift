@@ -85,7 +85,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject5?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func createBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsCreateBlueprint201Response?, _ error: Error?) -> Void)) -> RequestTask {
         return createBlueprintWithRequestBuilder(name: name, enrollmentCodeIsActive: enrollmentCodeIsActive, enrollmentCodeCode: enrollmentCodeCode, sourceType: sourceType, sourceId: sourceId, type: type).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -114,9 +114,9 @@ extension kandji_sdkAPI {
      - parameter sourceType: (form) Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. 
      - parameter sourceId: (form) Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. 
      - parameter type: (form) Choose the type of blueprint to create. Options: &lt;code&gt;classic&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt; 
-     - returns: RequestBuilder<InlineObject5> 
+     - returns: RequestBuilder<BlueprintsCreateBlueprint201Response> 
      */
-    open class func createBlueprintWithRequestBuilder(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String) -> RequestBuilder<InlineObject5> {
+    open class func createBlueprintWithRequestBuilder(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String) -> RequestBuilder<BlueprintsCreateBlueprint201Response> {
         let localVariablePath = "/api/v1/blueprints"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableFormParams: [String: Any?] = [
@@ -139,7 +139,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject5>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BlueprintsCreateBlueprint201Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -206,7 +206,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getBlueprint(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject6?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getBlueprint(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsGetBlueprint200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getBlueprintWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -230,9 +230,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#c0383706-3a41-445c-998f-37a2c1c7ba4a
 }
      - parameter blueprintId: (path)  
-     - returns: RequestBuilder<InlineObject6> 
+     - returns: RequestBuilder<BlueprintsGetBlueprint200Response> 
      */
-    open class func getBlueprintWithRequestBuilder(blueprintId: String) -> RequestBuilder<InlineObject6> {
+    open class func getBlueprintWithRequestBuilder(blueprintId: String) -> RequestBuilder<BlueprintsGetBlueprint200Response> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -248,7 +248,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject6>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BlueprintsGetBlueprint200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -381,7 +381,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject2?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listBlueprintsWithRequestBuilder(_id: _id, idIn: idIn, name: name, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -409,9 +409,9 @@ extension kandji_sdkAPI {
      - parameter name: (query) Return Blueprint names &amp;quot;containing&amp;quot; the specified search string. (optional)
      - parameter limit: (query) Number of results to return per page. (optional)
      - parameter offset: (query) The initial index from which to return the results. (optional)
-     - returns: RequestBuilder<InlineObject2> 
+     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
      */
-    open class func listBlueprintsWithRequestBuilder(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<InlineObject2> {
+    open class func listBlueprintsWithRequestBuilder(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
         let localVariablePath = "/api/v1/blueprints"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -431,7 +431,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject2>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -444,7 +444,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listLibraryItems(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject2?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listLibraryItems(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listLibraryItemsWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -468,9 +468,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#34af40a5-7273-425c-9ea5-2c8a5dbbe29f
 }
      - parameter blueprintId: (path)  
-     - returns: RequestBuilder<InlineObject2> 
+     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
      */
-    open class func listLibraryItemsWithRequestBuilder(blueprintId: String) -> RequestBuilder<InlineObject2> {
+    open class func listLibraryItemsWithRequestBuilder(blueprintId: String) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}/list-library-items"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -486,7 +486,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject2>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -560,7 +560,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: InlineObject7?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func updateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsUpdateBlueprint200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return updateBlueprintWithRequestBuilder(blueprintId: blueprintId, name: name, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -588,9 +588,9 @@ extension kandji_sdkAPI {
      - parameter _description: (form) Update the description of the Blueprint  
      - parameter enrollmentCodeCode: (form) Update the enrollment code of the Blueprint  
      - parameter enrollmentCodeIsActive: (form) Disable the Blueprint for manual device enrollment from the enrollment portal. 
-     - returns: RequestBuilder<InlineObject7> 
+     - returns: RequestBuilder<BlueprintsUpdateBlueprint200Response> 
      */
-    open class func updateBlueprintWithRequestBuilder(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String) -> RequestBuilder<InlineObject7> {
+    open class func updateBlueprintWithRequestBuilder(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String) -> RequestBuilder<BlueprintsUpdateBlueprint200Response> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -614,7 +614,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<InlineObject7>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BlueprintsUpdateBlueprint200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PATCH", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
