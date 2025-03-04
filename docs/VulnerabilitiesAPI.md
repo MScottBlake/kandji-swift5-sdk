@@ -5,7 +5,7 @@ All URIs are relative to *https://<sub_domain>.api.kandji.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getVulnerabilityDescription**](VulnerabilitiesAPI.md#getvulnerabilitydescription) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id} | Get Vulnerability Description
-[**listAffectedApplications**](VulnerabilitiesAPI.md#listaffectedapplications) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Applications
+[**listAffectedApps**](VulnerabilitiesAPI.md#listaffectedapps) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Apps
 [**listAffectedDevices**](VulnerabilitiesAPI.md#listaffecteddevices) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices | List Affected Devices
 [**listDetections**](VulnerabilitiesAPI.md#listdetections) | **GET** /api/v1/vulnerability-management/detections | List Detections
 [**listVulnerabilities**](VulnerabilitiesAPI.md#listvulnerabilities) | **GET** /api/v1/vulnerability-management/vulnerabilities | List Vulnerabilities
@@ -61,12 +61,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **listAffectedApplications**
+# **listAffectedApps**
 ```swift
-    open class func listAffectedApplications(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listAffectedApps(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
-List Affected Applications
+List Affected Apps
 
 This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
@@ -81,8 +81,8 @@ let size = "size_example" // String | A hard upper limit is set at 50  records r
 let sortBy = "sortBy_example" // String | Field to sort by. Example: sort_by=app_name. (optional)
 let filter = "filter_example" // String | Filterable columns: blueprint_id updated_at (optional)
 
-// List Affected Applications
-VulnerabilitiesAPI.listAffectedApplications(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
+// List Affected Apps
+VulnerabilitiesAPI.listAffectedApps(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
     guard error == nil else {
         print(error)
         return

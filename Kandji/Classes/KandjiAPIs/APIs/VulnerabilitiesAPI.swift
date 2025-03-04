@@ -71,7 +71,7 @@ extension kandji_sdkAPI {
     }
 
     /**
-     List Affected Applications
+     List Affected Apps
      
      - parameter cveId: (path)  
      - parameter page: (query) The page number of the response. (optional)
@@ -82,8 +82,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listAffectedApplications(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listAffectedApplicationsWithRequestBuilder(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
+    open class func listAffectedApps(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return listAffectedAppsWithRequestBuilder(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -94,7 +94,7 @@ extension kandji_sdkAPI {
     }
 
     /**
-     List Affected Applications
+     List Affected Apps
      - GET /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications
      - This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
      - Bearer Token:
@@ -112,7 +112,7 @@ extension kandji_sdkAPI {
      - parameter filter: (query) Filterable columns: blueprint_id updated_at (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listAffectedApplicationsWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func listAffectedAppsWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications"
         let cveIdPreEscape = "\(APIHelper.mapValueToPathItem(cveId))"
         let cveIdPostEscape = cveIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
