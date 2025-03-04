@@ -17,54 +17,54 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseLostMode: NSObject, Codable, JSONEncodable {
 
-    public var lostModeStatus: String?
-    public var enabledBy: String?
-    public var enableStatusAt: String?
-    public var lockScreenMessage: String?
-    public var lockScreenPhoneNumber: String?
-    public var lockScreenFootnote: String?
     public var disableStatus: String?
-    public var disabledBy: String?
     public var disableStatusAt: String?
-    public var lastLocationStatus: String?
-    public var lastLocationStatusAt: String?
+    public var disabledBy: String?
+    public var enableStatusAt: String?
+    public var enabledBy: String?
     public var lastLocation: DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation?
     public var lastLocationAt: String?
+    public var lastLocationStatus: String?
+    public var lastLocationStatusAt: String?
+    public var lockScreenFootnote: String?
+    public var lockScreenMessage: String?
+    public var lockScreenPhoneNumber: String?
+    public var lostModeStatus: String?
     public var soundStatus: String?
     public var soundStatusAt: String?
 
-    public init(lostModeStatus: String? = nil, enabledBy: String? = nil, enableStatusAt: String? = nil, lockScreenMessage: String? = nil, lockScreenPhoneNumber: String? = nil, lockScreenFootnote: String? = nil, disableStatus: String? = nil, disabledBy: String? = nil, disableStatusAt: String? = nil, lastLocationStatus: String? = nil, lastLocationStatusAt: String? = nil, lastLocation: DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation? = nil, lastLocationAt: String? = nil, soundStatus: String? = nil, soundStatusAt: String? = nil) {
-        self.lostModeStatus = lostModeStatus
-        self.enabledBy = enabledBy
-        self.enableStatusAt = enableStatusAt
-        self.lockScreenMessage = lockScreenMessage
-        self.lockScreenPhoneNumber = lockScreenPhoneNumber
-        self.lockScreenFootnote = lockScreenFootnote
+    public init(disableStatus: String? = nil, disableStatusAt: String? = nil, disabledBy: String? = nil, enableStatusAt: String? = nil, enabledBy: String? = nil, lastLocation: DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation? = nil, lastLocationAt: String? = nil, lastLocationStatus: String? = nil, lastLocationStatusAt: String? = nil, lockScreenFootnote: String? = nil, lockScreenMessage: String? = nil, lockScreenPhoneNumber: String? = nil, lostModeStatus: String? = nil, soundStatus: String? = nil, soundStatusAt: String? = nil) {
         self.disableStatus = disableStatus
-        self.disabledBy = disabledBy
         self.disableStatusAt = disableStatusAt
-        self.lastLocationStatus = lastLocationStatus
-        self.lastLocationStatusAt = lastLocationStatusAt
+        self.disabledBy = disabledBy
+        self.enableStatusAt = enableStatusAt
+        self.enabledBy = enabledBy
         self.lastLocation = lastLocation
         self.lastLocationAt = lastLocationAt
+        self.lastLocationStatus = lastLocationStatus
+        self.lastLocationStatusAt = lastLocationStatusAt
+        self.lockScreenFootnote = lockScreenFootnote
+        self.lockScreenMessage = lockScreenMessage
+        self.lockScreenPhoneNumber = lockScreenPhoneNumber
+        self.lostModeStatus = lostModeStatus
         self.soundStatus = soundStatus
         self.soundStatusAt = soundStatusAt
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case lostModeStatus = "lost_mode_status"
-        case enabledBy = "enabled_by"
-        case enableStatusAt = "enable_status_at"
-        case lockScreenMessage = "lock_screen_message"
-        case lockScreenPhoneNumber = "lock_screen_phone_number"
-        case lockScreenFootnote = "lock_screen_footnote"
         case disableStatus = "disable_status"
-        case disabledBy = "disabled_by"
         case disableStatusAt = "disable_status_at"
-        case lastLocationStatus = "last_location_status"
-        case lastLocationStatusAt = "last_location_status_at"
+        case disabledBy = "disabled_by"
+        case enableStatusAt = "enable_status_at"
+        case enabledBy = "enabled_by"
         case lastLocation = "last_location"
         case lastLocationAt = "last_location_at"
+        case lastLocationStatus = "last_location_status"
+        case lastLocationStatusAt = "last_location_status_at"
+        case lockScreenFootnote = "lock_screen_footnote"
+        case lockScreenMessage = "lock_screen_message"
+        case lockScreenPhoneNumber = "lock_screen_phone_number"
+        case lostModeStatus = "lost_mode_status"
         case soundStatus = "sound_status"
         case soundStatusAt = "sound_status_at"
     }
@@ -73,19 +73,19 @@ extension kandji_sdkAPI {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(lostModeStatus, forKey: .lostModeStatus)
-        try container.encodeIfPresent(enabledBy, forKey: .enabledBy)
-        try container.encodeIfPresent(enableStatusAt, forKey: .enableStatusAt)
-        try container.encodeIfPresent(lockScreenMessage, forKey: .lockScreenMessage)
-        try container.encodeIfPresent(lockScreenPhoneNumber, forKey: .lockScreenPhoneNumber)
-        try container.encodeIfPresent(lockScreenFootnote, forKey: .lockScreenFootnote)
         try container.encodeIfPresent(disableStatus, forKey: .disableStatus)
-        try container.encodeIfPresent(disabledBy, forKey: .disabledBy)
         try container.encodeIfPresent(disableStatusAt, forKey: .disableStatusAt)
-        try container.encodeIfPresent(lastLocationStatus, forKey: .lastLocationStatus)
-        try container.encodeIfPresent(lastLocationStatusAt, forKey: .lastLocationStatusAt)
+        try container.encodeIfPresent(disabledBy, forKey: .disabledBy)
+        try container.encodeIfPresent(enableStatusAt, forKey: .enableStatusAt)
+        try container.encodeIfPresent(enabledBy, forKey: .enabledBy)
         try container.encodeIfPresent(lastLocation, forKey: .lastLocation)
         try container.encodeIfPresent(lastLocationAt, forKey: .lastLocationAt)
+        try container.encodeIfPresent(lastLocationStatus, forKey: .lastLocationStatus)
+        try container.encodeIfPresent(lastLocationStatusAt, forKey: .lastLocationStatusAt)
+        try container.encodeIfPresent(lockScreenFootnote, forKey: .lockScreenFootnote)
+        try container.encodeIfPresent(lockScreenMessage, forKey: .lockScreenMessage)
+        try container.encodeIfPresent(lockScreenPhoneNumber, forKey: .lockScreenPhoneNumber)
+        try container.encodeIfPresent(lostModeStatus, forKey: .lostModeStatus)
         try container.encodeIfPresent(soundStatus, forKey: .soundStatus)
         try container.encodeIfPresent(soundStatusAt, forKey: .soundStatusAt)
     }

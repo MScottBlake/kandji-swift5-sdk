@@ -17,10 +17,10 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseCellular: NSObject, Codable, JSONEncodable {
 
-    public var voiceRoaming: Int?
-    public var voiceRoamingNum: NSNumber? {
+    public var cellularTechnology: Int?
+    public var cellularTechnologyNum: NSNumber? {
         get {
-            return voiceRoaming as NSNumber?
+            return cellularTechnology as NSNumber?
         }
     }
     public var dataRoaming: Int?
@@ -29,36 +29,36 @@ extension kandji_sdkAPI {
             return dataRoaming as NSNumber?
         }
     }
-    public var cellularTechnology: Int?
-    public var cellularTechnologyNum: NSNumber? {
+    public var subscriptions: AnyCodable?
+    public var voiceRoaming: Int?
+    public var voiceRoamingNum: NSNumber? {
         get {
-            return cellularTechnology as NSNumber?
+            return voiceRoaming as NSNumber?
         }
     }
-    public var subscriptions: AnyCodable?
 
-    public init(voiceRoaming: Int? = nil, dataRoaming: Int? = nil, cellularTechnology: Int? = nil, subscriptions: AnyCodable? = nil) {
-        self.voiceRoaming = voiceRoaming
-        self.dataRoaming = dataRoaming
+    public init(cellularTechnology: Int? = nil, dataRoaming: Int? = nil, subscriptions: AnyCodable? = nil, voiceRoaming: Int? = nil) {
         self.cellularTechnology = cellularTechnology
+        self.dataRoaming = dataRoaming
         self.subscriptions = subscriptions
+        self.voiceRoaming = voiceRoaming
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case voiceRoaming = "voice_roaming"
-        case dataRoaming = "data_roaming"
         case cellularTechnology = "cellular_technology"
+        case dataRoaming = "data_roaming"
         case subscriptions
+        case voiceRoaming = "voice_roaming"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(voiceRoaming, forKey: .voiceRoaming)
-        try container.encodeIfPresent(dataRoaming, forKey: .dataRoaming)
         try container.encodeIfPresent(cellularTechnology, forKey: .cellularTechnology)
+        try container.encodeIfPresent(dataRoaming, forKey: .dataRoaming)
         try container.encodeIfPresent(subscriptions, forKey: .subscriptions)
+        try container.encodeIfPresent(voiceRoaming, forKey: .voiceRoaming)
     }
 }
 

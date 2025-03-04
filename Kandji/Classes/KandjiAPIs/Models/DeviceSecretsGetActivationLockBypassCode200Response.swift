@@ -17,25 +17,25 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceSecretsGetActivationLockBypassCode200Response: NSObject, Codable, JSONEncodable {
 
-    public var userBasedAlbc: String?
     public var deviceBasedAlbc: String?
+    public var userBasedAlbc: String?
 
-    public init(userBasedAlbc: String? = nil, deviceBasedAlbc: String? = nil) {
-        self.userBasedAlbc = userBasedAlbc
+    public init(deviceBasedAlbc: String? = nil, userBasedAlbc: String? = nil) {
         self.deviceBasedAlbc = deviceBasedAlbc
+        self.userBasedAlbc = userBasedAlbc
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case userBasedAlbc = "user_based_albc"
         case deviceBasedAlbc = "device_based_albc"
+        case userBasedAlbc = "user_based_albc"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(userBasedAlbc, forKey: .userBasedAlbc)
         try container.encodeIfPresent(deviceBasedAlbc, forKey: .deviceBasedAlbc)
+        try container.encodeIfPresent(userBasedAlbc, forKey: .userBasedAlbc)
     }
 }
 

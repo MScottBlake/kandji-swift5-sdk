@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 # **createBlueprint**
 ```swift
-    open class func createBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, completion: @escaping (_ data: BlueprintsCreateBlueprint201Response?, _ error: Error?) -> Void)
+    open class func createBlueprint(enrollmentCodeCode: String, enrollmentCodeIsActive: String, name: String, sourceId: String, sourceType: String, type: String, completion: @escaping (_ data: BlueprintsCreateBlueprint201Response?, _ error: Error?) -> Void)
 ```
 
 Create Blueprint
@@ -82,15 +82,15 @@ Create Blueprint
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import kandji_sdk
 
-let name = "name_example" // String | (required) Set the name of the Blueprint. The name provided must be unique.
-let enrollmentCodeIsActive = "enrollmentCodeIsActive_example" // String | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal
 let enrollmentCodeCode = "enrollmentCodeCode_example" // String | Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.
-let sourceType = "sourceType_example" // String | Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.
+let enrollmentCodeIsActive = "enrollmentCodeIsActive_example" // String | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal
+let name = "name_example" // String | (required) Set the name of the Blueprint. The name provided must be unique.
 let sourceId = "sourceId_example" // String | Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.
+let sourceType = "sourceType_example" // String | Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.
 let type = "type_example" // String | Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>
 
 // Create Blueprint
-BlueprintsAPI.createBlueprint(name: name, enrollmentCodeIsActive: enrollmentCodeIsActive, enrollmentCodeCode: enrollmentCodeCode, sourceType: sourceType, sourceId: sourceId, type: type) { (response, error) in
+BlueprintsAPI.createBlueprint(enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive, name: name, sourceId: sourceId, sourceType: sourceType, type: type) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -106,11 +106,11 @@ BlueprintsAPI.createBlueprint(name: name, enrollmentCodeIsActive: enrollmentCode
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **String** | (required) Set the name of the Blueprint. The name provided must be unique. | 
- **enrollmentCodeIsActive** | **String** | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal | 
  **enrollmentCodeCode** | **String** | Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. | 
- **sourceType** | **String** | Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. | 
+ **enrollmentCodeIsActive** | **String** | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal | 
+ **name** | **String** | (required) Set the name of the Blueprint. The name provided must be unique. | 
  **sourceId** | **String** | Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. | 
+ **sourceType** | **String** | Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. | 
  **type** | **String** | Choose the type of blueprint to create. Options: &lt;code&gt;classic&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt; | 
 
 ### Return type
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 # **listBlueprints**
 ```swift
-    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
+    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)
 ```
 
 List Blueprints
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 # **listLibraryItems**
 ```swift
-    open class func listLibraryItems(blueprintId: String, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
+    open class func listLibraryItems(blueprintId: String, completion: @escaping (_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)
 ```
 
 List Library Items
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 # **updateBlueprint**
 ```swift
-    open class func updateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, completion: @escaping (_ data: BlueprintsUpdateBlueprint200Response?, _ error: Error?) -> Void)
+    open class func updateBlueprint(blueprintId: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, name: String, completion: @escaping (_ data: BlueprintsUpdateBlueprint200Response?, _ error: Error?) -> Void)
 ```
 
 Update Blueprint
@@ -505,13 +505,13 @@ Update Blueprint
 import kandji_sdk
 
 let blueprintId = "blueprintId_example" // String | 
-let name = "name_example" // String | Update the name of the Blueprint
 let _description = "_description_example" // String | Update the description of the Blueprint 
 let enrollmentCodeCode = "enrollmentCodeCode_example" // String | Update the enrollment code of the Blueprint 
 let enrollmentCodeIsActive = "enrollmentCodeIsActive_example" // String | Disable the Blueprint for manual device enrollment from the enrollment portal.
+let name = "name_example" // String | Update the name of the Blueprint
 
 // Update Blueprint
-BlueprintsAPI.updateBlueprint(blueprintId: blueprintId, name: name, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive) { (response, error) in
+BlueprintsAPI.updateBlueprint(blueprintId: blueprintId, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive, name: name) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -528,10 +528,10 @@ BlueprintsAPI.updateBlueprint(blueprintId: blueprintId, name: name, _description
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprintId** | **String** |  | 
- **name** | **String** | Update the name of the Blueprint | 
  **_description** | **String** | Update the description of the Blueprint  | 
  **enrollmentCodeCode** | **String** | Update the enrollment code of the Blueprint  | 
  **enrollmentCodeIsActive** | **String** | Disable the Blueprint for manual device enrollment from the enrollment portal. | 
+ **name** | **String** | Update the name of the Blueprint | 
 
 ### Return type
 

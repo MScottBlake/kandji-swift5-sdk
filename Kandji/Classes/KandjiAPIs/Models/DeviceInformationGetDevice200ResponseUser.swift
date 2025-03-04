@@ -18,7 +18,6 @@ extension kandji_sdkAPI {
 @objcMembers public class DeviceInformationGetDevice200ResponseUser: NSObject, Codable, JSONEncodable {
 
     public var email: String?
-    public var name: String?
     public var _id: String?
     public var isArchived: Int?
     public var isArchivedNum: NSNumber? {
@@ -26,19 +25,20 @@ extension kandji_sdkAPI {
             return isArchived as NSNumber?
         }
     }
+    public var name: String?
 
-    public init(email: String? = nil, name: String? = nil, _id: String? = nil, isArchived: Int? = nil) {
+    public init(email: String? = nil, _id: String? = nil, isArchived: Int? = nil, name: String? = nil) {
         self.email = email
-        self.name = name
         self._id = _id
         self.isArchived = isArchived
+        self.name = name
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case email
-        case name
         case _id = "id"
         case isArchived = "is_archived"
+        case name
     }
 
     // Encodable protocol methods
@@ -46,9 +46,9 @@ extension kandji_sdkAPI {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(email, forKey: .email)
-        try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(_id, forKey: ._id)
         try container.encodeIfPresent(isArchived, forKey: .isArchived)
+        try container.encodeIfPresent(name, forKey: .name)
     }
 }
 

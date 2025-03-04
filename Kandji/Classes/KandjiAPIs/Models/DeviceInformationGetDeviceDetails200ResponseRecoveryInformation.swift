@@ -17,12 +17,6 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseRecoveryInformation: NSObject, Codable, JSONEncodable {
 
-    public var recoveryLockEnabled: Int?
-    public var recoveryLockEnabledNum: NSNumber? {
-        get {
-            return recoveryLockEnabled as NSNumber?
-        }
-    }
     public var firmwarePasswordExist: Int?
     public var firmwarePasswordExistNum: NSNumber? {
         get {
@@ -36,29 +30,35 @@ extension kandji_sdkAPI {
         }
     }
     public var passwordRotationScheduled: AnyCodable?
+    public var recoveryLockEnabled: Int?
+    public var recoveryLockEnabledNum: NSNumber? {
+        get {
+            return recoveryLockEnabled as NSNumber?
+        }
+    }
 
-    public init(recoveryLockEnabled: Int? = nil, firmwarePasswordExist: Int? = nil, firmwarePasswordPending: Int? = nil, passwordRotationScheduled: AnyCodable? = nil) {
-        self.recoveryLockEnabled = recoveryLockEnabled
+    public init(firmwarePasswordExist: Int? = nil, firmwarePasswordPending: Int? = nil, passwordRotationScheduled: AnyCodable? = nil, recoveryLockEnabled: Int? = nil) {
         self.firmwarePasswordExist = firmwarePasswordExist
         self.firmwarePasswordPending = firmwarePasswordPending
         self.passwordRotationScheduled = passwordRotationScheduled
+        self.recoveryLockEnabled = recoveryLockEnabled
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case recoveryLockEnabled = "recovery_lock_enabled"
         case firmwarePasswordExist = "firmware_password_exist"
         case firmwarePasswordPending = "firmware_password_pending"
         case passwordRotationScheduled = "password_rotation_scheduled"
+        case recoveryLockEnabled = "recovery_lock_enabled"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(recoveryLockEnabled, forKey: .recoveryLockEnabled)
         try container.encodeIfPresent(firmwarePasswordExist, forKey: .firmwarePasswordExist)
         try container.encodeIfPresent(firmwarePasswordPending, forKey: .firmwarePasswordPending)
         try container.encodeIfPresent(passwordRotationScheduled, forKey: .passwordRotationScheduled)
+        try container.encodeIfPresent(recoveryLockEnabled, forKey: .recoveryLockEnabled)
     }
 }
 

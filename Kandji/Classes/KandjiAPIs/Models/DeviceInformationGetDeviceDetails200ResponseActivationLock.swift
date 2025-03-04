@@ -17,24 +17,6 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseActivationLock: NSObject, Codable, JSONEncodable {
 
-    public var bypassCodeFailed: Int?
-    public var bypassCodeFailedNum: NSNumber? {
-        get {
-            return bypassCodeFailed as NSNumber?
-        }
-    }
-    public var userActivationLockEnabled: Int?
-    public var userActivationLockEnabledNum: NSNumber? {
-        get {
-            return userActivationLockEnabled as NSNumber?
-        }
-    }
-    public var deviceActivationLockEnabled: Int?
-    public var deviceActivationLockEnabledNum: NSNumber? {
-        get {
-            return deviceActivationLockEnabled as NSNumber?
-        }
-    }
     public var activationLockAllowedWhileSupervised: Int?
     public var activationLockAllowedWhileSupervisedNum: NSNumber? {
         get {
@@ -47,32 +29,50 @@ extension kandji_sdkAPI {
             return activationLockSupported as NSNumber?
         }
     }
+    public var bypassCodeFailed: Int?
+    public var bypassCodeFailedNum: NSNumber? {
+        get {
+            return bypassCodeFailed as NSNumber?
+        }
+    }
+    public var deviceActivationLockEnabled: Int?
+    public var deviceActivationLockEnabledNum: NSNumber? {
+        get {
+            return deviceActivationLockEnabled as NSNumber?
+        }
+    }
+    public var userActivationLockEnabled: Int?
+    public var userActivationLockEnabledNum: NSNumber? {
+        get {
+            return userActivationLockEnabled as NSNumber?
+        }
+    }
 
-    public init(bypassCodeFailed: Int? = nil, userActivationLockEnabled: Int? = nil, deviceActivationLockEnabled: Int? = nil, activationLockAllowedWhileSupervised: Int? = nil, activationLockSupported: Int? = nil) {
-        self.bypassCodeFailed = bypassCodeFailed
-        self.userActivationLockEnabled = userActivationLockEnabled
-        self.deviceActivationLockEnabled = deviceActivationLockEnabled
+    public init(activationLockAllowedWhileSupervised: Int? = nil, activationLockSupported: Int? = nil, bypassCodeFailed: Int? = nil, deviceActivationLockEnabled: Int? = nil, userActivationLockEnabled: Int? = nil) {
         self.activationLockAllowedWhileSupervised = activationLockAllowedWhileSupervised
         self.activationLockSupported = activationLockSupported
+        self.bypassCodeFailed = bypassCodeFailed
+        self.deviceActivationLockEnabled = deviceActivationLockEnabled
+        self.userActivationLockEnabled = userActivationLockEnabled
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case bypassCodeFailed = "bypass_code_failed"
-        case userActivationLockEnabled = "user_activation_lock_enabled"
-        case deviceActivationLockEnabled = "device_activation_lock_enabled"
         case activationLockAllowedWhileSupervised = "activation_lock_allowed_while_supervised"
         case activationLockSupported = "activation_lock_supported"
+        case bypassCodeFailed = "bypass_code_failed"
+        case deviceActivationLockEnabled = "device_activation_lock_enabled"
+        case userActivationLockEnabled = "user_activation_lock_enabled"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(bypassCodeFailed, forKey: .bypassCodeFailed)
-        try container.encodeIfPresent(userActivationLockEnabled, forKey: .userActivationLockEnabled)
-        try container.encodeIfPresent(deviceActivationLockEnabled, forKey: .deviceActivationLockEnabled)
         try container.encodeIfPresent(activationLockAllowedWhileSupervised, forKey: .activationLockAllowedWhileSupervised)
         try container.encodeIfPresent(activationLockSupported, forKey: .activationLockSupported)
+        try container.encodeIfPresent(bypassCodeFailed, forKey: .bypassCodeFailed)
+        try container.encodeIfPresent(deviceActivationLockEnabled, forKey: .deviceActivationLockEnabled)
+        try container.encodeIfPresent(userActivationLockEnabled, forKey: .userActivationLockEnabled)
     }
 }
 

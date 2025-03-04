@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **Int** |  | [optional] 
+**malwareCount** | **Int** |  | [optional] 
 **next** | **AnyCodable** |  | [optional] 
 **previous** | **AnyCodable** |  | [optional] 
-**malwareCount** | **Int** |  | [optional] 
 **pupCount** | **Int** |  | [optional] 
 **results** | **AnyCodable** |  | [optional] 
 

@@ -17,35 +17,35 @@ extension kandji_sdkAPI {
 
 @objcMembers public class SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform: NSObject, Codable, JSONEncodable {
 
-    public var macos: Int?
-    public var macosNum: NSNumber? {
-        get {
-            return macos as NSNumber?
-        }
-    }
     public var iosIpados: Int?
     public var iosIpadosNum: NSNumber? {
         get {
             return iosIpados as NSNumber?
         }
     }
+    public var macos: Int?
+    public var macosNum: NSNumber? {
+        get {
+            return macos as NSNumber?
+        }
+    }
 
-    public init(macos: Int? = nil, iosIpados: Int? = nil) {
-        self.macos = macos
+    public init(iosIpados: Int? = nil, macos: Int? = nil) {
         self.iosIpados = iosIpados
+        self.macos = macos
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case macos
         case iosIpados = "ios_ipados"
+        case macos
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(macos, forKey: .macos)
         try container.encodeIfPresent(iosIpados, forKey: .iosIpados)
+        try container.encodeIfPresent(macos, forKey: .macos)
     }
 }
 

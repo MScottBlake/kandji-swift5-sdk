@@ -17,30 +17,19 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDevice200Response: NSObject, Codable, JSONEncodable {
 
-    public var deviceId: String?
-    public var deviceName: String?
-    public var model: String?
-    public var serialNumber: String?
-    public var platform: String?
-    public var osVersion: String?
-    public var supplementalBuildVersion: String?
-    public var supplementalOsVersionExtra: String?
-    public var lastCheckIn: String?
-    public var user: DeviceInformationGetDevice200ResponseUser?
-    public var assetTag: String?
-    public var blueprintId: String?
-    public var mdmEnabled: Int?
-    public var mdmEnabledNum: NSNumber? {
-        get {
-            return mdmEnabled as NSNumber?
-        }
-    }
     public var agentInstalled: Int?
     public var agentInstalledNum: NSNumber? {
         get {
             return agentInstalled as NSNumber?
         }
     }
+    public var agentVersion: String?
+    public var assetTag: String?
+    public var blueprintId: String?
+    public var blueprintName: String?
+    public var deviceId: String?
+    public var deviceName: String?
+    public var firstEnrollment: String?
     public var isMissing: Int?
     public var isMissingNum: NSNumber? {
         get {
@@ -53,85 +42,96 @@ extension kandji_sdkAPI {
             return isRemoved as NSNumber?
         }
     }
-    public var agentVersion: String?
-    public var firstEnrollment: String?
+    public var lastCheckIn: String?
     public var lastEnrollment: String?
-    public var blueprintName: String?
+    public var mdmEnabled: Int?
+    public var mdmEnabledNum: NSNumber? {
+        get {
+            return mdmEnabled as NSNumber?
+        }
+    }
+    public var model: String?
+    public var osVersion: String?
+    public var platform: String?
+    public var serialNumber: String?
+    public var supplementalBuildVersion: String?
+    public var supplementalOsVersionExtra: String?
     public var tags: AnyCodable?
+    public var user: DeviceInformationGetDevice200ResponseUser?
 
-    public init(deviceId: String? = nil, deviceName: String? = nil, model: String? = nil, serialNumber: String? = nil, platform: String? = nil, osVersion: String? = nil, supplementalBuildVersion: String? = nil, supplementalOsVersionExtra: String? = nil, lastCheckIn: String? = nil, user: DeviceInformationGetDevice200ResponseUser? = nil, assetTag: String? = nil, blueprintId: String? = nil, mdmEnabled: Int? = nil, agentInstalled: Int? = nil, isMissing: Int? = nil, isRemoved: Int? = nil, agentVersion: String? = nil, firstEnrollment: String? = nil, lastEnrollment: String? = nil, blueprintName: String? = nil, tags: AnyCodable? = nil) {
-        self.deviceId = deviceId
-        self.deviceName = deviceName
-        self.model = model
-        self.serialNumber = serialNumber
-        self.platform = platform
-        self.osVersion = osVersion
-        self.supplementalBuildVersion = supplementalBuildVersion
-        self.supplementalOsVersionExtra = supplementalOsVersionExtra
-        self.lastCheckIn = lastCheckIn
-        self.user = user
+    public init(agentInstalled: Int? = nil, agentVersion: String? = nil, assetTag: String? = nil, blueprintId: String? = nil, blueprintName: String? = nil, deviceId: String? = nil, deviceName: String? = nil, firstEnrollment: String? = nil, isMissing: Int? = nil, isRemoved: Int? = nil, lastCheckIn: String? = nil, lastEnrollment: String? = nil, mdmEnabled: Int? = nil, model: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, supplementalBuildVersion: String? = nil, supplementalOsVersionExtra: String? = nil, tags: AnyCodable? = nil, user: DeviceInformationGetDevice200ResponseUser? = nil) {
+        self.agentInstalled = agentInstalled
+        self.agentVersion = agentVersion
         self.assetTag = assetTag
         self.blueprintId = blueprintId
-        self.mdmEnabled = mdmEnabled
-        self.agentInstalled = agentInstalled
+        self.blueprintName = blueprintName
+        self.deviceId = deviceId
+        self.deviceName = deviceName
+        self.firstEnrollment = firstEnrollment
         self.isMissing = isMissing
         self.isRemoved = isRemoved
-        self.agentVersion = agentVersion
-        self.firstEnrollment = firstEnrollment
+        self.lastCheckIn = lastCheckIn
         self.lastEnrollment = lastEnrollment
-        self.blueprintName = blueprintName
+        self.mdmEnabled = mdmEnabled
+        self.model = model
+        self.osVersion = osVersion
+        self.platform = platform
+        self.serialNumber = serialNumber
+        self.supplementalBuildVersion = supplementalBuildVersion
+        self.supplementalOsVersionExtra = supplementalOsVersionExtra
         self.tags = tags
+        self.user = user
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case deviceId = "device_id"
-        case deviceName = "device_name"
-        case model
-        case serialNumber = "serial_number"
-        case platform
-        case osVersion = "os_version"
-        case supplementalBuildVersion = "supplemental_build_version"
-        case supplementalOsVersionExtra = "supplemental_os_version_extra"
-        case lastCheckIn = "last_check_in"
-        case user
+        case agentInstalled = "agent_installed"
+        case agentVersion = "agent_version"
         case assetTag = "asset_tag"
         case blueprintId = "blueprint_id"
-        case mdmEnabled = "mdm_enabled"
-        case agentInstalled = "agent_installed"
+        case blueprintName = "blueprint_name"
+        case deviceId = "device_id"
+        case deviceName = "device_name"
+        case firstEnrollment = "first_enrollment"
         case isMissing = "is_missing"
         case isRemoved = "is_removed"
-        case agentVersion = "agent_version"
-        case firstEnrollment = "first_enrollment"
+        case lastCheckIn = "last_check_in"
         case lastEnrollment = "last_enrollment"
-        case blueprintName = "blueprint_name"
+        case mdmEnabled = "mdm_enabled"
+        case model
+        case osVersion = "os_version"
+        case platform
+        case serialNumber = "serial_number"
+        case supplementalBuildVersion = "supplemental_build_version"
+        case supplementalOsVersionExtra = "supplemental_os_version_extra"
         case tags
+        case user
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(deviceId, forKey: .deviceId)
-        try container.encodeIfPresent(deviceName, forKey: .deviceName)
-        try container.encodeIfPresent(model, forKey: .model)
-        try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
-        try container.encodeIfPresent(platform, forKey: .platform)
-        try container.encodeIfPresent(osVersion, forKey: .osVersion)
-        try container.encodeIfPresent(supplementalBuildVersion, forKey: .supplementalBuildVersion)
-        try container.encodeIfPresent(supplementalOsVersionExtra, forKey: .supplementalOsVersionExtra)
-        try container.encodeIfPresent(lastCheckIn, forKey: .lastCheckIn)
-        try container.encodeIfPresent(user, forKey: .user)
+        try container.encodeIfPresent(agentInstalled, forKey: .agentInstalled)
+        try container.encodeIfPresent(agentVersion, forKey: .agentVersion)
         try container.encodeIfPresent(assetTag, forKey: .assetTag)
         try container.encodeIfPresent(blueprintId, forKey: .blueprintId)
-        try container.encodeIfPresent(mdmEnabled, forKey: .mdmEnabled)
-        try container.encodeIfPresent(agentInstalled, forKey: .agentInstalled)
+        try container.encodeIfPresent(blueprintName, forKey: .blueprintName)
+        try container.encodeIfPresent(deviceId, forKey: .deviceId)
+        try container.encodeIfPresent(deviceName, forKey: .deviceName)
+        try container.encodeIfPresent(firstEnrollment, forKey: .firstEnrollment)
         try container.encodeIfPresent(isMissing, forKey: .isMissing)
         try container.encodeIfPresent(isRemoved, forKey: .isRemoved)
-        try container.encodeIfPresent(agentVersion, forKey: .agentVersion)
-        try container.encodeIfPresent(firstEnrollment, forKey: .firstEnrollment)
+        try container.encodeIfPresent(lastCheckIn, forKey: .lastCheckIn)
         try container.encodeIfPresent(lastEnrollment, forKey: .lastEnrollment)
-        try container.encodeIfPresent(blueprintName, forKey: .blueprintName)
+        try container.encodeIfPresent(mdmEnabled, forKey: .mdmEnabled)
+        try container.encodeIfPresent(model, forKey: .model)
+        try container.encodeIfPresent(osVersion, forKey: .osVersion)
+        try container.encodeIfPresent(platform, forKey: .platform)
+        try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
+        try container.encodeIfPresent(supplementalBuildVersion, forKey: .supplementalBuildVersion)
+        try container.encodeIfPresent(supplementalOsVersionExtra, forKey: .supplementalOsVersionExtra)
         try container.encodeIfPresent(tags, forKey: .tags)
+        try container.encodeIfPresent(user, forKey: .user)
     }
 }
 

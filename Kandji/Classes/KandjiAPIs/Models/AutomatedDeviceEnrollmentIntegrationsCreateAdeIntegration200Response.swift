@@ -17,98 +17,98 @@ extension kandji_sdkAPI {
 
 @objcMembers public class AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response: NSObject, Codable, JSONEncodable {
 
-    public var _id: String?
-    public var blueprint: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint?
     public var accessTokenExpiry: String?
-    public var serverName: String?
-    public var serverUuid: String?
     public var adminId: String?
-    public var orgName: String?
-    public var orgEmail: String?
-    public var orgPhone: String?
-    public var orgAddress: String?
-    public var orgType: String?
-    public var stokenFileName: String?
-    public var lastDeviceSync: AnyCodable?
-    public var defaults: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults?
+    public var blueprint: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint?
     public var daysLeft: Int?
     public var daysLeftNum: NSNumber? {
         get {
             return daysLeft as NSNumber?
         }
     }
+    public var defaults: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults?
+    public var deviceCounts: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts?
+    public var _id: String?
+    public var lastDeviceSync: AnyCodable?
+    public var orgAddress: String?
+    public var orgEmail: String?
+    public var orgName: String?
+    public var orgPhone: String?
+    public var orgType: String?
+    public var serverName: String?
+    public var serverUuid: String?
     public var status: String?
     public var statusReason: AnyCodable?
     public var statusReceivedAt: AnyCodable?
-    public var deviceCounts: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts?
+    public var stokenFileName: String?
 
-    public init(_id: String? = nil, blueprint: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint? = nil, accessTokenExpiry: String? = nil, serverName: String? = nil, serverUuid: String? = nil, adminId: String? = nil, orgName: String? = nil, orgEmail: String? = nil, orgPhone: String? = nil, orgAddress: String? = nil, orgType: String? = nil, stokenFileName: String? = nil, lastDeviceSync: AnyCodable? = nil, defaults: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults? = nil, daysLeft: Int? = nil, status: String? = nil, statusReason: AnyCodable? = nil, statusReceivedAt: AnyCodable? = nil, deviceCounts: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts? = nil) {
-        self._id = _id
-        self.blueprint = blueprint
+    public init(accessTokenExpiry: String? = nil, adminId: String? = nil, blueprint: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint? = nil, daysLeft: Int? = nil, defaults: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults? = nil, deviceCounts: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts? = nil, _id: String? = nil, lastDeviceSync: AnyCodable? = nil, orgAddress: String? = nil, orgEmail: String? = nil, orgName: String? = nil, orgPhone: String? = nil, orgType: String? = nil, serverName: String? = nil, serverUuid: String? = nil, status: String? = nil, statusReason: AnyCodable? = nil, statusReceivedAt: AnyCodable? = nil, stokenFileName: String? = nil) {
         self.accessTokenExpiry = accessTokenExpiry
+        self.adminId = adminId
+        self.blueprint = blueprint
+        self.daysLeft = daysLeft
+        self.defaults = defaults
+        self.deviceCounts = deviceCounts
+        self._id = _id
+        self.lastDeviceSync = lastDeviceSync
+        self.orgAddress = orgAddress
+        self.orgEmail = orgEmail
+        self.orgName = orgName
+        self.orgPhone = orgPhone
+        self.orgType = orgType
         self.serverName = serverName
         self.serverUuid = serverUuid
-        self.adminId = adminId
-        self.orgName = orgName
-        self.orgEmail = orgEmail
-        self.orgPhone = orgPhone
-        self.orgAddress = orgAddress
-        self.orgType = orgType
-        self.stokenFileName = stokenFileName
-        self.lastDeviceSync = lastDeviceSync
-        self.defaults = defaults
-        self.daysLeft = daysLeft
         self.status = status
         self.statusReason = statusReason
         self.statusReceivedAt = statusReceivedAt
-        self.deviceCounts = deviceCounts
+        self.stokenFileName = stokenFileName
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case _id = "id"
-        case blueprint
         case accessTokenExpiry = "access_token_expiry"
+        case adminId = "admin_id"
+        case blueprint
+        case daysLeft = "days_left"
+        case defaults
+        case deviceCounts = "device_counts"
+        case _id = "id"
+        case lastDeviceSync = "last_device_sync"
+        case orgAddress = "org_address"
+        case orgEmail = "org_email"
+        case orgName = "org_name"
+        case orgPhone = "org_phone"
+        case orgType = "org_type"
         case serverName = "server_name"
         case serverUuid = "server_uuid"
-        case adminId = "admin_id"
-        case orgName = "org_name"
-        case orgEmail = "org_email"
-        case orgPhone = "org_phone"
-        case orgAddress = "org_address"
-        case orgType = "org_type"
-        case stokenFileName = "stoken_file_name"
-        case lastDeviceSync = "last_device_sync"
-        case defaults
-        case daysLeft = "days_left"
         case status
         case statusReason = "status_reason"
         case statusReceivedAt = "status_received_at"
-        case deviceCounts = "device_counts"
+        case stokenFileName = "stoken_file_name"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(_id, forKey: ._id)
-        try container.encodeIfPresent(blueprint, forKey: .blueprint)
         try container.encodeIfPresent(accessTokenExpiry, forKey: .accessTokenExpiry)
+        try container.encodeIfPresent(adminId, forKey: .adminId)
+        try container.encodeIfPresent(blueprint, forKey: .blueprint)
+        try container.encodeIfPresent(daysLeft, forKey: .daysLeft)
+        try container.encodeIfPresent(defaults, forKey: .defaults)
+        try container.encodeIfPresent(deviceCounts, forKey: .deviceCounts)
+        try container.encodeIfPresent(_id, forKey: ._id)
+        try container.encodeIfPresent(lastDeviceSync, forKey: .lastDeviceSync)
+        try container.encodeIfPresent(orgAddress, forKey: .orgAddress)
+        try container.encodeIfPresent(orgEmail, forKey: .orgEmail)
+        try container.encodeIfPresent(orgName, forKey: .orgName)
+        try container.encodeIfPresent(orgPhone, forKey: .orgPhone)
+        try container.encodeIfPresent(orgType, forKey: .orgType)
         try container.encodeIfPresent(serverName, forKey: .serverName)
         try container.encodeIfPresent(serverUuid, forKey: .serverUuid)
-        try container.encodeIfPresent(adminId, forKey: .adminId)
-        try container.encodeIfPresent(orgName, forKey: .orgName)
-        try container.encodeIfPresent(orgEmail, forKey: .orgEmail)
-        try container.encodeIfPresent(orgPhone, forKey: .orgPhone)
-        try container.encodeIfPresent(orgAddress, forKey: .orgAddress)
-        try container.encodeIfPresent(orgType, forKey: .orgType)
-        try container.encodeIfPresent(stokenFileName, forKey: .stokenFileName)
-        try container.encodeIfPresent(lastDeviceSync, forKey: .lastDeviceSync)
-        try container.encodeIfPresent(defaults, forKey: .defaults)
-        try container.encodeIfPresent(daysLeft, forKey: .daysLeft)
         try container.encodeIfPresent(status, forKey: .status)
         try container.encodeIfPresent(statusReason, forKey: .statusReason)
         try container.encodeIfPresent(statusReceivedAt, forKey: .statusReceivedAt)
-        try container.encodeIfPresent(deviceCounts, forKey: .deviceCounts)
+        try container.encodeIfPresent(stokenFileName, forKey: .stokenFileName)
     }
 }
 

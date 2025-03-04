@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 # **createAdeIntegration**
 ```swift
-    open class func createAdeIntegration(blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response?, _ error: Error?) -> Void)
+    open class func createAdeIntegration(blueprintId: String, email: String, file: URL, phone: String, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response?, _ error: Error?) -> Void)
 ```
 
 Create ADE integration
@@ -32,12 +32,12 @@ Create ADE integration
 import kandji_sdk
 
 let blueprintId = "blueprintId_example" // String | 
-let phone = "phone_example" // String | 
 let email = "email_example" // String | 
 let file = URL(string: "https://example.com")! // URL | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
+let phone = "phone_example" // String | 
 
 // Create ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.createAdeIntegration(blueprintId: blueprintId, phone: phone, email: email, file: file) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.createAdeIntegration(blueprintId: blueprintId, email: email, file: file, phone: phone) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -54,9 +54,9 @@ AutomatedDeviceEnrollmentIntegrationsAPI.createAdeIntegration(blueprintId: bluep
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprintId** | **String** |  | 
- **phone** | **String** |  | 
  **email** | **String** |  | 
  **file** | **URL** | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
+ **phone** | **String** |  | 
 
 ### Return type
 
@@ -271,7 +271,7 @@ Void (empty response body)
 
 # **listAdeDevices**
 ```swift
-    open class func listAdeDevices(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
+    open class func listAdeDevices(blueprintId: String? = nil, userId: String? = nil, depAccount: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, page: String? = nil, completion: @escaping (_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)
 ```
 
 List ADE devices
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 
 # **renewAdeIntegration**
 ```swift
-    open class func renewAdeIntegration(adeTokenId: String, blueprintId: String, phone: String, email: String, file: URL, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func renewAdeIntegration(adeTokenId: String, blueprintId: String, email: String, file: URL, phone: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Renew ADE integration
@@ -449,12 +449,12 @@ import kandji_sdk
 
 let adeTokenId = "adeTokenId_example" // String | 
 let blueprintId = "blueprintId_example" // String | 
-let phone = "phone_example" // String | 
 let email = "email_example" // String | 
 let file = URL(string: "https://example.com")! // URL | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
+let phone = "phone_example" // String | 
 
 // Renew ADE integration
-AutomatedDeviceEnrollmentIntegrationsAPI.renewAdeIntegration(adeTokenId: adeTokenId, blueprintId: blueprintId, phone: phone, email: email, file: file) { (response, error) in
+AutomatedDeviceEnrollmentIntegrationsAPI.renewAdeIntegration(adeTokenId: adeTokenId, blueprintId: blueprintId, email: email, file: file, phone: phone) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -472,9 +472,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **adeTokenId** | **String** |  | 
  **blueprintId** | **String** |  | 
- **phone** | **String** |  | 
  **email** | **String** |  | 
  **file** | **URL** | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
+ **phone** | **String** |  | 
 
 ### Return type
 

@@ -46,7 +46,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Connection(String), Content-Type(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), Accept-Ranges(String), Access-Control-Allow-Origin(String), Date(String), X-Served-By(String), X-Cache(String), X-Cache-Hits(String), X-Timer(String), Vary(String), transfer-encoding(String)]
+     - responseHeaders: [Accept-Ranges(String), Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Vary(String), Via(String), X-Cache(String), X-Cache-Hits(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), X-Served-By(String), X-Timer(String), transfer-encoding(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#d64b40ce-8332-4b4a-a1f9-3db800502df4
@@ -116,7 +116,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#0d3abc6c-a5a5-4fe6-b7d4-19b1287eaf91
@@ -186,7 +186,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Connection(String), Content-Type(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), Accept-Ranges(String), Access-Control-Allow-Origin(String), Date(String), X-Served-By(String), X-Cache(String), X-Cache-Hits(String), X-Timer(String), Vary(String), transfer-encoding(String)]
+     - responseHeaders: [Accept-Ranges(String), Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Vary(String), Via(String), X-Cache(String), X-Cache-Hits(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), X-Served-By(String), X-Timer(String), transfer-encoding(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#0de36993-c9d8-4d58-8dce-a2616bc2e743
@@ -256,7 +256,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Connection(String), Content-Type(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), Accept-Ranges(String), Access-Control-Allow-Origin(String), Date(String), X-Served-By(String), X-Cache(String), X-Cache-Hits(String), X-Timer(String), Vary(String), transfer-encoding(String)]
+     - responseHeaders: [Accept-Ranges(String), Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Vary(String), Via(String), X-Cache(String), X-Cache-Hits(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), X-Served-By(String), X-Timer(String), transfer-encoding(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#a9716bc7-c267-476c-b777-239c81f1a6ba
@@ -321,7 +321,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#ae4770e4-bbcd-478c-a13a-4d2a3b1978d1
@@ -381,7 +381,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#7f6f6813-6522-4249-9f6a-3d0c479e2bbe
@@ -452,7 +452,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#f72f4d84-5750-494d-94fa-108ed04e85ec
@@ -523,7 +523,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#0f71e08c-a72c-44e0-a21d-a3e424652d95
@@ -593,7 +593,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#64bc8ff5-3c32-47c1-a47b-bfa89799ab74
@@ -658,7 +658,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#4cd8f1ae-3b5a-498f-9078-f4be656c424d
@@ -718,7 +718,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#4010f47a-c4fa-4d3c-bb98-e9e02f41c620
@@ -788,7 +788,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#95c1efd6-2a5f-4a05-89b8-0f9d3eb7efdc
@@ -858,7 +858,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#0093e44b-eeed-4ad0-b3d1-38719b1d2352
@@ -928,7 +928,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#9942d2f9-7df3-4ef9-97cc-60a5bbcf6180
@@ -993,7 +993,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#4d485b71-34fb-443a-a8a4-4c1ec8886b88
@@ -1050,7 +1050,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#64ad6959-c381-4487-9b91-3f1e465d7160
@@ -1120,7 +1120,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#2c0fb5db-3864-4875-a2b1-c925e19d7888
@@ -1190,7 +1190,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Transfer-Encoding(String), Connection(String), Access-Control-Allow-Origin(String), Content-Encoding(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
+     - responseHeaders: [Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Transfer-Encoding(String), Via(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#872afbd8-25b5-4c63-af17-a8ac61507449

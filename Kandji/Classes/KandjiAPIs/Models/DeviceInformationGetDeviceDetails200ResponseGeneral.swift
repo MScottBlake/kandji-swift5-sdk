@@ -17,85 +17,85 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseGeneral: NSObject, Codable, JSONEncodable {
 
-    public var deviceId: String?
-    public var deviceName: String?
-    public var lastEnrollment: String?
-    public var firstEnrollment: String?
-    public var model: String?
-    public var platform: String?
-    public var osVersion: String?
-    public var supplementalBuildVersion: String?
-    public var supplementalOsVersionExtra: String?
-    public var systemVersion: String?
-    public var bootVolume: String?
-    public var timeSinceBoot: String?
-    public var lastUser: String?
     public var assetTag: String?
     public var assignedUser: String?
     public var blueprintName: String?
     public var blueprintUuid: String?
+    public var bootVolume: String?
+    public var deviceId: String?
+    public var deviceName: String?
+    public var firstEnrollment: String?
+    public var lastEnrollment: String?
+    public var lastUser: String?
+    public var model: String?
+    public var osVersion: String?
+    public var platform: String?
+    public var supplementalBuildVersion: String?
+    public var supplementalOsVersionExtra: String?
+    public var systemVersion: String?
+    public var timeSinceBoot: String?
 
-    public init(deviceId: String? = nil, deviceName: String? = nil, lastEnrollment: String? = nil, firstEnrollment: String? = nil, model: String? = nil, platform: String? = nil, osVersion: String? = nil, supplementalBuildVersion: String? = nil, supplementalOsVersionExtra: String? = nil, systemVersion: String? = nil, bootVolume: String? = nil, timeSinceBoot: String? = nil, lastUser: String? = nil, assetTag: String? = nil, assignedUser: String? = nil, blueprintName: String? = nil, blueprintUuid: String? = nil) {
-        self.deviceId = deviceId
-        self.deviceName = deviceName
-        self.lastEnrollment = lastEnrollment
-        self.firstEnrollment = firstEnrollment
-        self.model = model
-        self.platform = platform
-        self.osVersion = osVersion
-        self.supplementalBuildVersion = supplementalBuildVersion
-        self.supplementalOsVersionExtra = supplementalOsVersionExtra
-        self.systemVersion = systemVersion
-        self.bootVolume = bootVolume
-        self.timeSinceBoot = timeSinceBoot
-        self.lastUser = lastUser
+    public init(assetTag: String? = nil, assignedUser: String? = nil, blueprintName: String? = nil, blueprintUuid: String? = nil, bootVolume: String? = nil, deviceId: String? = nil, deviceName: String? = nil, firstEnrollment: String? = nil, lastEnrollment: String? = nil, lastUser: String? = nil, model: String? = nil, osVersion: String? = nil, platform: String? = nil, supplementalBuildVersion: String? = nil, supplementalOsVersionExtra: String? = nil, systemVersion: String? = nil, timeSinceBoot: String? = nil) {
         self.assetTag = assetTag
         self.assignedUser = assignedUser
         self.blueprintName = blueprintName
         self.blueprintUuid = blueprintUuid
+        self.bootVolume = bootVolume
+        self.deviceId = deviceId
+        self.deviceName = deviceName
+        self.firstEnrollment = firstEnrollment
+        self.lastEnrollment = lastEnrollment
+        self.lastUser = lastUser
+        self.model = model
+        self.osVersion = osVersion
+        self.platform = platform
+        self.supplementalBuildVersion = supplementalBuildVersion
+        self.supplementalOsVersionExtra = supplementalOsVersionExtra
+        self.systemVersion = systemVersion
+        self.timeSinceBoot = timeSinceBoot
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case deviceId = "device_id"
-        case deviceName = "device_name"
-        case lastEnrollment = "last_enrollment"
-        case firstEnrollment = "first_enrollment"
-        case model
-        case platform
-        case osVersion = "os_version"
-        case supplementalBuildVersion = "supplemental_build_version"
-        case supplementalOsVersionExtra = "supplemental_os_version_extra"
-        case systemVersion = "system_version"
-        case bootVolume = "boot_volume"
-        case timeSinceBoot = "time_since_boot"
-        case lastUser = "last_user"
         case assetTag = "asset_tag"
         case assignedUser = "assigned_user"
         case blueprintName = "blueprint_name"
         case blueprintUuid = "blueprint_uuid"
+        case bootVolume = "boot_volume"
+        case deviceId = "device_id"
+        case deviceName = "device_name"
+        case firstEnrollment = "first_enrollment"
+        case lastEnrollment = "last_enrollment"
+        case lastUser = "last_user"
+        case model
+        case osVersion = "os_version"
+        case platform
+        case supplementalBuildVersion = "supplemental_build_version"
+        case supplementalOsVersionExtra = "supplemental_os_version_extra"
+        case systemVersion = "system_version"
+        case timeSinceBoot = "time_since_boot"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(deviceId, forKey: .deviceId)
-        try container.encodeIfPresent(deviceName, forKey: .deviceName)
-        try container.encodeIfPresent(lastEnrollment, forKey: .lastEnrollment)
-        try container.encodeIfPresent(firstEnrollment, forKey: .firstEnrollment)
-        try container.encodeIfPresent(model, forKey: .model)
-        try container.encodeIfPresent(platform, forKey: .platform)
-        try container.encodeIfPresent(osVersion, forKey: .osVersion)
-        try container.encodeIfPresent(supplementalBuildVersion, forKey: .supplementalBuildVersion)
-        try container.encodeIfPresent(supplementalOsVersionExtra, forKey: .supplementalOsVersionExtra)
-        try container.encodeIfPresent(systemVersion, forKey: .systemVersion)
-        try container.encodeIfPresent(bootVolume, forKey: .bootVolume)
-        try container.encodeIfPresent(timeSinceBoot, forKey: .timeSinceBoot)
-        try container.encodeIfPresent(lastUser, forKey: .lastUser)
         try container.encodeIfPresent(assetTag, forKey: .assetTag)
         try container.encodeIfPresent(assignedUser, forKey: .assignedUser)
         try container.encodeIfPresent(blueprintName, forKey: .blueprintName)
         try container.encodeIfPresent(blueprintUuid, forKey: .blueprintUuid)
+        try container.encodeIfPresent(bootVolume, forKey: .bootVolume)
+        try container.encodeIfPresent(deviceId, forKey: .deviceId)
+        try container.encodeIfPresent(deviceName, forKey: .deviceName)
+        try container.encodeIfPresent(firstEnrollment, forKey: .firstEnrollment)
+        try container.encodeIfPresent(lastEnrollment, forKey: .lastEnrollment)
+        try container.encodeIfPresent(lastUser, forKey: .lastUser)
+        try container.encodeIfPresent(model, forKey: .model)
+        try container.encodeIfPresent(osVersion, forKey: .osVersion)
+        try container.encodeIfPresent(platform, forKey: .platform)
+        try container.encodeIfPresent(supplementalBuildVersion, forKey: .supplementalBuildVersion)
+        try container.encodeIfPresent(supplementalOsVersionExtra, forKey: .supplementalOsVersionExtra)
+        try container.encodeIfPresent(systemVersion, forKey: .systemVersion)
+        try container.encodeIfPresent(timeSinceBoot, forKey: .timeSinceBoot)
     }
 }
 

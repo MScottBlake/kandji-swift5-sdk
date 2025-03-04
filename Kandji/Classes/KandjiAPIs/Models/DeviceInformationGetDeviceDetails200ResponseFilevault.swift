@@ -18,14 +18,14 @@ extension kandji_sdkAPI {
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseFilevault: NSObject, Codable, JSONEncodable {
 
     public var filevaultEnabled: AnyCodable?
-    public var filevaultRecoverykeyType: String?
+    public var filevaultNextRotation: String?
     public var filevaultPrkEscrowed: Int?
     public var filevaultPrkEscrowedNum: NSNumber? {
         get {
             return filevaultPrkEscrowed as NSNumber?
         }
     }
-    public var filevaultNextRotation: String?
+    public var filevaultRecoverykeyType: String?
     public var filevaultRegenRequired: Int?
     public var filevaultRegenRequiredNum: NSNumber? {
         get {
@@ -33,19 +33,19 @@ extension kandji_sdkAPI {
         }
     }
 
-    public init(filevaultEnabled: AnyCodable? = nil, filevaultRecoverykeyType: String? = nil, filevaultPrkEscrowed: Int? = nil, filevaultNextRotation: String? = nil, filevaultRegenRequired: Int? = nil) {
+    public init(filevaultEnabled: AnyCodable? = nil, filevaultNextRotation: String? = nil, filevaultPrkEscrowed: Int? = nil, filevaultRecoverykeyType: String? = nil, filevaultRegenRequired: Int? = nil) {
         self.filevaultEnabled = filevaultEnabled
-        self.filevaultRecoverykeyType = filevaultRecoverykeyType
-        self.filevaultPrkEscrowed = filevaultPrkEscrowed
         self.filevaultNextRotation = filevaultNextRotation
+        self.filevaultPrkEscrowed = filevaultPrkEscrowed
+        self.filevaultRecoverykeyType = filevaultRecoverykeyType
         self.filevaultRegenRequired = filevaultRegenRequired
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case filevaultEnabled = "filevault_enabled"
-        case filevaultRecoverykeyType = "filevault_recoverykey_type"
-        case filevaultPrkEscrowed = "filevault_prk_escrowed"
         case filevaultNextRotation = "filevault_next_rotation"
+        case filevaultPrkEscrowed = "filevault_prk_escrowed"
+        case filevaultRecoverykeyType = "filevault_recoverykey_type"
         case filevaultRegenRequired = "filevault_regen_required"
     }
 
@@ -54,9 +54,9 @@ extension kandji_sdkAPI {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(filevaultEnabled, forKey: .filevaultEnabled)
-        try container.encodeIfPresent(filevaultRecoverykeyType, forKey: .filevaultRecoverykeyType)
-        try container.encodeIfPresent(filevaultPrkEscrowed, forKey: .filevaultPrkEscrowed)
         try container.encodeIfPresent(filevaultNextRotation, forKey: .filevaultNextRotation)
+        try container.encodeIfPresent(filevaultPrkEscrowed, forKey: .filevaultPrkEscrowed)
+        try container.encodeIfPresent(filevaultRecoverykeyType, forKey: .filevaultRecoverykeyType)
         try container.encodeIfPresent(filevaultRegenRequired, forKey: .filevaultRegenRequired)
     }
 }

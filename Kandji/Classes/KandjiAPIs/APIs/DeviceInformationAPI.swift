@@ -95,7 +95,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#10a56208-b230-455a-a835-32b6cfb2803d
@@ -152,7 +152,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#80710108-fbdb-4dfd-af84-50adf15c5a23
@@ -213,7 +213,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), X-Total-Count(String), X-Total-Pages(String), Link(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Link(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Total-Count(String), X-Total-Pages(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#f8cd9733-89b6-40f0-a7ca-76829c6974df
@@ -323,7 +323,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#005bf79f-3458-4834-9c2f-4e0c792069f4
@@ -433,7 +433,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#8ca8c0e9-654e-40c1-8d8c-c9a8a6e262c6
@@ -488,7 +488,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#93f2cf60-cd3b-47ff-8388-2377fbff3c6e

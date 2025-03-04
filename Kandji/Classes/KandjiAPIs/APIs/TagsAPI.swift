@@ -129,7 +129,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getTags(search: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getTags(search: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getTagsWithRequestBuilder(search: search).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -153,9 +153,9 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#9e4feff9-bc65-4625-b2ca-5a30328c6b7e
 }
      - parameter search: (query) Return resultes containing a given tag search string. 
-     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
+     - returns: RequestBuilder<BlueprintsListBlueprints200Response> 
      */
-    open class func getTagsWithRequestBuilder(search: String) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
+    open class func getTagsWithRequestBuilder(search: String) -> RequestBuilder<BlueprintsListBlueprints200Response> {
         let localVariablePath = "/api/v1/tags"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -171,7 +171,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BlueprintsListBlueprints200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

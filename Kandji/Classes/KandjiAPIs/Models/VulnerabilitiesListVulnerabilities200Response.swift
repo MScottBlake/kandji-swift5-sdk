@@ -17,38 +17,38 @@ extension kandji_sdkAPI {
 
 @objcMembers public class VulnerabilitiesListVulnerabilities200Response: NSObject, Codable, JSONEncodable {
 
+    public var next: AnyCodable?
+    public var previous: AnyCodable?
+    public var results: AnyCodable?
     public var total: Int?
     public var totalNum: NSNumber? {
         get {
             return total as NSNumber?
         }
     }
-    public var next: AnyCodable?
-    public var previous: AnyCodable?
-    public var results: AnyCodable?
 
-    public init(total: Int? = nil, next: AnyCodable? = nil, previous: AnyCodable? = nil, results: AnyCodable? = nil) {
-        self.total = total
+    public init(next: AnyCodable? = nil, previous: AnyCodable? = nil, results: AnyCodable? = nil, total: Int? = nil) {
         self.next = next
         self.previous = previous
         self.results = results
+        self.total = total
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case total
         case next
         case previous
         case results
+        case total
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(total, forKey: .total)
         try container.encodeIfPresent(next, forKey: .next)
         try container.encodeIfPresent(previous, forKey: .previous)
         try container.encodeIfPresent(results, forKey: .results)
+        try container.encodeIfPresent(total, forKey: .total)
     }
 }
 

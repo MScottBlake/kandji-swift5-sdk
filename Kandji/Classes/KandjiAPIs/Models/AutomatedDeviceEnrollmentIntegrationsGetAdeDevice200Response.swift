@@ -17,110 +17,110 @@ extension kandji_sdkAPI {
 
 @objcMembers public class AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response: NSObject, Codable, JSONEncodable {
 
-    public var blueprintId: String?
-    public var mdmDevice: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice?
-    public var userId: String?
-    public var depAccount: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount?
     public var assetTag: String?
+    public var assignmentStatusReceivedAt: String?
+    public var blueprint: String?
+    public var blueprintId: String?
     public var color: String?
+    public var depAccount: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount?
     public var _description: String?
     public var deviceAssignedBy: String?
     public var deviceAssignedDate: String?
     public var deviceFamily: String?
-    public var model: String?
-    public var os: String?
-    public var profileAssignTime: String?
-    public var profilePushTime: String?
-    public var profileStatus: String?
-    public var serialNumber: String?
-    public var _id: String?
-    public var lastAssignmentStatus: String?
     public var failedAssignmentAttempts: Int?
     public var failedAssignmentAttemptsNum: NSNumber? {
         get {
             return failedAssignmentAttempts as NSNumber?
         }
     }
-    public var assignmentStatusReceivedAt: String?
-    public var blueprint: String?
+    public var _id: String?
+    public var lastAssignmentStatus: String?
+    public var mdmDevice: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice?
+    public var model: String?
+    public var os: String?
+    public var profileAssignTime: String?
+    public var profilePushTime: String?
+    public var profileStatus: String?
+    public var serialNumber: String?
     public var user: String?
+    public var userId: String?
 
-    public init(blueprintId: String? = nil, mdmDevice: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice? = nil, userId: String? = nil, depAccount: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount? = nil, assetTag: String? = nil, color: String? = nil, _description: String? = nil, deviceAssignedBy: String? = nil, deviceAssignedDate: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, profileAssignTime: String? = nil, profilePushTime: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, _id: String? = nil, lastAssignmentStatus: String? = nil, failedAssignmentAttempts: Int? = nil, assignmentStatusReceivedAt: String? = nil, blueprint: String? = nil, user: String? = nil) {
-        self.blueprintId = blueprintId
-        self.mdmDevice = mdmDevice
-        self.userId = userId
-        self.depAccount = depAccount
+    public init(assetTag: String? = nil, assignmentStatusReceivedAt: String? = nil, blueprint: String? = nil, blueprintId: String? = nil, color: String? = nil, depAccount: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount? = nil, _description: String? = nil, deviceAssignedBy: String? = nil, deviceAssignedDate: String? = nil, deviceFamily: String? = nil, failedAssignmentAttempts: Int? = nil, _id: String? = nil, lastAssignmentStatus: String? = nil, mdmDevice: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice? = nil, model: String? = nil, os: String? = nil, profileAssignTime: String? = nil, profilePushTime: String? = nil, profileStatus: String? = nil, serialNumber: String? = nil, user: String? = nil, userId: String? = nil) {
         self.assetTag = assetTag
+        self.assignmentStatusReceivedAt = assignmentStatusReceivedAt
+        self.blueprint = blueprint
+        self.blueprintId = blueprintId
         self.color = color
+        self.depAccount = depAccount
         self._description = _description
         self.deviceAssignedBy = deviceAssignedBy
         self.deviceAssignedDate = deviceAssignedDate
         self.deviceFamily = deviceFamily
+        self.failedAssignmentAttempts = failedAssignmentAttempts
+        self._id = _id
+        self.lastAssignmentStatus = lastAssignmentStatus
+        self.mdmDevice = mdmDevice
         self.model = model
         self.os = os
         self.profileAssignTime = profileAssignTime
         self.profilePushTime = profilePushTime
         self.profileStatus = profileStatus
         self.serialNumber = serialNumber
-        self._id = _id
-        self.lastAssignmentStatus = lastAssignmentStatus
-        self.failedAssignmentAttempts = failedAssignmentAttempts
-        self.assignmentStatusReceivedAt = assignmentStatusReceivedAt
-        self.blueprint = blueprint
         self.user = user
+        self.userId = userId
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case blueprintId = "blueprint_id"
-        case mdmDevice = "mdm_device"
-        case userId = "user_id"
-        case depAccount = "dep_account"
         case assetTag = "asset_tag"
+        case assignmentStatusReceivedAt = "assignment_status_received_at"
+        case blueprint
+        case blueprintId = "blueprint_id"
         case color
+        case depAccount = "dep_account"
         case _description = "description"
         case deviceAssignedBy = "device_assigned_by"
         case deviceAssignedDate = "device_assigned_date"
         case deviceFamily = "device_family"
+        case failedAssignmentAttempts = "failed_assignment_attempts"
+        case _id = "id"
+        case lastAssignmentStatus = "last_assignment_status"
+        case mdmDevice = "mdm_device"
         case model
         case os
         case profileAssignTime = "profile_assign_time"
         case profilePushTime = "profile_push_time"
         case profileStatus = "profile_status"
         case serialNumber = "serial_number"
-        case _id = "id"
-        case lastAssignmentStatus = "last_assignment_status"
-        case failedAssignmentAttempts = "failed_assignment_attempts"
-        case assignmentStatusReceivedAt = "assignment_status_received_at"
-        case blueprint
         case user
+        case userId = "user_id"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(blueprintId, forKey: .blueprintId)
-        try container.encodeIfPresent(mdmDevice, forKey: .mdmDevice)
-        try container.encodeIfPresent(userId, forKey: .userId)
-        try container.encodeIfPresent(depAccount, forKey: .depAccount)
         try container.encodeIfPresent(assetTag, forKey: .assetTag)
+        try container.encodeIfPresent(assignmentStatusReceivedAt, forKey: .assignmentStatusReceivedAt)
+        try container.encodeIfPresent(blueprint, forKey: .blueprint)
+        try container.encodeIfPresent(blueprintId, forKey: .blueprintId)
         try container.encodeIfPresent(color, forKey: .color)
+        try container.encodeIfPresent(depAccount, forKey: .depAccount)
         try container.encodeIfPresent(_description, forKey: ._description)
         try container.encodeIfPresent(deviceAssignedBy, forKey: .deviceAssignedBy)
         try container.encodeIfPresent(deviceAssignedDate, forKey: .deviceAssignedDate)
         try container.encodeIfPresent(deviceFamily, forKey: .deviceFamily)
+        try container.encodeIfPresent(failedAssignmentAttempts, forKey: .failedAssignmentAttempts)
+        try container.encodeIfPresent(_id, forKey: ._id)
+        try container.encodeIfPresent(lastAssignmentStatus, forKey: .lastAssignmentStatus)
+        try container.encodeIfPresent(mdmDevice, forKey: .mdmDevice)
         try container.encodeIfPresent(model, forKey: .model)
         try container.encodeIfPresent(os, forKey: .os)
         try container.encodeIfPresent(profileAssignTime, forKey: .profileAssignTime)
         try container.encodeIfPresent(profilePushTime, forKey: .profilePushTime)
         try container.encodeIfPresent(profileStatus, forKey: .profileStatus)
         try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
-        try container.encodeIfPresent(_id, forKey: ._id)
-        try container.encodeIfPresent(lastAssignmentStatus, forKey: .lastAssignmentStatus)
-        try container.encodeIfPresent(failedAssignmentAttempts, forKey: .failedAssignmentAttempts)
-        try container.encodeIfPresent(assignmentStatusReceivedAt, forKey: .assignmentStatusReceivedAt)
-        try container.encodeIfPresent(blueprint, forKey: .blueprint)
         try container.encodeIfPresent(user, forKey: .user)
+        try container.encodeIfPresent(userId, forKey: .userId)
     }
 }
 

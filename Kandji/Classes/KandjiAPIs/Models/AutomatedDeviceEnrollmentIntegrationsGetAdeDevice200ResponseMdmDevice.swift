@@ -17,21 +17,20 @@ extension kandji_sdkAPI {
 
 @objcMembers public class AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice: NSObject, Codable, JSONEncodable {
 
-    public var _id: String?
-    public var enrolledAt: String?
-    public var name: String?
-    public var enrollmentStatus: Int?
-    public var enrollmentStatusNum: NSNumber? {
-        get {
-            return enrollmentStatus as NSNumber?
-        }
-    }
     public var deferredInstall: Int?
     public var deferredInstallNum: NSNumber? {
         get {
             return deferredInstall as NSNumber?
         }
     }
+    public var enrolledAt: String?
+    public var enrollmentStatus: Int?
+    public var enrollmentStatusNum: NSNumber? {
+        get {
+            return enrollmentStatus as NSNumber?
+        }
+    }
+    public var _id: String?
     public var isMissing: Int?
     public var isMissingNum: NSNumber? {
         get {
@@ -44,38 +43,39 @@ extension kandji_sdkAPI {
             return isRemoved as NSNumber?
         }
     }
+    public var name: String?
 
-    public init(_id: String? = nil, enrolledAt: String? = nil, name: String? = nil, enrollmentStatus: Int? = nil, deferredInstall: Int? = nil, isMissing: Int? = nil, isRemoved: Int? = nil) {
-        self._id = _id
-        self.enrolledAt = enrolledAt
-        self.name = name
-        self.enrollmentStatus = enrollmentStatus
+    public init(deferredInstall: Int? = nil, enrolledAt: String? = nil, enrollmentStatus: Int? = nil, _id: String? = nil, isMissing: Int? = nil, isRemoved: Int? = nil, name: String? = nil) {
         self.deferredInstall = deferredInstall
+        self.enrolledAt = enrolledAt
+        self.enrollmentStatus = enrollmentStatus
+        self._id = _id
         self.isMissing = isMissing
         self.isRemoved = isRemoved
+        self.name = name
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case _id = "id"
-        case enrolledAt = "enrolled_at"
-        case name
-        case enrollmentStatus = "enrollment_status"
         case deferredInstall = "deferred_install"
+        case enrolledAt = "enrolled_at"
+        case enrollmentStatus = "enrollment_status"
+        case _id = "id"
         case isMissing = "is_missing"
         case isRemoved = "is_removed"
+        case name
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(_id, forKey: ._id)
-        try container.encodeIfPresent(enrolledAt, forKey: .enrolledAt)
-        try container.encodeIfPresent(name, forKey: .name)
-        try container.encodeIfPresent(enrollmentStatus, forKey: .enrollmentStatus)
         try container.encodeIfPresent(deferredInstall, forKey: .deferredInstall)
+        try container.encodeIfPresent(enrolledAt, forKey: .enrolledAt)
+        try container.encodeIfPresent(enrollmentStatus, forKey: .enrollmentStatus)
+        try container.encodeIfPresent(_id, forKey: ._id)
         try container.encodeIfPresent(isMissing, forKey: .isMissing)
         try container.encodeIfPresent(isRemoved, forKey: .isRemoved)
+        try container.encodeIfPresent(name, forKey: .name)
     }
 }
 

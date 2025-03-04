@@ -17,29 +17,29 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseHardwareOverview: NSObject, Codable, JSONEncodable {
 
-    public var uuid: String?
-    public var serialNumber: String?
     public var modelIdentifier: String?
+    public var serialNumber: String?
+    public var uuid: String?
 
-    public init(uuid: String? = nil, serialNumber: String? = nil, modelIdentifier: String? = nil) {
-        self.uuid = uuid
-        self.serialNumber = serialNumber
+    public init(modelIdentifier: String? = nil, serialNumber: String? = nil, uuid: String? = nil) {
         self.modelIdentifier = modelIdentifier
+        self.serialNumber = serialNumber
+        self.uuid = uuid
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case uuid
-        case serialNumber = "serial_number"
         case modelIdentifier = "model_identifier"
+        case serialNumber = "serial_number"
+        case uuid
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(uuid, forKey: .uuid)
-        try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
         try container.encodeIfPresent(modelIdentifier, forKey: .modelIdentifier)
+        try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
+        try container.encodeIfPresent(uuid, forKey: .uuid)
     }
 }
 

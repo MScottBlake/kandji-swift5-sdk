@@ -17,49 +17,49 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager: NSObject, Codable, JSONEncodable {
 
-    public var model: String?
     public var color: String?
     public var _description: String?
-    public var serialNumber: String?
-    public var deviceFamily: String?
-    public var os: String?
-    public var deviceAssignedDate: String?
     public var deviceAssignedBy: String?
+    public var deviceAssignedDate: String?
+    public var deviceFamily: String?
+    public var model: String?
+    public var os: String?
+    public var serialNumber: String?
 
-    public init(model: String? = nil, color: String? = nil, _description: String? = nil, serialNumber: String? = nil, deviceFamily: String? = nil, os: String? = nil, deviceAssignedDate: String? = nil, deviceAssignedBy: String? = nil) {
-        self.model = model
+    public init(color: String? = nil, _description: String? = nil, deviceAssignedBy: String? = nil, deviceAssignedDate: String? = nil, deviceFamily: String? = nil, model: String? = nil, os: String? = nil, serialNumber: String? = nil) {
         self.color = color
         self._description = _description
-        self.serialNumber = serialNumber
-        self.deviceFamily = deviceFamily
-        self.os = os
-        self.deviceAssignedDate = deviceAssignedDate
         self.deviceAssignedBy = deviceAssignedBy
+        self.deviceAssignedDate = deviceAssignedDate
+        self.deviceFamily = deviceFamily
+        self.model = model
+        self.os = os
+        self.serialNumber = serialNumber
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case model
         case color
         case _description = "description"
-        case serialNumber = "serial_number"
-        case deviceFamily = "device_family"
-        case os
-        case deviceAssignedDate = "device_assigned_date"
         case deviceAssignedBy = "device_assigned_by"
+        case deviceAssignedDate = "device_assigned_date"
+        case deviceFamily = "device_family"
+        case model
+        case os
+        case serialNumber = "serial_number"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(model, forKey: .model)
         try container.encodeIfPresent(color, forKey: .color)
         try container.encodeIfPresent(_description, forKey: ._description)
-        try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
-        try container.encodeIfPresent(deviceFamily, forKey: .deviceFamily)
-        try container.encodeIfPresent(os, forKey: .os)
-        try container.encodeIfPresent(deviceAssignedDate, forKey: .deviceAssignedDate)
         try container.encodeIfPresent(deviceAssignedBy, forKey: .deviceAssignedBy)
+        try container.encodeIfPresent(deviceAssignedDate, forKey: .deviceAssignedDate)
+        try container.encodeIfPresent(deviceFamily, forKey: .deviceFamily)
+        try container.encodeIfPresent(model, forKey: .model)
+        try container.encodeIfPresent(os, forKey: .os)
+        try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
     }
 }
 

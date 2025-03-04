@@ -17,35 +17,35 @@ extension kandji_sdkAPI {
 
 @objcMembers public class PrismCount200Response: NSObject, Codable, JSONEncodable {
 
-    public var count: Int?
-    public var countNum: NSNumber? {
-        get {
-            return count as NSNumber?
-        }
-    }
     public var approximate: Int?
     public var approximateNum: NSNumber? {
         get {
             return approximate as NSNumber?
         }
     }
+    public var count: Int?
+    public var countNum: NSNumber? {
+        get {
+            return count as NSNumber?
+        }
+    }
 
-    public init(count: Int? = nil, approximate: Int? = nil) {
-        self.count = count
+    public init(approximate: Int? = nil, count: Int? = nil) {
         self.approximate = approximate
+        self.count = count
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case count
         case approximate
+        case count
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(count, forKey: .count)
         try container.encodeIfPresent(approximate, forKey: .approximate)
+        try container.encodeIfPresent(count, forKey: .count)
     }
 }
 

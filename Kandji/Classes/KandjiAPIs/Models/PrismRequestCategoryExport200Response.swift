@@ -17,37 +17,37 @@ extension kandji_sdkAPI {
 
 @objcMembers public class PrismRequestCategoryExport200Response: NSObject, Codable, JSONEncodable {
 
-    public var _id: String?
-    public var status: String?
-    public var category: String?
     public var args: PrismRequestCategoryExport200ResponseArgs?
+    public var category: String?
+    public var createdAt: String?
     public var errorMsg: AnyCodable?
+    public var _id: String?
     public var path: AnyCodable?
     public var signedUrl: AnyCodable?
-    public var createdAt: String?
+    public var status: String?
     public var updatedAt: String?
 
-    public init(_id: String? = nil, status: String? = nil, category: String? = nil, args: PrismRequestCategoryExport200ResponseArgs? = nil, errorMsg: AnyCodable? = nil, path: AnyCodable? = nil, signedUrl: AnyCodable? = nil, createdAt: String? = nil, updatedAt: String? = nil) {
-        self._id = _id
-        self.status = status
-        self.category = category
+    public init(args: PrismRequestCategoryExport200ResponseArgs? = nil, category: String? = nil, createdAt: String? = nil, errorMsg: AnyCodable? = nil, _id: String? = nil, path: AnyCodable? = nil, signedUrl: AnyCodable? = nil, status: String? = nil, updatedAt: String? = nil) {
         self.args = args
+        self.category = category
+        self.createdAt = createdAt
         self.errorMsg = errorMsg
+        self._id = _id
         self.path = path
         self.signedUrl = signedUrl
-        self.createdAt = createdAt
+        self.status = status
         self.updatedAt = updatedAt
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case _id = "id"
-        case status
-        case category
         case args
+        case category
+        case createdAt = "created_at"
         case errorMsg = "error_msg"
+        case _id = "id"
         case path
         case signedUrl = "signed_url"
-        case createdAt = "created_at"
+        case status
         case updatedAt = "updated_at"
     }
 
@@ -55,14 +55,14 @@ extension kandji_sdkAPI {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(_id, forKey: ._id)
-        try container.encodeIfPresent(status, forKey: .status)
-        try container.encodeIfPresent(category, forKey: .category)
         try container.encodeIfPresent(args, forKey: .args)
+        try container.encodeIfPresent(category, forKey: .category)
+        try container.encodeIfPresent(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(errorMsg, forKey: .errorMsg)
+        try container.encodeIfPresent(_id, forKey: ._id)
         try container.encodeIfPresent(path, forKey: .path)
         try container.encodeIfPresent(signedUrl, forKey: .signedUrl)
-        try container.encodeIfPresent(createdAt, forKey: .createdAt)
+        try container.encodeIfPresent(status, forKey: .status)
         try container.encodeIfPresent(updatedAt, forKey: .updatedAt)
     }
 }

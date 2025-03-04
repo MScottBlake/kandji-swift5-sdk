@@ -17,63 +17,63 @@ extension kandji_sdkAPI {
 
 @objcMembers public class BlueprintsUpdateBlueprint200Response: NSObject, Codable, JSONEncodable {
 
-    public var _id: String?
-    public var name: String?
-    public var icon: String?
     public var color: String?
-    public var _description: String?
-    public var params: AnyCodable?
     public var computersCount: Int?
     public var computersCountNum: NSNumber? {
         get {
             return computersCount as NSNumber?
         }
     }
+    public var _description: String?
+    public var enrollmentCode: BlueprintsCreateBlueprint201ResponseEnrollmentCode?
+    public var icon: String?
+    public var _id: String?
     public var missingComputersCount: Int?
     public var missingComputersCountNum: NSNumber? {
         get {
             return missingComputersCount as NSNumber?
         }
     }
-    public var enrollmentCode: BlueprintsCreateBlueprint201ResponseEnrollmentCode?
+    public var name: String?
+    public var params: AnyCodable?
 
-    public init(_id: String? = nil, name: String? = nil, icon: String? = nil, color: String? = nil, _description: String? = nil, params: AnyCodable? = nil, computersCount: Int? = nil, missingComputersCount: Int? = nil, enrollmentCode: BlueprintsCreateBlueprint201ResponseEnrollmentCode? = nil) {
-        self._id = _id
-        self.name = name
-        self.icon = icon
+    public init(color: String? = nil, computersCount: Int? = nil, _description: String? = nil, enrollmentCode: BlueprintsCreateBlueprint201ResponseEnrollmentCode? = nil, icon: String? = nil, _id: String? = nil, missingComputersCount: Int? = nil, name: String? = nil, params: AnyCodable? = nil) {
         self.color = color
-        self._description = _description
-        self.params = params
         self.computersCount = computersCount
-        self.missingComputersCount = missingComputersCount
+        self._description = _description
         self.enrollmentCode = enrollmentCode
+        self.icon = icon
+        self._id = _id
+        self.missingComputersCount = missingComputersCount
+        self.name = name
+        self.params = params
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case _id = "id"
-        case name
-        case icon
         case color
-        case _description = "description"
-        case params
         case computersCount = "computers_count"
-        case missingComputersCount = "missing_computers_count"
+        case _description = "description"
         case enrollmentCode = "enrollment_code"
+        case icon
+        case _id = "id"
+        case missingComputersCount = "missing_computers_count"
+        case name
+        case params
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(_id, forKey: ._id)
-        try container.encodeIfPresent(name, forKey: .name)
-        try container.encodeIfPresent(icon, forKey: .icon)
         try container.encodeIfPresent(color, forKey: .color)
-        try container.encodeIfPresent(_description, forKey: ._description)
-        try container.encodeIfPresent(params, forKey: .params)
         try container.encodeIfPresent(computersCount, forKey: .computersCount)
-        try container.encodeIfPresent(missingComputersCount, forKey: .missingComputersCount)
+        try container.encodeIfPresent(_description, forKey: ._description)
         try container.encodeIfPresent(enrollmentCode, forKey: .enrollmentCode)
+        try container.encodeIfPresent(icon, forKey: .icon)
+        try container.encodeIfPresent(_id, forKey: ._id)
+        try container.encodeIfPresent(missingComputersCount, forKey: .missingComputersCount)
+        try container.encodeIfPresent(name, forKey: .name)
+        try container.encodeIfPresent(params, forKey: .params)
     }
 }
 

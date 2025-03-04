@@ -17,33 +17,33 @@ extension kandji_sdkAPI {
 
 @objcMembers public class AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint: NSObject, Codable, JSONEncodable {
 
+    public var color: String?
+    public var icon: String?
     public var _id: String?
     public var name: String?
-    public var icon: String?
-    public var color: String?
 
-    public init(_id: String? = nil, name: String? = nil, icon: String? = nil, color: String? = nil) {
+    public init(color: String? = nil, icon: String? = nil, _id: String? = nil, name: String? = nil) {
+        self.color = color
+        self.icon = icon
         self._id = _id
         self.name = name
-        self.icon = icon
-        self.color = color
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case color
+        case icon
         case _id = "id"
         case name
-        case icon
-        case color
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(color, forKey: .color)
+        try container.encodeIfPresent(icon, forKey: .icon)
         try container.encodeIfPresent(_id, forKey: ._id)
         try container.encodeIfPresent(name, forKey: .name)
-        try container.encodeIfPresent(icon, forKey: .icon)
-        try container.encodeIfPresent(color, forKey: .color)
     }
 }
 

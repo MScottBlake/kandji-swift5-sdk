@@ -24,21 +24,21 @@ extension kandji_sdkAPI {
         }
     }
     public var name: String?
-    public var uuid: String?
     public var type: String?
+    public var uuid: String?
 
-    public init(_id: Int? = nil, name: String? = nil, uuid: String? = nil, type: String? = nil) {
+    public init(_id: Int? = nil, name: String? = nil, type: String? = nil, uuid: String? = nil) {
         self._id = _id
         self.name = name
-        self.uuid = uuid
         self.type = type
+        self.uuid = uuid
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case _id = "id"
         case name
-        case uuid
         case type
+        case uuid
     }
 
     // Encodable protocol methods
@@ -47,8 +47,8 @@ extension kandji_sdkAPI {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(_id, forKey: ._id)
         try container.encodeIfPresent(name, forKey: .name)
-        try container.encodeIfPresent(uuid, forKey: .uuid)
         try container.encodeIfPresent(type, forKey: .type)
+        try container.encodeIfPresent(uuid, forKey: .uuid)
     }
 }
 

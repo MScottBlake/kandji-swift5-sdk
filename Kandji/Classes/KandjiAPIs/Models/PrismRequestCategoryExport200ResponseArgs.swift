@@ -17,37 +17,37 @@ extension kandji_sdkAPI {
 
 @objcMembers public class PrismRequestCategoryExport200ResponseArgs: NSObject, Codable, JSONEncodable {
 
-    public var filter: AnyCodable?
-    public var columns: AnyCodable?
-    public var sortBy: String?
     public var blueprintIds: AnyCodable?
+    public var columns: AnyCodable?
     public var deviceFamilies: AnyCodable?
+    public var filter: AnyCodable?
+    public var sortBy: String?
 
-    public init(filter: AnyCodable? = nil, columns: AnyCodable? = nil, sortBy: String? = nil, blueprintIds: AnyCodable? = nil, deviceFamilies: AnyCodable? = nil) {
-        self.filter = filter
-        self.columns = columns
-        self.sortBy = sortBy
+    public init(blueprintIds: AnyCodable? = nil, columns: AnyCodable? = nil, deviceFamilies: AnyCodable? = nil, filter: AnyCodable? = nil, sortBy: String? = nil) {
         self.blueprintIds = blueprintIds
+        self.columns = columns
         self.deviceFamilies = deviceFamilies
+        self.filter = filter
+        self.sortBy = sortBy
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case filter
-        case columns
-        case sortBy = "sort_by"
         case blueprintIds = "blueprint_ids"
+        case columns
         case deviceFamilies = "device_families"
+        case filter
+        case sortBy = "sort_by"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(filter, forKey: .filter)
-        try container.encodeIfPresent(columns, forKey: .columns)
-        try container.encodeIfPresent(sortBy, forKey: .sortBy)
         try container.encodeIfPresent(blueprintIds, forKey: .blueprintIds)
+        try container.encodeIfPresent(columns, forKey: .columns)
         try container.encodeIfPresent(deviceFamilies, forKey: .deviceFamilies)
+        try container.encodeIfPresent(filter, forKey: .filter)
+        try container.encodeIfPresent(sortBy, forKey: .sortBy)
     }
 }
 

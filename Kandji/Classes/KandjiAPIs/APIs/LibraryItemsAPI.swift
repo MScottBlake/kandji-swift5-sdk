@@ -28,7 +28,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getLibraryItemActivity(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getLibraryItemActivity(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getLibraryItemActivityWithRequestBuilder(libraryItemId: libraryItemId, activityType: activityType, userId: userId, userEmail: userEmail, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -46,7 +46,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Connection(String), Content-Type(String), Allow(String), Content-Encoding(String), Content-Security-Policy(String), Cross-Origin-Opener-Policy(String), Feature-Policy(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Via(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), Accept-Ranges(String), Access-Control-Allow-Origin(String), Date(String), X-Served-By(String), X-Cache(String), X-Cache-Hits(String), X-Timer(String), Vary(String), transfer-encoding(String)]
+     - responseHeaders: [Accept-Ranges(String), Access-Control-Allow-Origin(String), Allow(String), Connection(String), Content-Encoding(String), Content-Security-Policy(String), Content-Type(String), Cross-Origin-Opener-Policy(String), Date(String), Feature-Policy(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), Via(String), X-Cache(String), X-Cache-Hits(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), X-Served-By(String), X-Timer(String), transfer-encoding(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#c2bb2f1a-b904-4fc0-9256-d188fd9eb191
@@ -57,9 +57,9 @@ extension kandji_sdkAPI {
      - parameter userEmail: (query) Filter actions by this user (email) (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
-     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
+     - returns: RequestBuilder<BlueprintsListBlueprints200Response> 
      */
-    open class func getLibraryItemActivityWithRequestBuilder(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
+    open class func getLibraryItemActivityWithRequestBuilder(libraryItemId: String, activityType: String? = nil, userId: String? = nil, userEmail: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<BlueprintsListBlueprints200Response> {
         var localVariablePath = "/api/v1/library/library-items/{library_item_id}/activity"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -82,7 +82,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BlueprintsListBlueprints200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -98,7 +98,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getLibraryItemStatuses(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getLibraryItemStatuses(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getLibraryItemStatusesWithRequestBuilder(libraryItemId: libraryItemId, computerId: computerId, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -116,7 +116,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Connection(String), Content-Type(String), Allow(String), Content-Encoding(String), Content-Security-Policy(String), Cross-Origin-Opener-Policy(String), Feature-Policy(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Via(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), Accept-Ranges(String), Access-Control-Allow-Origin(String), Date(String), X-Served-By(String), X-Cache(String), X-Cache-Hits(String), X-Timer(String), Vary(String), transfer-encoding(String)]
+     - responseHeaders: [Accept-Ranges(String), Access-Control-Allow-Origin(String), Allow(String), Connection(String), Content-Encoding(String), Content-Security-Policy(String), Content-Type(String), Cross-Origin-Opener-Policy(String), Date(String), Feature-Policy(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), Via(String), X-Cache(String), X-Cache-Hits(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), X-Served-By(String), X-Timer(String), transfer-encoding(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#478764c4-638c-416c-b44c-3685a2f7b441
@@ -125,9 +125,9 @@ extension kandji_sdkAPI {
      - parameter computerId: (query) Query for the status of one device. (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
-     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
+     - returns: RequestBuilder<BlueprintsListBlueprints200Response> 
      */
-    open class func getLibraryItemStatusesWithRequestBuilder(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
+    open class func getLibraryItemStatusesWithRequestBuilder(libraryItemId: String, computerId: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<BlueprintsListBlueprints200Response> {
         var localVariablePath = "/api/v1/library/library-items/{library_item_id}/status"
         let libraryItemIdPreEscape = "\(APIHelper.mapValueToPathItem(libraryItemId))"
         let libraryItemIdPostEscape = libraryItemIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -148,7 +148,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BlueprintsListBlueprints200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

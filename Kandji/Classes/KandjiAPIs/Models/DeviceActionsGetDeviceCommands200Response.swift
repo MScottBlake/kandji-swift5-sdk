@@ -17,25 +17,25 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceActionsGetDeviceCommands200Response: NSObject, Codable, JSONEncodable {
 
+    public var commands: BlueprintsListBlueprints200Response?
     public var deviceId: String?
-    public var commands: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?
 
-    public init(deviceId: String? = nil, commands: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response? = nil) {
-        self.deviceId = deviceId
+    public init(commands: BlueprintsListBlueprints200Response? = nil, deviceId: String? = nil) {
         self.commands = commands
+        self.deviceId = deviceId
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case deviceId = "device_id"
         case commands
+        case deviceId = "device_id"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(deviceId, forKey: .deviceId)
         try container.encodeIfPresent(commands, forKey: .commands)
+        try container.encodeIfPresent(deviceId, forKey: .deviceId)
     }
 }
 

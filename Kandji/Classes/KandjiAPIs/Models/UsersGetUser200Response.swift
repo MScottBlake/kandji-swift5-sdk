@@ -32,31 +32,31 @@ extension kandji_sdkAPI {
     public var createdAt: String?
     public var department: AnyCodable?
     public var deprecatedUserId: String?
-    public var email: String?
-    public var _id: String?
-    public var integration: UsersGetUser200ResponseIntegration?
-    public var jobTitle: AnyCodable?
-    public var name: String?
     public var deviceCount: Int?
     public var deviceCountNum: NSNumber? {
         get {
             return deviceCount as NSNumber?
         }
     }
+    public var email: String?
+    public var _id: String?
+    public var integration: UsersGetUser200ResponseIntegration?
+    public var jobTitle: AnyCodable?
+    public var name: String?
     public var updatedAt: String?
 
-    public init(active: Int? = nil, archived: Int? = nil, createdAt: String? = nil, department: AnyCodable? = nil, deprecatedUserId: String? = nil, email: String? = nil, _id: String? = nil, integration: UsersGetUser200ResponseIntegration? = nil, jobTitle: AnyCodable? = nil, name: String? = nil, deviceCount: Int? = nil, updatedAt: String? = nil) {
+    public init(active: Int? = nil, archived: Int? = nil, createdAt: String? = nil, department: AnyCodable? = nil, deprecatedUserId: String? = nil, deviceCount: Int? = nil, email: String? = nil, _id: String? = nil, integration: UsersGetUser200ResponseIntegration? = nil, jobTitle: AnyCodable? = nil, name: String? = nil, updatedAt: String? = nil) {
         self.active = active
         self.archived = archived
         self.createdAt = createdAt
         self.department = department
         self.deprecatedUserId = deprecatedUserId
+        self.deviceCount = deviceCount
         self.email = email
         self._id = _id
         self.integration = integration
         self.jobTitle = jobTitle
         self.name = name
-        self.deviceCount = deviceCount
         self.updatedAt = updatedAt
     }
 
@@ -66,12 +66,12 @@ extension kandji_sdkAPI {
         case createdAt = "created_at"
         case department
         case deprecatedUserId = "deprecated_user_id"
+        case deviceCount = "device_count"
         case email
         case _id = "id"
         case integration
         case jobTitle = "job_title"
         case name
-        case deviceCount = "device_count"
         case updatedAt = "updated_at"
     }
 
@@ -84,12 +84,12 @@ extension kandji_sdkAPI {
         try container.encodeIfPresent(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(department, forKey: .department)
         try container.encodeIfPresent(deprecatedUserId, forKey: .deprecatedUserId)
+        try container.encodeIfPresent(deviceCount, forKey: .deviceCount)
         try container.encodeIfPresent(email, forKey: .email)
         try container.encodeIfPresent(_id, forKey: ._id)
         try container.encodeIfPresent(integration, forKey: .integration)
         try container.encodeIfPresent(jobTitle, forKey: .jobTitle)
         try container.encodeIfPresent(name, forKey: .name)
-        try container.encodeIfPresent(deviceCount, forKey: .deviceCount)
         try container.encodeIfPresent(updatedAt, forKey: .updatedAt)
     }
 }

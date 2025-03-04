@@ -42,7 +42,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Server(String), Allow(String), X-Frame-Options(String), Content-Length(String), X-Content-Type-Options(String), Referrer-Policy(String), Cross-Origin-Opener-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String), Content-Type(String)]
+     - responseHeaders: [Allow(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Cross-Origin-Opener-Policy(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#683ac930-5754-4203-b066-59cdb8ced781
@@ -75,18 +75,18 @@ extension kandji_sdkAPI {
     /**
      Create Blueprint
      
-     - parameter name: (form) (required) Set the name of the Blueprint. The name provided must be unique. 
-     - parameter enrollmentCodeIsActive: (form) (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal 
      - parameter enrollmentCodeCode: (form) Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. 
-     - parameter sourceType: (form) Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. 
+     - parameter enrollmentCodeIsActive: (form) (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal 
+     - parameter name: (form) (required) Set the name of the Blueprint. The name provided must be unique. 
      - parameter sourceId: (form) Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. 
+     - parameter sourceType: (form) Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. 
      - parameter type: (form) Choose the type of blueprint to create. Options: &lt;code&gt;classic&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt; 
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func createBlueprint(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsCreateBlueprint201Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return createBlueprintWithRequestBuilder(name: name, enrollmentCodeIsActive: enrollmentCodeIsActive, enrollmentCodeCode: enrollmentCodeCode, sourceType: sourceType, sourceId: sourceId, type: type).execute(apiResponseQueue) { result in
+    open class func createBlueprint(enrollmentCodeCode: String, enrollmentCodeIsActive: String, name: String, sourceId: String, sourceType: String, type: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsCreateBlueprint201Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return createBlueprintWithRequestBuilder(enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive, name: name, sourceId: sourceId, sourceType: sourceType, type: type).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -108,23 +108,23 @@ extension kandji_sdkAPI {
     description: null
     url: https://api-docs.kandji.io/#8ee421a2-c1f8-41ba-9285-8db1b33e092d
 }
-     - parameter name: (form) (required) Set the name of the Blueprint. The name provided must be unique. 
-     - parameter enrollmentCodeIsActive: (form) (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal 
      - parameter enrollmentCodeCode: (form) Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. 
-     - parameter sourceType: (form) Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. 
+     - parameter enrollmentCodeIsActive: (form) (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal 
+     - parameter name: (form) (required) Set the name of the Blueprint. The name provided must be unique. 
      - parameter sourceId: (form) Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. 
+     - parameter sourceType: (form) Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. 
      - parameter type: (form) Choose the type of blueprint to create. Options: &lt;code&gt;classic&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt; 
      - returns: RequestBuilder<BlueprintsCreateBlueprint201Response> 
      */
-    open class func createBlueprintWithRequestBuilder(name: String, enrollmentCodeIsActive: String, enrollmentCodeCode: String, sourceType: String, sourceId: String, type: String) -> RequestBuilder<BlueprintsCreateBlueprint201Response> {
+    open class func createBlueprintWithRequestBuilder(enrollmentCodeCode: String, enrollmentCodeIsActive: String, name: String, sourceId: String, sourceType: String, type: String) -> RequestBuilder<BlueprintsCreateBlueprint201Response> {
         let localVariablePath = "/api/v1/blueprints"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableFormParams: [String: Any?] = [
-            "name": name.encodeToJSON(),
-            "enrollment_code.is_active": enrollmentCodeIsActive.encodeToJSON(),
             "enrollment_code.code": enrollmentCodeCode.encodeToJSON(),
-            "source.type": sourceType.encodeToJSON(),
+            "enrollment_code.is_active": enrollmentCodeIsActive.encodeToJSON(),
+            "name": name.encodeToJSON(),
             "source.id": sourceId.encodeToJSON(),
+            "source.type": sourceType.encodeToJSON(),
             "type": type.encodeToJSON(),
         ]
 
@@ -224,7 +224,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#c0383706-3a41-445c-998f-37a2c1c7ba4a
@@ -336,7 +336,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Connection(String), Content-Length(String), Content-Type(String), Allow(String), Content-Disposition(String), Content-Language(String), Content-Security-Policy(String), Cross-Origin-Opener-Policy(String), Feature-Policy(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Via(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), Accept-Ranges(String), Access-Control-Allow-Origin(String), Date(String), X-Served-By(String), X-Cache(String), X-Cache-Hits(String), X-Timer(String), Vary(String)]
+     - responseHeaders: [Accept-Ranges(String), Access-Control-Allow-Origin(String), Allow(String), Connection(String), Content-Disposition(String), Content-Language(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Cross-Origin-Opener-Policy(String), Date(String), Feature-Policy(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), Via(String), X-Cache(String), X-Cache-Hits(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), X-Served-By(String), X-Timer(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#525b0cae-7ec9-4dc9-9679-fcf47df02cb0
@@ -381,7 +381,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listBlueprints(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listBlueprintsWithRequestBuilder(_id: _id, idIn: idIn, name: name, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -399,7 +399,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#44d3765c-ef17-4226-9104-47e5cef1d370
@@ -409,9 +409,9 @@ extension kandji_sdkAPI {
      - parameter name: (query) Return Blueprint names &amp;quot;containing&amp;quot; the specified search string. (optional)
      - parameter limit: (query) Number of results to return per page. (optional)
      - parameter offset: (query) The initial index from which to return the results. (optional)
-     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
+     - returns: RequestBuilder<BlueprintsListBlueprints200Response> 
      */
-    open class func listBlueprintsWithRequestBuilder(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
+    open class func listBlueprintsWithRequestBuilder(_id: String? = nil, idIn: String? = nil, name: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<BlueprintsListBlueprints200Response> {
         let localVariablePath = "/api/v1/blueprints"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -431,7 +431,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BlueprintsListBlueprints200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -444,7 +444,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listLibraryItems(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listLibraryItems(blueprintId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listLibraryItemsWithRequestBuilder(blueprintId: blueprintId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -462,15 +462,15 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Connection(String), Content-Type(String), Allow(String), Content-Encoding(String), Content-Security-Policy(String), Cross-Origin-Opener-Policy(String), Feature-Policy(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Via(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), Accept-Ranges(String), Access-Control-Allow-Origin(String), Date(String), X-Served-By(String), X-Cache(String), X-Cache-Hits(String), X-Timer(String), Vary(String), transfer-encoding(String)]
+     - responseHeaders: [Accept-Ranges(String), Access-Control-Allow-Origin(String), Allow(String), Connection(String), Content-Encoding(String), Content-Security-Policy(String), Content-Type(String), Cross-Origin-Opener-Policy(String), Date(String), Feature-Policy(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), Via(String), X-Cache(String), X-Cache-Hits(String), X-Content-Type-Options(String), X-Frame-Options(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), X-Served-By(String), X-Timer(String), transfer-encoding(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#34af40a5-7273-425c-9ea5-2c8a5dbbe29f
 }
      - parameter blueprintId: (path)  
-     - returns: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> 
+     - returns: RequestBuilder<BlueprintsListBlueprints200Response> 
      */
-    open class func listLibraryItemsWithRequestBuilder(blueprintId: String) -> RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response> {
+    open class func listLibraryItemsWithRequestBuilder(blueprintId: String) -> RequestBuilder<BlueprintsListBlueprints200Response> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}/list-library-items"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -486,7 +486,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<BlueprintsListBlueprints200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -518,7 +518,7 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Server(String), Allow(String), X-Frame-Options(String), Content-Length(String), X-Content-Type-Options(String), Referrer-Policy(String), Cross-Origin-Opener-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String), Content-Type(String)]
+     - responseHeaders: [Allow(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Cross-Origin-Opener-Policy(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#0d968198-fd6c-44ef-a3e0-a75e0a0adf71
@@ -552,16 +552,16 @@ extension kandji_sdkAPI {
      Update Blueprint
      
      - parameter blueprintId: (path)  
-     - parameter name: (form) Update the name of the Blueprint 
      - parameter _description: (form) Update the description of the Blueprint  
      - parameter enrollmentCodeCode: (form) Update the enrollment code of the Blueprint  
      - parameter enrollmentCodeIsActive: (form) Disable the Blueprint for manual device enrollment from the enrollment portal. 
+     - parameter name: (form) Update the name of the Blueprint 
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateBlueprint(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsUpdateBlueprint200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateBlueprintWithRequestBuilder(blueprintId: blueprintId, name: name, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive).execute(apiResponseQueue) { result in
+    open class func updateBlueprint(blueprintId: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, name: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: BlueprintsUpdateBlueprint200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return updateBlueprintWithRequestBuilder(blueprintId: blueprintId, _description: _description, enrollmentCodeCode: enrollmentCodeCode, enrollmentCodeIsActive: enrollmentCodeIsActive, name: name).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -578,29 +578,29 @@ extension kandji_sdkAPI {
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Date(String), Content-Type(String), Content-Length(String), Connection(String), Server(String), Allow(String), X-Frame-Options(String), Strict-Transport-Security(String), X-Content-Type-Options(String), X-XSS-Protection(String), Referrer-Policy(String), Feature-Policy(String), Vary(String), Content-Security-Policy(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#4820ba50-291a-4857-b622-77a9ab9cc9e3
 }
      - parameter blueprintId: (path)  
-     - parameter name: (form) Update the name of the Blueprint 
      - parameter _description: (form) Update the description of the Blueprint  
      - parameter enrollmentCodeCode: (form) Update the enrollment code of the Blueprint  
      - parameter enrollmentCodeIsActive: (form) Disable the Blueprint for manual device enrollment from the enrollment portal. 
+     - parameter name: (form) Update the name of the Blueprint 
      - returns: RequestBuilder<BlueprintsUpdateBlueprint200Response> 
      */
-    open class func updateBlueprintWithRequestBuilder(blueprintId: String, name: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String) -> RequestBuilder<BlueprintsUpdateBlueprint200Response> {
+    open class func updateBlueprintWithRequestBuilder(blueprintId: String, _description: String, enrollmentCodeCode: String, enrollmentCodeIsActive: String, name: String) -> RequestBuilder<BlueprintsUpdateBlueprint200Response> {
         var localVariablePath = "/api/v1/blueprints/{blueprint_id}"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{blueprint_id}", with: blueprintIdPostEscape, options: .literal, range: nil)
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableFormParams: [String: Any?] = [
-            "name": name.encodeToJSON(),
             "description": _description.encodeToJSON(),
             "enrollment_code.code": enrollmentCodeCode.encodeToJSON(),
             "enrollment_code.is_active": enrollmentCodeIsActive.encodeToJSON(),
+            "name": name.encodeToJSON(),
         ]
 
         let localVariableNonNullParameters = APIHelper.rejectNil(localVariableFormParams)

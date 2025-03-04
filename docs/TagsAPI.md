@@ -112,7 +112,7 @@ Void (empty response body)
 
 # **getTags**
 ```swift
-    open class func getTags(search: String, completion: @escaping (_ data: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response?, _ error: Error?) -> Void)
+    open class func getTags(search: String, completion: @escaping (_ data: BlueprintsListBlueprints200Response?, _ error: Error?) -> Void)
 ```
 
 Get Tags
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 

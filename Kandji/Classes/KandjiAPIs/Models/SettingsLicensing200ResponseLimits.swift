@@ -17,7 +17,6 @@ extension kandji_sdkAPI {
 
 @objcMembers public class SettingsLicensing200ResponseLimits: NSObject, Codable, JSONEncodable {
 
-    public var planType: String?
     public var maxDevices: Int?
     public var maxDevicesNum: NSNumber? {
         get {
@@ -25,26 +24,27 @@ extension kandji_sdkAPI {
         }
     }
     public var maxDevicesPerPlatform: SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform?
+    public var planType: String?
 
-    public init(planType: String? = nil, maxDevices: Int? = nil, maxDevicesPerPlatform: SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform? = nil) {
-        self.planType = planType
+    public init(maxDevices: Int? = nil, maxDevicesPerPlatform: SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform? = nil, planType: String? = nil) {
         self.maxDevices = maxDevices
         self.maxDevicesPerPlatform = maxDevicesPerPlatform
+        self.planType = planType
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case planType = "plan_type"
         case maxDevices = "max_devices"
         case maxDevicesPerPlatform = "max_devices_per_platform"
+        case planType = "plan_type"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(planType, forKey: .planType)
         try container.encodeIfPresent(maxDevices, forKey: .maxDevices)
         try container.encodeIfPresent(maxDevicesPerPlatform, forKey: .maxDevicesPerPlatform)
+        try container.encodeIfPresent(planType, forKey: .planType)
     }
 }
 

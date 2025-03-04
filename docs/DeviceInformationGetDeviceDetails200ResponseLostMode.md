@@ -3,19 +3,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lostModeStatus** | **String** |  | [optional] 
-**enabledBy** | **String** |  | [optional] 
-**enableStatusAt** | **String** |  | [optional] 
-**lockScreenMessage** | **String** |  | [optional] 
-**lockScreenPhoneNumber** | **String** |  | [optional] 
-**lockScreenFootnote** | **String** |  | [optional] 
 **disableStatus** | **String** |  | [optional] 
-**disabledBy** | **String** |  | [optional] 
 **disableStatusAt** | **String** |  | [optional] 
-**lastLocationStatus** | **String** |  | [optional] 
-**lastLocationStatusAt** | **String** |  | [optional] 
+**disabledBy** | **String** |  | [optional] 
+**enableStatusAt** | **String** |  | [optional] 
+**enabledBy** | **String** |  | [optional] 
 **lastLocation** | [**DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation**](DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation.md) |  | [optional] 
 **lastLocationAt** | **String** |  | [optional] 
+**lastLocationStatus** | **String** |  | [optional] 
+**lastLocationStatusAt** | **String** |  | [optional] 
+**lockScreenFootnote** | **String** |  | [optional] 
+**lockScreenMessage** | **String** |  | [optional] 
+**lockScreenPhoneNumber** | **String** |  | [optional] 
+**lostModeStatus** | **String** |  | [optional] 
 **soundStatus** | **String** |  | [optional] 
 **soundStatusAt** | **String** |  | [optional] 
 

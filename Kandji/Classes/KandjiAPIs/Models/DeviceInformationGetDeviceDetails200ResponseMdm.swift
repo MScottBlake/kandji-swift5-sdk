@@ -17,37 +17,37 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseMdm: NSObject, Codable, JSONEncodable {
 
-    public var mdmEnabled: String?
-    public var supervised: String?
     public var installDate: String?
     public var lastCheckIn: String?
+    public var mdmEnabled: String?
     public var mdmEnabledUser: AnyCodable?
+    public var supervised: String?
 
-    public init(mdmEnabled: String? = nil, supervised: String? = nil, installDate: String? = nil, lastCheckIn: String? = nil, mdmEnabledUser: AnyCodable? = nil) {
-        self.mdmEnabled = mdmEnabled
-        self.supervised = supervised
+    public init(installDate: String? = nil, lastCheckIn: String? = nil, mdmEnabled: String? = nil, mdmEnabledUser: AnyCodable? = nil, supervised: String? = nil) {
         self.installDate = installDate
         self.lastCheckIn = lastCheckIn
+        self.mdmEnabled = mdmEnabled
         self.mdmEnabledUser = mdmEnabledUser
+        self.supervised = supervised
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case mdmEnabled = "mdm_enabled"
-        case supervised
         case installDate = "install_date"
         case lastCheckIn = "last_check_in"
+        case mdmEnabled = "mdm_enabled"
         case mdmEnabledUser = "mdm_enabled_user"
+        case supervised
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(mdmEnabled, forKey: .mdmEnabled)
-        try container.encodeIfPresent(supervised, forKey: .supervised)
         try container.encodeIfPresent(installDate, forKey: .installDate)
         try container.encodeIfPresent(lastCheckIn, forKey: .lastCheckIn)
+        try container.encodeIfPresent(mdmEnabled, forKey: .mdmEnabled)
         try container.encodeIfPresent(mdmEnabledUser, forKey: .mdmEnabledUser)
+        try container.encodeIfPresent(supervised, forKey: .supervised)
     }
 }
 
