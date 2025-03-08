@@ -212,14 +212,14 @@ extension kandji_sdkAPI {
      List Detections
      
      - parameter after: (query) Cursor token. (optional)
-     - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
+     - parameter size: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter filter: (query) Can filter on any key attribute within the response. (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listDetections(after: String? = nil, limit: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListDetections200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return listDetectionsWithRequestBuilder(after: after, limit: limit, filter: filter).execute(apiResponseQueue) { result in
+    open class func listDetections(after: String? = nil, size: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListDetections200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return listDetectionsWithRequestBuilder(after: after, size: size, filter: filter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -242,11 +242,11 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#6ca65b6a-8792-4d01-a49b-935fff494070
 }
      - parameter after: (query) Cursor token. (optional)
-     - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
+     - parameter size: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter filter: (query) Can filter on any key attribute within the response. (optional)
      - returns: RequestBuilder<VulnerabilitiesListDetections200Response> 
      */
-    open class func listDetectionsWithRequestBuilder(after: String? = nil, limit: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListDetections200Response> {
+    open class func listDetectionsWithRequestBuilder(after: String? = nil, size: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListDetections200Response> {
         let localVariablePath = "/api/v1/vulnerability-management/detections"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -254,7 +254,7 @@ extension kandji_sdkAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "after": (wrappedValue: after?.encodeToJSON(), isExplode: true),
-            "limit": (wrappedValue: limit?.encodeToJSON(), isExplode: true),
+            "size": (wrappedValue: size?.encodeToJSON(), isExplode: true),
             "filter": (wrappedValue: filter?.encodeToJSON(), isExplode: true),
         ])
 

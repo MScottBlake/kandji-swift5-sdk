@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 # **listDetections**
 ```swift
-    open class func listDetections(after: String? = nil, limit: String? = nil, filter: String? = nil, completion: @escaping (_ data: VulnerabilitiesListDetections200Response?, _ error: Error?) -> Void)
+    open class func listDetections(after: String? = nil, size: String? = nil, filter: String? = nil, completion: @escaping (_ data: VulnerabilitiesListDetections200Response?, _ error: Error?) -> Void)
 ```
 
 List Detections
@@ -192,11 +192,11 @@ This endpoint makes a request to retrieve a list of all vulnerability detections
 import kandji_sdk
 
 let after = "" // String | Cursor token. (optional)
-let limit = "limit_example" // String | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
+let size = "size_example" // String | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
 let filter = "filter_example" // String | Can filter on any key attribute within the response. (optional)
 
 // List Detections
-VulnerabilitiesAPI.listDetections(after: after, limit: limit, filter: filter) { (response, error) in
+VulnerabilitiesAPI.listDetections(after: after, size: size, filter: filter) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -213,7 +213,7 @@ VulnerabilitiesAPI.listDetections(after: after, limit: limit, filter: filter) { 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **after** | **String** | Cursor token. | [optional] 
- **limit** | **String** | A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
+ **size** | **String** | A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **filter** | **String** | Can filter on any key attribute within the response. | [optional] 
 
 ### Return type
