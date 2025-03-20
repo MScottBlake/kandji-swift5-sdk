@@ -79,6 +79,7 @@ Kandji/Classes/KandjiAPIs/Models/SettingsLicensing200ResponseCounts.swift
 Kandji/Classes/KandjiAPIs/Models/SettingsLicensing200ResponseLimits.swift
 Kandji/Classes/KandjiAPIs/Models/SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.swift
 Kandji/Classes/KandjiAPIs/Models/TagsCreateTag201Response.swift
+Kandji/Classes/KandjiAPIs/Models/ThreatsGetBehavioralDetections200Response.swift
 Kandji/Classes/KandjiAPIs/Models/ThreatsGetThreatDetails200Response.swift
 Kandji/Classes/KandjiAPIs/Models/UsersGetUser200Response.swift
 Kandji/Classes/KandjiAPIs/Models/UsersGetUser200ResponseIntegration.swift
@@ -160,6 +161,7 @@ docs/SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.md
 docs/TagsAPI.md
 docs/TagsCreateTag201Response.md
 docs/ThreatsAPI.md
+docs/ThreatsGetBehavioralDetections200Response.md
 docs/ThreatsGetThreatDetails200Response.md
 docs/UsersAPI.md
 docs/UsersGetUser200Response.md

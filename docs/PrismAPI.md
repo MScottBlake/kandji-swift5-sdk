@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**activationLock**](PrismAPI.md#activationlock) | **GET** /api/v1/prism/activation_lock | Activation lock
 [**applicationFirewall**](PrismAPI.md#applicationfirewall) | **GET** /api/v1/prism/application_firewall | Application firewall
 [**applications**](PrismAPI.md#applications) | **GET** /api/v1/prism/apps | Applications
+[**cellular**](PrismAPI.md#cellular) | **GET** /api/v1/prism/cellular | Cellular
 [**certificates**](PrismAPI.md#certificates) | **GET** /api/v1/prism/certificates | Certificates
 [**count**](PrismAPI.md#count) | **GET** /api/v1/prism/count | Count
 [**desktopAndScreensaver**](PrismAPI.md#desktopandscreensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
@@ -192,6 +193,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrismApplications200Response**](PrismApplications200Response.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cellular**
+```swift
+    open class func cellular(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+```
+
+Cellular
+
+Get Cellular attributes for devices.
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import kandji_sdk
+
+let blueprintIds = "blueprintIds_example" // String | Filter results by one or more blueprint IDs separated by commas. (optional)
+let deviceFamilies = "deviceFamilies_example" // String | Filter results by one or more device families separate by commas. (optional)
+let filter = "" // String | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
+let sortBy = "" // String | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+let limit = "" // String | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+let offset = "" // String | Specify the starting record to return. (optional)
+
+// Cellular
+PrismAPI.cellular(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprintIds** | **String** | Filter results by one or more blueprint IDs separated by commas. | [optional] 
+ **deviceFamilies** | **String** | Filter results by one or more device families separate by commas. | [optional] 
+ **filter** | **String** | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | [optional] 
+ **sortBy** | **String** | Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | [optional] 
+ **limit** | **String** | A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | [optional] 
+ **offset** | **String** | Specify the starting record to return. | [optional] 
+
+### Return type
+
+**AnyCodable**
 
 ### Authorization
 

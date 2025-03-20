@@ -215,6 +215,7 @@ Class | Method | HTTP request | Description
 *PrismAPI* | [**activationLock**](docs/PrismAPI.md#activationlock) | **GET** /api/v1/prism/activation_lock | Activation lock
 *PrismAPI* | [**applicationFirewall**](docs/PrismAPI.md#applicationfirewall) | **GET** /api/v1/prism/application_firewall | Application firewall
 *PrismAPI* | [**applications**](docs/PrismAPI.md#applications) | **GET** /api/v1/prism/apps | Applications
+*PrismAPI* | [**cellular**](docs/PrismAPI.md#cellular) | **GET** /api/v1/prism/cellular | Cellular
 *PrismAPI* | [**certificates**](docs/PrismAPI.md#certificates) | **GET** /api/v1/prism/certificates | Certificates
 *PrismAPI* | [**count**](docs/PrismAPI.md#count) | **GET** /api/v1/prism/count | Count
 *PrismAPI* | [**desktopAndScreensaver**](docs/PrismAPI.md#desktopandscreensaver) | **GET** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
@@ -235,6 +236,7 @@ Class | Method | HTTP request | Description
 *TagsAPI* | [**deleteTag**](docs/TagsAPI.md#deletetag) | **DELETE** /api/v1/tags/{tag_id} | Delete Tag
 *TagsAPI* | [**getTags**](docs/TagsAPI.md#gettags) | **GET** /api/v1/tags | Get Tags
 *TagsAPI* | [**updateTag**](docs/TagsAPI.md#updatetag) | **PATCH** /api/v1/tags/{tag_id} | Update Tag
+*ThreatsAPI* | [**getBehavioralDetections**](docs/ThreatsAPI.md#getbehavioraldetections) | **GET** /api/v1/behavioral-detections | Get Behavioral Detections
 *ThreatsAPI* | [**getThreatDetails**](docs/ThreatsAPI.md#getthreatdetails) | **GET** /api/v1/threat-details | Get Threat Details
 *UsersAPI* | [**deleteUser**](docs/UsersAPI.md#deleteuser) | **DELETE** /api/v1/users/{user_id} | Delete User
 *UsersAPI* | [**getUser**](docs/UsersAPI.md#getuser) | **GET** /api/v1/users/{user_id} | Get User
@@ -306,6 +308,7 @@ Class | Method | HTTP request | Description
  - [SettingsLicensing200ResponseLimits](docs/SettingsLicensing200ResponseLimits.md)
  - [SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform](docs/SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.md)
  - [TagsCreateTag201Response](docs/TagsCreateTag201Response.md)
+ - [ThreatsGetBehavioralDetections200Response](docs/ThreatsGetBehavioralDetections200Response.md)
  - [ThreatsGetThreatDetails200Response](docs/ThreatsGetThreatDetails200Response.md)
  - [UsersGetUser200Response](docs/UsersGetUser200Response.md)
  - [UsersGetUser200ResponseIntegration](docs/UsersGetUser200ResponseIntegration.md)

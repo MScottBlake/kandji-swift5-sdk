@@ -226,6 +226,76 @@ extension kandji_sdkAPI {
     }
 
     /**
+     Cellular
+     
+     - parameter blueprintIds: (query) Filter results by one or more blueprint IDs separated by commas. (optional)
+     - parameter deviceFamilies: (query) Filter results by one or more device families separate by commas. (optional)
+     - parameter filter: (query) JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
+     - parameter sortBy: (query) Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. (optional)
+     - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+     - parameter offset: (query) Specify the starting record to return. (optional)
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func cellular(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return cellularWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     Cellular
+     - GET /api/v1/prism/cellular
+     - Get Cellular attributes for devices.
+     - Bearer Token:
+       - type: http
+       - name: bearer
+     - responseHeaders: [Accept-Ranges(String), Access-Control-Allow-Origin(String), Connection(String), Content-Encoding(String), Content-Type(String), Date(String), Ratelimit-Limit(String), Ratelimit-Remaining(String), Ratelimit-Reset(String), Server(String), Vary(String), Via(String), X-Cache(String), X-Cache-Hits(String), X-Kong-Proxy-Latency(String), X-Kong-Upstream-Latency(String), X-Ratelimit-Limit-Hour(String), X-Ratelimit-Limit-Second(String), X-Ratelimit-Remaining-Hour(String), X-Ratelimit-Remaining-Second(String), X-Served-By(String), X-Timer(String), transfer-encoding(String)]
+     - externalDocs: class ExternalDocumentation {
+    description: null
+    url: https://api-docs.kandji.io/#409341db-b2f0-484c-844c-46be4a637d16
+}
+     - parameter blueprintIds: (query) Filter results by one or more blueprint IDs separated by commas. (optional)
+     - parameter deviceFamilies: (query) Filter results by one or more device families separate by commas. (optional)
+     - parameter filter: (query) JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
+     - parameter sortBy: (query) Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. (optional)
+     - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+     - parameter offset: (query) Specify the starting record to return. (optional)
+     - returns: RequestBuilder<AnyCodable> 
+     */
+    open class func cellularWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+        let localVariablePath = "/api/v1/prism/cellular"
+        let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "blueprint_ids": (wrappedValue: blueprintIds?.encodeToJSON(), isExplode: true),
+            "device_families": (wrappedValue: deviceFamilies?.encodeToJSON(), isExplode: true),
+            "filter": (wrappedValue: filter?.encodeToJSON(), isExplode: true),
+            "sort_by": (wrappedValue: sortBy?.encodeToJSON(), isExplode: true),
+            "limit": (wrappedValue: limit?.encodeToJSON(), isExplode: true),
+            "offset": (wrappedValue: offset?.encodeToJSON(), isExplode: true),
+        ])
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
      Certificates
      
      - parameter blueprintIds: (query) Filter results by one or more blueprint IDs separated by commas. (optional)
