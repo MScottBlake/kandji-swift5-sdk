@@ -66,9 +66,8 @@ Kandji/Classes/KandjiAPIs/Models/DeviceSecretsGetFilevaultRecoveryKey200Response
 Kandji/Classes/KandjiAPIs/Models/DeviceSecretsGetRecoveryLockPassword200Response.swift
 Kandji/Classes/KandjiAPIs/Models/DeviceSecretsGetUnlockPin200Response.swift
 Kandji/Classes/KandjiAPIs/Models/PrismActivationLock200Response.swift
-Kandji/Classes/KandjiAPIs/Models/PrismApplications200Response.swift
+Kandji/Classes/KandjiAPIs/Models/PrismApplicationFirewall200Response.swift
 Kandji/Classes/KandjiAPIs/Models/PrismCount200Response.swift
-Kandji/Classes/KandjiAPIs/Models/PrismDeviceInformation200Response.swift
 Kandji/Classes/KandjiAPIs/Models/PrismGetCategoryExport200Response.swift
 Kandji/Classes/KandjiAPIs/Models/PrismLocalUsers200Response.swift
 Kandji/Classes/KandjiAPIs/Models/PrismRequestCategoryExport200Response.swift
@@ -145,9 +144,8 @@ docs/DeviceSecretsGetUnlockPin200Response.md
 docs/LibraryItemsAPI.md
 docs/PrismAPI.md
 docs/PrismActivationLock200Response.md
-docs/PrismApplications200Response.md
+docs/PrismApplicationFirewall200Response.md
 docs/PrismCount200Response.md
-docs/PrismDeviceInformation200Response.md
 docs/PrismGetCategoryExport200Response.md
 docs/PrismLocalUsers200Response.md
 docs/PrismRequestCategoryExport200Response.md

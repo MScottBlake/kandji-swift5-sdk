@@ -98,7 +98,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func applicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func applicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return applicationFirewallWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -127,9 +127,9 @@ extension kandji_sdkAPI {
      - parameter sortBy: (query) Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return. (optional)
-     - returns: RequestBuilder<PrismActivationLock200Response> 
+     - returns: RequestBuilder<PrismApplicationFirewall200Response> 
      */
-    open class func applicationFirewallWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismActivationLock200Response> {
+    open class func applicationFirewallWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismApplicationFirewall200Response> {
         let localVariablePath = "/api/v1/prism/application_firewall"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -150,7 +150,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<PrismActivationLock200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PrismApplicationFirewall200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -168,7 +168,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func applications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismApplications200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func applications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return applicationsWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -197,9 +197,9 @@ extension kandji_sdkAPI {
      - parameter sortBy: (query) Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return. (optional)
-     - returns: RequestBuilder<PrismApplications200Response> 
+     - returns: RequestBuilder<PrismActivationLock200Response> 
      */
-    open class func applicationsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismApplications200Response> {
+    open class func applicationsWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismActivationLock200Response> {
         let localVariablePath = "/api/v1/prism/apps"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -220,7 +220,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<PrismApplications200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PrismActivationLock200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -238,7 +238,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func cellular(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func cellular(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return cellularWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -267,9 +267,9 @@ extension kandji_sdkAPI {
      - parameter sortBy: (query) Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return. (optional)
-     - returns: RequestBuilder<AnyCodable> 
+     - returns: RequestBuilder<PrismApplicationFirewall200Response> 
      */
-    open class func cellularWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func cellularWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismApplicationFirewall200Response> {
         let localVariablePath = "/api/v1/prism/cellular"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -290,7 +290,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PrismApplicationFirewall200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -308,7 +308,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func certificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func certificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return certificatesWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -337,9 +337,9 @@ extension kandji_sdkAPI {
      - parameter sortBy: (query) Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return. (optional)
-     - returns: RequestBuilder<PrismActivationLock200Response> 
+     - returns: RequestBuilder<PrismApplicationFirewall200Response> 
      */
-    open class func certificatesWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismActivationLock200Response> {
+    open class func certificatesWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismApplicationFirewall200Response> {
         let localVariablePath = "/api/v1/prism/certificates"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -360,7 +360,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<PrismActivationLock200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PrismApplicationFirewall200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -504,7 +504,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func deviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismDeviceInformation200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func deviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return deviceInformationWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -534,9 +534,9 @@ extension kandji_sdkAPI {
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
      - parameter body: (body)  (optional)
-     - returns: RequestBuilder<PrismDeviceInformation200Response> 
+     - returns: RequestBuilder<PrismActivationLock200Response> 
      */
-    open class func deviceInformationWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil) -> RequestBuilder<PrismDeviceInformation200Response> {
+    open class func deviceInformationWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil) -> RequestBuilder<PrismActivationLock200Response> {
         let localVariablePath = "/api/v1/prism/device_information"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
@@ -557,7 +557,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<PrismDeviceInformation200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PrismActivationLock200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -575,7 +575,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func filevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismDeviceInformation200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func filevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return filevaultWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -604,9 +604,9 @@ extension kandji_sdkAPI {
      - parameter sortBy: (query) Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
-     - returns: RequestBuilder<PrismDeviceInformation200Response> 
+     - returns: RequestBuilder<PrismApplicationFirewall200Response> 
      */
-    open class func filevaultWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismDeviceInformation200Response> {
+    open class func filevaultWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismApplicationFirewall200Response> {
         let localVariablePath = "/api/v1/prism/filevault"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -627,7 +627,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<PrismDeviceInformation200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PrismApplicationFirewall200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -645,7 +645,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func gatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func gatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return gatekeeperAndXprotectWithRequestBuilder(blueprintIds: blueprintIds, deviceFamilies: deviceFamilies, filter: filter, sortBy: sortBy, limit: limit, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -674,9 +674,9 @@ extension kandji_sdkAPI {
      - parameter sortBy: (query) Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. (optional)
      - parameter limit: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
-     - returns: RequestBuilder<PrismActivationLock200Response> 
+     - returns: RequestBuilder<PrismApplicationFirewall200Response> 
      */
-    open class func gatekeeperAndXprotectWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismActivationLock200Response> {
+    open class func gatekeeperAndXprotectWithRequestBuilder(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil) -> RequestBuilder<PrismApplicationFirewall200Response> {
         let localVariablePath = "/api/v1/prism/gatekeeper_and_xprotect"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -697,7 +697,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<PrismActivationLock200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PrismApplicationFirewall200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

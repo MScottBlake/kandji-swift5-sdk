@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 # **applicationFirewall**
 ```swift
-    open class func applicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
+    open class func applicationFirewall(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)
 ```
 
 Application firewall
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
+[**PrismApplicationFirewall200Response**](PrismApplicationFirewall200Response.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 # **applications**
 ```swift
-    open class func applications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismApplications200Response?, _ error: Error?) -> Void)
+    open class func applications(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Applications
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrismApplications200Response**](PrismApplications200Response.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 # **cellular**
 ```swift
-    open class func cellular(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func cellular(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)
 ```
 
 Cellular
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**AnyCodable**
+[**PrismApplicationFirewall200Response**](PrismApplicationFirewall200Response.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 # **certificates**
 ```swift
-    open class func certificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
+    open class func certificates(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)
 ```
 
 Certificates
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
+[**PrismApplicationFirewall200Response**](PrismApplicationFirewall200Response.md)
 
 ### Authorization
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 # **deviceInformation**
 ```swift
-    open class func deviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, completion: @escaping (_ data: PrismDeviceInformation200Response?, _ error: Error?) -> Void)
+    open class func deviceInformation(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, body: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
 ```
 
 Device information
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrismDeviceInformation200Response**](PrismDeviceInformation200Response.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 
 # **filevault**
 ```swift
-    open class func filevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismDeviceInformation200Response?, _ error: Error?) -> Void)
+    open class func filevault(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)
 ```
 
 FileVault
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrismDeviceInformation200Response**](PrismDeviceInformation200Response.md)
+[**PrismApplicationFirewall200Response**](PrismApplicationFirewall200Response.md)
 
 ### Authorization
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 
 # **gatekeeperAndXprotect**
 ```swift
-    open class func gatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismActivationLock200Response?, _ error: Error?) -> Void)
+    open class func gatekeeperAndXprotect(blueprintIds: String? = nil, deviceFamilies: String? = nil, filter: String? = nil, sortBy: String? = nil, limit: String? = nil, offset: String? = nil, completion: @escaping (_ data: PrismApplicationFirewall200Response?, _ error: Error?) -> Void)
 ```
 
 Gatekeeper and XProtect
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
+[**PrismApplicationFirewall200Response**](PrismApplicationFirewall200Response.md)
 
 ### Authorization
 

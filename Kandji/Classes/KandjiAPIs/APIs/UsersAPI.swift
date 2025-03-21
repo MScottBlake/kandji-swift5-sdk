@@ -132,12 +132,13 @@ extension kandji_sdkAPI {
      - parameter _id: (query) Search for a user matching the provided UUID value. (optional)
      - parameter integrationId: (query) Search for a integration matching the provided UUID value. (optional)
      - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
+     - parameter cursor: (query) Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: UsersListUsers200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return listUsersWithRequestBuilder(email: email, _id: _id, integrationId: integrationId, archived: archived).execute(apiResponseQueue) { result in
+    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: UsersListUsers200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return listUsersWithRequestBuilder(email: email, _id: _id, integrationId: integrationId, archived: archived, cursor: cursor).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -163,9 +164,10 @@ extension kandji_sdkAPI {
      - parameter _id: (query) Search for a user matching the provided UUID value. (optional)
      - parameter integrationId: (query) Search for a integration matching the provided UUID value. (optional)
      - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
+     - parameter cursor: (query) Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
      - returns: RequestBuilder<UsersListUsers200Response> 
      */
-    open class func listUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil) -> RequestBuilder<UsersListUsers200Response> {
+    open class func listUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil) -> RequestBuilder<UsersListUsers200Response> {
         let localVariablePath = "/api/v1/users"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -176,6 +178,7 @@ extension kandji_sdkAPI {
             "id": (wrappedValue: _id?.encodeToJSON(), isExplode: true),
             "integration_id": (wrappedValue: integrationId?.encodeToJSON(), isExplode: true),
             "archived": (wrappedValue: archived?.encodeToJSON(), isExplode: true),
+            "cursor": (wrappedValue: cursor?.encodeToJSON(), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: Any?] = [
