@@ -284,7 +284,7 @@ Get a list of Automated Device Enrollment devices.
 import kandji_sdk
 
 let blueprintId = "blueprintId_example" // String | Return results &quot;containing&quot; the specified blueprint id (optional)
-let userId = "userId_example" // String | &quot;exact&quot; match on kandji user ID number (optional)
+let userId = "userId_example" // String | &quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
 let depAccount = "" // String | The ADE token UUID (optional)
 let deviceFamily = "" // String | Mac, iPhone, iPad, AppleTV, iPod (optional)
 let model = "model_example" // String | Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot; (optional)
@@ -311,7 +311,7 @@ AutomatedDeviceEnrollmentIntegrationsAPI.listAdeDevices(blueprintId: blueprintId
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprintId** | **String** | Return results &amp;quot;containing&amp;quot; the specified blueprint id | [optional] 
- **userId** | **String** | &amp;quot;exact&amp;quot; match on kandji user ID number | [optional] 
+ **userId** | **String** | &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
  **depAccount** | **String** | The ADE token UUID | [optional] 
  **deviceFamily** | **String** | Mac, iPhone, iPad, AppleTV, iPod | [optional] 
  **model** | **String** | Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; | [optional] 

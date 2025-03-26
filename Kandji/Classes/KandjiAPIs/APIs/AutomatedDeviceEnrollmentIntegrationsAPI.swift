@@ -299,7 +299,7 @@ extension kandji_sdkAPI {
      List ADE devices
      
      - parameter blueprintId: (query) Return results &amp;quot;containing&amp;quot; the specified blueprint id (optional)
-     - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID number (optional)
+     - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
      - parameter depAccount: (query) The ADE token UUID (optional)
      - parameter deviceFamily: (query) Mac, iPhone, iPad, AppleTV, iPod (optional)
      - parameter model: (query) Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; (optional)
@@ -335,7 +335,7 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#c5dfa94c-d75d-46de-918e-44249bd40134
 }
      - parameter blueprintId: (query) Return results &amp;quot;containing&amp;quot; the specified blueprint id (optional)
-     - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID number (optional)
+     - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
      - parameter depAccount: (query) The ADE token UUID (optional)
      - parameter deviceFamily: (query) Mac, iPhone, iPad, AppleTV, iPod (optional)
      - parameter model: (query) Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; (optional)
