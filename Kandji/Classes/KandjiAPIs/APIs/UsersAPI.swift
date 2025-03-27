@@ -137,7 +137,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: UsersListUsers200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AuditLogListAuditEvents200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listUsersWithRequestBuilder(email: email, _id: _id, integrationId: integrationId, archived: archived, cursor: cursor).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -165,9 +165,9 @@ extension kandji_sdkAPI {
      - parameter integrationId: (query) Search for a integration matching the provided UUID value. (optional)
      - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
      - parameter cursor: (query) Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
-     - returns: RequestBuilder<UsersListUsers200Response> 
+     - returns: RequestBuilder<AuditLogListAuditEvents200Response> 
      */
-    open class func listUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil) -> RequestBuilder<UsersListUsers200Response> {
+    open class func listUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil) -> RequestBuilder<AuditLogListAuditEvents200Response> {
         let localVariablePath = "/api/v1/users"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -187,7 +187,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<UsersListUsers200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AuditLogListAuditEvents200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

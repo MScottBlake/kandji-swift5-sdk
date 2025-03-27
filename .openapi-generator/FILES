@@ -3,6 +3,7 @@
 Cartfile
 Kandji/Classes/KandjiAPIs/APIHelper.swift
 Kandji/Classes/KandjiAPIs/APIs.swift
+Kandji/Classes/KandjiAPIs/APIs/AuditLogAPI.swift
 Kandji/Classes/KandjiAPIs/APIs/AutomatedDeviceEnrollmentIntegrationsAPI.swift
 Kandji/Classes/KandjiAPIs/APIs/BlueprintsAPI.swift
 Kandji/Classes/KandjiAPIs/APIs/DeviceActionsAPI.swift
@@ -21,6 +22,7 @@ Kandji/Classes/KandjiAPIs/Extensions.swift
 Kandji/Classes/KandjiAPIs/JSONDataEncoding.swift
 Kandji/Classes/KandjiAPIs/JSONEncodingHelper.swift
 Kandji/Classes/KandjiAPIs/Models.swift
+Kandji/Classes/KandjiAPIs/Models/AuditLogListAuditEvents200Response.swift
 Kandji/Classes/KandjiAPIs/Models/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.swift
 Kandji/Classes/KandjiAPIs/Models/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.swift
 Kandji/Classes/KandjiAPIs/Models/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults.swift
@@ -82,7 +84,6 @@ Kandji/Classes/KandjiAPIs/Models/ThreatsGetBehavioralDetections200Response.swift
 Kandji/Classes/KandjiAPIs/Models/ThreatsGetThreatDetails200Response.swift
 Kandji/Classes/KandjiAPIs/Models/UsersGetUser200Response.swift
 Kandji/Classes/KandjiAPIs/Models/UsersGetUser200ResponseIntegration.swift
-Kandji/Classes/KandjiAPIs/Models/UsersListUsers200Response.swift
 Kandji/Classes/KandjiAPIs/Models/VulnerabilitiesGetVulnerabilityDescription200Response.swift
 Kandji/Classes/KandjiAPIs/Models/VulnerabilitiesListDetections200Response.swift
 Kandji/Classes/KandjiAPIs/Models/VulnerabilitiesListVulnerabilities200Response.swift
@@ -92,6 +93,8 @@ Kandji/Classes/KandjiAPIs/URLSessionImplementations.swift
 Kandji/Classes/KandjiAPIs/Validation.swift
 Package.swift
 README.md
+docs/AuditLogAPI.md
+docs/AuditLogListAuditEvents200Response.md
 docs/AutomatedDeviceEnrollmentIntegrationsAPI.md
 docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md
 docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.md
@@ -164,7 +167,6 @@ docs/ThreatsGetThreatDetails200Response.md
 docs/UsersAPI.md
 docs/UsersGetUser200Response.md
 docs/UsersGetUser200ResponseIntegration.md
-docs/UsersListUsers200Response.md
 docs/VulnerabilitiesAPI.md
 docs/VulnerabilitiesGetVulnerabilityDescription200Response.md
 docs/VulnerabilitiesListDetections200Response.md

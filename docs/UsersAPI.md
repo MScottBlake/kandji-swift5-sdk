@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 # **listUsers**
 ```swift
-    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil, completion: @escaping (_ data: UsersListUsers200Response?, _ error: Error?) -> Void)
+    open class func listUsers(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil, completion: @escaping (_ data: AuditLogListAuditEvents200Response?, _ error: Error?) -> Void)
 ```
 
 List Users
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsersListUsers200Response**](UsersListUsers200Response.md)
+[**AuditLogListAuditEvents200Response**](AuditLogListAuditEvents200Response.md)
 
 ### Authorization
 
