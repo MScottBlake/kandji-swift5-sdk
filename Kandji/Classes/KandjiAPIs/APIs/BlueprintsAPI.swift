@@ -16,63 +16,6 @@ extension kandji_sdkAPI {
 @objcMembers open class BlueprintsAPI : NSObject {
 
     /**
-     Assign Library Item
-     
-     - parameter blueprintId: (path)  
-     - parameter body: (body)  (optional)
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    @discardableResult
-    open class func assignLibraryItem(blueprintId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return assignLibraryItemWithRequestBuilder(blueprintId: blueprintId, body: body).execute(apiResponseQueue) { result in
-            switch result {
-            case let .success(response):
-                completion(response.body, nil)
-            case let .failure(error):
-                completion(nil, error)
-            }
-        }
-    }
-
-    /**
-     Assign Library Item
-     - POST /api/v1/blueprints/{blueprint_id}/assign-library-item
-     - <p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p> <ul> <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li> </ul> </li> </ul> <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists on Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item already exists in Assignment Node&quot;</td> </tr> <tr> <td></td> <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> </tbody> </table> </div>
-     - Bearer Token:
-       - type: http
-       - name: bearer
-     - responseHeaders: [Allow(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Cross-Origin-Opener-Policy(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String)]
-     - externalDocs: class ExternalDocumentation {
-    description: null
-    url: https://api-docs.kandji.io/#683ac930-5754-4203-b066-59cdb8ced781
-}
-     - parameter blueprintId: (path)  
-     - parameter body: (body)  (optional)
-     - returns: RequestBuilder<AnyCodable> 
-     */
-    open class func assignLibraryItemWithRequestBuilder(blueprintId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
-        var localVariablePath = "/api/v1/blueprints/{blueprint_id}/assign-library-item"
-        let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
-        let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{blueprint_id}", with: blueprintIdPostEscape, options: .literal, range: nil)
-        let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: Any?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
-    }
-
-    /**
      Create Blueprint
      
      - parameter enrollmentCodeCode: (form) Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. 
@@ -166,7 +109,7 @@ extension kandji_sdkAPI {
     /**
      Delete Blueprint
      - DELETE /api/v1/blueprints/{blueprint_id}
-     - <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+     - <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -220,7 +163,7 @@ extension kandji_sdkAPI {
     /**
      Get Blueprint
      - GET /api/v1/blueprints/{blueprint_id}
-     - <p>This request returns information about a specific blueprint based on blueprint ID.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+     - This request returns information about a specific blueprint based on blueprint ID.
      - Bearer Token:
        - type: http
        - name: bearer
@@ -332,7 +275,7 @@ extension kandji_sdkAPI {
     /**
      Get Manual Enrollment Profile
      - GET /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile
-     - <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li> </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+     - <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p> <p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p> <p>The enrollment profile will be returned in raw form with response headers:</p> <ul> <li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p> </li> <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p> </li> </ul> <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -458,7 +401,7 @@ extension kandji_sdkAPI {
     /**
      List Library Items
      - GET /api/v1/blueprints/{blueprint_id}/list-library-items
-     - <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
+     - <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p> <h3 id=&quot;response-fields&quot;>Response fields</h3> <ul> <li><p><code>count</code> (int): The total count of library items.</p> </li> <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p> </li> <li><p><code>results</code> (object): An array containing objects with the following fields:</p> <ul> <li><p><code>id</code> (str): The ID of the library item.</p> </li> <li><p><code>name</code> (str): The name of the library item.</p> </li> </ul> </li> </ul>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -513,8 +456,8 @@ extension kandji_sdkAPI {
 
     /**
      Remove Library Item
-     - POST /api/v1/blueprints/{blueprint_id}/remove-library-item
-     - <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, required for maps)</p> </li> </ul> <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item does not exist on Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item does not exist in Assignment Node&quot;</td> </tr> </tbody> </table> </div>
+     - POST /api/v1/blueprints/{blueprint_id}/assign-library-item
+     - <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p> <h3 id=&quot;request-body&quot;>Request Body</h3> <ul> <li><p><code>library_item_id</code> (string, required)</p> </li> <li><p><code>assignment_node_id</code> (string, for maps)</p> <ul> <li>NOT required for assigning to assignment maps if the map does not have conditional logic.</li> </ul> </li> </ul> <h3 id=&quot;error-responses&quot;>Error responses</h3> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Code</strong></th> <th><strong>Body</strong></th> </tr> </thead> <tbody> <tr> <td>400 - Bad Request</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item does not exist on Blueprint&quot;</td> </tr> <tr> <td></td> <td>&quot;Library Item does not exist in Assignment Node&quot;</td> </tr> </tbody> </table> </div>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -528,7 +471,7 @@ extension kandji_sdkAPI {
      - returns: RequestBuilder<AnyCodable> 
      */
     open class func removeLibraryItemWithRequestBuilder(blueprintId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
-        var localVariablePath = "/api/v1/blueprints/{blueprint_id}/remove-library-item"
+        var localVariablePath = "/api/v1/blueprints/{blueprint_id}/assign-library-item"
         let blueprintIdPreEscape = "\(APIHelper.mapValueToPathItem(blueprintId))"
         let blueprintIdPostEscape = blueprintIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{blueprint_id}", with: blueprintIdPostEscape, options: .literal, range: nil)
@@ -574,7 +517,7 @@ extension kandji_sdkAPI {
     /**
      Update Blueprint
      - PATCH /api/v1/blueprints/{blueprint_id}
-     - <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+     - This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.
      - Bearer Token:
        - type: http
        - name: bearer
