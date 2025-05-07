@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Get Vulnerability Description
 
-This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
+Retrieve information about a CVE.
 
 ### Example
 ```swift
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 # **listAffectedApps**
 ```swift
-    open class func listAffectedApps(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listAffectedApps(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: VulnerabilitiesListAffectedApps200Response?, _ error: Error?) -> Void)
 ```
 
 List Affected Apps
@@ -79,7 +79,7 @@ let cveId = "cveId_example" // String |
 let page = "" // String | The page number of the response. (optional)
 let size = "size_example" // String | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
 let sortBy = "sortBy_example" // String | Field to sort by. Example: sort_by=app_name. (optional)
-let filter = "filter_example" // String | Filterable columns: blueprint_id updated_at (optional)
+let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
 
 // List Affected Apps
 VulnerabilitiesAPI.listAffectedApps(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
@@ -102,11 +102,11 @@ Name | Type | Description  | Notes
  **page** | **String** | The page number of the response. | [optional] 
  **size** | **String** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **sortBy** | **String** | Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **String** | Filterable columns: blueprint_id updated_at | [optional] 
+ **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
-**AnyCodable**
+[**VulnerabilitiesListAffectedApps200Response**](VulnerabilitiesListAffectedApps200Response.md)
 
 ### Authorization
 
@@ -121,12 +121,12 @@ Name | Type | Description  | Notes
 
 # **listAffectedDevices**
 ```swift
-    open class func listAffectedDevices(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listAffectedDevices(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: VulnerabilitiesListAffectedApps200Response?, _ error: Error?) -> Void)
 ```
 
 List Affected Devices
 
-This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
 ### Example
 ```swift
@@ -137,7 +137,7 @@ let cveId = "cveId_example" // String |
 let page = "" // String | The page number of the response. (optional)
 let size = "size_example" // String | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
 let sortBy = "sortBy_example" // String | Field to sort by. Example: sort_by=app_name. (optional)
-let filter = "filter_example" // String | Filterable columns: blueprint_id updated_at (optional)
+let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
 
 // List Affected Devices
 VulnerabilitiesAPI.listAffectedDevices(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
@@ -160,11 +160,11 @@ Name | Type | Description  | Notes
  **page** | **String** | The page number of the response. | [optional] 
  **size** | **String** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **sortBy** | **String** | Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **String** | Filterable columns: blueprint_id updated_at | [optional] 
+ **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
-**AnyCodable**
+[**VulnerabilitiesListAffectedApps200Response**](VulnerabilitiesListAffectedApps200Response.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 List Detections
 
-This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
+Retrieve a list of all vulnerability detections across the device fleet.
 
 ### Example
 ```swift
@@ -193,7 +193,7 @@ import kandji_sdk
 
 let after = "" // String | Cursor token. (optional)
 let size = "size_example" // String | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-let filter = "filter_example" // String | Can filter on any key attribute within the response. (optional)
+let filter = "filter_example" // String | <p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul> (optional)
 
 // List Detections
 VulnerabilitiesAPI.listDetections(after: after, size: size, filter: filter) { (response, error) in
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **after** | **String** | Cursor token. | [optional] 
  **size** | **String** | A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
- **filter** | **String** | Can filter on any key attribute within the response. | [optional] 
+ **filter** | **String** | &lt;p&gt;Filter on any key attribute within the response.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;device_id&lt;/li&gt; &lt;li&gt;device_name&lt;/li&gt; &lt;li&gt;device_serial_number&lt;/li&gt; &lt;li&gt;device_model&lt;/li&gt; &lt;li&gt;device_os_version&lt;/li&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;blueprint_name&lt;/li&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;path&lt;/li&gt; &lt;li&gt;version&lt;/li&gt; &lt;li&gt;bundle_id&lt;/li&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;cve_description&lt;/li&gt; &lt;li&gt;cve_link&lt;/li&gt; &lt;li&gt;cvss_score&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;li&gt;cve_published_at&lt;/li&gt; &lt;li&gt;cve_modified_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
@@ -233,12 +233,12 @@ Name | Type | Description  | Notes
 
 # **listVulnerabilities**
 ```swift
-    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: VulnerabilitiesListVulnerabilities200Response?, _ error: Error?) -> Void)
+    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Vulnerabilities
 
-This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
+Retrieve a list of all vulnerabilities grouped by cve.
 
 ### Example
 ```swift
@@ -247,8 +247,8 @@ import kandji_sdk
 
 let page = "" // String | The page number of the response. (optional)
 let size = "size_example" // String | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-let sortBy = "sortBy_example" // String | Field to sort by. Example: sort_by=cve_id. (optional)
-let filter = "filter_example" // String | <p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p> (optional)
+let sortBy = "sortBy_example" // String | <p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
+let filter = "filter_example" // String | <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
 
 // List Vulnerabilities
 VulnerabilitiesAPI.listVulnerabilities(page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
@@ -269,12 +269,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **String** | The page number of the response. | [optional] 
  **size** | **String** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
- **sortBy** | **String** | Field to sort by. Example: sort_by&#x3D;cve_id. | [optional] 
- **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;p&gt;cve_id app_name severity first_detection_date latest_detection_date&lt;/p&gt; | [optional] 
+ **sortBy** | **String** | &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software (the name of the software)&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **String** | &lt;p&gt;Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;app_name&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
-[**VulnerabilitiesListVulnerabilities200Response**](VulnerabilitiesListVulnerabilities200Response.md)
+**AnyCodable**
 
 ### Authorization
 

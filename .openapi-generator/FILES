@@ -85,8 +85,8 @@ Kandji/Classes/KandjiAPIs/Models/ThreatsGetThreatDetails200Response.swift
 Kandji/Classes/KandjiAPIs/Models/UsersGetUser200Response.swift
 Kandji/Classes/KandjiAPIs/Models/UsersGetUser200ResponseIntegration.swift
 Kandji/Classes/KandjiAPIs/Models/VulnerabilitiesGetVulnerabilityDescription200Response.swift
+Kandji/Classes/KandjiAPIs/Models/VulnerabilitiesListAffectedApps200Response.swift
 Kandji/Classes/KandjiAPIs/Models/VulnerabilitiesListDetections200Response.swift
-Kandji/Classes/KandjiAPIs/Models/VulnerabilitiesListVulnerabilities200Response.swift
 Kandji/Classes/KandjiAPIs/OpenISO8601DateFormatter.swift
 Kandji/Classes/KandjiAPIs/SynchronizedDictionary.swift
 Kandji/Classes/KandjiAPIs/URLSessionImplementations.swift
@@ -169,8 +169,8 @@ docs/UsersGetUser200Response.md
 docs/UsersGetUser200ResponseIntegration.md
 docs/VulnerabilitiesAPI.md
 docs/VulnerabilitiesGetVulnerabilityDescription200Response.md
+docs/VulnerabilitiesListAffectedApps200Response.md
 docs/VulnerabilitiesListDetections200Response.md
-docs/VulnerabilitiesListVulnerabilities200Response.md
 git_push.sh
 kandji_sdk.podspec
 project.yml

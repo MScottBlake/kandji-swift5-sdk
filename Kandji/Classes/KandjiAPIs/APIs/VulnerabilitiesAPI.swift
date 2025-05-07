@@ -37,14 +37,14 @@ extension kandji_sdkAPI {
     /**
      Get Vulnerability Description
      - GET /api/v1/vulnerability-management/vulnerabilities/{cve_id}
-     - This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
+     - Retrieve information about a CVE.
      - Bearer Token:
        - type: http
        - name: bearer
      - responseHeaders: [Content-Type(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
-    url: https://api-docs.kandji.io/#5ed832dc-00f7-4105-ba9d-ad29ff6ead74
+    url: https://api-docs.kandji.io/#173d5705-b54c-4357-9342-c566604db0e1
 }
      - parameter cveId: (path)  
      - returns: RequestBuilder<VulnerabilitiesGetVulnerabilityDescription200Response> 
@@ -77,12 +77,12 @@ extension kandji_sdkAPI {
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;app_name. (optional)
-     - parameter filter: (query) Filterable columns: blueprint_id updated_at (optional)
+     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listAffectedApps(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listAffectedApps(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListAffectedApps200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listAffectedAppsWithRequestBuilder(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -103,16 +103,16 @@ extension kandji_sdkAPI {
      - responseHeaders: [Content-Type(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
-    url: https://api-docs.kandji.io/#a5d64850-8825-4a72-865c-f541936752f8
+    url: https://api-docs.kandji.io/#54c4eb6c-957f-4001-a056-cb7ecece2de7
 }
      - parameter cveId: (path)  
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;app_name. (optional)
-     - parameter filter: (query) Filterable columns: blueprint_id updated_at (optional)
-     - returns: RequestBuilder<AnyCodable> 
+     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; (optional)
+     - returns: RequestBuilder<VulnerabilitiesListAffectedApps200Response> 
      */
-    open class func listAffectedAppsWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func listAffectedAppsWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListAffectedApps200Response> {
         var localVariablePath = "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications"
         let cveIdPreEscape = "\(APIHelper.mapValueToPathItem(cveId))"
         let cveIdPostEscape = cveIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -134,7 +134,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListAffectedApps200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -146,12 +146,12 @@ extension kandji_sdkAPI {
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;app_name. (optional)
-     - parameter filter: (query) Filterable columns: blueprint_id updated_at (optional)
+     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listAffectedDevices(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listAffectedDevices(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListAffectedApps200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listAffectedDevicesWithRequestBuilder(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -165,23 +165,23 @@ extension kandji_sdkAPI {
     /**
      List Affected Devices
      - GET /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices
-     - This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+     - Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
      - Bearer Token:
        - type: http
        - name: bearer
      - responseHeaders: [Content-Type(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
-    url: https://api-docs.kandji.io/#6512fb0e-feab-497f-ac5c-fa20be1f4837
+    url: https://api-docs.kandji.io/#87484333-003d-455a-9bcc-c91bff6ced20
 }
      - parameter cveId: (path)  
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;app_name. (optional)
-     - parameter filter: (query) Filterable columns: blueprint_id updated_at (optional)
-     - returns: RequestBuilder<AnyCodable> 
+     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; (optional)
+     - returns: RequestBuilder<VulnerabilitiesListAffectedApps200Response> 
      */
-    open class func listAffectedDevicesWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func listAffectedDevicesWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListAffectedApps200Response> {
         var localVariablePath = "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices"
         let cveIdPreEscape = "\(APIHelper.mapValueToPathItem(cveId))"
         let cveIdPostEscape = cveIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -203,7 +203,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListAffectedApps200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -213,7 +213,7 @@ extension kandji_sdkAPI {
      
      - parameter after: (query) Cursor token. (optional)
      - parameter size: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-     - parameter filter: (query) Can filter on any key attribute within the response. (optional)
+     - parameter filter: (query) &lt;p&gt;Filter on any key attribute within the response.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;device_id&lt;/li&gt; &lt;li&gt;device_name&lt;/li&gt; &lt;li&gt;device_serial_number&lt;/li&gt; &lt;li&gt;device_model&lt;/li&gt; &lt;li&gt;device_os_version&lt;/li&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;blueprint_name&lt;/li&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;path&lt;/li&gt; &lt;li&gt;version&lt;/li&gt; &lt;li&gt;bundle_id&lt;/li&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;cve_description&lt;/li&gt; &lt;li&gt;cve_link&lt;/li&gt; &lt;li&gt;cvss_score&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;li&gt;cve_published_at&lt;/li&gt; &lt;li&gt;cve_modified_at&lt;/li&gt; &lt;/ul&gt; (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
@@ -232,18 +232,18 @@ extension kandji_sdkAPI {
     /**
      List Detections
      - GET /api/v1/vulnerability-management/detections
-     - This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
+     - Retrieve a list of all vulnerability detections across the device fleet.
      - Bearer Token:
        - type: http
        - name: bearer
      - responseHeaders: [Content-Type(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
-    url: https://api-docs.kandji.io/#6ca65b6a-8792-4d01-a49b-935fff494070
+    url: https://api-docs.kandji.io/#6a827684-404a-417d-b0b4-2c97ab5c3318
 }
      - parameter after: (query) Cursor token. (optional)
      - parameter size: (query) A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-     - parameter filter: (query) Can filter on any key attribute within the response. (optional)
+     - parameter filter: (query) &lt;p&gt;Filter on any key attribute within the response.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;device_id&lt;/li&gt; &lt;li&gt;device_name&lt;/li&gt; &lt;li&gt;device_serial_number&lt;/li&gt; &lt;li&gt;device_model&lt;/li&gt; &lt;li&gt;device_os_version&lt;/li&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;blueprint_name&lt;/li&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;path&lt;/li&gt; &lt;li&gt;version&lt;/li&gt; &lt;li&gt;bundle_id&lt;/li&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;cve_description&lt;/li&gt; &lt;li&gt;cve_link&lt;/li&gt; &lt;li&gt;cvss_score&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;li&gt;cve_published_at&lt;/li&gt; &lt;li&gt;cve_modified_at&lt;/li&gt; &lt;/ul&gt; (optional)
      - returns: RequestBuilder<VulnerabilitiesListDetections200Response> 
      */
     open class func listDetectionsWithRequestBuilder(after: String? = nil, size: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListDetections200Response> {
@@ -274,13 +274,13 @@ extension kandji_sdkAPI {
      
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-     - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;cve_id. (optional)
-     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;p&gt;cve_id app_name severity first_detection_date latest_detection_date&lt;/p&gt; (optional)
+     - parameter sortBy: (query) &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software (the name of the software)&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter filter: (query) &lt;p&gt;Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;app_name&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListVulnerabilities200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
         return listVulnerabilitiesWithRequestBuilder(page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -294,22 +294,22 @@ extension kandji_sdkAPI {
     /**
      List Vulnerabilities
      - GET /api/v1/vulnerability-management/vulnerabilities
-     - This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
+     - Retrieve a list of all vulnerabilities grouped by cve.
      - Bearer Token:
        - type: http
        - name: bearer
      - responseHeaders: [Content-Type(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
-    url: https://api-docs.kandji.io/#bfa9286d-417e-43d1-8c0d-6e8c9e59df17
+    url: https://api-docs.kandji.io/#f483cda1-23ab-4f7b-839f-a3f47a46529d
 }
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-     - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;cve_id. (optional)
-     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;p&gt;cve_id app_name severity first_detection_date latest_detection_date&lt;/p&gt; (optional)
-     - returns: RequestBuilder<VulnerabilitiesListVulnerabilities200Response> 
+     - parameter sortBy: (query) &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software (the name of the software)&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter filter: (query) &lt;p&gt;Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;app_name&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; (optional)
+     - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listVulnerabilitiesWithRequestBuilder(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListVulnerabilities200Response> {
+    open class func listVulnerabilitiesWithRequestBuilder(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/vulnerability-management/vulnerabilities"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -328,7 +328,7 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListVulnerabilities200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
