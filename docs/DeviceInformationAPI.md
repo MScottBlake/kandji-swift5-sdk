@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 # **listDevices**
 ```swift
-    open class func listDevices(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listDevices(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userEmailExact: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 List Devices
@@ -503,12 +503,13 @@ let tagId = "" // String | Search for a tag by its ID. Case sensitive. (optional
 let tagIdIn = "" // String | Return results for given tag IDs separated by commas. Case sensitive. (optional)
 let user = "user_example" // String | Return results &quot;containing&quot; the user name (optional)
 let userEmail = "userEmail_example" // String | Return results &quot;containing&quot; search on email address (optional)
+let userEmailExact = "userEmailExact_example" // String | Return results &quot;matching&quot; the specified email address (optional)
 let userId = "userId_example" // String | &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
 let userName = "userName_example" // String | Return results &quot;containing&quot; the assigned user Display Name (optional)
 let offset = "offset_example" // String | Specify the starting record to return (optional)
 
 // List Devices
-DeviceInformationAPI.listDevices(limit: limit, assetTag: assetTag, blueprintId: blueprintId, deviceId: deviceId, deviceName: deviceName, filevaultEnabled: filevaultEnabled, macAddress: macAddress, model: model, ordering: ordering, osVersion: osVersion, platform: platform, serialNumber: serialNumber, tagName: tagName, tagNameIn: tagNameIn, tagId: tagId, tagIdIn: tagIdIn, user: user, userEmail: userEmail, userId: userId, userName: userName, offset: offset) { (response, error) in
+DeviceInformationAPI.listDevices(limit: limit, assetTag: assetTag, blueprintId: blueprintId, deviceId: deviceId, deviceName: deviceName, filevaultEnabled: filevaultEnabled, macAddress: macAddress, model: model, ordering: ordering, osVersion: osVersion, platform: platform, serialNumber: serialNumber, tagName: tagName, tagNameIn: tagNameIn, tagId: tagId, tagIdIn: tagIdIn, user: user, userEmail: userEmail, userEmailExact: userEmailExact, userId: userId, userName: userName, offset: offset) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -542,6 +543,7 @@ Name | Type | Description  | Notes
  **tagIdIn** | **String** | Return results for given tag IDs separated by commas. Case sensitive. | [optional] 
  **user** | **String** | Return results &amp;quot;containing&amp;quot; the user name | [optional] 
  **userEmail** | **String** | Return results &amp;quot;containing&amp;quot; search on email address | [optional] 
+ **userEmailExact** | **String** | Return results &amp;quot;matching&amp;quot; the specified email address | [optional] 
  **userId** | **String** | &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | [optional] 
  **userName** | **String** | Return results &amp;quot;containing&amp;quot; the assigned user Display Name | [optional] 
  **offset** | **String** | Specify the starting record to return | [optional] 

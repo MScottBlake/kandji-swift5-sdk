@@ -538,6 +538,7 @@ extension kandji_sdkAPI {
      - parameter tagIdIn: (query) Return results for given tag IDs separated by commas. Case sensitive. (optional)
      - parameter user: (query) Return results &amp;quot;containing&amp;quot; the user name (optional)
      - parameter userEmail: (query) Return results &amp;quot;containing&amp;quot; search on email address (optional)
+     - parameter userEmailExact: (query) Return results &amp;quot;matching&amp;quot; the specified email address (optional)
      - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
      - parameter userName: (query) Return results &amp;quot;containing&amp;quot; the assigned user Display Name (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
@@ -545,8 +546,8 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listDevices(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return listDevicesWithRequestBuilder(limit: limit, assetTag: assetTag, blueprintId: blueprintId, deviceId: deviceId, deviceName: deviceName, filevaultEnabled: filevaultEnabled, macAddress: macAddress, model: model, ordering: ordering, osVersion: osVersion, platform: platform, serialNumber: serialNumber, tagName: tagName, tagNameIn: tagNameIn, tagId: tagId, tagIdIn: tagIdIn, user: user, userEmail: userEmail, userId: userId, userName: userName, offset: offset).execute(apiResponseQueue) { result in
+    open class func listDevices(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userEmailExact: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return listDevicesWithRequestBuilder(limit: limit, assetTag: assetTag, blueprintId: blueprintId, deviceId: deviceId, deviceName: deviceName, filevaultEnabled: filevaultEnabled, macAddress: macAddress, model: model, ordering: ordering, osVersion: osVersion, platform: platform, serialNumber: serialNumber, tagName: tagName, tagNameIn: tagNameIn, tagId: tagId, tagIdIn: tagIdIn, user: user, userEmail: userEmail, userEmailExact: userEmailExact, userId: userId, userName: userName, offset: offset).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -586,12 +587,13 @@ extension kandji_sdkAPI {
      - parameter tagIdIn: (query) Return results for given tag IDs separated by commas. Case sensitive. (optional)
      - parameter user: (query) Return results &amp;quot;containing&amp;quot; the user name (optional)
      - parameter userEmail: (query) Return results &amp;quot;containing&amp;quot; search on email address (optional)
+     - parameter userEmailExact: (query) Return results &amp;quot;matching&amp;quot; the specified email address (optional)
      - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
      - parameter userName: (query) Return results &amp;quot;containing&amp;quot; the assigned user Display Name (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func listDevicesWithRequestBuilder(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func listDevicesWithRequestBuilder(limit: String, assetTag: String? = nil, blueprintId: String? = nil, deviceId: String? = nil, deviceName: String? = nil, filevaultEnabled: String? = nil, macAddress: String? = nil, model: String? = nil, ordering: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, tagName: String? = nil, tagNameIn: String? = nil, tagId: String? = nil, tagIdIn: String? = nil, user: String? = nil, userEmail: String? = nil, userEmailExact: String? = nil, userId: String? = nil, userName: String? = nil, offset: String? = nil) -> RequestBuilder<AnyCodable> {
         let localVariablePath = "/api/v1/devices"
         let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -615,6 +617,7 @@ extension kandji_sdkAPI {
             "tag_id_in": (wrappedValue: tagIdIn?.encodeToJSON(), isExplode: true),
             "user": (wrappedValue: user?.encodeToJSON(), isExplode: true),
             "user_email": (wrappedValue: userEmail?.encodeToJSON(), isExplode: true),
+            "user_email_exact": (wrappedValue: userEmailExact?.encodeToJSON(), isExplode: true),
             "user_id": (wrappedValue: userId?.encodeToJSON(), isExplode: true),
             "user_name": (wrappedValue: userName?.encodeToJSON(), isExplode: true),
             "limit": (wrappedValue: limit.encodeToJSON(), isExplode: true),
