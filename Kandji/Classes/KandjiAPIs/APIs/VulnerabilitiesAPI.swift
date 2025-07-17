@@ -77,7 +77,7 @@ extension kandji_sdkAPI {
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;app_name. (optional)
-     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;created_at&lt;/li&gt; &lt;/ul&gt; (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
@@ -109,7 +109,7 @@ extension kandji_sdkAPI {
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;app_name. (optional)
-     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;created_at&lt;/li&gt; &lt;/ul&gt; (optional)
      - returns: RequestBuilder<VulnerabilitiesListAffectedApps200Response> 
      */
     open class func listAffectedAppsWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListAffectedApps200Response> {
@@ -146,7 +146,7 @@ extension kandji_sdkAPI {
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;app_name. (optional)
-     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
@@ -178,7 +178,7 @@ extension kandji_sdkAPI {
      - parameter page: (query) The page number of the response. (optional)
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) Field to sort by. Example: sort_by&#x3D;app_name. (optional)
-     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
      - returns: RequestBuilder<VulnerabilitiesListAffectedApps200Response> 
      */
     open class func listAffectedDevicesWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListAffectedApps200Response> {

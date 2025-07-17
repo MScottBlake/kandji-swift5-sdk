@@ -79,7 +79,7 @@ let cveId = "cveId_example" // String |
 let page = "" // String | The page number of the response. (optional)
 let size = "size_example" // String | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
 let sortBy = "sortBy_example" // String | Field to sort by. Example: sort_by=app_name. (optional)
-let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
+let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul> (optional)
 
 // List Affected Apps
 VulnerabilitiesAPI.listAffectedApps(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
  **page** | **String** | The page number of the response. | [optional] 
  **size** | **String** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **sortBy** | **String** | Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;created_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
@@ -137,7 +137,7 @@ let cveId = "cveId_example" // String |
 let page = "" // String | The page number of the response. (optional)
 let size = "size_example" // String | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
 let sortBy = "sortBy_example" // String | Field to sort by. Example: sort_by=app_name. (optional)
-let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
+let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul> (optional)
 
 // List Affected Devices
 VulnerabilitiesAPI.listAffectedDevices(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
  **page** | **String** | The page number of the response. | [optional] 
  **size** | **String** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
  **sortBy** | **String** | Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
