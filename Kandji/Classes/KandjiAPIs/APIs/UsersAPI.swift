@@ -132,7 +132,7 @@ extension kandji_sdkAPI {
      - parameter _id: (query) Search for a user matching the provided UUID value. (optional)
      - parameter integrationId: (query) Search for a integration matching the provided UUID value. (optional)
      - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
-     - parameter cursor: (query) Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
+     - parameter cursor: (query) Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
@@ -164,7 +164,7 @@ extension kandji_sdkAPI {
      - parameter _id: (query) Search for a user matching the provided UUID value. (optional)
      - parameter integrationId: (query) Search for a integration matching the provided UUID value. (optional)
      - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
-     - parameter cursor: (query) Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
+     - parameter cursor: (query) Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
      - returns: RequestBuilder<AuditLogListAuditEvents200Response> 
      */
     open class func listUsersWithRequestBuilder(email: String? = nil, _id: String? = nil, integrationId: String? = nil, archived: String? = nil, cursor: String? = nil) -> RequestBuilder<AuditLogListAuditEvents200Response> {

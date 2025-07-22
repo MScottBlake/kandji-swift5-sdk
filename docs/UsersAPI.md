@@ -127,7 +127,7 @@ let email = "email_example" // String | Returns users with email addresses conta
 let _id = "_id_example" // String | Search for a user matching the provided UUID value. (optional)
 let integrationId = "integrationId_example" // String | Search for a integration matching the provided UUID value. (optional)
 let archived = "archived_example" // String | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
-let cursor = "cursor_example" // String | Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
+let cursor = "cursor_example" // String | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
 
 // List Users
 UsersAPI.listUsers(email: email, _id: _id, integrationId: integrationId, archived: archived, cursor: cursor) { (response, error) in
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
  **_id** | **String** | Search for a user matching the provided UUID value. | [optional] 
  **integrationId** | **String** | Search for a integration matching the provided UUID value. | [optional] 
  **archived** | **String** | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | [optional] 
- **cursor** | **String** | Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. | [optional] 
+ **cursor** | **String** | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. | [optional] 
 
 ### Return type
 
