@@ -78,8 +78,8 @@ import kandji_sdk
 let cveId = "cveId_example" // String | 
 let page = "" // String | The page number of the response. (optional)
 let size = "size_example" // String | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-let sortBy = "sortBy_example" // String | Field to sort by. Example: sort_by=app_name. (optional)
-let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>created_at</li> </ul> (optional)
+let sortBy = "sortBy_example" // String | <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul> (optional)
+let filter = "filter_example" // String | <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul> (optional)
 
 // List Affected Apps
 VulnerabilitiesAPI.listAffectedApps(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
@@ -101,8 +101,8 @@ Name | Type | Description  | Notes
  **cveId** | **String** |  | 
  **page** | **String** | The page number of the response. | [optional] 
  **size** | **String** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
- **sortBy** | **String** | Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;created_at&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **sortBy** | **String** | &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **String** | &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
@@ -136,8 +136,8 @@ import kandji_sdk
 let cveId = "cveId_example" // String | 
 let page = "" // String | The page number of the response. (optional)
 let size = "size_example" // String | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-let sortBy = "sortBy_example" // String | Field to sort by. Example: sort_by=app_name. (optional)
-let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul> (optional)
+let sortBy = "sortBy_example" // String | <p>Field to sort by.</p> <ul> <li>name (device name)</li> <li>detection_datetime</li> </ul> (optional)
+let filter = "filter_example" // String | <p>Filterable columns:</p> <ul> <li>name</li> <li>detection_datetime</li> </ul> (optional)
 
 // List Affected Devices
 VulnerabilitiesAPI.listAffectedDevices(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
@@ -159,8 +159,8 @@ Name | Type | Description  | Notes
  **cveId** | **String** |  | 
  **page** | **String** | The page number of the response. | [optional] 
  **size** | **String** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
- **sortBy** | **String** | Field to sort by. Example: sort_by&#x3D;app_name. | [optional] 
- **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **sortBy** | **String** | &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name (device name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **String** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
@@ -233,12 +233,12 @@ Name | Type | Description  | Notes
 
 # **listVulnerabilities**
 ```swift
-    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func listVulnerabilities(page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, completion: @escaping (_ data: VulnerabilitiesListVulnerabilities200Response?, _ error: Error?) -> Void)
 ```
 
 List Vulnerabilities
 
-Retrieve a list of all vulnerabilities grouped by cve.
+Retrieve a list of all vulnerabilities grouped by CVE.
 
 ### Example
 ```swift
@@ -247,8 +247,8 @@ import kandji_sdk
 
 let page = "" // String | The page number of the response. (optional)
 let size = "size_example" // String | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-let sortBy = "sortBy_example" // String | <p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
-let filter = "filter_example" // String | <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
+let sortBy = "sortBy_example" // String | <p>Field to sort by.</p> <ul> <li><p>age</p> </li> <li><p>cve_id</p> </li> <li><p>cvss_score</p> </li> <li><p>device_count</p> </li> <li><p>known_exploit</p> </li> <li><p>software (software name)</p> </li> <li><p>severity</p> </li> <li><p>status</p> </li> </ul> (optional)
+let filter = "filter_example" // String | <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>cve_id</li> <li>software</li> <li>severity</li> <li>first_detection_date</li> <li>status</li> </ul> (optional)
 
 // List Vulnerabilities
 VulnerabilitiesAPI.listVulnerabilities(page: page, size: size, sortBy: sortBy, filter: filter) { (response, error) in
@@ -269,12 +269,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **String** | The page number of the response. | [optional] 
  **size** | **String** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | [optional] 
- **sortBy** | **String** | &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software (the name of the software)&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; | [optional] 
- **filter** | **String** | &lt;p&gt;Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;app_name&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **sortBy** | **String** | &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;p&gt;age&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;cve_id&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;cvss_score&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;device_count&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;known_exploit&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;software (software name)&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;severity&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;status&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; | [optional] 
+ **filter** | **String** | &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;status&lt;/li&gt; &lt;/ul&gt; | [optional] 
 
 ### Return type
 
-**AnyCodable**
+[**VulnerabilitiesListVulnerabilities200Response**](VulnerabilitiesListVulnerabilities200Response.md)
 
 ### Authorization
 
