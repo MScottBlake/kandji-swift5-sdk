@@ -242,8 +242,8 @@ Class | Method | HTTP request | Description
 *UsersAPI* | [**getUser**](docs/UsersAPI.md#getuser) | **GET** /api/v1/users/{user_id} | Get User
 *UsersAPI* | [**listUsers**](docs/UsersAPI.md#listusers) | **GET** /api/v1/users | List Users
 *VulnerabilitiesAPI* | [**getVulnerabilityDescription**](docs/VulnerabilitiesAPI.md#getvulnerabilitydescription) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id} | Get Vulnerability Description
-*VulnerabilitiesAPI* | [**listAffectedApps**](docs/VulnerabilitiesAPI.md#listaffectedapps) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Apps
 *VulnerabilitiesAPI* | [**listAffectedDevices**](docs/VulnerabilitiesAPI.md#listaffecteddevices) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices | List Affected Devices
+*VulnerabilitiesAPI* | [**listAffectedSoftware**](docs/VulnerabilitiesAPI.md#listaffectedsoftware) | **GET** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/software | List Affected Software
 *VulnerabilitiesAPI* | [**listDetections**](docs/VulnerabilitiesAPI.md#listdetections) | **GET** /api/v1/vulnerability-management/detections | List Detections
 *VulnerabilitiesAPI* | [**listVulnerabilities**](docs/VulnerabilitiesAPI.md#listvulnerabilities) | **GET** /api/v1/vulnerability-management/vulnerabilities | List Vulnerabilities
 
@@ -313,7 +313,7 @@ Class | Method | HTTP request | Description
  - [UsersGetUser200Response](docs/UsersGetUser200Response.md)
  - [UsersGetUser200ResponseIntegration](docs/UsersGetUser200ResponseIntegration.md)
  - [VulnerabilitiesGetVulnerabilityDescription200Response](docs/VulnerabilitiesGetVulnerabilityDescription200Response.md)
- - [VulnerabilitiesListAffectedApps200Response](docs/VulnerabilitiesListAffectedApps200Response.md)
+ - [VulnerabilitiesListAffectedDevices200Response](docs/VulnerabilitiesListAffectedDevices200Response.md)
  - [VulnerabilitiesListDetections200Response](docs/VulnerabilitiesListDetections200Response.md)
  - [VulnerabilitiesListVulnerabilities200Response](docs/VulnerabilitiesListVulnerabilities200Response.md)
 

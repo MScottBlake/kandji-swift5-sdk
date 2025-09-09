@@ -71,75 +71,6 @@ extension kandji_sdkAPI {
     }
 
     /**
-     List Affected Apps
-     
-     - parameter cveId: (path)  
-     - parameter page: (query) The page number of the response. (optional)
-     - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-     - parameter sortBy: (query) &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
-     - parameter filter: (query) &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    @discardableResult
-    open class func listAffectedApps(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListAffectedApps200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return listAffectedAppsWithRequestBuilder(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
-            switch result {
-            case let .success(response):
-                completion(response.body, nil)
-            case let .failure(error):
-                completion(nil, error)
-            }
-        }
-    }
-
-    /**
-     List Affected Apps
-     - GET /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications
-     - This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
-     - Bearer Token:
-       - type: http
-       - name: bearer
-     - responseHeaders: [Content-Type(String)]
-     - externalDocs: class ExternalDocumentation {
-    description: null
-    url: https://api-docs.kandji.io/#54c4eb6c-957f-4001-a056-cb7ecece2de7
-}
-     - parameter cveId: (path)  
-     - parameter page: (query) The page number of the response. (optional)
-     - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-     - parameter sortBy: (query) &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
-     - parameter filter: (query) &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
-     - returns: RequestBuilder<VulnerabilitiesListAffectedApps200Response> 
-     */
-    open class func listAffectedAppsWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListAffectedApps200Response> {
-        var localVariablePath = "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications"
-        let cveIdPreEscape = "\(APIHelper.mapValueToPathItem(cveId))"
-        let cveIdPostEscape = cveIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{cve_id}", with: cveIdPostEscape, options: .literal, range: nil)
-        let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
-        let localVariableParameters: [String: Any]? = nil
-
-        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
-        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "page": (wrappedValue: page?.encodeToJSON(), isExplode: true),
-            "size": (wrappedValue: size?.encodeToJSON(), isExplode: true),
-            "sort_by": (wrappedValue: sortBy?.encodeToJSON(), isExplode: true),
-            "filter": (wrappedValue: filter?.encodeToJSON(), isExplode: true),
-        ])
-
-        let localVariableNillableHeaders: [String: Any?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListAffectedApps200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
-    }
-
-    /**
      List Affected Devices
      
      - parameter cveId: (path)  
@@ -151,7 +82,7 @@ extension kandji_sdkAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func listAffectedDevices(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListAffectedApps200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func listAffectedDevices(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListAffectedDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return listAffectedDevicesWithRequestBuilder(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -179,9 +110,9 @@ extension kandji_sdkAPI {
      - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
      - parameter sortBy: (query) &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name (device name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
      - parameter filter: (query) &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
-     - returns: RequestBuilder<VulnerabilitiesListAffectedApps200Response> 
+     - returns: RequestBuilder<VulnerabilitiesListAffectedDevices200Response> 
      */
-    open class func listAffectedDevicesWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListAffectedApps200Response> {
+    open class func listAffectedDevicesWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListAffectedDevices200Response> {
         var localVariablePath = "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices"
         let cveIdPreEscape = "\(APIHelper.mapValueToPathItem(cveId))"
         let cveIdPostEscape = cveIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -203,7 +134,76 @@ extension kandji_sdkAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListAffectedApps200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListAffectedDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
+     List Affected Software
+     
+     - parameter cveId: (path)  
+     - parameter page: (query) The page number of the response. (optional)
+     - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
+     - parameter sortBy: (query) &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter filter: (query) &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func listAffectedSoftware(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: VulnerabilitiesListAffectedDevices200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return listAffectedSoftwareWithRequestBuilder(cveId: cveId, page: page, size: size, sortBy: sortBy, filter: filter).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     List Affected Software
+     - GET /api/v1/vulnerability-management/vulnerabilities/{cve_id}/software
+     - This endpoint makes a request to retrieve a list of software impacted by a specified <code>cve_id</code> vulnerability for a tenant's fleet.
+     - Bearer Token:
+       - type: http
+       - name: bearer
+     - responseHeaders: [Content-Type(String)]
+     - externalDocs: class ExternalDocumentation {
+    description: null
+    url: https://api-docs.kandji.io/#54c4eb6c-957f-4001-a056-cb7ecece2de7
+}
+     - parameter cveId: (path)  
+     - parameter page: (query) The page number of the response. (optional)
+     - parameter size: (query) A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
+     - parameter sortBy: (query) &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
+     - parameter filter: (query) &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; (optional)
+     - returns: RequestBuilder<VulnerabilitiesListAffectedDevices200Response> 
+     */
+    open class func listAffectedSoftwareWithRequestBuilder(cveId: String, page: String? = nil, size: String? = nil, sortBy: String? = nil, filter: String? = nil) -> RequestBuilder<VulnerabilitiesListAffectedDevices200Response> {
+        var localVariablePath = "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/software"
+        let cveIdPreEscape = "\(APIHelper.mapValueToPathItem(cveId))"
+        let cveIdPostEscape = cveIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{cve_id}", with: cveIdPostEscape, options: .literal, range: nil)
+        let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "page": (wrappedValue: page?.encodeToJSON(), isExplode: true),
+            "size": (wrappedValue: size?.encodeToJSON(), isExplode: true),
+            "sort_by": (wrappedValue: sortBy?.encodeToJSON(), isExplode: true),
+            "filter": (wrappedValue: filter?.encodeToJSON(), isExplode: true),
+        ])
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<VulnerabilitiesListAffectedDevices200Response>.Type = kandji_sdkAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
