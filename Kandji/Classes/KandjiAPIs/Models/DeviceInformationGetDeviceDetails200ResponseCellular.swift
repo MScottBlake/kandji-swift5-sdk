@@ -17,48 +17,25 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseCellular: NSObject, Codable, JSONEncodable {
 
-    public var cellularTechnology: Int?
-    public var cellularTechnologyNum: NSNumber? {
-        get {
-            return cellularTechnology as NSNumber?
-        }
-    }
-    public var dataRoaming: Int?
-    public var dataRoamingNum: NSNumber? {
-        get {
-            return dataRoaming as NSNumber?
-        }
-    }
-    public var subscriptions: AnyCodable?
-    public var voiceRoaming: Int?
-    public var voiceRoamingNum: NSNumber? {
-        get {
-            return voiceRoaming as NSNumber?
-        }
-    }
+    public var imei: String?
+    public var meid: String?
 
-    public init(cellularTechnology: Int? = nil, dataRoaming: Int? = nil, subscriptions: AnyCodable? = nil, voiceRoaming: Int? = nil) {
-        self.cellularTechnology = cellularTechnology
-        self.dataRoaming = dataRoaming
-        self.subscriptions = subscriptions
-        self.voiceRoaming = voiceRoaming
+    public init(imei: String? = nil, meid: String? = nil) {
+        self.imei = imei
+        self.meid = meid
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case cellularTechnology = "cellular_technology"
-        case dataRoaming = "data_roaming"
-        case subscriptions
-        case voiceRoaming = "voice_roaming"
+        case imei
+        case meid
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(cellularTechnology, forKey: .cellularTechnology)
-        try container.encodeIfPresent(dataRoaming, forKey: .dataRoaming)
-        try container.encodeIfPresent(subscriptions, forKey: .subscriptions)
-        try container.encodeIfPresent(voiceRoaming, forKey: .voiceRoaming)
+        try container.encodeIfPresent(imei, forKey: .imei)
+        try container.encodeIfPresent(meid, forKey: .meid)
     }
 }
 

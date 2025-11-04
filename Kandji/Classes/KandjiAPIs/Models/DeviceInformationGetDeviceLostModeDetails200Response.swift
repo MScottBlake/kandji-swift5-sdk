@@ -18,9 +18,9 @@ extension kandji_sdkAPI {
 @objcMembers public class DeviceInformationGetDeviceLostModeDetails200Response: NSObject, Codable, JSONEncodable {
 
     public var deviceId: String?
-    public var lostMode: DeviceInformationGetDeviceDetails200ResponseLostMode?
+    public var lostMode: DeviceInformationGetDeviceLostModeDetails200ResponseLostMode?
 
-    public init(deviceId: String? = nil, lostMode: DeviceInformationGetDeviceDetails200ResponseLostMode? = nil) {
+    public init(deviceId: String? = nil, lostMode: DeviceInformationGetDeviceLostModeDetails200ResponseLostMode? = nil) {
         self.deviceId = deviceId
         self.lostMode = lostMode
     }

@@ -103,7 +103,7 @@ extension kandji_sdkAPI {
     /**
      Delete ADE integration
      - DELETE /api/v1/integrations/apple/ade/{ade_token_id}
-     - <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p>
+     - <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1> <p>This is a HIGHLY destructive action.</p> <p>Deleting an ADE token will unassign the associated device records. For currently enrolled devices that were assigned via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p> <p>If applicable, be sure to reassign the device records in ABM.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -299,7 +299,7 @@ extension kandji_sdkAPI {
      List ADE devices
      
      - parameter blueprintId: (query) Return results &amp;quot;containing&amp;quot; the specified blueprint id (optional)
-     - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
+     - parameter userId: (query) &amp;quot;exact&amp;quot; match on user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
      - parameter depAccount: (query) The ADE token UUID (optional)
      - parameter deviceFamily: (query) iPad, iPhone, iPod, Mac, AppleTV, or Vision (optional)
      - parameter model: (query) Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; (optional)
@@ -335,7 +335,7 @@ extension kandji_sdkAPI {
     url: https://api-docs.kandji.io/#c5dfa94c-d75d-46de-918e-44249bd40134
 }
      - parameter blueprintId: (query) Return results &amp;quot;containing&amp;quot; the specified blueprint id (optional)
-     - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
+     - parameter userId: (query) &amp;quot;exact&amp;quot; match on user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
      - parameter depAccount: (query) The ADE token UUID (optional)
      - parameter deviceFamily: (query) iPad, iPhone, iPod, Mac, AppleTV, or Vision (optional)
      - parameter model: (query) Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; (optional)
@@ -446,7 +446,7 @@ extension kandji_sdkAPI {
     /**
      List devices associated to ADE token
      - GET /api/v1/integrations/apple/ade/{ade_token_id}/devices
-     - <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
+     - <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p> <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment.</p> <p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
      - Bearer Token:
        - type: http
        - name: bearer

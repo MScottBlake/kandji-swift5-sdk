@@ -92,7 +92,7 @@ extension kandji_sdkAPI {
     /**
      Delete Device
      - DELETE /api/v1/devices/{device_id}
-     - This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.
+     - <p>This endpoint deletes a device, which will remove the device record and unenroll the device from MDM.</p> <p>For macOS and Windows devices, the agent will automatically uninstall on the next agent checkin.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -203,7 +203,7 @@ extension kandji_sdkAPI {
     /**
      Erase Device
      - POST /api/v1/devices/{device_id}/action/erase
-     - <p>This endpoint sends an MDM command to erase the device.</p> <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>PIN</code></td> <td><code>string</code></td> <td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.  <br />  <br />Note: This value will be ignored for iOS, iPadOS, and tvOS devices.</td> </tr> <tr> <td><code>PreserveDataPlan</code></td> <td><code>boolean</code></td> <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td> </tr> <tr> <td><code>DisallowProximitySetup</code></td> <td><code>boolean</code></td> <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td> </tr> <tr> <td><code>ReturnToService</code></td> <td><code>object</code></td> <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td> </tr> <tr> <td>- <code>Enabled</code></td> <td><code>boolean</code></td> <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td> </tr> <tr> <td>- <code>ProfileId</code></td> <td><code>string</code></td> <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td> </tr> </tbody> </table> </div>
+     - <p>This endpoint sends an MDM command to erase a device.</p> <p><strong>Request Body Parameters: application/json</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Key</th> <th>Type</th> <th>Description</th> </tr> </thead> <tbody> <tr> <td><code>PIN</code></td> <td><code>string</code></td> <td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.  <br />  <br />Note: This value will be ignored for iOS, iPadOS, and tvOS devices.</td> </tr> <tr> <td><code>PreserveDataPlan</code></td> <td><code>boolean</code></td> <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td> </tr> <tr> <td><code>DisallowProximitySetup</code></td> <td><code>boolean</code></td> <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td> </tr> <tr> <td><code>ReturnToService</code></td> <td><code>object</code></td> <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td> </tr> <tr> <td>- <code>Enabled</code></td> <td><code>boolean</code></td> <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td> </tr> <tr> <td>- <code>ProfileId</code></td> <td><code>string</code></td> <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td> </tr> <tr> <td><code>erase_mode</code></td> <td><code>string</code></td> <td>For Windows devices, the following modes are supported:  <br />  <br /><code>WIPE</code> - Equivalent to running Reset this PC &gt; Remove everything from the Settings app, with Clean Data set to No and Delete Files set to Yes.  <br />  <br /><code>WIPE_CLOUD</code> - Perform a cloud-based remote wipe on the device.  <br />  <br /><code>WIPE_PROTECTED</code> - Performs a remote wipe on the device and fully cleans the internal drive. In some device configurations, this command may leave the device unable to boot. This is similar to WIPE but cannot be circumvented by power cycling the device.</td> </tr> <tr> <td><code>erase_flags</code></td> <td><code>string</code></td> <td>Optional erase options for Android devices, provided as a single comma separated list of the following strings:  <br />  <br /><code>WIPE_EXTERNAL_STORAGE</code> - Additionally wipe the device's external storage (such as SD cards).  <br />  <br /><code>WIPE_ESIMS</code> - For company-owned devices, this removes all eSIMs from the device when the device is wiped.  <br />  <br />Example value:  <br /><code>WIPE_EXTERNAL_STORAGE,WIPE_ESIMS</code></td> </tr> </tbody> </table> </div>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -260,7 +260,7 @@ extension kandji_sdkAPI {
     /**
      Get Device Commands
      - GET /api/v1/devices/{device_id}/commands
-     - <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li>1 : Command is Pending</li> <li>2 : Command is running</li> <li>3 : Command completed</li> <li>4 : Command failed</li> <li>5 : Command received &quot;Not Now&quot; response</li> </ul>
+     - <p>This endpoint sends a request to get information about the commands sent to a given Apple device.</p> <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3> <ul> <li><p>1 : Command is Pending</p> </li> <li><p>2 : Command is running</p> </li> <li><p>3 : Command completed</p> </li> <li><p>4 : Command failed</p> </li> <li><p>5 : Command received &quot;Not Now&quot; response</p> </li> </ul>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -322,7 +322,7 @@ extension kandji_sdkAPI {
     /**
      Lock Device
      - POST /api/v1/devices/{device_id}/action/lock
-     - <p>This endpoint sends an MDM command to remotely lock a device.</p> <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p> <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=&quot;response-properties&quot;>Response properties</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
+     - <p>This endpoint sends an MDM command to remotely lock an Apple or Android device.</p> <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p> <blockquote> <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em> </p> </blockquote> <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target Mac.</p> <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p> <h4 id=&quot;response-properties&quot;>Response properties</h4> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Property</th> <th>Description</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>PIN</td> <td>Six digit pin code used to unlock a Mac.</td> <td>String</td> </tr> </tbody> </table> </div>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -357,6 +357,61 @@ extension kandji_sdkAPI {
     }
 
     /**
+     Perform Daily Check-in
+     
+     - parameter deviceId: (path)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func performDailyCheckin(deviceId: String, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
+        return performDailyCheckinWithRequestBuilder(deviceId: deviceId).execute(apiResponseQueue) { result in
+            switch result {
+            case .success:
+                completion((), nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     Perform Daily Check-in
+     - POST /api/v1/devices/{device_id}/action/dailycheckin
+     - This endpoint runs the daily MDM commands and MDM logic for Apple devices and initiates a full daily CSP sync for Windows devices.
+     - Bearer Token:
+       - type: http
+       - name: bearer
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
+     - externalDocs: class ExternalDocumentation {
+    description: null
+    url: https://api-docs.kandji.io/#46d99c83-3310-4105-8135-fbb3bfb51e09
+}
+     - parameter deviceId: (path)  
+     - returns: RequestBuilder<Void> 
+     */
+    open class func performDailyCheckinWithRequestBuilder(deviceId: String) -> RequestBuilder<Void> {
+        var localVariablePath = "/api/v1/devices/{device_id}/action/dailycheckin"
+        let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
+        let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{device_id}", with: deviceIdPostEscape, options: .literal, range: nil)
+        let localVariableURLString = kandji_sdkAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<Void>.Type = kandji_sdkAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
      Reinstall Agent
      
      - parameter deviceId: (path)  
@@ -378,7 +433,7 @@ extension kandji_sdkAPI {
     /**
      Reinstall Agent
      - POST /api/v1/devices/{device_id}/action/reinstallagent
-     - This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.
+     - This endpoint sends an MDM command reinstall the Kandji Agent on macOS devices.
      - Bearer Token:
        - type: http
        - name: bearer
@@ -489,7 +544,7 @@ extension kandji_sdkAPI {
     /**
      Renew MDM Profile
      - POST /api/v1/devices/{device_id}/action/renewmdmprofile
-     - This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
+     - This endpoint sends an MDM command to re-install the existing root MDM profile for a given Apple device. This command will not impact any existing configurations, apps, or profiles.
      - Bearer Token:
        - type: http
        - name: bearer
@@ -544,7 +599,7 @@ extension kandji_sdkAPI {
     /**
      Restart Device
      - POST /api/v1/devices/{device_id}/action/restart
-     - <p>This endpoint sends an MDM command to remotely restart a device.</p> <ul> <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p> </li> <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p> </li> </ul>
+     - <p>This endpoint sends an MDM command to remotely restart an iPhone, iPad, Apple TV, or Mac.</p> <ul> <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p> </li> <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p> </li> </ul>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -600,7 +655,7 @@ extension kandji_sdkAPI {
     /**
      Send Blankpush
      - POST /api/v1/devices/{device_id}/action/blankpush
-     - <p>This endpoint sends an MDM command to initiate a blank push.</p> <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
+     - <p>This endpoint sends an MDM command to initiate a blank push for an Apple device.</p> <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -656,7 +711,7 @@ extension kandji_sdkAPI {
     /**
      Set Name
      - POST /api/v1/devices/{device_id}/action/setname
-     - <p>This endpoint sends an MDM command to set the device name.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>DeviceName</code> - <code>string</code></p>
+     - <p>This endpoint sends an MDM command to set the device name for an Apple device.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>DeviceName</code> - <code>string</code></p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -712,7 +767,7 @@ extension kandji_sdkAPI {
     /**
      Shutdown
      - POST /api/v1/devices/{device_id}/action/shutdown
-     - This endpoint sends an MDM command to shutdown a device.
+     - This endpoint sends an MDM command to shutdown an iPhone, iPad, or Mac.
      - Bearer Token:
        - type: http
        - name: bearer
@@ -768,7 +823,7 @@ extension kandji_sdkAPI {
     /**
      Unlock Account
      - POST /api/v1/devices/{device_id}/action/unlockaccount
-     - <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>UserName</code> - <code>string</code></p>
+     - <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for Mac.</p> <p><strong>Request Body Parameters</strong>: application/json</p> <hr /> <p><code>UserName</code> - <code>string</code></p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -824,7 +879,7 @@ extension kandji_sdkAPI {
     /**
      Update Inventory
      - POST /api/v1/devices/{device_id}/action/updateinventory
-     - This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
+     - <p>This endpoint runs the daily MDM commands and MDM logic for Apple devices.</p> <p><strong>Note:</strong> The newer <code>dailycheckin</code> endpoint can be used instead and also supports Windows devices.</p>
      - Bearer Token:
        - type: http
        - name: bearer

@@ -1,10 +1,12 @@
-# DeviceInformationGetDeviceLostModeDetails200Response
+# DeviceInformationGetDeviceDetails200ResponseHardware
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deviceId** | **String** |  | [optional] 
-**lostMode** | [**DeviceInformationGetDeviceLostModeDetails200ResponseLostMode**](DeviceInformationGetDeviceLostModeDetails200ResponseLostMode.md) |  | [optional] 
+**availableCapacity** | **String** |  | [optional] 
+**totalCapacity** | **String** |  | [optional] 
+**totalRam** | **String** |  | [optional] 
+**wifiMacAddress** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Delete User
 
-<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p> <h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3> <p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot; }  </code></pre>
+<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p> <h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3> <p>You will see the following response (400 bad request), if a user is still assigned to one or more devices. The user will need to be unassigned from the device either manually through the UI in the web app or programatically using the Update device API endpoint.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot; }  </code></pre>
 
 ### Example
 ```swift
@@ -126,8 +126,8 @@ import kandji_sdk
 let email = "email_example" // String | Returns users with email addresses containing the provided string. (optional)
 let _id = "_id_example" // String | Search for a user matching the provided UUID value. (optional)
 let integrationId = "integrationId_example" // String | Search for a integration matching the provided UUID value. (optional)
-let archived = "archived_example" // String | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
-let cursor = "cursor_example" // String | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
+let archived = "archived_example" // String | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Users module under the Archived tab. (optional)
+let cursor = "" // String | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
 
 // List Users
 UsersAPI.listUsers(email: email, _id: _id, integrationId: integrationId, archived: archived, cursor: cursor) { (response, error) in
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
  **email** | **String** | Returns users with email addresses containing the provided string. | [optional] 
  **_id** | **String** | Search for a user matching the provided UUID value. | [optional] 
  **integrationId** | **String** | Search for a integration matching the provided UUID value. | [optional] 
- **archived** | **String** | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | [optional] 
+ **archived** | **String** | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Users module under the Archived tab. | [optional] 
  **cursor** | **String** | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. | [optional] 
 
 ### Return type

@@ -37,7 +37,7 @@ extension kandji_sdkAPI {
     /**
      Delete User
      - DELETE /api/v1/users/{user_id}
-     - <p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p> <h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3> <p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot; }  </code></pre>
+     - <p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p> <h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3> <p>You will see the following response (400 bad request), if a user is still assigned to one or more devices. The user will need to be unassigned from the device either manually through the UI in the web app or programatically using the Update device API endpoint.</p> <pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{     &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot; }  </code></pre>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -131,7 +131,7 @@ extension kandji_sdkAPI {
      - parameter email: (query) Returns users with email addresses containing the provided string. (optional)
      - parameter _id: (query) Search for a user matching the provided UUID value. (optional)
      - parameter integrationId: (query) Search for a integration matching the provided UUID value. (optional)
-     - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
+     - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Users module under the Archived tab. (optional)
      - parameter cursor: (query) Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
@@ -163,7 +163,7 @@ extension kandji_sdkAPI {
      - parameter email: (query) Returns users with email addresses containing the provided string. (optional)
      - parameter _id: (query) Search for a user matching the provided UUID value. (optional)
      - parameter integrationId: (query) Search for a integration matching the provided UUID value. (optional)
-     - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
+     - parameter archived: (query) Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Users module under the Archived tab. (optional)
      - parameter cursor: (query) Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
      - returns: RequestBuilder<AuditLogListAuditEvents200Response> 
      */

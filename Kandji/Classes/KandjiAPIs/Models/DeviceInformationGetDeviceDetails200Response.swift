@@ -17,85 +17,41 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200Response: NSObject, Codable, JSONEncodable {
 
-    public var activationLock: DeviceInformationGetDeviceDetails200ResponseActivationLock?
-    public var appleBusinessManager: DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager?
-    public var automatedDeviceEnrollment: DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment?
     public var cellular: DeviceInformationGetDeviceDetails200ResponseCellular?
-    public var filevault: DeviceInformationGetDeviceDetails200ResponseFilevault?
     public var general: DeviceInformationGetDeviceDetails200ResponseGeneral?
-    public var hardwareOverview: DeviceInformationGetDeviceDetails200ResponseHardwareOverview?
-    public var installedProfiles: AnyCodable?
-    public var kandjiAgent: DeviceInformationGetDeviceDetails200ResponseKandjiAgent?
-    public var lostMode: DeviceInformationGetDeviceDetails200ResponseLostMode?
-    public var mdm: DeviceInformationGetDeviceDetails200ResponseMdm?
-    public var network: AnyCodable?
-    public var recoveryInformation: DeviceInformationGetDeviceDetails200ResponseRecoveryInformation?
-    public var securityInformation: DeviceInformationGetDeviceDetails200ResponseSecurityInformation?
+    public var hardware: DeviceInformationGetDeviceDetails200ResponseHardware?
+    public var management: DeviceInformationGetDeviceDetails200ResponseManagement?
+    public var security: DeviceInformationGetDeviceDetails200ResponseSecurity?
     public var tags: AnyCodable?
-    public var users: DeviceInformationGetDeviceDetails200ResponseUsers?
-    public var volumes: AnyCodable?
 
-    public init(activationLock: DeviceInformationGetDeviceDetails200ResponseActivationLock? = nil, appleBusinessManager: DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager? = nil, automatedDeviceEnrollment: DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment? = nil, cellular: DeviceInformationGetDeviceDetails200ResponseCellular? = nil, filevault: DeviceInformationGetDeviceDetails200ResponseFilevault? = nil, general: DeviceInformationGetDeviceDetails200ResponseGeneral? = nil, hardwareOverview: DeviceInformationGetDeviceDetails200ResponseHardwareOverview? = nil, installedProfiles: AnyCodable? = nil, kandjiAgent: DeviceInformationGetDeviceDetails200ResponseKandjiAgent? = nil, lostMode: DeviceInformationGetDeviceDetails200ResponseLostMode? = nil, mdm: DeviceInformationGetDeviceDetails200ResponseMdm? = nil, network: AnyCodable? = nil, recoveryInformation: DeviceInformationGetDeviceDetails200ResponseRecoveryInformation? = nil, securityInformation: DeviceInformationGetDeviceDetails200ResponseSecurityInformation? = nil, tags: AnyCodable? = nil, users: DeviceInformationGetDeviceDetails200ResponseUsers? = nil, volumes: AnyCodable? = nil) {
-        self.activationLock = activationLock
-        self.appleBusinessManager = appleBusinessManager
-        self.automatedDeviceEnrollment = automatedDeviceEnrollment
+    public init(cellular: DeviceInformationGetDeviceDetails200ResponseCellular? = nil, general: DeviceInformationGetDeviceDetails200ResponseGeneral? = nil, hardware: DeviceInformationGetDeviceDetails200ResponseHardware? = nil, management: DeviceInformationGetDeviceDetails200ResponseManagement? = nil, security: DeviceInformationGetDeviceDetails200ResponseSecurity? = nil, tags: AnyCodable? = nil) {
         self.cellular = cellular
-        self.filevault = filevault
         self.general = general
-        self.hardwareOverview = hardwareOverview
-        self.installedProfiles = installedProfiles
-        self.kandjiAgent = kandjiAgent
-        self.lostMode = lostMode
-        self.mdm = mdm
-        self.network = network
-        self.recoveryInformation = recoveryInformation
-        self.securityInformation = securityInformation
+        self.hardware = hardware
+        self.management = management
+        self.security = security
         self.tags = tags
-        self.users = users
-        self.volumes = volumes
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case activationLock = "activation_lock"
-        case appleBusinessManager = "apple_business_manager"
-        case automatedDeviceEnrollment = "automated_device_enrollment"
         case cellular
-        case filevault
         case general
-        case hardwareOverview = "hardware_overview"
-        case installedProfiles = "installed_profiles"
-        case kandjiAgent = "kandji_agent"
-        case lostMode = "lost_mode"
-        case mdm
-        case network
-        case recoveryInformation = "recovery_information"
-        case securityInformation = "security_information"
+        case hardware
+        case management
+        case security
         case tags
-        case users
-        case volumes
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(activationLock, forKey: .activationLock)
-        try container.encodeIfPresent(appleBusinessManager, forKey: .appleBusinessManager)
-        try container.encodeIfPresent(automatedDeviceEnrollment, forKey: .automatedDeviceEnrollment)
         try container.encodeIfPresent(cellular, forKey: .cellular)
-        try container.encodeIfPresent(filevault, forKey: .filevault)
         try container.encodeIfPresent(general, forKey: .general)
-        try container.encodeIfPresent(hardwareOverview, forKey: .hardwareOverview)
-        try container.encodeIfPresent(installedProfiles, forKey: .installedProfiles)
-        try container.encodeIfPresent(kandjiAgent, forKey: .kandjiAgent)
-        try container.encodeIfPresent(lostMode, forKey: .lostMode)
-        try container.encodeIfPresent(mdm, forKey: .mdm)
-        try container.encodeIfPresent(network, forKey: .network)
-        try container.encodeIfPresent(recoveryInformation, forKey: .recoveryInformation)
-        try container.encodeIfPresent(securityInformation, forKey: .securityInformation)
+        try container.encodeIfPresent(hardware, forKey: .hardware)
+        try container.encodeIfPresent(management, forKey: .management)
+        try container.encodeIfPresent(security, forKey: .security)
         try container.encodeIfPresent(tags, forKey: .tags)
-        try container.encodeIfPresent(users, forKey: .users)
-        try container.encodeIfPresent(volumes, forKey: .volumes)
     }
 }
 

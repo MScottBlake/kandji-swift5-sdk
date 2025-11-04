@@ -24,12 +24,14 @@ extension kandji_sdkAPI {
         }
     }
     public var agentVersion: String?
+    public var apiLevel: String?
     public var assetTag: String?
     public var blueprintId: String?
     public var blueprintName: String?
     public var deviceId: String?
     public var deviceName: String?
     public var firstEnrollment: String?
+    public var fullSoftwareVersion: String?
     public var isMissing: Int?
     public var isMissingNum: NSNumber? {
         get {
@@ -44,6 +46,7 @@ extension kandji_sdkAPI {
     }
     public var lastCheckIn: String?
     public var lastEnrollment: String?
+    public var lostModeStatus: String?
     public var mdmEnabled: Int?
     public var mdmEnabledNum: NSNumber? {
         get {
@@ -53,29 +56,34 @@ extension kandji_sdkAPI {
     public var model: String?
     public var osVersion: String?
     public var platform: String?
+    public var securityPatchLevel: String?
     public var serialNumber: String?
     public var supplementalBuildVersion: String?
     public var supplementalOsVersionExtra: String?
     public var tags: AnyCodable?
     public var user: DeviceInformationGetDevice200ResponseUser?
 
-    public init(agentInstalled: Int? = nil, agentVersion: String? = nil, assetTag: String? = nil, blueprintId: String? = nil, blueprintName: String? = nil, deviceId: String? = nil, deviceName: String? = nil, firstEnrollment: String? = nil, isMissing: Int? = nil, isRemoved: Int? = nil, lastCheckIn: String? = nil, lastEnrollment: String? = nil, mdmEnabled: Int? = nil, model: String? = nil, osVersion: String? = nil, platform: String? = nil, serialNumber: String? = nil, supplementalBuildVersion: String? = nil, supplementalOsVersionExtra: String? = nil, tags: AnyCodable? = nil, user: DeviceInformationGetDevice200ResponseUser? = nil) {
+    public init(agentInstalled: Int? = nil, agentVersion: String? = nil, apiLevel: String? = nil, assetTag: String? = nil, blueprintId: String? = nil, blueprintName: String? = nil, deviceId: String? = nil, deviceName: String? = nil, firstEnrollment: String? = nil, fullSoftwareVersion: String? = nil, isMissing: Int? = nil, isRemoved: Int? = nil, lastCheckIn: String? = nil, lastEnrollment: String? = nil, lostModeStatus: String? = nil, mdmEnabled: Int? = nil, model: String? = nil, osVersion: String? = nil, platform: String? = nil, securityPatchLevel: String? = nil, serialNumber: String? = nil, supplementalBuildVersion: String? = nil, supplementalOsVersionExtra: String? = nil, tags: AnyCodable? = nil, user: DeviceInformationGetDevice200ResponseUser? = nil) {
         self.agentInstalled = agentInstalled
         self.agentVersion = agentVersion
+        self.apiLevel = apiLevel
         self.assetTag = assetTag
         self.blueprintId = blueprintId
         self.blueprintName = blueprintName
         self.deviceId = deviceId
         self.deviceName = deviceName
         self.firstEnrollment = firstEnrollment
+        self.fullSoftwareVersion = fullSoftwareVersion
         self.isMissing = isMissing
         self.isRemoved = isRemoved
         self.lastCheckIn = lastCheckIn
         self.lastEnrollment = lastEnrollment
+        self.lostModeStatus = lostModeStatus
         self.mdmEnabled = mdmEnabled
         self.model = model
         self.osVersion = osVersion
         self.platform = platform
+        self.securityPatchLevel = securityPatchLevel
         self.serialNumber = serialNumber
         self.supplementalBuildVersion = supplementalBuildVersion
         self.supplementalOsVersionExtra = supplementalOsVersionExtra
@@ -86,20 +94,24 @@ extension kandji_sdkAPI {
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case agentInstalled = "agent_installed"
         case agentVersion = "agent_version"
+        case apiLevel = "api_level"
         case assetTag = "asset_tag"
         case blueprintId = "blueprint_id"
         case blueprintName = "blueprint_name"
         case deviceId = "device_id"
         case deviceName = "device_name"
         case firstEnrollment = "first_enrollment"
+        case fullSoftwareVersion = "full_software_version"
         case isMissing = "is_missing"
         case isRemoved = "is_removed"
         case lastCheckIn = "last_check_in"
         case lastEnrollment = "last_enrollment"
+        case lostModeStatus = "lost_mode_status"
         case mdmEnabled = "mdm_enabled"
         case model
         case osVersion = "os_version"
         case platform
+        case securityPatchLevel = "security_patch_level"
         case serialNumber = "serial_number"
         case supplementalBuildVersion = "supplemental_build_version"
         case supplementalOsVersionExtra = "supplemental_os_version_extra"
@@ -113,20 +125,24 @@ extension kandji_sdkAPI {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(agentInstalled, forKey: .agentInstalled)
         try container.encodeIfPresent(agentVersion, forKey: .agentVersion)
+        try container.encodeIfPresent(apiLevel, forKey: .apiLevel)
         try container.encodeIfPresent(assetTag, forKey: .assetTag)
         try container.encodeIfPresent(blueprintId, forKey: .blueprintId)
         try container.encodeIfPresent(blueprintName, forKey: .blueprintName)
         try container.encodeIfPresent(deviceId, forKey: .deviceId)
         try container.encodeIfPresent(deviceName, forKey: .deviceName)
         try container.encodeIfPresent(firstEnrollment, forKey: .firstEnrollment)
+        try container.encodeIfPresent(fullSoftwareVersion, forKey: .fullSoftwareVersion)
         try container.encodeIfPresent(isMissing, forKey: .isMissing)
         try container.encodeIfPresent(isRemoved, forKey: .isRemoved)
         try container.encodeIfPresent(lastCheckIn, forKey: .lastCheckIn)
         try container.encodeIfPresent(lastEnrollment, forKey: .lastEnrollment)
+        try container.encodeIfPresent(lostModeStatus, forKey: .lostModeStatus)
         try container.encodeIfPresent(mdmEnabled, forKey: .mdmEnabled)
         try container.encodeIfPresent(model, forKey: .model)
         try container.encodeIfPresent(osVersion, forKey: .osVersion)
         try container.encodeIfPresent(platform, forKey: .platform)
+        try container.encodeIfPresent(securityPatchLevel, forKey: .securityPatchLevel)
         try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
         try container.encodeIfPresent(supplementalBuildVersion, forKey: .supplementalBuildVersion)
         try container.encodeIfPresent(supplementalOsVersionExtra, forKey: .supplementalOsVersionExtra)

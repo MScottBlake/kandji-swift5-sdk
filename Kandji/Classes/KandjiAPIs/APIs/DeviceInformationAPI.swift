@@ -91,7 +91,7 @@ extension kandji_sdkAPI {
     /**
      Get Device
      - GET /api/v1/devices/{device_id}
-     - This request returns the high-level information for a specified Device ID.
+     - <p>This request returns the high-level information for a specified Device ID.</p> <p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -148,7 +148,7 @@ extension kandji_sdkAPI {
     /**
      Get Device Activity
      - GET /api/v1/devices/{device_id}/activity
-     - This request returns the device activity for a specified Device ID.
+     - <p>This request returns the device activity for a specified Device ID.</p> <p>If Windows or Android management is turned on, additonal keys may be present in activity entries.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -209,7 +209,7 @@ extension kandji_sdkAPI {
     /**
      Get Device Apps
      - GET /api/v1/devices/{device_id}/apps
-     - <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
+     - <p>This request returns a list of all installed apps for a specified Device ID.</p> <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p> <p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -264,11 +264,11 @@ extension kandji_sdkAPI {
     /**
      Get Device Details
      - GET /api/v1/devices/{device_id}/details
-     - This request returns the device details for a specified Device ID.
+     - <p>This request returns the device details for a specified Device ID.</p> <p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>
      - Bearer Token:
        - type: http
        - name: bearer
-     - responseHeaders: [Content-Type(String)]
+     - responseHeaders: [Allow(String), Connection(String), Content-Length(String), Content-Security-Policy(String), Content-Type(String), Date(String), Feature-Policy(String), Referrer-Policy(String), Server(String), Strict-Transport-Security(String), Vary(String), X-Content-Type-Options(String), X-Frame-Options(String), X-XSS-Protection(String)]
      - externalDocs: class ExternalDocumentation {
     description: null
     url: https://api-docs.kandji.io/#efa2170d-e5f7-4b97-8f4c-da6f84ba58b5
@@ -429,7 +429,7 @@ extension kandji_sdkAPI {
     /**
      Get Device Parameters
      - GET /api/v1/devices/{device_id}/parameters
-     - <p>This request returns the parameters and their statuses for a specified Device ID</p> <p>This endpoint is only applicable to macOS clients.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <p><strong>Possible parameter status values</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
+     - <p>This request returns the parameters and their statuses for a specified Device ID, and is only applicable to Mac.</p> <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p> <p><strong>Possible parameter status values</strong></p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th><strong>Value</strong></th> <th><strong>Type</strong></th> <th><strong>Additional Info</strong></th> </tr> </thead> <tbody> <tr> <td>ERROR</td> <td>string</td> <td>Audit failure</td> </tr> <tr> <td>INCOMPATIBLE</td> <td>string</td> <td>Not compatible with device or OS version</td> </tr> <tr> <td>PASS</td> <td>string</td> <td>Device meets requirements</td> </tr> <tr> <td>PENDING</td> <td>string</td> <td>Waiting on device. Not yet run.</td> </tr> <tr> <td>REMEDIATED</td> <td>string</td> <td>Parameter remediated</td> </tr> <tr> <td>WARNING</td> <td>string</td> <td>Muted alert</td> </tr> </tbody> </table> </div>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -530,7 +530,7 @@ extension kandji_sdkAPI {
      - parameter model: (query) Return model results &amp;quot;containing&amp;quot; the specified model string. (optional)
      - parameter ordering: (query) &lt;p&gt;The &lt;code&gt;ordering&lt;/code&gt; parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;-serial_number&lt;/code&gt; will order the response by serial_number in descending order.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Possible values&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;asset_tag&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;blueprint_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_name&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;last_check_in&lt;/code&gt; - agent checkin&lt;/li&gt; &lt;li&gt;&lt;code&gt;model&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;os_version&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;serial_number&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;user&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;serial_number,platform&lt;/code&gt;&lt;/p&gt; (optional)
      - parameter osVersion: (query) Return all device records containing the specified OS version (optional)
-     - parameter platform: (query) Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt; (optional)
+     - parameter platform: (query) Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt;, &lt;code&gt;Android&lt;/code&gt;, &lt;code&gt;Windows&lt;/code&gt; (optional)
      - parameter serialNumber: (query) Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. (optional)
      - parameter tagName: (query) Return results for given tag name. Case sensitive. (optional)
      - parameter tagNameIn: (query) Return results for given tag names separate by commas. Case sensitive. (optional)
@@ -539,7 +539,7 @@ extension kandji_sdkAPI {
      - parameter user: (query) Return results &amp;quot;containing&amp;quot; the user name (optional)
      - parameter userEmail: (query) Return results &amp;quot;containing&amp;quot; search on email address (optional)
      - parameter userEmailExact: (query) Return results &amp;quot;matching&amp;quot; the specified email address (optional)
-     - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
+     - parameter userId: (query) &amp;quot;exact&amp;quot; match on user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
      - parameter userName: (query) Return results &amp;quot;containing&amp;quot; the assigned user Display Name (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
@@ -560,7 +560,7 @@ extension kandji_sdkAPI {
     /**
      List Devices
      - GET /api/v1/devices
-     - <p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+     - <p>This request returns a list of devices in an Iru Endpoint Management tenant. Optionally, query parameters can be used to filter results.</p> <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Iru support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p> <p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -579,7 +579,7 @@ extension kandji_sdkAPI {
      - parameter model: (query) Return model results &amp;quot;containing&amp;quot; the specified model string. (optional)
      - parameter ordering: (query) &lt;p&gt;The &lt;code&gt;ordering&lt;/code&gt; parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;-serial_number&lt;/code&gt; will order the response by serial_number in descending order.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Possible values&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;asset_tag&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;blueprint_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_name&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;last_check_in&lt;/code&gt; - agent checkin&lt;/li&gt; &lt;li&gt;&lt;code&gt;model&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;os_version&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;serial_number&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;user&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;serial_number,platform&lt;/code&gt;&lt;/p&gt; (optional)
      - parameter osVersion: (query) Return all device records containing the specified OS version (optional)
-     - parameter platform: (query) Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt; (optional)
+     - parameter platform: (query) Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt;, &lt;code&gt;Android&lt;/code&gt;, &lt;code&gt;Windows&lt;/code&gt; (optional)
      - parameter serialNumber: (query) Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. (optional)
      - parameter tagName: (query) Return results for given tag name. Case sensitive. (optional)
      - parameter tagNameIn: (query) Return results for given tag names separate by commas. Case sensitive. (optional)
@@ -588,7 +588,7 @@ extension kandji_sdkAPI {
      - parameter user: (query) Return results &amp;quot;containing&amp;quot; the user name (optional)
      - parameter userEmail: (query) Return results &amp;quot;containing&amp;quot; search on email address (optional)
      - parameter userEmailExact: (query) Return results &amp;quot;matching&amp;quot; the specified email address (optional)
-     - parameter userId: (query) &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
+     - parameter userId: (query) &amp;quot;exact&amp;quot; match on user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
      - parameter userName: (query) Return results &amp;quot;containing&amp;quot; the assigned user Display Name (optional)
      - parameter offset: (query) Specify the starting record to return (optional)
      - returns: RequestBuilder<AnyCodable> 

@@ -42,7 +42,7 @@ extension kandji_sdkAPI {
     /**
      Create Blueprint
      - POST /api/v1/blueprints
-     - <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
+     - <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the tenant.</p> <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p> <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -338,7 +338,7 @@ extension kandji_sdkAPI {
     /**
      List Blueprints
      - GET /api/v1/blueprints
-     - This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.
+     - This request returns a list of a Blueprints. Optional query parameters can be specified to filter the results.
      - Bearer Token:
        - type: http
        - name: bearer

@@ -1,6 +1,7 @@
 # Swift5 API client for kandji_sdk
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1>
+<html><head></head><body><h1 id=&quot;welcome-to-the-iru-endpoint-management-api-documentation&quot;>Welcome to the Iru Endpoint Management API Documentation</h1>
+<p><strong>Note:</strong> Kandji is now Iru, but many URLs and notes within this documentation will continue to reference Kandji for some time.</p>
 <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p>
 <ul>
 <li><p>US - <code>https://SubDomain.api.kandji.io</code></p>
@@ -11,9 +12,9 @@
 <p>For information on how to obtain an API token, please refer to the following support article.</p>
 <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>
 <h4 id=&quot;rate-limit&quot;>Rate Limit</h4>
-<p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p>
+<p>The Iru Endpoint Management API currently has an API rate limit of 10,000 requests per hour per customer.</p>
 <h4 id=&quot;request-methods&quot;>Request Methods</h4>
-<p>HTTP request methods supported by the Kandji API.</p>
+<p>HTTP request methods supported by the API.</p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
 <tr>
@@ -104,7 +105,7 @@
 </tr>
 <tr>
 <td></td>
-<td>Unable to locate the resource in the Kandji tenant.</td>
+<td>Unable to locate the resource in the Iru tenant.</td>
 </tr>
 <tr>
 <td>415</td>
@@ -131,7 +132,7 @@
 </div><h4 id=&quot;data-structure&quot;>Data structure</h4>
 <p>The API returns all structured responses in JSON schema format.</p>
 <h4 id=&quot;examples&quot;>Examples</h4>
-<p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p>
+<p>Code examples using the API can be found in the Iru Endpoint Management support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p>
 </body></html>
 
 ## Overview
@@ -186,6 +187,7 @@ Class | Method | HTTP request | Description
 *DeviceActionsAPI* | [**eraseDevice**](docs/DeviceActionsAPI.md#erasedevice) | **POST** /api/v1/devices/{device_id}/action/erase | Erase Device
 *DeviceActionsAPI* | [**getDeviceCommands**](docs/DeviceActionsAPI.md#getdevicecommands) | **GET** /api/v1/devices/{device_id}/commands | Get Device Commands
 *DeviceActionsAPI* | [**lockDevice**](docs/DeviceActionsAPI.md#lockdevice) | **POST** /api/v1/devices/{device_id}/action/lock | Lock Device
+*DeviceActionsAPI* | [**performDailyCheckin**](docs/DeviceActionsAPI.md#performdailycheckin) | **POST** /api/v1/devices/{device_id}/action/dailycheckin | Perform Daily Check-in
 *DeviceActionsAPI* | [**reinstallAgent**](docs/DeviceActionsAPI.md#reinstallagent) | **POST** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
 *DeviceActionsAPI* | [**remoteDesktop**](docs/DeviceActionsAPI.md#remotedesktop) | **POST** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
 *DeviceActionsAPI* | [**renewMdmProfile**](docs/DeviceActionsAPI.md#renewmdmprofile) | **POST** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
@@ -272,22 +274,15 @@ Class | Method | HTTP request | Description
  - [DeviceInformationGetDeviceActivity200Response](docs/DeviceInformationGetDeviceActivity200Response.md)
  - [DeviceInformationGetDeviceApps200Response](docs/DeviceInformationGetDeviceApps200Response.md)
  - [DeviceInformationGetDeviceDetails200Response](docs/DeviceInformationGetDeviceDetails200Response.md)
- - [DeviceInformationGetDeviceDetails200ResponseActivationLock](docs/DeviceInformationGetDeviceDetails200ResponseActivationLock.md)
- - [DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager](docs/DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager.md)
- - [DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment](docs/DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment.md)
  - [DeviceInformationGetDeviceDetails200ResponseCellular](docs/DeviceInformationGetDeviceDetails200ResponseCellular.md)
- - [DeviceInformationGetDeviceDetails200ResponseFilevault](docs/DeviceInformationGetDeviceDetails200ResponseFilevault.md)
  - [DeviceInformationGetDeviceDetails200ResponseGeneral](docs/DeviceInformationGetDeviceDetails200ResponseGeneral.md)
- - [DeviceInformationGetDeviceDetails200ResponseHardwareOverview](docs/DeviceInformationGetDeviceDetails200ResponseHardwareOverview.md)
- - [DeviceInformationGetDeviceDetails200ResponseKandjiAgent](docs/DeviceInformationGetDeviceDetails200ResponseKandjiAgent.md)
- - [DeviceInformationGetDeviceDetails200ResponseLostMode](docs/DeviceInformationGetDeviceDetails200ResponseLostMode.md)
- - [DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation](docs/DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation.md)
- - [DeviceInformationGetDeviceDetails200ResponseMdm](docs/DeviceInformationGetDeviceDetails200ResponseMdm.md)
- - [DeviceInformationGetDeviceDetails200ResponseRecoveryInformation](docs/DeviceInformationGetDeviceDetails200ResponseRecoveryInformation.md)
- - [DeviceInformationGetDeviceDetails200ResponseSecurityInformation](docs/DeviceInformationGetDeviceDetails200ResponseSecurityInformation.md)
- - [DeviceInformationGetDeviceDetails200ResponseUsers](docs/DeviceInformationGetDeviceDetails200ResponseUsers.md)
+ - [DeviceInformationGetDeviceDetails200ResponseHardware](docs/DeviceInformationGetDeviceDetails200ResponseHardware.md)
+ - [DeviceInformationGetDeviceDetails200ResponseManagement](docs/DeviceInformationGetDeviceDetails200ResponseManagement.md)
+ - [DeviceInformationGetDeviceDetails200ResponseSecurity](docs/DeviceInformationGetDeviceDetails200ResponseSecurity.md)
  - [DeviceInformationGetDeviceLibraryItems200Response](docs/DeviceInformationGetDeviceLibraryItems200Response.md)
  - [DeviceInformationGetDeviceLostModeDetails200Response](docs/DeviceInformationGetDeviceLostModeDetails200Response.md)
+ - [DeviceInformationGetDeviceLostModeDetails200ResponseLostMode](docs/DeviceInformationGetDeviceLostModeDetails200ResponseLostMode.md)
+ - [DeviceInformationGetDeviceLostModeDetails200ResponseLostModeLastLocation](docs/DeviceInformationGetDeviceLostModeDetails200ResponseLostModeLastLocation.md)
  - [DeviceInformationGetDeviceParameters200Response](docs/DeviceInformationGetDeviceParameters200Response.md)
  - [DeviceInformationGetDeviceStatus200Response](docs/DeviceInformationGetDeviceStatus200Response.md)
  - [DeviceInformationUpdateDevice200Response](docs/DeviceInformationUpdateDevice200Response.md)

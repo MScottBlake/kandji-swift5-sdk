@@ -37,7 +37,7 @@ extension kandji_sdkAPI {
     /**
      Get Activation Lock Bypass Code
      - GET /api/v1/devices/{device_id}/secrets/bypasscode
-     - <p>This request allows you to retrieve the Activation Lock Bypass code.</p> <p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p> <p>device_based_albc is the device-based Activation Lock bypass code for when Activation Lock is enabled by the MDM server.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
+     - <p>This request allows you to retrieve the Activation Lock Bypass code for Apple devices.</p> <p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p> <p>device_based_albc is the device-based Activation Lock bypass code for when Activation Lock is enabled by the MDM server.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -92,7 +92,7 @@ extension kandji_sdkAPI {
     /**
      Get FileVault Recovery Key
      - GET /api/v1/devices/{device_id}/secrets/filevaultkey
-     - <p>This request allows you to retrieve the FileVault Recovery key for a macOS device.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
+     - <p>This request allows you to retrieve the FileVault Recovery key for a Mac.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
      - Bearer Token:
        - type: http
        - name: bearer
@@ -202,7 +202,7 @@ extension kandji_sdkAPI {
     /**
      Get Unlock Pin
      - GET /api/v1/devices/{device_id}/secrets/unlockpin
-     - <p>This request allows you to retrieve the device unlock pin for a macOS device.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
+     - <p>This request allows you to retrieve the device unlock pin for a Mac.</p> <h3 id=&quot;request-parameters&quot;>Request Parameters</h3> <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
      - Bearer Token:
        - type: http
        - name: bearer

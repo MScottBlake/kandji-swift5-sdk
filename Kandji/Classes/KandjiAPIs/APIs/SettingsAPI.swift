@@ -36,7 +36,7 @@ extension kandji_sdkAPI {
     /**
      Licensing
      - GET /api/v1/settings/licensing
-     - Returns Kandji tenant licensing and utilization information.
+     - Returns tenant licensing and utilization information.
      - Bearer Token:
        - type: http
        - name: bearer

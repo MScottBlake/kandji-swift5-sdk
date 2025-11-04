@@ -17,85 +17,89 @@ extension kandji_sdkAPI {
 
 @objcMembers public class DeviceInformationGetDeviceDetails200ResponseGeneral: NSObject, Codable, JSONEncodable {
 
+    public var apiLevel: String?
     public var assetTag: String?
-    public var assignedUser: String?
+    public var assignedUser: AnyCodable?
     public var blueprintName: String?
     public var blueprintUuid: String?
-    public var bootVolume: String?
     public var deviceId: String?
     public var deviceName: String?
+    public var enterpriseDeviceId: String?
+    public var enterpriseId: String?
     public var firstEnrollment: String?
     public var lastEnrollment: String?
-    public var lastUser: String?
-    public var model: String?
+    public var manufacturer: String?
+    public var modelName: String?
+    public var osBuild: String?
     public var osVersion: String?
     public var platform: String?
-    public var supplementalBuildVersion: String?
-    public var supplementalOsVersionExtra: String?
-    public var systemVersion: String?
-    public var timeSinceBoot: String?
+    public var securityPatchLevel: String?
+    public var serialNumber: String?
 
-    public init(assetTag: String? = nil, assignedUser: String? = nil, blueprintName: String? = nil, blueprintUuid: String? = nil, bootVolume: String? = nil, deviceId: String? = nil, deviceName: String? = nil, firstEnrollment: String? = nil, lastEnrollment: String? = nil, lastUser: String? = nil, model: String? = nil, osVersion: String? = nil, platform: String? = nil, supplementalBuildVersion: String? = nil, supplementalOsVersionExtra: String? = nil, systemVersion: String? = nil, timeSinceBoot: String? = nil) {
+    public init(apiLevel: String? = nil, assetTag: String? = nil, assignedUser: AnyCodable? = nil, blueprintName: String? = nil, blueprintUuid: String? = nil, deviceId: String? = nil, deviceName: String? = nil, enterpriseDeviceId: String? = nil, enterpriseId: String? = nil, firstEnrollment: String? = nil, lastEnrollment: String? = nil, manufacturer: String? = nil, modelName: String? = nil, osBuild: String? = nil, osVersion: String? = nil, platform: String? = nil, securityPatchLevel: String? = nil, serialNumber: String? = nil) {
+        self.apiLevel = apiLevel
         self.assetTag = assetTag
         self.assignedUser = assignedUser
         self.blueprintName = blueprintName
         self.blueprintUuid = blueprintUuid
-        self.bootVolume = bootVolume
         self.deviceId = deviceId
         self.deviceName = deviceName
+        self.enterpriseDeviceId = enterpriseDeviceId
+        self.enterpriseId = enterpriseId
         self.firstEnrollment = firstEnrollment
         self.lastEnrollment = lastEnrollment
-        self.lastUser = lastUser
-        self.model = model
+        self.manufacturer = manufacturer
+        self.modelName = modelName
+        self.osBuild = osBuild
         self.osVersion = osVersion
         self.platform = platform
-        self.supplementalBuildVersion = supplementalBuildVersion
-        self.supplementalOsVersionExtra = supplementalOsVersionExtra
-        self.systemVersion = systemVersion
-        self.timeSinceBoot = timeSinceBoot
+        self.securityPatchLevel = securityPatchLevel
+        self.serialNumber = serialNumber
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case apiLevel = "api_level"
         case assetTag = "asset_tag"
         case assignedUser = "assigned_user"
         case blueprintName = "blueprint_name"
         case blueprintUuid = "blueprint_uuid"
-        case bootVolume = "boot_volume"
         case deviceId = "device_id"
         case deviceName = "device_name"
+        case enterpriseDeviceId = "enterprise_device_id"
+        case enterpriseId = "enterprise_id"
         case firstEnrollment = "first_enrollment"
         case lastEnrollment = "last_enrollment"
-        case lastUser = "last_user"
-        case model
+        case manufacturer
+        case modelName = "model_name"
+        case osBuild = "os_build"
         case osVersion = "os_version"
         case platform
-        case supplementalBuildVersion = "supplemental_build_version"
-        case supplementalOsVersionExtra = "supplemental_os_version_extra"
-        case systemVersion = "system_version"
-        case timeSinceBoot = "time_since_boot"
+        case securityPatchLevel = "security_patch_level"
+        case serialNumber = "serial_number"
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(apiLevel, forKey: .apiLevel)
         try container.encodeIfPresent(assetTag, forKey: .assetTag)
         try container.encodeIfPresent(assignedUser, forKey: .assignedUser)
         try container.encodeIfPresent(blueprintName, forKey: .blueprintName)
         try container.encodeIfPresent(blueprintUuid, forKey: .blueprintUuid)
-        try container.encodeIfPresent(bootVolume, forKey: .bootVolume)
         try container.encodeIfPresent(deviceId, forKey: .deviceId)
         try container.encodeIfPresent(deviceName, forKey: .deviceName)
+        try container.encodeIfPresent(enterpriseDeviceId, forKey: .enterpriseDeviceId)
+        try container.encodeIfPresent(enterpriseId, forKey: .enterpriseId)
         try container.encodeIfPresent(firstEnrollment, forKey: .firstEnrollment)
         try container.encodeIfPresent(lastEnrollment, forKey: .lastEnrollment)
-        try container.encodeIfPresent(lastUser, forKey: .lastUser)
-        try container.encodeIfPresent(model, forKey: .model)
+        try container.encodeIfPresent(manufacturer, forKey: .manufacturer)
+        try container.encodeIfPresent(modelName, forKey: .modelName)
+        try container.encodeIfPresent(osBuild, forKey: .osBuild)
         try container.encodeIfPresent(osVersion, forKey: .osVersion)
         try container.encodeIfPresent(platform, forKey: .platform)
-        try container.encodeIfPresent(supplementalBuildVersion, forKey: .supplementalBuildVersion)
-        try container.encodeIfPresent(supplementalOsVersionExtra, forKey: .supplementalOsVersionExtra)
-        try container.encodeIfPresent(systemVersion, forKey: .systemVersion)
-        try container.encodeIfPresent(timeSinceBoot, forKey: .timeSinceBoot)
+        try container.encodeIfPresent(securityPatchLevel, forKey: .securityPatchLevel)
+        try container.encodeIfPresent(serialNumber, forKey: .serialNumber)
     }
 }
 
